@@ -6,23 +6,23 @@
   A biomedical AI assistant with 37 MCP-powered research tools running securely in containers. Built on <a href="https://github.com/qwibitai/nanoclaw">NanoClaw</a>.
 </p>
 
-BioClaw bundles 37 pharma and bioinformatics MCP servers directly into the container image — no cloning repos, no configuring paths. One image, zero setup.
+BioClaw bundles 37 [OpenPharma](https://github.com/openpharma-org) MCP servers directly into the container image — no cloning repos, no configuring paths. One image, zero setup.
 
 ## What's Included
 
-**37 MCP servers** covering:
+**37 MCP servers** from [OpenPharma](https://github.com/openpharma-org):
 
 | Category | Servers |
 |----------|---------|
-| **Drug & Regulatory** | FDA, EMA, DrugBank, ChEMBL, PubChem, OpenTargets, ClinicalTrials.gov |
-| **Literature** | PubMed, bioRxiv, OpenAlex, NLM |
-| **Genomics & Variants** | ClinVar, COSMIC, GWAS Catalog, gnomAD, Ensembl, GTEx, GEO, JASPAR |
-| **Proteomics & Structure** | UniProt, AlphaFold, PDB, STRING-db, BindingDB |
-| **Pathways & Ontology** | Reactome, KEGG, Gene Ontology, HPO, Monarch |
-| **Cancer & Dependencies** | DepMap, cBioPortal |
-| **Metabolomics** | HMDB |
-| **Pharmacogenomics** | ClinPGx |
-| **Healthcare** | Medicare, Medicaid, CDC, EU Filings |
+| **Drug & Regulatory** | [FDA](https://github.com/openpharma-org/fda-mcp), [EMA](https://github.com/openpharma-org/ema-mcp), [DrugBank](https://github.com/openpharma-org/drugbank-mcp-server), [ChEMBL](https://github.com/openpharma-org/chembl-mcp), [PubChem](https://github.com/openpharma-org/pubchem-mcp), [OpenTargets](https://github.com/openpharma-org/opentargets-mcp), [ClinicalTrials.gov](https://github.com/openpharma-org/ct-gov-mcp) |
+| **Literature** | [PubMed](https://github.com/openpharma-org/pubmed-mcp), [bioRxiv](https://github.com/openpharma-org/biorxiv-mcp), [OpenAlex](https://github.com/openpharma-org/openalex-mcp-server), [NLM](https://github.com/openpharma-org/nlm-codes-mcp) |
+| **Genomics & Variants** | [ClinVar](https://github.com/openpharma-org/clinvar-mcp-server), [COSMIC](https://github.com/openpharma-org/cosmic-mcp-server), [GWAS Catalog](https://github.com/openpharma-org/gwas-mcp-server), [gnomAD](https://github.com/openpharma-org/gnomad-mcp-server), [Ensembl](https://github.com/openpharma-org/ensembl-mcp-server), [GTEx](https://github.com/openpharma-org/gtex-mcp-server), [GEO](https://github.com/openpharma-org/geo-mcp-server), [JASPAR](https://github.com/openpharma-org/jaspar-mcp-server) |
+| **Proteomics & Structure** | [UniProt](https://github.com/openpharma-org/uniprot-mcp-server), [AlphaFold](https://github.com/openpharma-org/alphafold-mcp-server), [PDB](https://github.com/openpharma-org/pdb-mcp-server), [STRING-db](https://github.com/openpharma-org/stringdb-mcp-server), [BindingDB](https://github.com/openpharma-org/bindingdb-mcp-server) |
+| **Pathways & Ontology** | [Reactome](https://github.com/openpharma-org/reactome-mcp-server), [KEGG](https://github.com/openpharma-org/kegg-mcp-server), [Gene Ontology](https://github.com/openpharma-org/geneontology-mcp-server), [HPO](https://github.com/openpharma-org/hpo-mcp-server), [Monarch](https://github.com/openpharma-org/monarch-mcp-server) |
+| **Cancer & Dependencies** | [DepMap](https://github.com/openpharma-org/depmap-mcp-server), [cBioPortal](https://github.com/openpharma-org/cbioportal-mcp-server) |
+| **Metabolomics** | [HMDB](https://github.com/openpharma-org/hmdb-mcp-server) |
+| **Pharmacogenomics** | [ClinPGx](https://github.com/openpharma-org/clinpgx-mcp-server) |
+| **Healthcare** | [Medicare](https://github.com/openpharma-org/medicare-mcp), [Medicaid](https://github.com/openpharma-org/medicaid-mcp-server), [CDC](https://github.com/openpharma-org/cdc-mcp), [EU Filings](https://github.com/openpharma-org/eu-filings-mcp-server) |
 
 ## Agent Skills (120+)
 
