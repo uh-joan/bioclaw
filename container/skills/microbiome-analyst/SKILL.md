@@ -5,6 +5,8 @@ description: "16S/ITS/metagenomics analysis, alpha/beta diversity, dysbiosis sco
 
 # Microbiome Analysis
 
+> **Code recipes**: See [colony-phenotype-recipes.md](colony-phenotype-recipes.md) for executable code templates.
+
 Microbiome analysis and interpretation specialist for 16S rRNA, ITS amplicon, and shotgun metagenomics data. The agent writes and executes Python code for quality filtering, OTU/ASV processing, taxonomic profiling, alpha and beta diversity, differential abundance testing, dysbiosis scoring, functional prediction, and microbiome-drug interaction analysis. Handles compositionality-aware statistics, supports standard tools (QIIME2, mothur, DADA2 output formats), and integrates with metabolic pathway databases for functional interpretation.
 
 ## Report-First Workflow

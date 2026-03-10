@@ -5,6 +5,8 @@ description: Phylogenetic and molecular evolution analysis. Sequence alignment, 
 
 # Phylogenetics Analysis
 
+> **Code recipes**: See [recipes.md](recipes.md) in this directory for copy-paste executable code templates.
+
 Phylogenetic inference and molecular evolution. The agent writes and executes Python code for sequence parsing, distance calculation, tree construction (NJ, UPGMA, parsimony), bootstrap evaluation, molecular clock estimation, and visualization. All algorithms implemented from scratch using numpy, scipy, pandas, matplotlib (no BioPython/ete3/DendroPy).
 
 ## Report-First Workflow

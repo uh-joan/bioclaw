@@ -5,6 +5,8 @@ description: Biostatistics and statistical modeling for biomedical research. Sur
 
 # Statistical Modeling
 
+> **Code recipes**: See [recipes.md](recipes.md), [data-wrangling-recipes.md](data-wrangling-recipes.md), and [regression-recipes.md](regression-recipes.md) for executable code templates.
+
 Biostatistics and statistical modeling for biomedical research. The agent writes and executes Python code for survival analysis, regression models, mixed effects models, power analysis, Bayesian approaches, meta-analysis, and diagnostic metrics. Uses statsmodels, scipy, lifelines, and scikit-learn for computation and matplotlib for visualization.
 
 ## Report-First Workflow

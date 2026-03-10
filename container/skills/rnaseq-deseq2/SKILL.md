@@ -5,6 +5,8 @@ description: Production-ready RNA-seq differential expression analysis using PyD
 
 # RNA-seq DESeq2
 
+> **Code recipes**: See [recipes.md](recipes.md) in this directory for copy-paste executable code templates.
+
 Production-ready RNA-seq differential expression analysis using PyDESeq2. The agent writes and executes Python code for normalization, dispersion estimation, Wald testing, LFC shrinkage, and result filtering. Uses Open Targets for gene-disease annotation, PubMed for literature evidence, and NLM for gene ID resolution and cross-referencing.
 
 ## Report-First Workflow

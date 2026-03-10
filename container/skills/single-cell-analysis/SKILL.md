@@ -5,6 +5,8 @@ description: Single-cell RNA-seq analysis specialist. Production-ready scRNA-seq
 
 # Single-Cell Analysis
 
+> **Code recipes**: See [recipes.md](recipes.md) in this directory for copy-paste executable code templates.
+
 Production-ready scRNA-seq analysis methodology. The agent writes and executes Python code using scanpy/anndata for QC, normalization, dimensionality reduction, clustering, differential expression, cell type annotation, batch correction, trajectory inference, and cell-cell communication. Uses Open Targets, PubMed, ChEMBL, and DrugBank for biological annotation of results.
 
 ## Report-First Workflow
