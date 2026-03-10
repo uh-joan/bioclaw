@@ -10,9 +10,41 @@ import {
   CONTAINER_IMAGE,
   CONTAINER_MAX_OUTPUT_SIZE,
   CONTAINER_TIMEOUT,
+  CTGOV_MCP_SERVER_PATH,
   DATA_DIR,
+  DRUGBANK_MCP_SERVER_PATH,
+  BIORXIV_MCP_SERVER_PATH,
+  CDC_MCP_SERVER_PATH,
+  CHEMBL_MCP_SERVER_PATH,
+  EMA_MCP_SERVER_PATH,
+  ENSEMBL_MCP_SERVER_PATH,
+  EU_FILINGS_MCP_SERVER_PATH,
+  STRINGDB_MCP_SERVER_PATH,
+  REACTOME_MCP_SERVER_PATH,
+  KEGG_MCP_SERVER_PATH,
+  ALPHAFOLD_MCP_SERVER_PATH,
+  PDB_MCP_SERVER_PATH,
+  HPO_MCP_SERVER_PATH,
+  GTEX_MCP_SERVER_PATH,
+  GENEONTOLOGY_MCP_SERVER_PATH,
+  DEPMAP_MCP_SERVER_PATH,
+  GNOMAD_MCP_SERVER_PATH,
+  CBIOPORTAL_MCP_SERVER_PATH,
+  BINDINGDB_MCP_SERVER_PATH,
+  GEO_MCP_SERVER_PATH,
+  CLINPGX_MCP_SERVER_PATH,
+  MONARCH_MCP_SERVER_PATH,
+  JASPAR_MCP_SERVER_PATH,
+  UNIPROT_MCP_SERVER_PATH,
+  FDA_MCP_SERVER_PATH,
+  MEDICAID_MCP_SERVER_PATH,
+  MEDICARE_MCP_SERVER_PATH,
+  NLM_MCP_SERVER_PATH,
+  OPENTARGETS_MCP_SERVER_PATH,
+  PUBCHEM_MCP_SERVER_PATH,
   GROUPS_DIR,
   IDLE_TIMEOUT,
+  PUBMED_MCP_SERVER_PATH,
   TIMEZONE,
 } from './config.js';
 import { readEnvFile } from './env.js';
@@ -39,6 +71,7 @@ export interface ContainerInput {
   isScheduledTask?: boolean;
   assistantName?: string;
   secrets?: Record<string, string>;
+  imageAttachments?: Array<{ relativePath: string; mediaType: string }>;
 }
 
 export interface ContainerOutput {
@@ -188,7 +221,7 @@ function buildVolumeMounts(
     group.folder,
     'agent-runner-src',
   );
-  if (!fs.existsSync(groupAgentRunnerDir) && fs.existsSync(agentRunnerSrc)) {
+  if (fs.existsSync(agentRunnerSrc)) {
     fs.cpSync(agentRunnerSrc, groupAgentRunnerDir, { recursive: true });
   }
   mounts.push({
@@ -196,6 +229,51 @@ function buildVolumeMounts(
     containerPath: '/app/src',
     readonly: false,
   });
+
+  // Pharma MCP Servers (read-only mounts of project directories)
+  const mcpMounts: Array<{ envPath: string; containerName: string }> = [
+    { envPath: FDA_MCP_SERVER_PATH, containerName: 'fda-mcp-server' },
+    { envPath: CTGOV_MCP_SERVER_PATH, containerName: 'ctgov-mcp-server' },
+    { envPath: PUBMED_MCP_SERVER_PATH, containerName: 'pubmed-mcp-server' },
+    { envPath: DRUGBANK_MCP_SERVER_PATH, containerName: 'drugbank-mcp-server' },
+    { envPath: EMA_MCP_SERVER_PATH, containerName: 'ema-mcp-server' },
+    { envPath: OPENTARGETS_MCP_SERVER_PATH, containerName: 'opentargets-mcp-server' },
+    { envPath: CHEMBL_MCP_SERVER_PATH, containerName: 'chembl-mcp-server' },
+    { envPath: NLM_MCP_SERVER_PATH, containerName: 'nlm-mcp-server' },
+    { envPath: CDC_MCP_SERVER_PATH, containerName: 'cdc-mcp-server' },
+    { envPath: PUBCHEM_MCP_SERVER_PATH, containerName: 'pubchem-mcp-server' },
+    { envPath: BIORXIV_MCP_SERVER_PATH, containerName: 'biorxiv-mcp-server' },
+    { envPath: MEDICARE_MCP_SERVER_PATH, containerName: 'medicare-mcp-server' },
+    { envPath: MEDICAID_MCP_SERVER_PATH, containerName: 'medicaid-mcp-server' },
+    { envPath: EU_FILINGS_MCP_SERVER_PATH, containerName: 'eu-filings-mcp-server' },
+    { envPath: ENSEMBL_MCP_SERVER_PATH, containerName: 'ensembl-mcp-server' },
+    { envPath: UNIPROT_MCP_SERVER_PATH, containerName: 'uniprot-mcp-server' },
+    { envPath: STRINGDB_MCP_SERVER_PATH, containerName: 'stringdb-mcp-server' },
+    { envPath: REACTOME_MCP_SERVER_PATH, containerName: 'reactome-mcp-server' },
+    { envPath: KEGG_MCP_SERVER_PATH, containerName: 'kegg-mcp-server' },
+    { envPath: ALPHAFOLD_MCP_SERVER_PATH, containerName: 'alphafold-mcp-server' },
+    { envPath: PDB_MCP_SERVER_PATH, containerName: 'pdb-mcp-server' },
+    { envPath: HPO_MCP_SERVER_PATH, containerName: 'hpo-mcp-server' },
+    { envPath: GTEX_MCP_SERVER_PATH, containerName: 'gtex-mcp-server' },
+    { envPath: GENEONTOLOGY_MCP_SERVER_PATH, containerName: 'geneontology-mcp-server' },
+    { envPath: DEPMAP_MCP_SERVER_PATH, containerName: 'depmap-mcp-server' },
+    { envPath: GNOMAD_MCP_SERVER_PATH, containerName: 'gnomad-mcp-server' },
+    { envPath: CBIOPORTAL_MCP_SERVER_PATH, containerName: 'cbioportal-mcp-server' },
+    { envPath: BINDINGDB_MCP_SERVER_PATH, containerName: 'bindingdb-mcp-server' },
+    { envPath: GEO_MCP_SERVER_PATH, containerName: 'geo-mcp-server' },
+    { envPath: CLINPGX_MCP_SERVER_PATH, containerName: 'clinpgx-mcp-server' },
+    { envPath: MONARCH_MCP_SERVER_PATH, containerName: 'monarch-mcp-server' },
+    { envPath: JASPAR_MCP_SERVER_PATH, containerName: 'jaspar-mcp-server' },
+  ];
+  for (const { envPath, containerName } of mcpMounts) {
+    if (envPath && fs.existsSync(envPath)) {
+      mounts.push({
+        hostPath: envPath,
+        containerPath: `/opt/${containerName}`,
+        readonly: true,
+      });
+    }
+  }
 
   // Additional mounts validated against external allowlist (tamper-proof from containers)
   if (group.containerConfig?.additionalMounts) {

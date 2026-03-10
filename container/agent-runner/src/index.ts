@@ -28,7 +28,18 @@ interface ContainerInput {
   isScheduledTask?: boolean;
   assistantName?: string;
   secrets?: Record<string, string>;
+  imageAttachments?: Array<{ relativePath: string; mediaType: string }>;
 }
+
+interface ImageContentBlock {
+  type: 'image';
+  source: { type: 'base64'; media_type: string; data: string };
+}
+interface TextContentBlock {
+  type: 'text';
+  text: string;
+}
+type ContentBlock = ImageContentBlock | TextContentBlock;
 
 interface ContainerOutput {
   status: 'success' | 'error';
@@ -50,7 +61,7 @@ interface SessionsIndex {
 
 interface SDKUserMessage {
   type: 'user';
-  message: { role: 'user'; content: string };
+  message: { role: 'user'; content: string | ContentBlock[] };
   parent_tool_use_id: null;
   session_id: string;
 }
@@ -72,6 +83,16 @@ class MessageStream {
     this.queue.push({
       type: 'user',
       message: { role: 'user', content: text },
+      parent_tool_use_id: null,
+      session_id: '',
+    });
+    this.waiting?.();
+  }
+
+  pushMultimodal(content: ContentBlock[]): void {
+    this.queue.push({
+      type: 'user',
+      message: { role: 'user', content },
       parent_tool_use_id: null,
       session_id: '',
     });
@@ -365,6 +386,23 @@ async function runQuery(
   const stream = new MessageStream();
   stream.push(prompt);
 
+  // Load image attachments and send as multimodal content blocks
+  if (containerInput.imageAttachments?.length) {
+    const blocks: ContentBlock[] = [];
+    for (const img of containerInput.imageAttachments) {
+      const imgPath = path.join('/workspace/group', img.relativePath);
+      try {
+        const data = fs.readFileSync(imgPath).toString('base64');
+        blocks.push({ type: 'image', source: { type: 'base64', media_type: img.mediaType, data } });
+      } catch (err) {
+        log(`Failed to load image: ${imgPath}`);
+      }
+    }
+    if (blocks.length > 0) {
+      stream.pushMultimodal(blocks);
+    }
+  }
+
   // Poll IPC for follow-up messages and _close sentinel during the query
   let ipcPolling = true;
   let closedDuringQuery = false;
@@ -390,6 +428,8 @@ async function runQuery(
   let lastAssistantUuid: string | undefined;
   let messageCount = 0;
   let resultCount = 0;
+  let activeTasks = 0; // Track running subagent tasks
+  let pushbackCount = 0; // How many times we've pushed back on early results
 
   // Load global CLAUDE.md as additional system context (shared across all groups)
   const globalClaudeMdPath = '/workspace/global/CLAUDE.md';
@@ -432,7 +472,39 @@ async function runQuery(
         'TeamCreate', 'TeamDelete', 'SendMessage',
         'TodoWrite', 'ToolSearch', 'Skill',
         'NotebookEdit',
-        'mcp__nanoclaw__*'
+        'mcp__nanoclaw__*',
+        'mcp__fda__*',
+        'mcp__ctgov__*',
+        'mcp__pubmed__*',
+        'mcp__drugbank__*',
+        'mcp__ema__*',
+        'mcp__opentargets__*',
+        'mcp__chembl__*',
+        'mcp__nlm__*',
+        'mcp__cdc__*',
+        'mcp__pubchem__*',
+        'mcp__biorxiv__*',
+        'mcp__medicare__*',
+        'mcp__medicaid__*',
+        'mcp__eu_filings__*',
+        'mcp__ensembl__*',
+        'mcp__uniprot__*',
+        'mcp__stringdb__*',
+        'mcp__reactome__*',
+        'mcp__kegg__*',
+        'mcp__alphafold__*',
+        'mcp__pdb__*',
+        'mcp__hpo__*',
+        'mcp__gtex__*',
+        'mcp__geneontology__*',
+        'mcp__depmap__*',
+        'mcp__gnomad__*',
+        'mcp__cbioportal__*',
+        'mcp__bindingdb__*',
+        'mcp__geo__*',
+        'mcp__clinpgx__*',
+        'mcp__monarch__*',
+        'mcp__jaspar__*'
       ],
       env: sdkEnv,
       permissionMode: 'bypassPermissions',
@@ -448,6 +520,231 @@ async function runQuery(
             NANOCLAW_IS_MAIN: containerInput.isMain ? '1' : '0',
           },
         },
+        // Pharma MCP Servers (mounted read-only, symlinked by entrypoint)
+        ...(fs.existsSync('/tmp/fda-mcp-server/build/index.js') ? {
+          fda: {
+            command: 'node',
+            args: ['/tmp/fda-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/ctgov-mcp-server/build/index.js') ? {
+          ctgov: {
+            command: 'node',
+            args: ['/tmp/ctgov-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/pubmed-mcp-server/build/index.js') ? {
+          pubmed: {
+            command: 'node',
+            args: ['/tmp/pubmed-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/drugbank-mcp-server/build/index.js') ? {
+          drugbank: {
+            command: 'node',
+            args: ['/tmp/drugbank-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/ema-mcp-server/build/index.js') ? {
+          ema: {
+            command: 'node',
+            args: ['/tmp/ema-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/opentargets-mcp-server/build/index.js') ? {
+          opentargets: {
+            command: 'node',
+            args: ['/tmp/opentargets-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/chembl-mcp-server/build/index.js') ? {
+          chembl: {
+            command: 'node',
+            args: ['/tmp/chembl-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/nlm-mcp-server/build/index.js') ? {
+          nlm: {
+            command: 'node',
+            args: ['/tmp/nlm-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/cdc-mcp-server/build/index.js') ? {
+          cdc: {
+            command: 'node',
+            args: ['/tmp/cdc-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/pubchem-mcp-server/build/index.js') ? {
+          pubchem: {
+            command: 'node',
+            args: ['/tmp/pubchem-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/biorxiv-mcp-server/build/index.js') ? {
+          biorxiv: {
+            command: 'node',
+            args: ['/tmp/biorxiv-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/medicare-mcp-server/build/index.js') ? {
+          medicare: {
+            command: 'node',
+            args: ['/tmp/medicare-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/medicaid-mcp-server/build/index.js') ? {
+          medicaid: {
+            command: 'node',
+            args: ['/tmp/medicaid-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/eu-filings-mcp-server/build/index.js') ? {
+          eu_filings: {
+            command: 'node',
+            args: ['/tmp/eu-filings-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/ensembl-mcp-server/build/index.js') ? {
+          ensembl: {
+            command: 'node',
+            args: ['/tmp/ensembl-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/uniprot-mcp-server/build/index.js') ? {
+          uniprot: {
+            command: 'node',
+            args: ['/tmp/uniprot-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/stringdb-mcp-server/build/index.js') ? {
+          stringdb: {
+            command: 'node',
+            args: ['/tmp/stringdb-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/reactome-mcp-server/build/index.js') ? {
+          reactome: {
+            command: 'node',
+            args: ['/tmp/reactome-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/kegg-mcp-server/build/index.js') ? {
+          kegg: {
+            command: 'node',
+            args: ['/tmp/kegg-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/alphafold-mcp-server/build/index.js') ? {
+          alphafold: {
+            command: 'node',
+            args: ['/tmp/alphafold-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/pdb-mcp-server/build/index.js') ? {
+          pdb: {
+            command: 'node',
+            args: ['/tmp/pdb-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/hpo-mcp-server/build/index.js') ? {
+          hpo: {
+            command: 'node',
+            args: ['/tmp/hpo-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/gtex-mcp-server/build/index.js') ? {
+          gtex: {
+            command: 'node',
+            args: ['/tmp/gtex-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/geneontology-mcp-server/build/index.js') ? {
+          geneontology: {
+            command: 'node',
+            args: ['/tmp/geneontology-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/depmap-mcp-server/build/index.js') ? {
+          depmap: {
+            command: 'node',
+            args: ['/tmp/depmap-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/gnomad-mcp-server/build/index.js') ? {
+          gnomad: {
+            command: 'node',
+            args: ['/tmp/gnomad-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/cbioportal-mcp-server/build/index.js') ? {
+          cbioportal: {
+            command: 'node',
+            args: ['/tmp/cbioportal-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/bindingdb-mcp-server/build/index.js') ? {
+          bindingdb: {
+            command: 'node',
+            args: ['/tmp/bindingdb-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/geo-mcp-server/build/index.js') ? {
+          geo: {
+            command: 'node',
+            args: ['/tmp/geo-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/clinpgx-mcp-server/build/index.js') ? {
+          clinpgx: {
+            command: 'node',
+            args: ['/tmp/clinpgx-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/monarch-mcp-server/build/index.js') ? {
+          monarch: {
+            command: 'node',
+            args: ['/tmp/monarch-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/jaspar-mcp-server/build/index.js') ? {
+          jaspar: {
+            command: 'node',
+            args: ['/tmp/jaspar-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
       },
       hooks: {
         PreCompact: [{ hooks: [createPreCompactHook(containerInput.assistantName)] }],
@@ -468,15 +765,38 @@ async function runQuery(
       log(`Session initialized: ${newSessionId}`);
     }
 
+    if (message.type === 'system' && (message as { subtype?: string }).subtype === 'task_started') {
+      activeTasks++;
+      log(`Task started (active: ${activeTasks})`);
+    }
+
     if (message.type === 'system' && (message as { subtype?: string }).subtype === 'task_notification') {
       const tn = message as { task_id: string; status: string; summary: string };
       log(`Task notification: task=${tn.task_id} status=${tn.status} summary=${tn.summary}`);
+      if (tn.status === 'completed' || tn.status === 'failed' || tn.status === 'cancelled') {
+        activeTasks = Math.max(0, activeTasks - 1);
+        log(`Task ended (active: ${activeTasks})`);
+      }
     }
 
     if (message.type === 'result') {
       resultCount++;
       const textResult = 'result' in message ? (message as { result?: string }).result : null;
-      log(`Result #${resultCount}: subtype=${message.subtype}${textResult ? ` text=${textResult.slice(0, 200)}` : ''}`);
+      log(`Result #${resultCount}: subtype=${message.subtype}${textResult ? ` text=${textResult.slice(0, 200)}` : ''} (activeTasks: ${activeTasks})`);
+
+      // If subagent tasks were started and this is the first result, push back
+      // once to give the agent a chance to wait for task completion.
+      if (activeTasks > 0 && pushbackCount === 0) {
+        pushbackCount++;
+        log(`Pushing follow-up: ${activeTasks} tasks started, forcing agent to wait (pushback #${pushbackCount})`);
+        stream.push(
+          `[SYSTEM] You returned a result but you created ${activeTasks} subagent task(s). ` +
+          `Use TaskOutput to wait for each task to complete, then synthesize and return the final answer. ` +
+          `Do NOT return until all tasks are done.`
+        );
+        continue;
+      }
+
       writeOutput({
         status: 'success',
         result: textResult || null,

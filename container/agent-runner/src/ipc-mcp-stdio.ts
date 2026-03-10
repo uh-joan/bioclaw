@@ -44,7 +44,7 @@ server.tool(
   "Send a message to the user or group immediately while you're still running. Use this for progress updates or to send multiple messages. You can call this multiple times.",
   {
     text: z.string().describe('The message text to send'),
-    sender: z.string().optional().describe('Your role/identity name (e.g. "Researcher"). When set, messages appear from a dedicated bot in Telegram.'),
+    sender: z.string().optional().describe('Your role/identity name (e.g. "Researcher"). On Telegram with bot pool, messages appear from a dedicated bot. On other channels (WhatsApp, etc.), messages are prefixed with [Role].'),
   },
   async (args) => {
     const data: Record<string, string | undefined> = {
