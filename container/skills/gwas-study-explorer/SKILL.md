@@ -112,6 +112,23 @@ mcp__gnomad__gnomad_data(method: "get_population_frequencies", variant_id: "9-22
 | `drug_search` | Search drugs by indication or name | `query`, `limit` |
 | `get_admet` | ADMET/drug-likeness properties | `chembl_id` |
 
+### `mcp__gwas__gwas_data` (GWAS Catalog — Study Metadata & Cross-Study Comparison)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID e.g. rs7329174 | `rs_id` |
+| `get_variant_associations` | All associations for a variant | `rs_id`, `page`, `size` |
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog as the primary source for study metadata and cross-study comparison. In Function 1 (Study Comparison), query `search_studies` to retrieve all GWAS catalog entries for a disease trait, then use `get_study` to extract study-level metadata including sample size, ancestry, platform, and publication details for systematic comparison. In Function 3 (Replication Assessment), use `get_variant_associations` to check whether a specific variant has been reported across multiple independent GWAS studies — multiple catalog entries for the same variant-trait pair from different studies constitute replication evidence. Use `search_by_trait` to identify all associations for a trait across studies, enabling heterogeneity assessment by comparing effect sizes and p-values across GCST accessions.
+
 ---
 
 ## 4 Core Functions

@@ -106,6 +106,21 @@ Interprets genetic variants (SNPs) from genome-wide association studies by aggre
 | `get_xrefs` | Get cross-database references | `gene_id`, `external_db`, `all_levels` |
 | `map_coordinates` | Map between assemblies | `region`, `species`, `target_assembly` |
 
+### `mcp__clinvar__clinvar_data` (ClinVar SNP Clinical Significance)
+
+Use ClinVar to check whether a GWAS lead SNP or credible set variant has known clinical significance — variants with ClinVar pathogenic/likely pathogenic annotations provide strong evidence for causal variant identification within a GWAS locus.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_variants` | Free-text search for ClinVar variants | `query`, `retmax`, `retstart` |
+| `get_variant_summary` | Get summary for variant IDs (max 50) | `id` or `ids` (array) |
+| `search_by_gene` | Search variants by gene symbol | `gene`, `retmax`, `retstart` |
+| `search_by_condition` | Search by disease/phenotype | `condition`, `retmax`, `retstart` |
+| `search_by_significance` | Search by clinical significance (e.g. pathogenic) | `significance`, `retmax`, `retstart` |
+| `get_variant_details` | Detailed variant record with HGVS, locations, submissions | `id` |
+| `combined_search` | Multi-filter: gene + condition + significance | `gene`, `condition`, `significance`, `retmax`, `retstart` |
+| `get_gene_variants_summary` | Search gene then return summaries (max 50) | `gene`, `limit` |
+
 ### `mcp__gnomad__gnomad_data` (Population Frequencies & Gene Constraint)
 
 | Method | What it does | Key parameters |
@@ -145,6 +160,23 @@ mcp__gnomad__gnomad_data(method: "get_gene_constraint", gene: "PCSK9")
 | `scan_sequence` | Scan GWAS locus sequence for TF binding sites | `sequence`, `matrix_id`, `threshold` |
 
 **JASPAR Workflow:** Assess non-coding GWAS variant impact on TF binding using JASPAR PWMs. Most GWAS hits fall in non-coding regulatory regions where the causal mechanism involves disruption or creation of transcription factor binding sites. Use `variant_impact` to evaluate whether a GWAS lead SNP or credible set variant alters a TF binding motif — this provides mechanistic evidence linking the variant to gene regulation. Use `search_matrices` to identify TFs relevant to the disease-associated tissue or pathway, then `scan_sequence` to map all TF binding sites across the GWAS locus to identify which regulatory elements overlap credible set variants. Combine with GTEx eQTL and Ensembl regulatory feature data for a complete regulatory mechanism model.
+
+### `mcp__gwas__gwas_data` (GWAS Catalog — SNP Annotation with Study Data)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID e.g. rs7329174 | `rs_id` |
+| `get_variant_associations` | All associations for a variant | `rs_id`, `page`, `size` |
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog to annotate SNPs with comprehensive study-level association data. In Phase 1 (SNP Annotation), query `get_variant` and `get_variant_associations` to retrieve all published GWAS associations for the SNP of interest — this reveals the full trait association landscape including p-values, effect sizes, and study accessions. In Phase 2 (Association Discovery), use `search_by_trait` to find all GWAS-reported associations for the trait, and `get_study` to retrieve study metadata (sample size, ancestry, platform) for each reporting study. Use `get_region_associations` to identify other associated variants in the same genomic region, supporting LD-aware interpretation and credible set contextualization in Phase 3.
 
 ---
 

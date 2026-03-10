@@ -106,6 +106,21 @@ Precision oncology molecular tumor board workflow. Interprets somatic cancer mut
 | `get_regulatory_features` | Get regulatory elements in region | `region`, `species`, `feature_type`, `cell_type` |
 | `get_xrefs` | Get cross-database references | `gene_id`, `external_db`, `all_levels` |
 
+### `mcp__clinvar__clinvar_data` (ClinVar Germline vs Somatic Context)
+
+Use ClinVar to distinguish germline pathogenic variants from somatic-only alterations and to cross-reference clinical significance when classifying cancer variants — critical for accurate AMP/ASCO/CAP tier assignment and identifying hereditary cancer syndrome overlap.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_variants` | Free-text search for ClinVar variants | `query`, `retmax`, `retstart` |
+| `get_variant_summary` | Get summary for variant IDs (max 50) | `id` or `ids` (array) |
+| `search_by_gene` | Search variants by gene symbol | `gene`, `retmax`, `retstart` |
+| `search_by_condition` | Search by disease/phenotype | `condition`, `retmax`, `retstart` |
+| `search_by_significance` | Search by clinical significance (e.g. pathogenic) | `significance`, `retmax`, `retstart` |
+| `get_variant_details` | Detailed variant record with HGVS, locations, submissions | `id` |
+| `combined_search` | Multi-filter: gene + condition + significance | `gene`, `condition`, `significance`, `retmax`, `retstart` |
+| `get_gene_variants_summary` | Search gene then return summaries (max 50) | `gene`, `limit` |
+
 ### DepMap — Cancer Dependency Map
 
 | Tool | Method | Use |
@@ -133,6 +148,23 @@ Precision oncology molecular tumor board workflow. Interprets somatic cancer mut
 | | `get_mutations` | Specific mutation patterns (hotspots, truncating) |
 | | `get_copy_number` | Amplification/deletion patterns |
 | | `get_molecular_profiles` | Available data types for a study |
+
+### COSMIC — Catalogue of Somatic Mutations in Cancer
+
+Use COSMIC to assess somatic mutation recurrence and frequency across cancer types. Cross-reference variant hotspot status, tissue-specific mutation prevalence, and pan-cancer recurrence to strengthen or weaken driver classification and AMP/ASCO/CAP tier assignment.
+
+| Tool | Method | Use |
+|------|--------|-----|
+| `mcp__cosmic__cosmic_data` | `search_by_gene` | Mutation spectrum for a gene across cancers, optionally filtered by tissue (`gene`, `site`, `limit`) |
+| | `get_mutation` | Look up a specific mutation by COSMIC ID e.g. COSM476 (`mutation_id`) |
+| | `search_by_site` | Find mutations by tissue site and histology (`site`, `histology`, `gene`, `limit`) |
+| | `search_by_mutation_aa` | Search by amino acid change e.g. V600E — confirm hotspot status (`mutation`, `gene`, `limit`) |
+| | `search_by_mutation_cds` | Search by CDS change e.g. c.1799T>A (`mutation`, `gene`, `limit`) |
+| | `search_by_position` | Search by genomic position e.g. 7:140453136-140453136 (`position`, `limit`) |
+| | `search_free_text` | General search across all COSMIC fields (`query`, `filter`, `limit`) |
+| | `get_gene_mutation_profile` | Comprehensive profile: tissue distribution, mutation types, top AA changes (`gene`) |
+| | `get_file_download_url` | Get authenticated URL for COSMIC bulk data files (`filepath`) |
+| | `list_fields` | List all searchable fields, common sites, and histologies |
 
 ---
 

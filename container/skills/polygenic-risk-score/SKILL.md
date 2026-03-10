@@ -88,6 +88,47 @@ Builds and interprets polygenic risk scores for complex diseases using GWAS summ
 | `drug_search` | Search drugs by indication or name | `query`, `limit` |
 | `get_admet` | ADMET/drug-likeness properties | `chembl_id` |
 
+### `mcp__gwas__gwas_data` (GWAS Catalog — PRS Locus Discovery & Effect Size Source)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_by_trait` | Search EFO traits by term, get associations for top match — primary source for PRS locus collection | `trait`, `page`, `size` |
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID — allele and position verification for PRS construction | `rs_id` |
+| `get_variant_associations` | All associations for a variant — identifies replicated effect sizes across studies | `rs_id`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_studies` | Search studies by disease trait name — find largest GWAS for effect size extraction | `disease_trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession — sample size, ancestry for PRS weight calibration | `study_id` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog as the primary source for PRS locus collection and effect size extraction. In Step 2 (Association Collection), query `search_by_trait` or `get_trait_associations` to retrieve all genome-wide significant associations for the trait, then use `get_study` to identify the largest and most recent GWAS for optimal effect size weights. In Step 3 (Effect Size Extraction), use `get_variant_associations` to compare effect sizes reported across multiple studies for the same variant — consistent effect sizes across studies reduce winner's curse bias. Use `search_studies` to identify multi-ancestry GWAS for PRS portability assessment (linking to gnomAD ancestry equity workflow).
+
+```
+# Collect all GWAS associations for PRS construction
+mcp__gwas__gwas_data(method: "search_by_trait", trait: "coronary artery disease")
+
+# Compare effect sizes across studies for a PRS variant
+mcp__gwas__gwas_data(method: "get_variant_associations", rs_id: "rs10455872")
+
+# Find the largest GWAS for effect size extraction
+mcp__gwas__gwas_data(method: "search_studies", disease_trait: "coronary artery disease")
+```
+
+### `mcp__clinvar__clinvar_data` (ClinVar Variant Annotation for PRS)
+
+Use ClinVar to annotate PRS variants with clinical significance — while most PRS variants are common and individually benign, ClinVar annotations identify the subset with known pathogenic effects, which can disproportionately contribute to risk and warrant individual-level interpretation.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_variants` | Free-text search for ClinVar variants | `query`, `retmax`, `retstart` |
+| `get_variant_summary` | Get summary for variant IDs (max 50) | `id` or `ids` (array) |
+| `search_by_gene` | Search variants by gene symbol | `gene`, `retmax`, `retstart` |
+| `search_by_condition` | Search by disease/phenotype | `condition`, `retmax`, `retstart` |
+| `search_by_significance` | Search by clinical significance (e.g. pathogenic) | `significance`, `retmax`, `retstart` |
+| `get_variant_details` | Detailed variant record with HGVS, locations, submissions | `id` |
+| `combined_search` | Multi-filter: gene + condition + significance | `gene`, `condition`, `significance`, `retmax`, `retstart` |
+| `get_gene_variants_summary` | Search gene then return summaries (max 50) | `gene`, `limit` |
+
 ### `mcp__gnomad__gnomad_data` (Population Frequencies for PRS Calibration & Equity)
 
 | Method | What it does | Key parameters |
@@ -122,6 +163,23 @@ across ancestries — major issue in PRS equity:
    -> Report predicted PRS accuracy reduction per ancestry based on AF divergence
    -> Recommend multi-ancestry PRS methods (PRS-CSx) when >20% of variants show >2-fold AF difference
 ```
+
+### `mcp__gwas__gwas_data` (GWAS Catalog — PRS Variant Weights)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID e.g. rs7329174 | `rs_id` |
+| `get_variant_associations` | All associations for a variant | `rs_id`, `page`, `size` |
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog as the primary source for PRS variant weights and effect sizes. In Step 2 (Association Collection), query `search_by_trait` or `get_trait_associations` to retrieve all genome-wide significant associations for the disease, providing the variant-level effect sizes (beta/OR) needed for PRS weight construction. Use `get_variant_associations` to verify effect sizes and risk allele orientation for individual PRS variants, and `get_study` to retrieve study metadata (sample size, ancestry, publication) for selecting the best-powered GWAS as the weight source. In Step 4 (SNP Filtering), use `search_studies` to identify the largest available GWAS for the trait — PRS weights from the largest study generally yield the best predictive performance.
 
 ---
 

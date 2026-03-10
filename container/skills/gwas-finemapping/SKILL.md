@@ -95,6 +95,31 @@ Identifies and prioritizes causal variants at GWAS loci using Bayesian statistic
 | `drug_search` | Search drugs by indication or name | `query`, `limit` |
 | `get_admet` | ADMET/drug-likeness properties | `chembl_id` |
 
+### `mcp__gwas__gwas_data` (GWAS Catalog — Variant Associations & Regional Context)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `get_variant` | Get variant info by rs ID for fine-mapping candidate lookup | `rs_id` |
+| `get_variant_associations` | All GWAS associations for a variant — identifies studies reporting the signal | `rs_id`, `page`, `size` |
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_study` | Study details by GCST accession — sample size, ancestry, platform for LD reference selection | `study_id` |
+| `get_gene_associations` | All GWAS associations for a gene — defines the association landscape at a locus | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region — retrieves all signals in the fine-mapping window | `chromosome`, `start`, `end`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog to define the association landscape before fine-mapping. Query `get_region_associations` to retrieve all reported GWAS signals within the fine-mapping window — multiple independent signals from different studies indicate allelic heterogeneity requiring multi-signal fine-mapping (SuSiE). Use `get_variant_associations` to check whether credible set variants have been independently reported, which strengthens causal candidacy. Use `get_study` to extract study-level metadata (sample size, ancestry, platform) needed for selecting appropriate LD reference panels.
+
+```
+# Retrieve all GWAS signals in the fine-mapping region
+mcp__gwas__gwas_data(method: "get_region_associations", chromosome: "9", start: 21900000, end: 22200000)
+
+# Check if a credible set variant has been independently reported
+mcp__gwas__gwas_data(method: "get_variant_associations", rs_id: "rs1333049")
+
+# Get study metadata for LD reference panel selection
+mcp__gwas__gwas_data(method: "get_study", study_id: "GCST000001")
+```
+
 ### `mcp__gnomad__gnomad_data` (Regional Variant Annotation & Gene Constraint)
 
 | Method | What it does | Key parameters |
@@ -115,6 +140,23 @@ mcp__gnomad__gnomad_data(method: "get_variant", variant_id: "9-22125503-C-G")
 # Assess gene constraint for the candidate effector gene
 mcp__gnomad__gnomad_data(method: "get_gene_constraint", gene: "CDKN2A")
 ```
+
+### `mcp__gwas__gwas_data` (GWAS Catalog — Credible Set Variant Data)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID e.g. rs7329174 | `rs_id` |
+| `get_variant_associations` | All associations for a variant | `rs_id`, `page`, `size` |
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog to annotate credible set variants with published association data. After constructing a credible set, query `get_variant_associations` for each credible set member to determine whether it has been reported as a lead variant in any published GWAS — variants that are themselves GWAS lead SNPs have stronger prior probability of being causal. Use `get_region_associations` to retrieve all GWAS associations within the fine-mapping window, identifying additional signals and independent associations at the locus that may indicate allelic heterogeneity requiring multi-signal fine-mapping. Use `get_study` to retrieve metadata for the original GWAS studies that reported associations at the locus, informing the choice of LD reference panel and ancestry composition for fine-mapping.
 
 ---
 

@@ -110,6 +110,49 @@ Patient-level genomic-clinical integration with disease-specific routing. Produc
 | `ncbi-genes` | NCBI gene annotations and identifiers | `query` |
 | `major-surgeries-implants` | Surgical procedure classification | `query` |
 
+### `mcp__gwas__gwas_data` (GWAS Catalog — Genetic Risk & Trait Associations)
+
+Use the GWAS Catalog to support germline risk assessment (Phase 2) and molecular pathway enrichment (Phase 6) by retrieving published GWAS associations for patient variants and disease-gene evidence for risk scoring.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_by_trait` | Search EFO traits by term, get associations — identifies genetic risk loci for the patient's disease | `trait`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID — annotate patient variants with GWAS context | `rs_id` |
+| `get_variant_associations` | All associations for a variant — determines if a patient's variant has known disease associations | `rs_id`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene — supports molecular pathway enrichment | `gene`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession — sample size, ancestry for evidence grading | `study_id` |
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+
+**GWAS Catalog Workflow:** In Phase 2 (Germline Risk Assessment), use `get_variant_associations` to check whether patient germline variants have established GWAS associations — variants reported across multiple GWAS studies strengthen the Genetic Risk score component. Use `search_by_trait` to retrieve the full landscape of GWAS loci for the patient's disease, informing polygenic risk context. In Phase 6 (Molecular Pathway Enrichment), use `get_gene_associations` to assess whether genes in the patient's mutational profile have broader GWAS support across related traits, identifying pathway-level convergence.
+
+```
+# Retrieve GWAS associations for the patient's disease
+mcp__gwas__gwas_data(method: "search_by_trait", trait: "breast carcinoma")
+
+# Check if a patient's germline variant has known GWAS associations
+mcp__gwas__gwas_data(method: "get_variant_associations", rs_id: "rs1799950")
+
+# Assess GWAS evidence for a gene in the patient's molecular profile
+mcp__gwas__gwas_data(method: "get_gene_associations", gene: "BRCA1")
+```
+
+### `mcp__clinvar__clinvar_data` (ClinVar Stratification Biomarker Lookup)
+
+Use ClinVar to look up clinical significance of stratification biomarker variants — supports germline risk assessment (Phase 2) by retrieving expert-panel classifications for pathogenic variants in high-penetrance disease genes used for risk tier assignment.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_variants` | Free-text search for ClinVar variants | `query`, `retmax`, `retstart` |
+| `get_variant_summary` | Get summary for variant IDs (max 50) | `id` or `ids` (array) |
+| `search_by_gene` | Search variants by gene symbol | `gene`, `retmax`, `retstart` |
+| `search_by_condition` | Search by disease/phenotype | `condition`, `retmax`, `retstart` |
+| `search_by_significance` | Search by clinical significance (e.g. pathogenic) | `significance`, `retmax`, `retstart` |
+| `get_variant_details` | Detailed variant record with HGVS, locations, submissions | `id` |
+| `combined_search` | Multi-filter: gene + condition + significance | `gene`, `condition`, `significance`, `retmax`, `retstart` |
+| `get_gene_variants_summary` | Search gene then return summaries (max 50) | `gene`, `limit` |
+
 ### `mcp__hpo__hpo_data` (Human Phenotype Ontology)
 
 | Method | What it does | Key parameters |
@@ -130,6 +173,23 @@ Patient-level genomic-clinical integration with disease-specific routing. Produc
 | `get_transcripts` | Get transcripts for a gene | `gene_id`, `canonical_only` |
 | `search_genes` | Search genes by name/description | `query`, `species`, `biotype`, `limit` |
 
+### `mcp__cosmic__cosmic_data` (COSMIC — Somatic Mutation Catalogue)
+
+Use COSMIC for somatic mutation stratification when computing the Molecular Features component of the Precision Medicine Risk Score. Query mutation recurrence across cancer types, tissue-specific prevalence, and known hotspot status to inform whether a somatic variant is a recognized driver (upgrades score) or a rare/uncharacterized change (neutral or low score contribution).
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_by_gene` | Find mutations for a gene, optionally filtered by tissue | `gene`, `site`, `limit` |
+| `get_mutation` | Look up specific mutation by COSMIC ID e.g. COSM476 | `mutation_id` |
+| `search_by_site` | Find mutations by tissue site/histology | `site`, `histology`, `gene`, `limit` |
+| `search_by_mutation_aa` | Search by amino acid change e.g. V600E | `mutation`, `gene`, `limit` |
+| `search_by_mutation_cds` | Search by CDS change e.g. c.1799T>A | `mutation`, `gene`, `limit` |
+| `search_by_position` | Search by genomic position e.g. 7:140453136-140453136 | `position`, `limit` |
+| `search_free_text` | General search across all fields | `query`, `filter`, `limit` |
+| `get_gene_mutation_profile` | Comprehensive profile: tissue distribution, mutation types, top AA changes | `gene` |
+| `get_file_download_url` | Get authenticated URL for COSMIC bulk data files | `filepath` |
+| `list_fields` | List all searchable fields, common sites, and histologies |
+
 ### `mcp__gtex__gtex_data` (Tissue Expression & eQTLs)
 
 | Method | What it does | Key parameters |
@@ -138,6 +198,23 @@ Patient-level genomic-clinical integration with disease-specific routing. Produc
 | `get_gene_expression` | Expression across tissues | `gencodeId`, `tissueSiteDetailId` |
 | `get_median_gene_expression` | Median expression per tissue | `gencodeId`, `tissueSiteDetailId` |
 | `get_tissue_info` | Available tissue metadata | — |
+
+### `mcp__gwas__gwas_data` (GWAS Catalog — Genetic Evidence in Stratification)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID e.g. rs7329174 | `rs_id` |
+| `get_variant_associations` | All associations for a variant | `rs_id`, `page`, `size` |
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog to strengthen the genetic evidence component of patient stratification. In Phase 2 (Germline Risk Assessment), query `get_gene_associations` to retrieve all GWAS associations for patient's germline risk genes — genes with multiple independent GWAS associations across related traits contribute higher Genetic Risk scores. In Phase 3 (Disease-Specific Stratification), use `search_by_trait` to identify the full GWAS landscape for the patient's disease, and `get_variant_associations` to check whether specific patient variants have established population-level trait associations. Use `search_studies` to identify the largest ancestry-matched GWAS for polygenic risk score integration, informing the Genetic Risk component (0-35) of the Precision Medicine Risk Score.
 
 ---
 

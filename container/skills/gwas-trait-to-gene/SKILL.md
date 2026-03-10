@@ -95,6 +95,49 @@ Systematically discovers genes linked to diseases and traits by querying GWAS da
 | `drug_search` | Search drugs by indication or name | `query`, `limit` |
 | `get_admet` | ADMET/drug-likeness properties | `chembl_id` |
 
+### `mcp__gwas__gwas_data` (GWAS Catalog — Trait Associations & Gene Mapping)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID | `rs_id` |
+| `get_variant_associations` | All associations for a variant — cross-study replication evidence | `rs_id`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene — comprehensive trait-gene evidence | `gene`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_genes` | Gene info with genomic context | `gene` |
+| `get_region_associations` | Associations in a genomic region — identifies all signals at a locus | `chromosome`, `start`, `end`, `page`, `size` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog as the primary source for trait-to-gene association discovery. In Step 1 (Trait Search), query `search_by_trait` to retrieve all GWAS associations for a trait, providing the initial locus list. In Step 2 (SNP Aggregation), use `get_region_associations` to identify all signals at each locus and `get_variant_associations` to check cross-study replication. In Step 3 (Gene Mapping), use `get_gene_associations` and `search_genes` to assess the full GWAS evidence landscape for each candidate gene — genes reported across multiple independent GWAS studies are stronger causal candidates. Use `get_study` to extract study-level metadata for evidence grading in Step 4.
+
+```
+# Retrieve all GWAS associations for a trait
+mcp__gwas__gwas_data(method: "search_by_trait", trait: "type 2 diabetes")
+
+# Get all GWAS associations for a candidate gene
+mcp__gwas__gwas_data(method: "get_gene_associations", gene: "TCF7L2")
+
+# Check cross-study replication for a lead variant
+mcp__gwas__gwas_data(method: "get_variant_associations", rs_id: "rs7903146")
+```
+
+### `mcp__clinvar__clinvar_data` (ClinVar Causal Gene Evidence)
+
+Use ClinVar to validate causal gene assignments at GWAS loci — genes with ClinVar pathogenic variants for related phenotypes provide independent evidence supporting GWAS gene prioritization and Mendelian-common disease convergence.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_variants` | Free-text search for ClinVar variants | `query`, `retmax`, `retstart` |
+| `get_variant_summary` | Get summary for variant IDs (max 50) | `id` or `ids` (array) |
+| `search_by_gene` | Search variants by gene symbol | `gene`, `retmax`, `retstart` |
+| `search_by_condition` | Search by disease/phenotype | `condition`, `retmax`, `retstart` |
+| `search_by_significance` | Search by clinical significance (e.g. pathogenic) | `significance`, `retmax`, `retstart` |
+| `get_variant_details` | Detailed variant record with HGVS, locations, submissions | `id` |
+| `combined_search` | Multi-filter: gene + condition + significance | `gene`, `condition`, `significance`, `retmax`, `retstart` |
+| `get_gene_variants_summary` | Search gene then return summaries (max 50) | `gene`, `limit` |
+
 ### `mcp__gnomad__gnomad_data` (Gene Constraint & Variant Landscape)
 
 | Method | What it does | Key parameters |
@@ -155,6 +198,23 @@ mcp__gnomad__gnomad_data(method: "get_gene_variants", gene: "TCF7L2", consequenc
 | `get_single_tissue_eqtls` | eQTLs for a gene in a tissue | `gencodeId`, `tissueSiteDetailId`, `datasetId` |
 | `get_multi_tissue_eqtls` | eQTLs across all tissues | `gencodeId`, `datasetId` |
 | `get_gene_expression` | Expression across tissues | `gencodeId`, `tissueSiteDetailId` |
+
+### `mcp__gwas__gwas_data` (GWAS Catalog — Locus-to-Gene Mapping Evidence)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID e.g. rs7329174 | `rs_id` |
+| `get_variant_associations` | All associations for a variant | `rs_id`, `page`, `size` |
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog to support locus-to-gene mapping with comprehensive association evidence. In Step 2 (SNP Aggregation), query `search_by_trait` or `get_trait_associations` to retrieve all genome-wide significant associations for the trait, providing the full locus catalog for gene mapping. In Step 3 (Gene Mapping), use `get_gene_associations` to check whether a candidate gene has GWAS associations reported directly (mapped gene in the catalog), and `search_genes` to retrieve the gene's genomic context for positional mapping. Use `get_region_associations` to identify all GWAS signals in a locus window — when multiple studies independently map to the same gene, this strengthens the L2G assignment and supports evidence ranking in Step 4.
 
 ---
 

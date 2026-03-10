@@ -97,6 +97,21 @@ Genotype-guided prescribing using CPIC guidelines, FDA PGx biomarker labels, and
 | `get_population_frequencies` | Population-specific allele frequencies — critical for ancestry-specific dosing recommendations |
 | `get_gene_variants` | All known variants in PGx genes (e.g., CYP2D6, CYP2C19, DPYD) |
 
+### `mcp__clinvar__clinvar_data` (ClinVar PGx Variant Significance)
+
+Use ClinVar to retrieve clinical significance annotations for pharmacogenomic variants — identifies PGx-relevant variants with drug response classifications and links star alleles to their ClinVar submission-level evidence for CPIC/DPWG guideline cross-referencing.
+
+| Method | PGx use |
+|--------|---------|
+| `search_variants` | Free-text search for PGx variants by rsID or HGVS (`query`, `retmax`, `retstart`) |
+| `get_variant_summary` | Get summary for variant IDs, max 50 (`id` or `ids` array) |
+| `search_by_gene` | Search all ClinVar variants in a pharmacogene (`gene`, `retmax`, `retstart`) |
+| `search_by_condition` | Search variants by drug response condition (`condition`, `retmax`, `retstart`) |
+| `search_by_significance` | Search by clinical significance e.g. drug response (`significance`, `retmax`, `retstart`) |
+| `get_variant_details` | Detailed variant record with HGVS, locations, submissions (`id`) |
+| `combined_search` | Multi-filter: gene + condition + significance (`gene`, `condition`, `significance`, `retmax`, `retstart`) |
+| `get_gene_variants_summary` | Search gene then return summaries, max 50 (`gene`, `limit`) |
+
 ### `mcp__clinpgx__clinpgx_data` (PharmGKB / ClinPGx — Core PGx Resource)
 
 | Method | PGx use |

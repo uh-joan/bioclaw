@@ -124,6 +124,23 @@ Clinical decision support for cancer treatment via molecular profiling, biomarke
 | | `get_copy_number` | CNA patterns (amplifications for targeted therapy) |
 | | `get_clinical_attributes` | Available clinical outcomes data |
 
+### COSMIC — Catalogue of Somatic Mutations in Cancer
+
+Use COSMIC to find mutation-specific treatment evidence by querying the exact amino acid change or CDS variant observed in the patient. Tissue-specific mutation profiles and pan-cancer recurrence data inform whether a mutation has established clinical significance and support off-label or cross-tumor-type treatment rationale.
+
+| Tool | Method | Use |
+|------|--------|-----|
+| `mcp__cosmic__cosmic_data` | `search_by_gene` | Mutation landscape for a target gene, optionally filtered by tissue (`gene`, `site`, `limit`) |
+| | `get_mutation` | Look up a specific mutation by COSMIC ID e.g. COSM476 (`mutation_id`) |
+| | `search_by_site` | Find mutations by tissue site and histology (`site`, `histology`, `gene`, `limit`) |
+| | `search_by_mutation_aa` | Search by amino acid change e.g. V600E — link to known treatment evidence (`mutation`, `gene`, `limit`) |
+| | `search_by_mutation_cds` | Search by CDS change e.g. c.1799T>A (`mutation`, `gene`, `limit`) |
+| | `search_by_position` | Search by genomic position e.g. 7:140453136-140453136 (`position`, `limit`) |
+| | `search_free_text` | General search across all COSMIC fields (`query`, `filter`, `limit`) |
+| | `get_gene_mutation_profile` | Comprehensive profile: tissue distribution, mutation types, top AA changes (`gene`) |
+| | `get_file_download_url` | Get authenticated URL for COSMIC bulk data files (`filepath`) |
+| | `list_fields` | List all searchable fields, common sites, and histologies |
+
 ---
 
 ## 6-Phase Treatment Advisory Pipeline

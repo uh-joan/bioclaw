@@ -112,6 +112,21 @@ Systematic clinical variant interpretation that classifies genetic variants acco
 
 **Monarch Workflow:** Check Monarch for gene-disease evidence to support ACMG criteria. Use `get_gene_diseases` to retrieve known disease associations for the gene harboring the variant — strong gene-disease associations support PM1 (functional domain in disease gene) and PP1 (co-segregation context). Use `phenotype_gene_search` when patient phenotypes are available to match phenotype terms to candidate genes, supporting PP4 (phenotype specificity) and aiding variant prioritization in multi-gene panels.
 
+### `mcp__clinvar__clinvar_data` (ClinVar Variant Classification)
+
+Use ClinVar to retrieve existing ACMG classifications, submission-level evidence, and clinical significance for variants under review — directly supports PP5/BP6 evidence codes and cross-references expert panel consensus.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_variants` | Free-text search for ClinVar variants | `query`, `retmax`, `retstart` |
+| `get_variant_summary` | Get summary for variant IDs (max 50) | `id` or `ids` (array) |
+| `search_by_gene` | Search variants by gene symbol | `gene`, `retmax`, `retstart` |
+| `search_by_condition` | Search by disease/phenotype | `condition`, `retmax`, `retstart` |
+| `search_by_significance` | Search by clinical significance (e.g. pathogenic) | `significance`, `retmax`, `retstart` |
+| `get_variant_details` | Detailed variant record with HGVS, locations, submissions | `id` |
+| `combined_search` | Multi-filter: gene + condition + significance | `gene`, `condition`, `significance`, `retmax`, `retstart` |
+| `get_gene_variants_summary` | Search gene then return summaries (max 50) | `gene`, `limit` |
+
 ### `mcp__jaspar__jaspar_data` (Transcription Factor Binding Analysis)
 
 | Method | What it does | Key parameters |
@@ -120,6 +135,23 @@ Systematic clinical variant interpretation that classifies genetic variants acco
 | `scan_sequence` | Identify TF binding sites in a genomic sequence | `sequence`, `matrix_id`, `threshold` |
 
 **JASPAR Workflow:** Check JASPAR for transcription factor binding disruption in non-coding variants. For variants in regulatory regions (promoters, enhancers, UTRs), use `variant_impact` to determine whether the variant disrupts or creates a TF binding motif — this provides mechanistic evidence for regulatory variants that lack coding consequence predictions. Use `scan_sequence` to identify all TF binding sites across a region of interest, which helps contextualize whether the variant falls within a regulatory element with functional TF occupancy.
+
+### `mcp__gwas__gwas_data` (GWAS Catalog — Population-Level Variant Associations)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID e.g. rs7329174 | `rs_id` |
+| `get_variant_associations` | All associations for a variant | `rs_id`, `page`, `size` |
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog to retrieve population-level variant-trait associations that inform ACMG evidence assessment. For variants under clinical interpretation, query `get_variant_associations` to identify all published GWAS associations — variants with genome-wide significant associations to the patient's phenotype support PS4 (prevalence in affected vs controls). Use `get_gene_associations` to check whether the gene harboring the variant has broader GWAS evidence linking it to the disease, reinforcing gene-disease validity. Use `search_by_trait` to identify other variants and loci associated with the same condition, providing context for the genetic architecture and supporting PP4 (phenotype specificity) when GWAS findings converge on the same gene or pathway.
 
 ## Python Environment
 

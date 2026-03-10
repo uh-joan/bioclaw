@@ -140,6 +140,23 @@ mcp__gnomad__gnomad_data(method: "filter_rare_variants", gene: "PCSK9", max_af: 
 | `map_codes` | Cross-map between coding systems (MeSH, SNOMED, ICD-10) | `source_code`, `source_system`, `target_system` |
 | `search_omim` | Search OMIM for Mendelian disease-gene links | `query`, `limit` |
 
+### `mcp__gwas__gwas_data` (GWAS Catalog — Lead Variants & Associations)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID e.g. rs7329174 | `rs_id` |
+| `get_variant_associations` | All associations for a variant | `rs_id`, `page`, `size` |
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog to retrieve lead variants and trait associations for GWAS-nominated drug targets. In Step 1 (GWAS Gene Discovery), query `search_by_trait` or `search_associations` to identify all genome-wide significant loci for the disease of interest, complementing Open Targets with the full GWAS Catalog association landscape. Use `get_gene_associations` to retrieve all GWAS associations for a candidate drug target gene — multiple independent associations across traits strengthen the genetic evidence for target validity. Use `get_variant_associations` to check whether lead variants at a locus associate with related phenotypes (PheWAS-style), informing direction-of-effect analysis and potential on-target safety signals for drug repurposing in Step 5.
+
 ---
 
 ## 6-Step GWAS-to-Drug Pipeline

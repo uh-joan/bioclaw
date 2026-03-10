@@ -112,6 +112,21 @@ Differential diagnosis support for rare diseases using phenotype matching, genom
 | | `search` | Search for diseases, genes, phenotypes by text |
 | | `get_entity` | Get entity details (MONDO, HP, HGNC IDs) |
 
+### `mcp__clinvar__clinvar_data` (ClinVar Pathogenicity Lookups)
+
+Use ClinVar to retrieve known pathogenicity classifications for candidate variants in rare disease genes — supports ACMG PP5/BP6 evidence codes and identifies expert-panel-reviewed variants that can accelerate diagnostic interpretation.
+
+| Method | Rare disease use |
+|--------|-----------------|
+| `search_variants` | Free-text search for ClinVar variants (`query`, `retmax`, `retstart`) |
+| `get_variant_summary` | Get summary for variant IDs, max 50 (`id` or `ids` array) |
+| `search_by_gene` | Search variants by gene symbol (`gene`, `retmax`, `retstart`) |
+| `search_by_condition` | Search by disease/phenotype (`condition`, `retmax`, `retstart`) |
+| `search_by_significance` | Search by clinical significance e.g. pathogenic (`significance`, `retmax`, `retstart`) |
+| `get_variant_details` | Detailed variant record with HGVS, locations, submissions (`id`) |
+| `combined_search` | Multi-filter: gene + condition + significance (`gene`, `condition`, `significance`, `retmax`, `retstart`) |
+| `get_gene_variants_summary` | Search gene then return summaries, max 50 (`gene`, `limit`) |
+
 ### `mcp__gnomad__gnomad_data` (gnomAD Population Genomics)
 
 | Method | Rare disease use |

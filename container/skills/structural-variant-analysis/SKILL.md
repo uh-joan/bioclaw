@@ -49,6 +49,22 @@ Structural variant and copy number variation analysis methodology. The agent wri
 | `get_structural_variants` | Query gnomAD SV catalog for a gene — distinguish rare from common SVs | `gene` |
 | `get_gene_constraint` | Gene tolerance to loss-of-function (pLI/LOEUF for dosage sensitivity) | `gene` |
 
+### `mcp__cosmic__cosmic_data` (COSMIC — Somatic Mutation Catalogue)
+
+Use COSMIC for fusion gene and breakpoint annotation in cancer samples. Query known fusion partners, breakpoint positions, and recurrent structural rearrangements to determine whether detected SVs correspond to known oncogenic fusions with established clinical significance.
+
+| Method | SV analysis use | Key parameters |
+|--------|----------------|----------------|
+| `search_by_gene` | Find fusion-associated mutations for a gene involved in a breakpoint | `gene`, `site`, `limit` |
+| `get_mutation` | Look up a specific structural variant by COSMIC ID e.g. COSM476 | `mutation_id` |
+| `search_by_site` | Find recurrent fusions/SVs by tissue site and histology | `site`, `histology`, `gene`, `limit` |
+| `search_by_position` | Search breakpoint region by genomic coordinates e.g. 2:29446394-29446394 | `position`, `limit` |
+| `search_by_mutation_cds` | Search by CDS-level rearrangement notation | `mutation`, `gene`, `limit` |
+| `search_free_text` | General search for fusion names or structural rearrangement terms | `query`, `filter`, `limit` |
+| `get_gene_mutation_profile` | Comprehensive gene profile including fusion prevalence and tissue distribution | `gene` |
+| `get_file_download_url` | Get authenticated URL for COSMIC bulk data files (e.g., fusion export) | `filepath` |
+| `list_fields` | List all searchable fields, common sites, and histologies |
+
 ## Python Environment
 
 The container has Python 3 with `pandas`, `numpy`, `matplotlib`, `seaborn`, `scipy`, `scikit-learn`. For genomic file parsing, use `pandas` to read VCF, BED, BEDPE, and segment files. The agent writes and executes all code directly via Bash.

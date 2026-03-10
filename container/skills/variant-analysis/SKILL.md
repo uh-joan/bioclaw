@@ -52,6 +52,44 @@ Python 3 with pandas, numpy, scipy, matplotlib, seaborn, and standard library (r
 | `get_gene_variants` | All known variants in a gene with frequencies | `gene_symbol` or `gene_id` |
 | `batch_gene_constraint` | Constraint scores for gene panels (up to 20) | `gene_symbols` (array) |
 
+### `mcp__gwas__gwas_data` (GWAS Catalog — Variant Association Context)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `get_variant` | Get variant info by rs ID — check if a called variant has known GWAS associations | `rs_id` |
+| `get_variant_associations` | All GWAS associations for a variant — enriches prioritization with trait context | `rs_id`, `page`, `size` |
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region — identifies GWAS signals overlapping called variants | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene — contextualizes burden test results | `gene`, `page`, `size` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog to enrich variant prioritization (Phase 7) with known GWAS association context. After annotation and filtering, query `get_variant_associations` for prioritized variants to determine whether they (or variants in LD) have been reported in GWAS — a known GWAS association elevates biological relevance. For burden testing (Phase 6), use `get_gene_associations` to check whether genes with significant burden results have established GWAS support, strengthening the evidence for gene-disease association. Use `get_region_associations` to overlay GWAS signals on regions of interest.
+
+```
+# Check if a prioritized variant has known GWAS associations
+mcp__gwas__gwas_data(method: "get_variant_associations", rs_id: "rs7412")
+
+# Overlay GWAS signals on a region of interest
+mcp__gwas__gwas_data(method: "get_region_associations", chromosome: "7", start: 140400000, end: 140500000)
+
+# Check GWAS evidence for a gene with significant burden test result
+mcp__gwas__gwas_data(method: "get_gene_associations", gene: "BRAF")
+```
+
+### `mcp__clinvar__clinvar_data` (ClinVar Variant Prioritization)
+
+Use ClinVar to enrich variant prioritization with known clinical significance — variants with existing ClinVar pathogenic or likely pathogenic annotations can be elevated during prioritization (Phase 7), while benign-classified variants can be deprioritized.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_variants` | Free-text search for ClinVar variants | `query`, `retmax`, `retstart` |
+| `get_variant_summary` | Get summary for variant IDs (max 50) | `id` or `ids` (array) |
+| `search_by_gene` | Search variants by gene symbol | `gene`, `retmax`, `retstart` |
+| `search_by_condition` | Search by disease/phenotype | `condition`, `retmax`, `retstart` |
+| `search_by_significance` | Search by clinical significance (e.g. pathogenic) | `significance`, `retmax`, `retstart` |
+| `get_variant_details` | Detailed variant record with HGVS, locations, submissions | `id` |
+| `combined_search` | Multi-filter: gene + condition + significance | `gene`, `condition`, `significance`, `retmax`, `retstart` |
+| `get_gene_variants_summary` | Search gene then return summaries (max 50) | `gene`, `limit` |
+
 ### `mcp__jaspar__jaspar_data` (Transcription Factor Binding Analysis)
 
 | Method | What it does | Key parameters |
@@ -60,6 +98,23 @@ Python 3 with pandas, numpy, scipy, matplotlib, seaborn, and standard library (r
 | `scan_sequence` | Scan genomic sequence for TF binding sites | `sequence`, `matrix_id`, `threshold` |
 
 **JASPAR Workflow:** Use JASPAR to assess non-coding variant impact on transcription factor binding. During variant annotation (Phase 4) and prioritization (Phase 7), variants in regulatory regions (promoters, enhancers, UTRs) that lack coding consequence predictions can be evaluated for TF binding disruption using `variant_impact`. This adds mechanistic context for MODIFIER-impact variants that might otherwise be deprioritized. Use `scan_sequence` to identify TF binding sites across a region, which helps determine whether a non-coding variant falls within a functionally occupied regulatory element.
+
+### `mcp__gwas__gwas_data` (GWAS Catalog — Variant-Trait Association Lookup)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_associations` | Search associations by query or PubMed ID | `query`, `pubmed_id`, `page`, `size` |
+| `get_variant` | Get variant info by rs ID e.g. rs7329174 | `rs_id` |
+| `get_variant_associations` | All associations for a variant | `rs_id`, `page`, `size` |
+| `search_by_trait` | Search EFO traits by term, get associations for top match | `trait`, `page`, `size` |
+| `get_study` | Study details by GCST accession | `study_id` |
+| `search_studies` | Search studies by disease trait name | `disease_trait`, `page`, `size` |
+| `get_gene_associations` | All GWAS associations for a gene | `gene`, `page`, `size` |
+| `get_region_associations` | Associations in a genomic region | `chromosome`, `start`, `end`, `page`, `size` |
+| `get_trait_associations` | All associations for an EFO trait ID | `efo_id`, `page`, `size` |
+| `search_genes` | Gene info with genomic context | `gene` |
+
+**GWAS Catalog Workflow:** Use the GWAS Catalog to enrich variant analysis with trait association context. During Phase 7 (Variant Prioritization), query `get_variant_associations` for prioritized variants to check whether they have published GWAS associations — variants with genome-wide significant trait associations receive higher priority as they have established phenotypic consequences. Use `get_gene_associations` to retrieve all GWAS associations for genes harboring qualifying variants in burden testing (Phase 6), which helps interpret whether significant burden test results align with known genetic architecture. Use `get_region_associations` to contextualize variant clusters within a genomic region against the GWAS association landscape.
 
 ---
 
