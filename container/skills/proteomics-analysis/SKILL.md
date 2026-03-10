@@ -5,7 +5,7 @@ description: Proteomics and mass spectrometry data analysis. Protein quantificat
 
 # Proteomics Analysis
 
-> **Code recipes**: See [recipes.md](recipes.md) in this directory for copy-paste executable code templates.
+> **Code recipes**: See [recipes.md](recipes.md) for basic proteomics analysis templates, and [ms-recipes.md](ms-recipes.md) for mass spectrometry-specific templates (MaxQuant, DIA-NN, TMT, phosphoproteomics, AP-MS, spectral libraries).
 
 Mass spectrometry-based proteomics data analysis covering label-free quantification (LFQ), tandem mass tag (TMT/iTRAQ) labeled quantification, and data-independent acquisition (DIA) workflows. The agent writes and executes Python code for the full pipeline: data loading, QC, normalization, imputation, differential expression, PTM analysis, enrichment, and visualization.
 

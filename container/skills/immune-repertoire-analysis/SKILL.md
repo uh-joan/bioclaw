@@ -5,6 +5,8 @@ description: Immune repertoire and adaptive immunity analysis. TCR sequencing, B
 
 # Immune Repertoire Analysis
 
+> **Code recipes**: See [repertoire-recipes.md](repertoire-recipes.md) for copy-paste executable code templates covering scirpy, Immcantation, MiXCR, VDJtools, diversity indices, CDR3 logos, and VDJ+scRNA-seq integration.
+
 Production-ready immune repertoire analysis methodology. The agent writes and executes Python code for TCR/BCR sequencing data covering clonotype identification, diversity quantification, V(D)J gene usage, CDR3 characterization, clonal expansion tracking, repertoire overlap, and antigen-specificity prediction. Uses Open Targets, PubMed, ChEMBL, and DrugBank for biological annotation of results.
 
 ## Report-First Workflow

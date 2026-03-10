@@ -5,6 +5,8 @@ description: Spatial transcriptomics analyst. Spatially-resolved gene expression
 
 # Spatial Transcriptomics
 
+> **Code recipes**: See [spatial-recipes.md](spatial-recipes.md) for copy-paste executable code templates covering spatial graph construction, Moran's I, deconvolution, neighborhood enrichment, and more.
+
 Spatially-resolved gene expression analysis across major platforms. Uses scanpy/squidpy for computational analysis, Open Targets for gene-disease annotation, PubMed for spatial biology literature, and DrugBank for pharmacological context of spatially variable targets.
 
 ## Report-First Workflow

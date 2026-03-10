@@ -5,6 +5,8 @@ description: Metabolomics and metabolic profiling data analysis. LC-MS, GC-MS da
 
 # Metabolomics Analysis
 
+> **Code recipes**: See [spectral-recipes.md](spectral-recipes.md) for XCMS peak picking, MS/MS spectral matching with matchms, molecular networking, SIRIUS/CSI:FingerID, adduct annotation, isotope validation, and lipidomics analysis.
+
 Metabolomics data analysis for LC-MS and GC-MS experiments. The agent writes and executes Python code for peak table processing, normalization, statistical analysis, metabolite identification, pathway mapping, biomarker discovery, and visualization. Supports both targeted and untargeted workflows, including lipidomics.
 
 ## Report-First Workflow

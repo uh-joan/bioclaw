@@ -5,6 +5,8 @@ description: Multi-omics data integration and cross-platform analysis. Integrati
 
 # Multi-Omics Integration
 
+> **Code recipes**: See [integration-recipes.md](integration-recipes.md) for copy-paste executable code templates covering MOFA2, DIABLO, SNF, MCIA, iCluster+, WGCNA, and more.
+
 Computational methodology for integrating multiple omics data layers into unified biological models. Provides Python code templates for early, intermediate, and late integration strategies -- combining transcriptomics, proteomics, metabolomics, and epigenomics from the same or overlapping sample sets. All analysis runs as Python code inside the agent container.
 
 ## Report-First Workflow

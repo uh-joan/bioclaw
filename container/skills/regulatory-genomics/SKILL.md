@@ -5,6 +5,8 @@ description: "Non-coding variant interpretation, enhancer analysis, transcriptio
 
 # Regulatory Genomics
 
+> **Code recipes**: See [scenic-recipes.md](scenic-recipes.md) for pySCENIC GRN inference, cisTarget regulon pruning, AUCell scoring, SCENIC+, WGCNA co-expression networks, ARACNe-AP, and differential regulon activity analysis.
+
 Specialist in non-coding genome interpretation and gene regulation. Analyzes regulatory variants by integrating chromatin state annotations (ChromHMM, ENCODE), transcription factor binding site disruption, expression quantitative trait loci (eQTL) from GTEx, enhancer-gene linking via chromatin interactions and activity-by-contact models, and conservation-based constraint metrics. Produces scored regulatory variant impact assessments with explicit evidence attribution across chromatin accessibility, TF motif disruption, eQTL support, evolutionary constraint, and functional validation data. Writes and executes Python code for position weight matrix scoring, eQTL effect size visualization, chromatin state enrichment analysis, and regulatory element overlap statistics.
 
 ## Report-First Workflow

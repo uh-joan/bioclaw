@@ -5,6 +5,8 @@ description: Systems biology and integrated pathway analysis specialist. Multi-d
 
 # Systems Biology
 
+> **Code recipes**: See [flux-recipes.md](flux-recipes.md) for COBRApy metabolic modeling: FBA, FVA, pFBA, gene knockouts, context-specific model extraction, flux sampling, medium configuration, gap filling, and model quality assessment.
+
 Integrated pathway analysis across multiple biological databases for gene set enrichment, pathway mapping, and systems-level biology understanding. Uses Open Targets for target-pathway associations, ChEMBL for compound-target-pathway links, DrugBank for metabolic/signaling pathways, PubMed for pathway literature, and PubChem for compound-pathway and target-pathway relationships.
 
 ## Report-First Workflow

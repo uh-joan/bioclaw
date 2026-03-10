@@ -5,7 +5,7 @@ description: Genomic variant analysis and VCF processing. Variant calling QC, an
 
 # Variant Analysis
 
-> **Code recipes**: See [recipes.md](recipes.md) in this directory for copy-paste executable code templates.
+> **Code recipes**: See [recipes.md](recipes.md) for VCF parsing and variant analysis templates, and [annotation-recipes.md](annotation-recipes.md) for variant annotation and functional prediction templates (VEP, SnpEff, ANNOVAR, CADD, SpliceAI, REVEL, ClinVar, gnomAD).
 
 Upstream genomic variant data processing and population-level analysis. The agent writes and executes Python code for VCF parsing, quality control, variant annotation, population frequency analysis, Hardy-Weinberg equilibrium testing, burden testing, and variant prioritization. This skill handles the computational pipeline from raw variant calls to prioritized variant lists. Distinct from variant-interpretation, which performs downstream ACMG clinical classification and pathogenicity scoring on already-processed variants.
 

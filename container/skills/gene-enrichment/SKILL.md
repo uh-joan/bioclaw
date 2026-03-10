@@ -5,7 +5,7 @@ description: Comprehensive gene enrichment analysis specialist. Over-Representat
 
 # Gene Enrichment
 
-> **Code recipes**: See [recipes.md](recipes.md) in this directory for copy-paste executable code templates.
+> **Code recipes**: See [recipes.md](recipes.md) for general enrichment templates, and [gsea-recipes.md](gsea-recipes.md) for GSEA/ORA with clusterProfiler, fgsea, GSEApy, MSigDB collections, ReactomePA, and multi-condition comparison.
 
 Comprehensive gene enrichment analysis using Over-Representation Analysis (ORA) and Gene Set Enrichment Analysis (GSEA) across multiple pathway databases. Uses Open Targets for gene-disease context, ChEMBL for pharmacological pathway mapping, DrugBank for drug-pathway relationships, PubMed for literature evidence, PubChem for chemical-gene interactions, and NLM for gene ID resolution and cross-referencing.
 
