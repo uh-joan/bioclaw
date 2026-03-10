@@ -9,6 +9,7 @@ import { readEnvFile } from './env.js';
 const envConfig = readEnvFile([
   'ASSISTANT_NAME',
   'ASSISTANT_HAS_OWN_NUMBER',
+  'CONTAINER_IMAGE',
   'FDA_MCP_SERVER_PATH',
   'CTGOV_MCP_SERVER_PATH',
   'PUBMED_MCP_SERVER_PATH',
@@ -41,6 +42,11 @@ const envConfig = readEnvFile([
   'CLINPGX_MCP_SERVER_PATH',
   'MONARCH_MCP_SERVER_PATH',
   'JASPAR_MCP_SERVER_PATH',
+  'CLINVAR_MCP_SERVER_PATH',
+  'COSMIC_MCP_SERVER_PATH',
+  'GWAS_MCP_SERVER_PATH',
+  'HMDB_MCP_SERVER_PATH',
+  'OPENALEX_MCP_SERVER_PATH',
 ]);
 
 export const ASSISTANT_NAME =
@@ -73,7 +79,7 @@ export const GROUPS_DIR = path.resolve(PROJECT_ROOT, 'groups');
 export const DATA_DIR = path.resolve(PROJECT_ROOT, 'data');
 
 export const CONTAINER_IMAGE =
-  process.env.CONTAINER_IMAGE || 'nanoclaw-agent:latest';
+  process.env.CONTAINER_IMAGE || envConfig.CONTAINER_IMAGE || 'nanoclaw-agent:latest';
 export const CONTAINER_TIMEOUT = parseInt(
   process.env.CONTAINER_TIMEOUT || '1800000',
   10,
@@ -197,6 +203,20 @@ export const MONARCH_MCP_SERVER_PATH =
   '';
 export const JASPAR_MCP_SERVER_PATH =
   process.env.JASPAR_MCP_SERVER_PATH || envConfig.JASPAR_MCP_SERVER_PATH || '';
+export const CLINVAR_MCP_SERVER_PATH =
+  process.env.CLINVAR_MCP_SERVER_PATH ||
+  envConfig.CLINVAR_MCP_SERVER_PATH ||
+  '';
+export const COSMIC_MCP_SERVER_PATH =
+  process.env.COSMIC_MCP_SERVER_PATH || envConfig.COSMIC_MCP_SERVER_PATH || '';
+export const GWAS_MCP_SERVER_PATH =
+  process.env.GWAS_MCP_SERVER_PATH || envConfig.GWAS_MCP_SERVER_PATH || '';
+export const HMDB_MCP_SERVER_PATH =
+  process.env.HMDB_MCP_SERVER_PATH || envConfig.HMDB_MCP_SERVER_PATH || '';
+export const OPENALEX_MCP_SERVER_PATH =
+  process.env.OPENALEX_MCP_SERVER_PATH ||
+  envConfig.OPENALEX_MCP_SERVER_PATH ||
+  '';
 
 // Timezone for scheduled tasks (cron expressions, etc.)
 // Uses system timezone by default
