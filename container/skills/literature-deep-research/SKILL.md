@@ -34,6 +34,10 @@ Systematic literature research engine with two operating modes: quick factoid ve
 - **Clinical trial pipeline data** -> use clinical-trial-analyst skill
 - **Regulatory context for findings** -> use fda-consultant skill
 
+## Recipes
+
+- **AlphaXiv paper lookup** → see `alphaxiv-recipes.md` — fetch AI-generated structured overviews of arxiv preprints via alphaxiv.org (no auth required, returns machine-readable markdown)
+
 ## Available MCP Tools
 
 ### `mcp__pubmed__pubmed_articles` (PRIMARY - Literature Search)
