@@ -35,6 +35,11 @@ import {
   CLINPGX_MCP_SERVER_PATH,
   MONARCH_MCP_SERVER_PATH,
   JASPAR_MCP_SERVER_PATH,
+  CLINVAR_MCP_SERVER_PATH,
+  COSMIC_MCP_SERVER_PATH,
+  GWAS_MCP_SERVER_PATH,
+  HMDB_MCP_SERVER_PATH,
+  OPENALEX_MCP_SERVER_PATH,
   UNIPROT_MCP_SERVER_PATH,
   FDA_MCP_SERVER_PATH,
   MEDICAID_MCP_SERVER_PATH,
@@ -282,6 +287,11 @@ function buildVolumeMounts(
     { envPath: CLINPGX_MCP_SERVER_PATH, containerName: 'clinpgx-mcp-server' },
     { envPath: MONARCH_MCP_SERVER_PATH, containerName: 'monarch-mcp-server' },
     { envPath: JASPAR_MCP_SERVER_PATH, containerName: 'jaspar-mcp-server' },
+    { envPath: CLINVAR_MCP_SERVER_PATH, containerName: 'clinvar-mcp-server' },
+    { envPath: COSMIC_MCP_SERVER_PATH, containerName: 'cosmic-mcp-server' },
+    { envPath: GWAS_MCP_SERVER_PATH, containerName: 'gwas-mcp-server' },
+    { envPath: HMDB_MCP_SERVER_PATH, containerName: 'hmdb-mcp-server' },
+    { envPath: OPENALEX_MCP_SERVER_PATH, containerName: 'openalex-mcp-server' },
   ];
   for (const { envPath, containerName } of mcpMounts) {
     if (envPath && fs.existsSync(envPath)) {

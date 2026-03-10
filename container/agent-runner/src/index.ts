@@ -504,7 +504,12 @@ async function runQuery(
         'mcp__geo__*',
         'mcp__clinpgx__*',
         'mcp__monarch__*',
-        'mcp__jaspar__*'
+        'mcp__jaspar__*',
+        'mcp__clinvar__*',
+        'mcp__cosmic__*',
+        'mcp__gwas__*',
+        'mcp__hmdb__*',
+        'mcp__openalex__*'
       ],
       env: sdkEnv,
       permissionMode: 'bypassPermissions',
@@ -742,6 +747,41 @@ async function runQuery(
           jaspar: {
             command: 'node',
             args: ['/tmp/jaspar-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/clinvar-mcp-server/build/index.js') ? {
+          clinvar: {
+            command: 'node',
+            args: ['/tmp/clinvar-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/cosmic-mcp-server/build/index.js') ? {
+          cosmic: {
+            command: 'node',
+            args: ['/tmp/cosmic-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/gwas-mcp-server/build/index.js') ? {
+          gwas: {
+            command: 'node',
+            args: ['/tmp/gwas-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/hmdb-mcp-server/build/index.js') ? {
+          hmdb: {
+            command: 'node',
+            args: ['/tmp/hmdb-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/openalex-mcp-server/build/index.js') ? {
+          openalex: {
+            command: 'node',
+            args: ['/tmp/openalex-mcp-server/build/index.js'],
             env: {},
           },
         } : {}),
