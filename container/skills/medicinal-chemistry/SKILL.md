@@ -9,6 +9,7 @@ Specialist skill for compound optimization and drug-likeness assessment. Provide
 
 > **Code recipes**: See [recipes.md](recipes.md) for copy-paste executable code templates covering RDKit and DeepChem.
 > **ML recipes**: See [ml-recipes.md](ml-recipes.md) for machine learning and cheminformatics recipes (Datamol, DeepChem GCN/AttentiveFP, ChemBERTa, GROVER, virtual screening, ADMET, multi-task learning).
+> **ADMET recipes**: See [admet-recipes.md](admet-recipes.md) for ADMET prediction pipelines, toxicity scoring, structural alert filtering (PAINS, Brenk, Ames), hERG risk, hepatotoxicity, CYP450 assessment, and composite drug candidate ranking.
 
 ## Report-First Workflow
 

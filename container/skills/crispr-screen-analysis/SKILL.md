@@ -6,6 +6,7 @@ description: CRISPR genetic screen data analysis. Guide RNA counting, gene-level
 # CRISPR Screen Analysis
 
 > **Code recipes**: See [mageck-recipes.md](mageck-recipes.md) for MAGeCK CLI workflows, JACKS analysis, CRISPResso2 quantification, normalization strategies, essential gene benchmarking, and base editing screen analysis.
+> **Experiment design recipes**: See [experiment-design-recipes.md](experiment-design-recipes.md) for guide RNA design, off-target analysis, library construction, delivery method selection, validation assays (T7EI, ICE/TIDE, CRISPResso2), base editing, and prime editing pegRNA design.
 
 CRISPR genetic screen data analysis from raw guide counts to gene-level hit lists. The agent writes and executes Python code for guide-level QC, normalization, log fold change calculation, gene-level aggregation (RRA-like scoring), hit calling, essentiality analysis with Bayes Factor scoring, and quality metrics. Supports dropout (negative selection), enrichment (positive selection), and fitness screens across CRISPR knockout, CRISPRi, and CRISPRa modalities.
 
