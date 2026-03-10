@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/nanoclaw-logo.png" alt="BioClaw" width="400">
+  <img src="assets/bioclaw-logo.png" alt="BioClaw" width="400">
 </p>
 
 <p align="center">
