@@ -260,39 +260,7 @@ Assess accessibility and usability of analysis code.
 | 1-2 | Code "available upon request" or in supplementary PDF |
 | 0 | No code availability; analysis not transparent |
 
-**Code Quality Assessment:**
-```python
-def assess_code_availability(code_info):
-    """Score code availability and quality.
-
-    code_info: dict with keys:
-        - repository_url: str or None
-        - readme_present: bool
-        - environment_file: bool (requirements.txt, environment.yml, etc.)
-        - version_control: bool
-        - test_suite: bool
-        - runs_on_data: bool (verified to run on provided data)
-        - documentation: str ('comprehensive', 'basic', 'none')
-        - license: bool
-    """
-    score = 0
-
-    if code_info.get('repository_url'):
-        score += 3
-    if code_info.get('readme_present'):
-        score += 1
-    if code_info.get('environment_file'):
-        score += 1.5
-    if code_info.get('test_suite'):
-        score += 1.5
-    if code_info.get('runs_on_data'):
-        score += 2
-
-    doc_scores = {'comprehensive': 1, 'basic': 0.5, 'none': 0}
-    score += doc_scores.get(code_info.get('documentation', 'none'), 0)
-
-    return min(10, round(score, 1))
-```
+**Code Quality Scoring:** Repository available (+3), README present (+1), environment file (+1.5), test suite (+1.5), runs on data (+2), documentation quality (+0-1). Cap at 10.
 
 ### Dimension 5: Statistical Rigor (0-10)
 
@@ -451,54 +419,7 @@ Adapted from the Cochrane Risk of Bias tool (RoB 2).
 | **Confounding** | Were confounders identified and controlled? | No adjustment, unmeasured confounders, residual confounding |
 
 **Bias Risk Scoring:**
-```python
-def bias_risk_assessment(domain_scores):
-    """Calculate overall bias risk score.
-
-    domain_scores: dict with domain names -> 'low', 'some_concerns', 'high', 'critical'
-    """
-    risk_values = {'low': 0, 'some_concerns': 1, 'high': 2, 'critical': 3}
-
-    total_risk = 0
-    n_domains = len(domain_scores)
-    domain_results = []
-
-    for domain, risk in domain_scores.items():
-        risk_val = risk_values.get(risk, 1)
-        total_risk += risk_val
-        domain_results.append({
-            'domain': domain,
-            'risk_level': risk,
-            'risk_value': risk_val
-        })
-
-    # Max possible risk = 3 * n_domains
-    max_risk = 3 * n_domains
-    normalized_score = (1 - total_risk / max_risk) * 10 if max_risk > 0 else 0
-
-    # Determine overall risk level
-    risk_counts = {'low': 0, 'some_concerns': 0, 'high': 0, 'critical': 0}
-    for risk in domain_scores.values():
-        risk_counts[risk] = risk_counts.get(risk, 0) + 1
-
-    if risk_counts['critical'] > 0:
-        overall = 'Critical risk'
-    elif risk_counts['high'] >= 2:
-        overall = 'High risk'
-    elif risk_counts['high'] == 1:
-        overall = 'Some concerns'
-    elif risk_counts['some_concerns'] >= 3:
-        overall = 'Some concerns'
-    else:
-        overall = 'Low risk'
-
-    return {
-        'score': round(normalized_score, 1),
-        'overall_risk': overall,
-        'domain_results': domain_results,
-        'risk_distribution': risk_counts
-    }
-```
+Rate each domain as: `low` (0), `some_concerns` (1), `high` (2), or `critical` (3). Sum risk values across domains, normalize to 0-10 scale: `score = (1 - total_risk / (3 * n_domains)) * 10`. Overall risk determination: any `critical` domain = Critical risk; 2+ `high` domains = High risk; 1 `high` or 3+ `some_concerns` = Some concerns; otherwise Low risk.
 
 ### Dimension 8: External Validity (0-10)
 
