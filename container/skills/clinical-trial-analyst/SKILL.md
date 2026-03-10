@@ -7,6 +7,8 @@ description: Clinical trial design and analysis specialist. Survival analysis, e
 
 Clinical trial design, statistical analysis, and pipeline intelligence. Uses `mcp__ctgov__ct_gov_studies` for trial data and `mcp__pubmed__pubmed_articles` for literature evidence.
 
+> **Population recipes**: See [population-recipes.md](population-recipes.md) for patient population sizing and clinical translation code templates (population calculation, biomarker prevalence, addressable patient pool, readiness scoring, expression stratification, indication prioritization, response rate estimation, endpoint benchmarking, competitive positioning, market sizing, subtype stratification).
+
 ## Report-First Workflow
 
 1. **Create report file immediately**: `[topic]_clinical-trial-analyst_report.md` with all section headers

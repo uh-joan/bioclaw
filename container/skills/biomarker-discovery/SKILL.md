@@ -7,6 +7,8 @@ description: "Biomarker identification and validation, FDA BEST categories, ROC/
 
 Identifies, characterizes, and validates biomarkers across the full translational spectrum -- from omics-driven discovery through analytical and clinical validation to regulatory qualification and clinical utility demonstration. Applies the FDA Biomarkers, EndpointS, and other Tools (BEST) framework to classify biomarkers by intended use. Integrates multi-omics data (genomics, transcriptomics, proteomics, metabolomics), clinical trial evidence, FDA labeling, tissue expression patterns, and pathway biology to produce actionable biomarker assessment reports with readiness scoring, ROC/AUC performance metrics, and companion diagnostic feasibility analysis.
 
+> **ML panel recipes**: See [ml-panel-recipes.md](ml-panel-recipes.md) for machine learning biomarker panel selection code templates (mutual information, LASSO, random forest importance, cross-validated AUC, mutation sensitivity, resistance profiling, lineage enrichment, elastic net, panel size optimization, biomarker readiness scoring, survival association, multi-omics integration).
+
 ## Report-First Workflow
 
 1. **Create report file immediately**: `[biomarker]_discovery_report.md` with all section headers

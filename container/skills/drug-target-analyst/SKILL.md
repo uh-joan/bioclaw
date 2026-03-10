@@ -7,6 +7,8 @@ description: Drug target and molecular pharmacology analyst. Target identificati
 
 Drug target identification, validation, and molecular pharmacology analysis. Uses Open Targets for target-disease evidence, ChEMBL for bioactivity data, DrugBank for drug-target relationships, and PubMed for literature evidence.
 
+> **Druggability recipes**: See [druggability-recipes.md](druggability-recipes.md) for multi-dimensional druggability assessment code templates (protein class scoring, ChEMBL ligand counts, pocket detection, GTEx tau index, co-essentiality, composite scoring, anti-target checks, tractability, competitive landscape).
+
 ## Report-First Workflow
 
 1. **Create report file immediately**: `[target]_drug-target-analyst_report.md` with all section headers
