@@ -176,6 +176,23 @@ Generates comprehensive disease intelligence reports by systematically investiga
 | `get_recent_preprints` | Latest preprints by topic | `topic`, `days`, `limit` |
 | `get_published_version` | Find journal-published version | `doi` |
 
+### `mcp__openalex__openalex_data` (Literature Landscape & Expertise Mapping)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_works` | Search disease literature with citation counts and publication dates | `query` |
+| `get_work` | Get work details by OpenAlex ID, DOI, or PMID | `id` |
+| `search_authors` | Find leading researchers in the disease area | `query` |
+| `get_author` | Author expertise profile with citation metrics and institutional history | `id` |
+| `search_topics` | Map disease research landscape with subfield classification | `query` |
+| `search_institutions` | Identify leading institutions for the disease area | `query` |
+| `get_institution` | Institution research profile with topic expertise and publication trends | `id` |
+| `get_works_by_author` | Author's top-cited works for identifying key opinion leaders | `authorId` |
+| `get_works_by_institution` | Institution's recent disease-relevant publications | `institutionId` |
+| `get_cited_by` | Find papers citing key disease studies for literature expansion | `workId` |
+
+**Usage note:** Use OpenAlex to map the literature landscape per disease (publication trends, citation patterns), identify leading authors and institutions for expertise mapping, and track publication trends over time to detect shifts in research focus. The `search_topics` method helps identify emerging subfields within a disease area.
+
 ### `mcp__kegg__kegg_data` (Disease & Pathway Data)
 
 | Method | What it does | Key parameters |

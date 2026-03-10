@@ -162,6 +162,21 @@ Generates comprehensive drug research reports with compound disambiguation, evid
 | `get_recent_preprints` | Latest preprints by subject area | `subject`, `limit` |
 | `search_by_author` | Find preprints by author | `author`, `limit` |
 
+### `mcp__openalex__openalex_data` (Publication Evidence & Competitive Landscape)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_works` | Search clinical trial publications and mechanism-of-action evidence by keywords | `query` |
+| `get_work` | Get work details by DOI or PMID for citation verification | `id` |
+| `search_authors` | Find researchers publishing on the drug or its target | `query` |
+| `get_author` | Author publication metrics and institutional affiliation | `id` |
+| `search_topics` | Map research topics around the drug's mechanism or indication | `query` |
+| `get_cited_by` | Find papers citing key clinical trial publications | `workId` |
+| `get_works_by_author` | Researcher's publication record for KOL identification | `authorId` |
+| `search_institutions` | Identify institutions leading research on the drug or target | `query` |
+
+**Usage note:** Use OpenAlex to find clinical trial publications and mechanism-of-action evidence beyond PubMed, assess the competitive landscape by tracking research volume and citation patterns around competing drugs, and identify key opinion leaders publishing on the drug's target or indication.
+
 ### `mcp__depmap__depmap_data` (Cancer Dependency & Preclinical Validation)
 
 | Method | What it does | Key parameters |

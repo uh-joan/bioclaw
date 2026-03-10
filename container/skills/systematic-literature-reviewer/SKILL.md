@@ -69,6 +69,20 @@ Conducts rigorous evidence reviews following PRISMA 2020 methodology. Multi-data
 |--------|-----------|
 | `get_patent_ids` | Patent literature for IP-sensitive reviews |
 
+### `mcp__openalex__openalex_data`
+
+| Method | Review use |
+|--------|-----------|
+| `search_works` | Complementary search coverage beyond PubMed; retrieve citation counts and open access status |
+| `get_work` | Verify citation metadata and open access availability for included studies |
+| `search_authors` | Identify prolific authors in the review topic for completeness checks |
+| `get_author` | Author publication track record and citation metrics |
+| `get_cited_by` | Citation network expansion — find papers citing key included studies |
+| `get_works_by_author` | Retrieve an author's full publication list to catch missed relevant studies |
+| `search_institutions` | Identify leading research institutions for geographic coverage assessment |
+
+**Usage note:** Use OpenAlex to supplement PubMed search coverage, verify open access status of included studies, and expand the citation network during the screening phase. Citation counts from OpenAlex help prioritize highly-cited studies during full-text review.
+
 ---
 
 ## PRISMA 2020 Workflow

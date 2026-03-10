@@ -147,6 +147,28 @@ Distinct from **drug-research** (which produces comprehensive single-drug monogr
 - Monitor preprints from competitor research teams
 - Track real-world evidence studies posted as preprints ahead of congress presentation
 
+### `mcp__openalex__openalex_data` (Competitor Publication Tracking & Research Expertise)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_works` | Track competitor publications by keywords; returns citation counts | `query` |
+| `get_work` | Get publication details by DOI or PMID for competitive evidence | `id` |
+| `search_authors` | Identify key researchers at competitor organizations | `query` |
+| `get_author` | Researcher expertise profile, citation metrics, and institutional affiliation | `id` |
+| `get_works_by_author` | Competitor researcher's publication record for IP and expertise assessment | `authorId` |
+| `get_works_by_institution` | Track competitor institution's recent publications | `institutionId` |
+| `search_institutions` | Identify research institutions active in the competitive space | `query` |
+| `get_institution` | Institution research output, top topics, and associated organizations | `id` |
+| `search_topics` | Map research topic activity for competitive white space analysis | `query` |
+| `get_cited_by` | Track citation impact of competitor publications | `workId` |
+
+**CI-specific uses:**
+- Monitor competitor research teams' publication activity for early signal detection
+- Assess research team expertise and depth by citation metrics and publication volume
+- Identify potential acqui-hire targets or KOLs based on publication track records
+- Map institutional research strengths for partnership or competitive threat assessment
+- Detect emerging competitive mechanisms via topic-level publication trend analysis
+
 ### `mcp__cbioportal__cbioportal_data` (Cancer Market Landscape & Patient Populations)
 
 | Method | What it does | Key parameters |

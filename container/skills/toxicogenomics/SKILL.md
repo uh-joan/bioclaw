@@ -156,6 +156,19 @@ Key HPO terms for organ toxicity:
 | HP:0002014 | Diarrhea | Gastrointestinal |
 | HP:0002719 | Recurrent infections | Immune suppression |
 
+### `mcp__hmdb__hmdb_data` (Metabolite-Gene Expression Links & Dose-Response Signatures)
+
+Use HMDB to identify metabolites whose perturbations link to toxicogenomic gene expression signatures, investigate dose-response metabolite patterns, and map metabolites to adverse outcome pathways. Note: HMDB uses Cloudflare protection so some requests may be blocked intermittently.
+
+| Method | Toxicogenomics use | Key parameters |
+|--------|-------------------|----------------|
+| `search_metabolites` | Search for metabolites associated with toxicity gene signatures | `query` (required), `limit` (optional, default 25) |
+| `get_metabolite` | Full metabolite profile including pathways and disease associations | `hmdb_id` (required) |
+| `get_metabolite_pathways` | Map metabolites to detoxification/bioactivation pathways for AOP integration | `hmdb_id` (required) |
+| `get_metabolite_diseases` | Disease associations — link metabolite perturbations to organ toxicity phenotypes | `hmdb_id` (required) |
+| `get_metabolite_concentrations` | Normal and abnormal concentrations — establish dose-response metabolite baselines | `hmdb_id` (required) |
+| `search_by_mass` | Identify toxicity-associated metabolites from untargeted metabolomics | `mass` (required), `tolerance` (optional, default 0.05), `limit` (optional, default 25) |
+
 ---
 
 ## Python Environment

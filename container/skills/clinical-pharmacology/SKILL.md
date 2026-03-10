@@ -207,6 +207,19 @@ Check ClinPGx for pharmacogenomic dose adjustments before finalizing dosing reco
 5. Integrate PGx dosing adjustment into final dose recommendation
 ```
 
+### `mcp__hmdb__hmdb_data` (Drug Metabolite Identification & Concentrations)
+
+Use HMDB to identify drug metabolites, retrieve active metabolite concentration ranges in biofluids, and map metabolic pathways relevant to PK profiling. Supports therapeutic drug monitoring by providing reference concentration data. Note: HMDB uses Cloudflare protection so some requests may be blocked intermittently.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `get_metabolite` | Comprehensive metabolite data (name, formula, SMILES, InChI, description, biofluid/tissue locations, pathways, diseases) | `hmdb_id` (required) |
+| `search_metabolites` | Search metabolites by name/keyword | `query` (required), `limit` (optional, default 25) |
+| `get_metabolite_concentrations` | Normal and abnormal concentration data across biofluids | `hmdb_id` (required) |
+| `get_metabolite_pathways` | Biological pathways, biofluid locations, tissue locations, cellular locations | `hmdb_id` (required) |
+| `get_metabolite_properties` | Chemical/physical properties (MW, logP, pKa, solubility, state) | `hmdb_id` (required) |
+| `search_by_mass` | Find metabolites by molecular weight in Daltons | `mass` (required), `tolerance` (optional, default 0.05), `limit` (optional, default 25) |
+
 ---
 
 ## Python Environment

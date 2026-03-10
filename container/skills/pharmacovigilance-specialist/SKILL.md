@@ -78,6 +78,18 @@ Drug safety monitoring, adverse event analysis, and signal detection. Uses three
 | `get_psusas` | Periodic Safety Update Single Assessments |
 | `get_supply_shortages` | EU supply shortage data |
 
+### `mcp__hmdb__hmdb_data` (Metabolite Safety Signal Investigation)
+
+Use HMDB to investigate metabolite-level safety signals by checking whether drug-related metabolite perturbations correlate with known disease associations, and to retrieve reference concentration ranges for safety biomarker assessment. Note: HMDB uses Cloudflare protection so some requests may be blocked intermittently.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_metabolites` | Search for metabolites implicated in safety signals | `query` (required), `limit` (optional, default 25) |
+| `get_metabolite` | Full metabolite profile including disease associations and biofluid locations | `hmdb_id` (required) |
+| `get_metabolite_diseases` | Disease associations with OMIM IDs — link metabolite changes to safety signals | `hmdb_id` (required) |
+| `get_metabolite_concentrations` | Normal and abnormal concentration data — establish safety reference intervals | `hmdb_id` (required) |
+| `get_metabolite_pathways` | Biological pathways — trace metabolic disruptions driving safety concerns | `hmdb_id` (required) |
+
 ---
 
 ## Signal Detection Methodology

@@ -126,6 +126,21 @@ Systematically formulates, evaluates, and ranks competing scientific hypotheses 
 | `get_protein_features` | Domains, modifications, variants | `accession` |
 | `get_protein_structure` | PDB structure references | `accession` |
 
+### `mcp__openalex__openalex_data` (Citation-Based Hypothesis Scoring & Trend Detection)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_works` | Search papers supporting or refuting hypotheses; returns citation counts | `query` |
+| `get_work` | Get work details by DOI or PMID for evidence verification | `id` |
+| `search_authors` | Find researchers working on the phenomenon | `query` |
+| `get_author` | Author citation metrics for assessing evidence source credibility | `id` |
+| `search_topics` | Map research topics to assess research momentum around a hypothesis | `query` |
+| `get_cited_by` | Forward citation chaining to track how seminal findings have been built upon | `workId` |
+| `get_works_by_author` | Author's top-cited works for identifying foundational evidence | `authorId` |
+| `get_works_by_institution` | Detect emerging research clusters at specific institutions | `institutionId` |
+
+**Usage note:** Use OpenAlex for citation-based hypothesis scoring (highly-cited supporting evidence strengthens a hypothesis), research momentum assessment via topic-level publication trends, and preprint detection through recent works tracking. The `search_topics` method helps identify whether a hypothesis aligns with growing or declining research areas.
+
 ---
 
 ## 8-Phase Hypothesis Generation Workflow

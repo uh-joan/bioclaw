@@ -130,6 +130,20 @@ Systematic literature research engine with two operating modes: quick factoid ve
 | `get_results` | Trial results data | `nct_id` |
 | `get_locations` | Trial site locations | `nct_id` |
 
+### `mcp__openalex__openalex_data` (Author & Citation Intelligence)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_works` | Search papers by keywords; returns citation counts and DOIs | `query` |
+| `get_work` | Get work details by OpenAlex ID, DOI, or PMID | `id` |
+| `search_authors` | Disambiguate researchers by name; returns institution and works count | `query` |
+| `get_author` | Full author profile with citation metrics and topic expertise | `id` |
+| `get_cited_by` | Navigate citation network — find papers citing a given work | `workId` |
+| `get_works_by_author` | Author's works sorted by citation count for evidence grading | `authorId` |
+| `search_topics` | Search research topics for landscape mapping | `query` |
+
+**Usage note:** Use OpenAlex for author disambiguation when multiple researchers share names, citation network navigation to expand beyond seed results, and evidence grading via citation impact. The `get_cited_by` method enables forward citation chaining that complements PubMed's reference-based backward chaining.
+
 ---
 
 ## Two Operating Modes

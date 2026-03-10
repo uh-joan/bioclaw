@@ -131,6 +131,18 @@ Evaluates drug-drug interactions through CYP450 enzyme metabolism, transporter e
 | `get_compound_reactions` | Reactions involving a compound | `compound_id` |
 | `convert_identifiers` | Convert between KEGG and external IDs | `identifiers`, `source_db`, `target_db` |
 
+### `mcp__hmdb__hmdb_data` (Metabolite-Level Interaction Detection)
+
+Use HMDB to identify metabolites involved in drug interactions, map metabolic conjugate pathways, and detect metabolite-level interaction mechanisms (e.g., competitive inhibition of shared metabolic routes). Note: HMDB uses Cloudflare protection so some requests may be blocked intermittently.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_metabolites` | Search for drug metabolites or conjugates involved in interactions | `query` (required), `limit` (optional, default 25) |
+| `get_metabolite` | Comprehensive metabolite data including pathways and tissue locations | `hmdb_id` (required) |
+| `get_metabolite_pathways` | Metabolic conjugate pathways — identify shared metabolic routes between interacting drugs | `hmdb_id` (required) |
+| `get_metabolite_concentrations` | Normal and abnormal concentration data — detect interaction-altered metabolite levels | `hmdb_id` (required) |
+| `search_by_mass` | Identify unknown interaction metabolites from mass spectrometry data | `mass` (required), `tolerance` (optional, default 0.05), `limit` (optional, default 25) |
+
 ### `mcp__clinpgx__clinpgx_data` (PharmGKB / ClinPGx — PGx-Mediated Interactions)
 
 | Method | What it does | Key parameters |

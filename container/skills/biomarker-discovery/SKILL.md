@@ -151,6 +151,19 @@ mcp__geo__geo_data(method: "search_by_gene", gene: "BIOMARKER_GENE")
 mcp__geo__geo_data(method: "get_dataset_summary", dataset_id: "GDSxxxxxx")
 ```
 
+### `mcp__hmdb__hmdb_data` (Metabolite Biomarker Validation)
+
+Use HMDB to validate metabolite biomarker candidates by retrieving disease associations, normal/abnormal concentration ranges across biofluids, and pathway context. Essential for assessing metabolite biomarker clinical utility and establishing reference intervals. Note: HMDB uses Cloudflare protection so some requests may be blocked intermittently.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `get_metabolite` | Comprehensive metabolite data (name, formula, SMILES, InChI, description, biofluid/tissue locations, pathways, diseases) | `hmdb_id` (required) |
+| `search_metabolites` | Search metabolites by name/keyword | `query` (required), `limit` (optional, default 25) |
+| `get_metabolite_diseases` | Disease associations with OMIM IDs and references | `hmdb_id` (required) |
+| `get_metabolite_concentrations` | Normal and abnormal concentration data across biofluids | `hmdb_id` (required) |
+| `get_metabolite_pathways` | Biological pathways, biofluid locations, tissue locations, cellular locations | `hmdb_id` (required) |
+| `search_by_mass` | Find metabolites by molecular weight in Daltons | `mass` (required), `tolerance` (optional, default 0.05), `limit` (optional, default 25) |
+
 ---
 
 ## Core Workflow 1: Biomarker Discovery Pipeline

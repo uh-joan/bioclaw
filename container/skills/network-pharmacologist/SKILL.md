@@ -143,6 +143,19 @@ Systems pharmacology specialist that constructs and analyzes compound-target-dis
 | `get_pathway_reactions` | Reactions in a pathway | `pathway_id` |
 | `get_protein_interactions` | Protein interactions from Reactome | `protein_id` |
 
+### `mcp__hmdb__hmdb_data` (Metabolite-Pathway Network Integration)
+
+Use HMDB to integrate metabolite nodes into compound-target-disease networks, enriching network pharmacology analysis with metabolite-pathway edges and metabolite-disease associations. Note: HMDB uses Cloudflare protection so some requests may be blocked intermittently.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `get_metabolite` | Comprehensive metabolite data (name, formula, pathways, diseases) — add metabolite nodes to C-T-D networks | `hmdb_id` (required) |
+| `search_metabolites` | Search metabolites by name/keyword for network node discovery | `query` (required), `limit` (optional, default 25) |
+| `get_metabolite_pathways` | Biological pathways — construct metabolite-pathway edges in the network | `hmdb_id` (required) |
+| `get_metabolite_diseases` | Disease associations — add metabolite-disease edges with OMIM cross-references | `hmdb_id` (required) |
+| `get_metabolite_concentrations` | Concentration data across biofluids — weight metabolite network edges by biological relevance | `hmdb_id` (required) |
+| `search_by_mass` | Find metabolites by molecular weight — integrate mass spec hits as network nodes | `mass` (required), `tolerance` (optional, default 0.05), `limit` (optional, default 25) |
+
 ### `mcp__geneontology__go_data` (Gene Ontology)
 
 | Method | What it does | Key parameters |

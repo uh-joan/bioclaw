@@ -174,6 +174,35 @@ Clinical evidence mapping:
   -> Compare registered endpoints with published results
 ```
 
+### `mcp__openalex__openalex_data` (Large-Scale Literature & Citation Analysis)
+
+| Method | Synthesis use | Key parameters |
+|--------|--------------|----------------|
+| `search_works` | Large-scale literature retrieval with citation counts for evidence weighting | `query` |
+| `get_work` | Get full work metadata by OpenAlex ID, DOI, or PMID | `id` |
+| `search_authors` | Identify leading researchers in the synthesis topic | `query` |
+| `get_author` | Author citation metrics and publication trends by year | `id` |
+| `search_topics` | Map research topic landscape with field/domain classification | `query` |
+| `get_cited_by` | Citation network analysis — find papers citing key works | `workId` |
+| `get_works_by_author` | Author's works sorted by citation count for identifying seminal papers | `authorId` |
+| `get_works_by_institution` | Institution publication trends for temporal analysis | `institutionId` |
+| `search_institutions` | Identify leading research institutions in the synthesis area | `query` |
+
+**Synthesis-specific uses:**
+```
+Publication trend analysis:
+  mcp__openalex__openalex_data(method: "search_topics",
+    query: "[synthesis topic]")
+  -> Map the research landscape with works counts and citation metrics
+  -> Identify subfields and domain classification for theme identification
+
+Citation network for snowball searching:
+  mcp__openalex__openalex_data(method: "get_cited_by",
+    workId: "[OpenAlex work ID of seminal paper]")
+  -> Forward citation chaining to find papers building on key findings
+  -> Complements backward reference chaining from PubMed
+```
+
 ---
 
 ## Core Methodology: 6-Phase Synthesis Process

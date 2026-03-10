@@ -112,6 +112,18 @@ Quantitative signal detection and disproportionality analysis for post-market dr
 | `get_mechanism` | Mechanism of action with target details | `chembl_id` |
 | `get_bioactivity` | Binding affinity, IC50 for on/off-target effects | `chembl_id`, `target_id` |
 
+### `mcp__hmdb__hmdb_data` (Metabolite-Associated Adverse Event Patterns)
+
+Use HMDB to identify metabolites associated with adverse event patterns, check whether altered metabolite concentrations correlate with reported adverse events, and investigate metabolite-disease links that may explain AE signals. Note: HMDB uses Cloudflare protection so some requests may be blocked intermittently.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_metabolites` | Search for metabolites linked to observed adverse events | `query` (required), `limit` (optional, default 25) |
+| `get_metabolite` | Full metabolite profile including disease associations and biofluid locations | `hmdb_id` (required) |
+| `get_metabolite_diseases` | Disease associations with OMIM IDs — link metabolite perturbations to AE mechanisms | `hmdb_id` (required) |
+| `get_metabolite_concentrations` | Normal and abnormal concentration data — detect AE-correlated metabolite shifts | `hmdb_id` (required) |
+| `get_metabolite_pathways` | Biological pathways — identify metabolic disruptions underlying adverse events | `hmdb_id` (required) |
+
 ---
 
 ## Python Environment

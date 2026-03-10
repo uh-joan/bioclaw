@@ -92,6 +92,26 @@ Distinct from **peer-review** (which evaluates existing proposals from a reviewe
 - Find potential competitors whose work may overlap with proposed aims
 - Cite preprints for emerging methods or technologies relevant to the approach
 
+### `mcp__openalex__openalex_data` (Team Publication Record & Funding Landscape)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_works` | Search the funding landscape — find publications in the proposal area with citation metrics | `query` |
+| `get_work` | Get citation details for PI's publications or competitor publications | `id` |
+| `search_authors` | Find PI and co-investigator publication profiles | `query` |
+| `get_author` | PI/co-I citation metrics, works count, and institutional history | `id` |
+| `get_works_by_author` | PI's publication record sorted by citation count for biosketch | `authorId` |
+| `search_institutions` | Identify competing institutions and potential collaborators | `query` |
+| `get_institution` | Institution research profile for Environment section | `id` |
+| `search_topics` | Map research topic landscape to position the proposal's innovation | `query` |
+
+**Grant-specific uses:**
+- Build the PI's publication track record for the Investigator criterion (NIH) or PI Excellence (ERC)
+- Quantify citation impact of PI's prior work to strengthen the biosketch personal statement
+- Survey the funding landscape by identifying highly-cited work in the proposal area
+- Identify competing research groups and institutions for positioning the innovation narrative
+- Support the Environment section with institutional research output data
+
 ---
 
 ## Agency-Specific Guidance

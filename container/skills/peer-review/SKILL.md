@@ -65,6 +65,19 @@ Provides structured manuscript and grant proposal review following journal revie
 | `get_target_disease_associations` | Validate biological target claims |
 | `get_disease_details` | Verify disease context and known therapeutics |
 
+### `mcp__openalex__openalex_data`
+
+| Method | Review use |
+|--------|-----------|
+| `search_works` | Check novelty — search for prior work with citation impact data |
+| `get_work` | Verify citation metadata for referenced papers by DOI or PMID |
+| `search_authors` | Assess author track record and publication history |
+| `get_author` | Author citation metrics, h-index proxy, and institutional affiliation |
+| `get_cited_by` | Check citation impact of key referenced papers |
+| `get_works_by_author` | Review author's publication record for expertise assessment |
+
+**Usage note:** Use OpenAlex to assess the citation impact of papers referenced in the manuscript, verify author track records and institutional affiliations, and check whether the manuscript's claims of novelty hold up against the broader literature indexed in OpenAlex.
+
 ---
 
 ## Review Workflow — 7 Stages

@@ -76,6 +76,19 @@ Predictive toxicology and compound safety assessment integrating structural aler
 
 Literature evidence for toxicity findings.
 
+### `mcp__hmdb__hmdb_data` (Reactive Metabolite Identification)
+
+Use HMDB to identify reactive metabolites and toxicophore metabolites by name or mass, retrieve their pathway context, and check disease associations linked to metabolite-mediated toxicity. Note: HMDB uses Cloudflare protection so some requests may be blocked intermittently.
+
+| Method | Toxicology use |
+|--------|---------------|
+| `search_metabolites` | Search for reactive metabolites or toxicophore metabolites by name/keyword |
+| `get_metabolite` | Full metabolite profile including biofluid/tissue locations and disease associations |
+| `get_metabolite_properties` | Chemical/physical properties (MW, logP, pKa, solubility) for toxicity assessment |
+| `get_metabolite_pathways` | Metabolic pathways — identify bioactivation routes and detoxification conjugation |
+| `get_metabolite_diseases` | Disease associations with OMIM IDs — link reactive metabolites to organ toxicity |
+| `search_by_mass` | Identify unknown reactive metabolites from mass spectrometry data |
+
 ---
 
 ## Drug-Likeness Rules

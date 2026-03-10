@@ -80,6 +80,21 @@ Orientation heuristic: if nrows >> ncols, assume features x samples (correct). I
 | `get_pathway_participants` | Molecules in a pathway | `pathway_id` |
 | `get_pathway_reactions` | Reactions in a pathway | `pathway_id` |
 
+### `mcp__hmdb__hmdb_data` (Metabolite Identification & Biological Context)
+
+Use HMDB for comprehensive metabolite data to complement KEGG compound lookups. Primary use: resolving putative IDs from accurate mass matching, retrieving spectral references for MS2 validation, and mapping metabolites to biological pathways and disease associations. Note: HMDB uses Cloudflare protection so some requests may be blocked intermittently.
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `get_metabolite` | Comprehensive metabolite data (name, formula, SMILES, InChI, description, biofluid/tissue locations, pathways, diseases) | `hmdb_id` (required) |
+| `search_metabolites` | Search metabolites by name/keyword | `query` (required), `limit` (optional, default 25) |
+| `get_metabolite_properties` | Chemical/physical properties (MW, logP, pKa, solubility, state) | `hmdb_id` (required) |
+| `get_metabolite_spectra` | Spectral data references (NMR, MS/MS with type, nucleus, frequency, solvent) | `hmdb_id` (required) |
+| `get_metabolite_pathways` | Biological pathways, biofluid locations, tissue locations, cellular locations | `hmdb_id` (required) |
+| `get_metabolite_diseases` | Disease associations with OMIM IDs and references | `hmdb_id` (required) |
+| `get_metabolite_concentrations` | Normal and abnormal concentration data across biofluids | `hmdb_id` (required) |
+| `search_by_mass` | Find metabolites by molecular weight in Daltons | `mass` (required), `tolerance` (optional, default 0.05), `limit` (optional, default 25) |
+
 ---
 
 ## Analysis Pipeline

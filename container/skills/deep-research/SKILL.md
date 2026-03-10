@@ -116,6 +116,21 @@ Distinct from **literature-deep-research** (which performs structured literature
 | `search_adverse_events` | FAERS adverse event reports | `query`, `limit` |
 | `get_approval_history` | Drug approval timeline | `drug_name` |
 
+### `mcp__openalex__openalex_data` (Citation Networks & Research Landscape)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_works` | Search papers by keywords; returns citation counts and publication dates | `query` |
+| `get_work` | Get work details by OpenAlex ID, DOI, or PMID | `id` |
+| `search_authors` | Search researchers by name with institution and topic data | `query` |
+| `get_author` | Author profile with citation counts by year for trend detection | `id` |
+| `search_topics` | Search research topics; returns field/domain classification and citation metrics | `query` |
+| `get_cited_by` | Forward citation expansion — find papers citing a given work | `workId` |
+| `get_works_by_author` | Author's works sorted by citation count | `authorId` |
+| `get_works_by_institution` | Institution's recent works for emerging research detection | `institutionId` |
+
+**Usage note:** Use OpenAlex for citation network expansion during the Execute phase (forward citation chaining via `get_cited_by`), topic-based landscape mapping to identify adjacent research areas, and detecting emerging research trends via `search_topics` and institution-level publication tracking. Citation counts help prioritize papers during the Reflect phase.
+
 ---
 
 ## Core Research Loop

@@ -56,6 +56,20 @@ Clinical trial design, statistical analysis, and pipeline intelligence. Uses `mc
 | `get_article_metadata` | Full article details | `pmid` |
 | `get_article_pdf` | PDF download link | `pmid` |
 
+### `mcp__openalex__openalex_data`
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_works` | Search trial publications and endpoint evidence by keywords | `query` |
+| `get_work` | Get work details by DOI or PMID for citation verification | `id` |
+| `search_authors` | Find investigators by name with publication history | `query` |
+| `get_author` | Investigator publication track record and citation metrics | `id` |
+| `get_works_by_author` | Investigator's publication history sorted by citation count | `authorId` |
+| `get_cited_by` | Find papers citing key trial publications for evidence chain | `workId` |
+| `search_institutions` | Identify leading trial sites by research output | `query` |
+
+**Usage note:** Use OpenAlex to assess investigator publication history and track record, find prior art for trial design decisions (endpoint selection, comparator choice), and trace the evidence chain for endpoint validation by examining citation networks around key efficacy studies.
+
 ---
 
 ## Endpoint Selection
