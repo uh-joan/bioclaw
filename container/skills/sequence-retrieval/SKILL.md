@@ -5,7 +5,7 @@ description: Biological sequence retrieval and analysis. DNA sequence, RNA seque
 
 # Sequence Retrieval
 
-> **Code recipes**: See [recipes.md](recipes.md) in this directory for copy-paste executable code templates.
+> **Code recipes**: See [recipes.md](recipes.md) and [biopython-recipes.md](biopython-recipes.md) for executable code templates.
 
 Unified interface for retrieving biological sequences from Ensembl (DNA, RNA, CDS) and UniProt (protein). Handles single-gene lookups, batch retrieval across gene lists, format conversion between FASTA and raw sequence, cross-species ortholog collection, and sequence validation. Routes each request to the appropriate database based on molecule type and use case.
 

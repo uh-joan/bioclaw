@@ -443,3 +443,250 @@ def test_variant_distribution(df: pd.DataFrame, group_col: str = 'group',
     chi2, p, dof, expected = chi2_contingency(ct)
     return {'chi2': chi2, 'p': p, 'dof': dof, 'observed': ct, 'expected': pd.DataFrame(expected, index=ct.index, columns=ct.columns)}
 ```
+
+---
+
+## pysam Recipes
+
+Python code templates for BAM/VCF/FASTA file manipulation using pysam. Covers read iteration, coverage calculation, VCF filtering, genotype extraction, and sequence retrieval.
+
+---
+
+## 12. Read BAM File and Iterate Reads in a Region
+
+Open a BAM file and iterate over aligned reads in a specific genomic region.
+
+```python
+import pysam
+
+# Open BAM file (requires .bai index alongside the .bam)
+bamfile = pysam.AlignmentFile("sample.bam", "rb")
+
+# Iterate reads in a specific region
+region_chrom = "chr1"
+region_start = 100000
+region_end = 200000
+
+read_count = 0
+for read in bamfile.fetch(region_chrom, region_start, region_end):
+    if read.is_unmapped or read.is_secondary or read.is_supplementary:
+        continue
+    read_count += 1
+    if read_count <= 3:  # print first few reads
+        print(f"Read: {read.query_name}")
+        print(f"  Position: {read.reference_name}:{read.reference_start}-{read.reference_end}")
+        print(f"  MAPQ: {read.mapping_quality}, CIGAR: {read.cigarstring}")
+        print(f"  Sequence length: {len(read.query_sequence)}")
+
+print(f"\nTotal primary reads in {region_chrom}:{region_start}-{region_end}: {read_count}")
+bamfile.close()
+```
+
+---
+
+## 13. Calculate Per-Base Coverage / Pileup Depth
+
+Compute depth of coverage at each position in a region using pileup.
+
+```python
+import pysam
+import numpy as np
+
+bamfile = pysam.AlignmentFile("sample.bam", "rb")
+
+chrom = "chr1"
+start = 100000
+end = 100500
+
+# Collect per-base depth
+positions = []
+depths = []
+for col in bamfile.pileup(chrom, start, end, truncate=True, min_mapping_quality=20):
+    positions.append(col.reference_pos)
+    depths.append(col.nsegments)
+
+depths_array = np.array(depths)
+print(f"Region: {chrom}:{start}-{end}")
+print(f"  Mean depth: {depths_array.mean():.1f}")
+print(f"  Median depth: {np.median(depths_array):.1f}")
+print(f"  Min/Max: {depths_array.min()}/{depths_array.max()}")
+print(f"  Bases >= 30x: {(depths_array >= 30).sum()} / {len(depths_array)}")
+
+bamfile.close()
+
+# Alternative: count_coverage returns per-base counts for A, C, G, T
+bamfile = pysam.AlignmentFile("sample.bam", "rb")
+a, c, g, t = bamfile.count_coverage(chrom, start, end, quality_threshold=20)
+total_depth = np.array(a) + np.array(c) + np.array(g) + np.array(t)
+print(f"Mean depth (count_coverage): {total_depth.mean():.1f}")
+bamfile.close()
+```
+
+---
+
+## 14. Filter VCF by Quality and Allele Frequency
+
+Read a VCF and filter variants by QUAL score and allele frequency.
+
+```python
+import pysam
+
+vcf_in = pysam.VariantFile("input.vcf.gz")
+vcf_out = pysam.VariantFile("filtered.vcf.gz", "wz", header=vcf_in.header)
+
+min_qual = 30.0
+min_af = 0.01
+max_af = 1.0
+
+passed = 0
+filtered = 0
+for record in vcf_in:
+    # Filter by QUAL
+    if record.qual is not None and record.qual < min_qual:
+        filtered += 1
+        continue
+
+    # Filter by allele frequency (AF in INFO field)
+    af = record.info.get("AF")
+    if af is not None:
+        af_val = af[0] if isinstance(af, tuple) else af
+        if af_val < min_af or af_val > max_af:
+            filtered += 1
+            continue
+
+    vcf_out.write(record)
+    passed += 1
+
+vcf_in.close()
+vcf_out.close()
+print(f"Passed: {passed}, Filtered: {filtered}")
+```
+
+---
+
+## 15. Extract Genotypes from Multi-Sample VCF
+
+Parse per-sample genotypes and allelic depths from a multi-sample VCF.
+
+```python
+import pysam
+import pandas as pd
+
+vcf = pysam.VariantFile("multi_sample.vcf.gz")
+samples = list(vcf.header.samples)
+print(f"Samples: {len(samples)}")
+
+records = []
+for record in vcf.fetch("chr1", 0, 1000000):
+    row = {
+        "chrom": record.chrom,
+        "pos": record.pos,
+        "ref": record.ref,
+        "alt": ",".join(str(a) for a in record.alts) if record.alts else ".",
+    }
+    for sample in samples:
+        gt = record.samples[sample]
+        alleles = gt.alleles  # tuple of allele strings or None
+        row[f"{sample}_GT"] = "/".join(str(a) if a else "." for a in alleles) if alleles else "./."
+        # Extract allelic depth if available
+        if "AD" in gt:
+            row[f"{sample}_AD"] = ",".join(str(d) for d in gt["AD"])
+        if "DP" in gt:
+            row[f"{sample}_DP"] = gt["DP"]
+    records.append(row)
+
+df = pd.DataFrame(records)
+print(f"Variants loaded: {len(df)}")
+print(df.head())
+vcf.close()
+```
+
+---
+
+## 16. Count Reads by Mapping Quality and Flags
+
+Summarize reads in a BAM by mapping quality distribution and flag categories.
+
+```python
+import pysam
+from collections import Counter
+
+bamfile = pysam.AlignmentFile("sample.bam", "rb")
+
+mapq_counts = Counter()
+flag_stats = {
+    "total": 0, "mapped": 0, "unmapped": 0,
+    "primary": 0, "secondary": 0, "supplementary": 0,
+    "paired": 0, "proper_pair": 0, "duplicate": 0,
+}
+
+for read in bamfile.fetch():
+    flag_stats["total"] += 1
+    if read.is_unmapped:
+        flag_stats["unmapped"] += 1
+    else:
+        flag_stats["mapped"] += 1
+        mapq_counts[read.mapping_quality] += 1
+    if read.is_secondary:
+        flag_stats["secondary"] += 1
+    elif read.is_supplementary:
+        flag_stats["supplementary"] += 1
+    else:
+        flag_stats["primary"] += 1
+    if read.is_paired:
+        flag_stats["paired"] += 1
+    if read.is_proper_pair:
+        flag_stats["proper_pair"] += 1
+    if read.is_duplicate:
+        flag_stats["duplicate"] += 1
+
+print("Flag statistics:")
+for k, v in flag_stats.items():
+    print(f"  {k}: {v}")
+
+# MAPQ distribution summary
+mapq_values = sorted(mapq_counts.keys())
+high_mapq = sum(v for k, v in mapq_counts.items() if k >= 30)
+print(f"\nMAPQ >= 30: {high_mapq} ({100*high_mapq/flag_stats['mapped']:.1f}%)")
+print(f"MAPQ == 0: {mapq_counts.get(0, 0)}")
+
+bamfile.close()
+```
+
+---
+
+## 17. Extract Sequences from FASTA by Coordinates
+
+Retrieve nucleotide sequences from an indexed FASTA reference file.
+
+```python
+import pysam
+
+# Open indexed FASTA (requires .fai index file)
+fasta = pysam.FastaFile("reference.fa")
+
+# List available contigs
+print(f"Contigs: {fasta.nreferences}")
+print(f"Names: {fasta.references[:5]}...")
+
+# Extract sequence for a region (0-based coordinates)
+chrom = "chr1"
+start = 100000
+end = 100100
+seq = fasta.fetch(chrom, start, end)
+print(f"Sequence {chrom}:{start}-{end} ({len(seq)} bp):")
+print(f"  {seq[:60]}...")
+
+# Extract multiple regions
+regions = [
+    ("chr1", 100000, 100050),
+    ("chr2", 200000, 200050),
+    ("chr3", 300000, 300050),
+]
+for chrom, s, e in regions:
+    seq = fasta.fetch(chrom, s, e)
+    gc = (seq.upper().count("G") + seq.upper().count("C")) / len(seq) * 100
+    print(f"  {chrom}:{s}-{e} -> {len(seq)} bp, GC={gc:.1f}%")
+
+fasta.close()
+```

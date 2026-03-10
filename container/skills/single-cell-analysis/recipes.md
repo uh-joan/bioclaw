@@ -383,3 +383,197 @@ def volcano_with_labels(de_results: pd.DataFrame, top_n: int = 10, **kwargs):
 fig = volcano_with_labels(de_results, top_n=15, title='miRNA DE: Patient vs Control')
 fig.savefig('mirna_volcano.png', dpi=150, bbox_inches='tight')
 ```
+
+---
+
+## scvi-tools Recipes
+
+Python code templates for deep generative models applied to single-cell data using scvi-tools. Covers batch correction, semi-supervised annotation, multi-modal integration, differential expression, and latent space extraction.
+
+---
+
+## 11. scVI Setup and Training for Batch Correction
+
+Train a variational autoencoder to learn a batch-corrected latent representation.
+
+```python
+import scanpy as sc
+import scvi
+
+# Load and prepare AnnData
+adata = sc.read_h5ad("single_cell_data.h5ad")
+
+# Filter and normalize (scVI expects raw counts)
+sc.pp.filter_genes(adata, min_counts=3)
+sc.pp.highly_variable_genes(adata, n_top_genes=3000, subset=True, flavor="seurat_v3")
+
+# Register the AnnData object with scVI
+scvi.model.SCVI.setup_anndata(
+    adata,
+    layer="counts",       # layer with raw counts; omit if adata.X has counts
+    batch_key="batch",    # column in adata.obs for batch labels
+)
+
+# Initialize and train model
+model = scvi.model.SCVI(adata, n_latent=30, n_layers=2, dropout_rate=0.1)
+model.train(max_epochs=200, early_stopping=True, early_stopping_patience=10)
+
+# Training history
+train_elbo = model.history["elbo_train"]
+print(f"Final train ELBO: {train_elbo.iloc[-1].values[0]:.2f}")
+print(f"Epochs trained: {len(train_elbo)}")
+
+# Save model for later use
+model.save("scvi_model/")
+# Reload: model = scvi.model.SCVI.load("scvi_model/", adata=adata)
+```
+
+---
+
+## 12. scANVI for Semi-Supervised Cell Type Annotation
+
+Transfer known cell type labels to unlabeled cells using a semi-supervised model.
+
+```python
+import scvi
+
+# Start from a trained scVI model (see recipe 11)
+# Annotate a subset of cells with known labels; rest are "Unknown"
+adata.obs["cell_type_partial"] = adata.obs["cell_type"].copy()
+# Simulate partial labels: mask 70% as unknown
+import numpy as np
+mask = np.random.choice([True, False], size=len(adata), p=[0.7, 0.3])
+adata.obs.loc[mask, "cell_type_partial"] = "Unknown"
+
+# Setup scANVI from the trained scVI model
+scvi.model.SCANVI.setup_anndata(
+    adata,
+    batch_key="batch",
+    labels_key="cell_type_partial",
+    unlabeled_category="Unknown",
+)
+scanvi_model = scvi.model.SCANVI.from_scvi_model(
+    model, unlabeled_category="Unknown", adata=adata
+)
+scanvi_model.train(max_epochs=50, n_samples_per_label=100)
+
+# Predict labels for all cells
+adata.obs["predicted_cell_type"] = scanvi_model.predict(adata)
+
+# Prediction probabilities
+soft_predictions = scanvi_model.predict(adata, soft=True)
+adata.obs["prediction_confidence"] = soft_predictions.max(axis=1).values
+print(f"Mean confidence: {adata.obs['prediction_confidence'].mean():.3f}")
+```
+
+---
+
+## 13. totalVI for CITE-seq (RNA + Protein) Integration
+
+Joint modeling of RNA and surface protein data from CITE-seq experiments.
+
+```python
+import scvi
+import scanpy as sc
+
+# Load CITE-seq AnnData (RNA in .X, protein in .obsm["protein_expression"])
+adata = sc.read_h5ad("cite_seq_data.h5ad")
+
+# Setup for totalVI
+scvi.model.TOTALVI.setup_anndata(
+    adata,
+    batch_key="batch",
+    protein_expression_obsm_key="protein_expression",
+    layer="counts",
+)
+
+# Train totalVI model
+totalvi_model = scvi.model.TOTALVI(
+    adata, n_latent=20, latent_distribution="normal"
+)
+totalvi_model.train(max_epochs=200, early_stopping=True)
+
+# Get denoised protein expression
+denoised_protein = totalvi_model.get_normalized_expression(
+    adata, n_samples=25, return_mean=True,
+    transform_batch=["batch_1"],  # normalize to reference batch
+)
+rna_denoised, protein_denoised = denoised_protein
+
+# Store latent representation
+adata.obsm["X_totalVI"] = totalvi_model.get_latent_representation()
+print(f"Latent shape: {adata.obsm['X_totalVI'].shape}")
+
+# Protein foreground probability (separates signal from background)
+protein_fg_prob = totalvi_model.get_protein_foreground_probability(adata)
+print(f"Protein foreground prob shape: {protein_fg_prob.shape}")
+```
+
+---
+
+## 14. Differential Expression with scVI
+
+Bayesian differential expression testing using the trained scVI model.
+
+```python
+import scvi
+import pandas as pd
+
+# Assumes a trained scVI model (see recipe 11)
+# DE between two groups defined by an obs column
+de_results = model.differential_expression(
+    adata,
+    groupby="condition",
+    group1="treatment",
+    group2="control",
+    delta=0.25,        # log-FC threshold for hypothesis test
+    batch_correction=True,
+)
+
+# Filter significant DE genes
+de_sig = de_results[
+    (de_results["is_de_fdr_0.05"] == True) &
+    (de_results["lfc_mean"].abs() > 0.5)
+].sort_values("lfc_mean", ascending=False)
+
+print(f"Significant DE genes: {len(de_sig)}")
+print(f"  Upregulated: {(de_sig['lfc_mean'] > 0).sum()}")
+print(f"  Downregulated: {(de_sig['lfc_mean'] < 0).sum()}")
+
+# Top genes
+print("\nTop 10 upregulated:")
+print(de_sig.head(10)[["lfc_mean", "lfc_std", "bayes_factor", "is_de_fdr_0.05"]])
+
+print("\nTop 10 downregulated:")
+print(de_sig.tail(10)[["lfc_mean", "lfc_std", "bayes_factor", "is_de_fdr_0.05"]])
+```
+
+---
+
+## 15. Extract Latent Representation and Feed to Scanpy UMAP
+
+Use the scVI latent space for downstream clustering and visualization in scanpy.
+
+```python
+import scanpy as sc
+
+# Get latent representation from trained scVI model
+adata.obsm["X_scVI"] = model.get_latent_representation()
+print(f"Latent representation shape: {adata.obsm['X_scVI'].shape}")
+
+# Use scVI latent space for neighbor graph and clustering
+sc.pp.neighbors(adata, use_rep="X_scVI", n_neighbors=15)
+sc.tl.umap(adata)
+sc.tl.leiden(adata, resolution=0.8, key_added="leiden_scVI")
+
+# Visualize
+sc.pl.umap(adata, color=["batch", "leiden_scVI", "cell_type"],
+           ncols=3, frameon=False, save="_scvi_latent.png")
+
+# Compare batch mixing before/after correction
+sc.pl.umap(adata, color="batch", title="scVI batch-corrected",
+           frameon=False, save="_batch_corrected.png")
+
+print(f"Clusters found: {adata.obs['leiden_scVI'].nunique()}")
+print(adata.obs["leiden_scVI"].value_counts())
+```
