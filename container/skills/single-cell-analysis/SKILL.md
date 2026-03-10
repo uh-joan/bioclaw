@@ -5,7 +5,7 @@ description: Single-cell RNA-seq analysis specialist. Production-ready scRNA-seq
 
 # Single-Cell Analysis
 
-> **Code recipes**: See [recipes.md](recipes.md) for miRNA DE and scvi-tools templates, and [clustering-recipes.md](clustering-recipes.md) for advanced clustering, batch correction, cell type annotation, doublet detection, and trajectory initialization.
+> **Code recipes**: See [recipes.md](recipes.md) for miRNA DE and scvi-tools templates, [clustering-recipes.md](clustering-recipes.md) for advanced clustering, batch correction, cell type annotation, doublet detection, and trajectory initialization, [qc-recipes.md](qc-recipes.md) for QC workflows (data loading, MAD filtering, ambient RNA removal, cell cycle scoring, multi-sample QC), and [scvi-recipes.md](scvi-recipes.md) for comprehensive scvi-tools models (scVI, scANVI, totalVI, PeakVI, MultiVI, DestVI, veloVI, sysVI, scArches, training diagnostics).
 
 Production-ready scRNA-seq analysis methodology. The agent writes and executes Python code using scanpy/anndata for QC, normalization, dimensionality reduction, clustering, differential expression, cell type annotation, batch correction, trajectory inference, and cell-cell communication. Uses Open Targets, PubMed, ChEMBL, and DrugBank for biological annotation of results.
 

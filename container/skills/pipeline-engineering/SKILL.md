@@ -5,6 +5,8 @@ description: Bioinformatics workflow engines for reproducible pipelines. Nextflo
 
 # Workflow Management
 
+> **Code recipes**: See [nextflow-recipes.md](nextflow-recipes.md) for nf-core pipeline templates (rnaseq, sarek, atacseq), GEO/SRA data acquisition, samplesheet generation, custom process definitions, config profiles, resource management, and MultiQC output parsing.
+
 Production-ready bioinformatics workflow engine methodology. The agent writes and executes code for building, configuring, and deploying reproducible pipelines using Nextflow, Snakemake, CWL, and WDL. Covers process definitions, container integration, resource management, error handling, cluster/cloud execution profiles, testing, and best practices for modular pipeline design.
 
 ## Report-First Workflow

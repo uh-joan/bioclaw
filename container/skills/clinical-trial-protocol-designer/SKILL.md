@@ -322,6 +322,10 @@ Requires: FDA Type B meeting discussion on margin selection
 2. Drug Target Analyst → Scientific rationale, mechanism of action
 3. Clinical Trial Analyst → Market landscape, competitive trials
 
+## Recipe Files
+
+- **[protocol-recipes.md](protocol-recipes.md)** — Clinical trial protocol generation recipes. Includes waypoint-based state management, device vs drug regulatory pathway branching, ClinicalTrials.gov search integration, sample size calculations (t-test and z-test), dropout rate adjustment, sensitivity analysis scenarios, inclusion/exclusion criteria generation, Schedule of Activities table, FDA 12-section protocol structure, adverse event classification framework, and statistical analysis plan outline.
+
 ## Completeness Checklist
 
 - [ ] Precedent trials searched and design decisions justified from existing evidence

@@ -240,6 +240,10 @@ mcp__fda__fda_info(method: "lookup_drug", search_term: "drug_name", search_type:
 2. Clinical Trial Analyst → Published trial evidence supporting the off-label use
 3. FDA Consultant → Compendia listing status, FDA guidance on off-label use
 
+## Recipe Files
+
+- **[workflow-recipes.md](workflow-recipes.md)** — Prior authorization workflow and MCP orchestration recipes. Includes two-stage pipeline architecture, parallel MCP orchestration, rubric-driven decision framework, waypoint persistence, notification letter templates, authorization number formatting, audit trail generation, and human-in-the-loop override mechanism.
+
 ## Completeness Checklist
 
 - [ ] Provider credentials verified via NPI lookup
