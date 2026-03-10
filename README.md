@@ -24,6 +24,29 @@ BioClaw bundles 37 pharma and bioinformatics MCP servers directly into the conta
 | **Pharmacogenomics** | ClinPGx |
 | **Healthcare** | Medicare, Medicaid, CDC, EU Filings |
 
+## Agent Skills (120+)
+
+The container agent has access to 120+ specialized skills that guide its reasoning and workflows:
+
+| Domain | Skills |
+|--------|--------|
+| **Genomics & Variants** | variant-interpretation, cancer-variant-interpreter, GWAS (SNP interpretation, fine-mapping, trait-to-gene, study explorer, drug discoverer), structural-variant-analysis, copy-number-analysis, rare-disease-diagnosis, comparative-genomics, regulatory-genomics, sequence-retrieval |
+| **Transcriptomics** | RNA-seq/DESeq2, single-cell-analysis, spatial-transcriptomics, spatial-omics, ribo-seq, alternative-splicing, temporal-genomics |
+| **Epigenomics** | ATAC-seq, ChIP-seq, chromatin-conformation, methylation-analysis, RNA-modification-analysis |
+| **Proteomics & Structure** | AlphaFold structures, PDB structures, protein-interactions, STRING-db, proteomics-analysis, antibody-engineering, protein-therapeutic-design |
+| **Pathways & Annotation** | Reactome, KEGG, Gene Ontology, HPO phenotypes, UniProt, Ensembl, GTEx expression, gene-regulatory-networks |
+| **Multi-Omics** | multi-omics-integration, multiomic-disease-characterization, metabolomics, toxicogenomics, systems-biology |
+| **Drug Discovery** | drug-target-analyst, drug-target-validator, drug-repurposing, binder-discovery, medicinal-chemistry, formulation-science, network-pharmacologist |
+| **Pharmacology** | pharmacogenomics-specialist, clinical-pharmacology, drug-interaction-analyst, chemical-safety-toxicology |
+| **Precision Medicine** | biomarker-discovery, precision-medicine-stratifier, precision-oncology-advisor, immunotherapy-response-predictor, polygenic-risk-score |
+| **Clinical** | clinical-trial-protocol-designer, clinical-trial-analyst, clinical-report-writer, clinical-decision-support, clinical-guidelines, prior-auth-reviewer |
+| **Regulatory & Safety** | FDA consultant, ISO 13485, MDR 745/2017, CAPA officer, QMS audit, pharmacovigilance, adverse-event-detection, GDPR privacy, risk-management |
+| **Population & Metagenomics** | phylogenetics, metagenomics, microbiome-analyst, genome-assembly, long-read-sequencing, immune-repertoire-analysis |
+| **Immunology & Oncology** | immunology-analyst, immunotherapy-response-predictor, cancer-variant-interpreter, infectious-disease-analyst |
+| **Research & Reasoning** | deep-research, literature-deep-research, systematic-literature-reviewer, hypothesis-generation, experimental-design, statistical-modeling, scientific-writing, peer-review, reproducibility-audit |
+| **Thinking Frameworks** | first-principles, abductive-reasoning, adversarial-collaboration, socratic-inquiry, Delphi method, what-if-oracle, meta-cognition, red-team-science, systems-thinking |
+| **Tools** | agent-browser (web automation), pdf-reader, image-analysis, scientific-visualization, pipeline-engineering |
+
 ## Quick Start
 
 ```bash
