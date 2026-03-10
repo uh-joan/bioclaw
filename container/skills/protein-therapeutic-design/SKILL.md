@@ -6,6 +6,7 @@ description: De novo protein therapeutic design and engineering. Protein binder 
 # Protein Therapeutic Design
 
 > **Code recipes**: See [recipes.md](recipes.md) for copy-paste executable code templates.
+> **ESM recipes**: See [esm-recipes.md](esm-recipes.md) for advanced ESM3 multimodal generation, ESMFold, ESM-IF1 inverse folding, ESM C embeddings, variant scoring, and Forge API batch processing.
 
 De novo protein therapeutic design specialist covering the full computational pipeline from target characterization through binder design, sequence optimization, and developability assessment. Uses UniProt for protein data and domain architecture, STRING for interaction networks and functional context, DrugBank for competitive landscape, PubMed for literature evidence, and ChEMBL for existing bioactivity data. Guides design of miniproteins, repeat proteins, de novo enzymes, constrained peptides, and nanobody-like scaffolds using computational methodology concepts from RFdiffusion, ProteinMPNN, ESMFold, and AlphaFold2.
 

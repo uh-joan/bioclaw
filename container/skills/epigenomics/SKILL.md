@@ -6,6 +6,7 @@ description: Epigenomics and epigenetic data analysis. DNA methylation, bisulfit
 # Epigenomics Analysis
 
 > **Code recipes**: See [recipes.md](recipes.md) for DNA methylation analysis templates, and [chipseq-recipes.md](chipseq-recipes.md) for ChIP-seq and ATAC-seq analysis templates.
+> **deepTools recipes**: See [deeptools-recipes.md](deeptools-recipes.md) for NGS signal processing, normalization (RPGC/CPM/BPM), bamCompare, plotFingerprint, correlation heatmaps, PCA, computeMatrix, plotHeatmap, plotProfile, fragment size QC, and alignmentSieve filtering.
 
 Epigenomics and epigenetic data analysis covering DNA methylation (bisulfite-seq, 450K/EPIC arrays), histone modifications (ChIP-seq), and chromatin accessibility (ATAC-seq). The agent writes and executes Python code for methylation QC, normalization, differential methylation analysis, CpG annotation, epigenetic clock estimation, peak-based chromatin analysis, and histone code interpretation. Uses Open Targets for gene-disease annotation, PubMed for literature evidence, and NLM for gene ID resolution.
 

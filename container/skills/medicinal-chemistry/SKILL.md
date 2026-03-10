@@ -8,6 +8,7 @@ description: "ADMET optimization, drug-likeness scoring, PAINS alerts, ligand ef
 Specialist skill for compound optimization and drug-likeness assessment. Provides systematic evaluation of hit-to-lead and lead-to-candidate progression through ADMET profiling, structural alert detection, ligand efficiency metrics, multi-parameter optimization scoring, and structure-activity relationship analysis. Integrates data from chemical databases, bioactivity repositories, protein structure archives, and biomedical literature to deliver actionable medicinal chemistry recommendations.
 
 > **Code recipes**: See [recipes.md](recipes.md) for copy-paste executable code templates covering RDKit and DeepChem.
+> **ML recipes**: See [ml-recipes.md](ml-recipes.md) for machine learning and cheminformatics recipes (Datamol, DeepChem GCN/AttentiveFP, ChemBERTa, GROVER, virtual screening, ADMET, multi-task learning).
 
 ## Report-First Workflow
 
