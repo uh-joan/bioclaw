@@ -193,6 +193,16 @@ function buildVolumeMounts(
       fs.cpSync(srcDir, dstDir, { recursive: true });
     }
   }
+  // Write service tokens to session .env so container scripts can use
+  // `node --env-file=~/.claude/.env` (e.g. Apify run_actor.js)
+  const sessionEnvTokens = readEnvFile(['APIFY_TOKEN']);
+  if (Object.keys(sessionEnvTokens).length > 0) {
+    const envLines = Object.entries(sessionEnvTokens)
+      .map(([k, v]) => `${k}=${v}`)
+      .join('\n');
+    fs.writeFileSync(path.join(groupSessionsDir, '.env'), envLines + '\n');
+  }
+
   mounts.push({
     hostPath: groupSessionsDir,
     containerPath: '/home/node/.claude',
