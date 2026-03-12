@@ -895,6 +895,12 @@ async function main(): Promise<void> {
     prompt += '\n' + pending.join('\n');
   }
 
+  // Send immediate ack so the user isn't left in the dark while the agent works
+  writeOutput({
+    status: 'success',
+    result: '_Working on it..._',
+  });
+
   // Query loop: run query → wait for IPC message → run new query → repeat
   let resumeAt: string | undefined;
   try {
