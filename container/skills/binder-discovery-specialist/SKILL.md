@@ -31,6 +31,7 @@ Complete drug discovery cascade from target validation through known ligand mini
 - **Repurposing approved drugs for new indications** -> use drug-repurposing-analyst skill
 - **Toxicity profiling and structural alert analysis** -> use chemical-safety-toxicology skill
 - **Polypharmacology and pathway-level target interactions** -> use network-pharmacologist skill
+- **ESM protein embeddings and structure prediction for interface design** -> use esm-protein-design skill
 
 ## Available MCP Tools
 

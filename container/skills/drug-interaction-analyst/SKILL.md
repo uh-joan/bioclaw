@@ -15,6 +15,11 @@ Evaluates drug-drug interactions through CYP450 enzyme metabolism, transporter e
 4. **Never show raw tool output**: Synthesize findings into report sections
 5. **Final verification**: Ensure no `[Analyzing...]` placeholders remain
 
+## Cross-Reference: Other Skills
+
+- **Enzyme kinetics (Km, kcat, Ki) for CYP metabolism quantification** -> use enzyme-kinetics skill
+- **Pharmacogenomic drug-gene interactions and CPIC guidelines** -> use pharmacogenomics-specialist skill
+
 ## When NOT to Use This Skill
 
 - Adverse event signal detection from interaction → use `pharmacovigilance-specialist`

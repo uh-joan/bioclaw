@@ -15,6 +15,10 @@ Patient-level genomic-clinical integration with disease-specific routing. Produc
 4. **Never show raw tool output**: Synthesize findings into report sections
 5. **Final verification**: Ensure no `[Analyzing...]` placeholders remain
 
+## Cross-Reference: Other Skills
+
+- **Pharmacogenomic profiling and allele function data (ClinPGx)** -> use pharmacogenomics-specialist skill
+
 ## When NOT to Use This Skill
 
 - Somatic variant interpretation for cancer → use `cancer-variant-interpreter`

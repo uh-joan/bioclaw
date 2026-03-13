@@ -17,6 +17,10 @@ Generates comprehensive drug research reports with compound disambiguation, evid
 4. **Never show raw tool output**: Synthesize findings into report sections
 5. **Final verification**: Ensure no `[Analyzing...]` placeholders remain
 
+## Cross-Reference: Other Skills
+
+- **Pharmacogenomic biomarkers, gene-drug pairs, and drug labels (ClinPGx)** -> use pharmacogenomics-specialist skill
+
 ## When NOT to Use This Skill
 
 - FDA regulatory deep-dives (510(k), patent cliffs, Orange/Purple Book) → use `fda-consultant`

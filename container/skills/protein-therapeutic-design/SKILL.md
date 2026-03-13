@@ -25,6 +25,9 @@ De novo protein therapeutic design specialist covering the full computational pi
 - **Protein structure retrieval and AlphaFold models** -> use protein-structure-retrieval skill
 - **Protein-protein interaction networks and pathway context** -> use protein-interactions skill
 - **Multi-dimensional target validation scoring** -> use drug-target-validator skill
+- **ESM structure prediction, inverse folding, and variant scoring** -> use esm-protein-design skill
+- **Enzyme kinetics and catalytic parameters (Km, kcat)** -> use enzyme-kinetics skill
+- **Cell type expression context for drug targets** -> use cell-type-expression skill
 
 ## When NOT to Use This Skill
 

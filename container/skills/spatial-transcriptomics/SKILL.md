@@ -31,6 +31,7 @@ Spatially-resolved gene expression analysis across major platforms. Uses scanpy/
 - **Pathway modeling from spatial patterns** -> use systems-biology skill
 - **Multi-omic integration with spatial data** -> use multiomic-disease-characterization skill
 - **Broader spatial omics context** -> use spatial-omics-analysis skill
+- **Single-cell reference atlases for spatial deconvolution** -> use cell-type-expression skill
 
 ## Available MCP Tools
 

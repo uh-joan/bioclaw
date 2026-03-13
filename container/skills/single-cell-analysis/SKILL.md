@@ -33,6 +33,7 @@ Production-ready scRNA-seq analysis methodology. The agent writes and executes P
 - **Drug targets from cell communication hits** → use target-research skill
 - **Disease associations for cell type markers** → use disease-research skill
 - **Multi-omic integration with scRNA-seq** → use multiomic-disease-characterization skill
+- **Cell type expression atlas and dataset discovery (CELLxGENE)** → use cell-type-expression skill
 
 ## Available MCP Tools
 

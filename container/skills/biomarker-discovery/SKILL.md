@@ -33,6 +33,7 @@ Identifies, characterizes, and validates biomarkers across the full translationa
 - **Differential gene expression from RNA-seq experiments** -> use rnaseq-deseq2 skill
 - **Single-cell transcriptomics and cell-type deconvolution** -> use single-cell-analysis skill
 - **Mass spectrometry proteomics and protein quantification** -> use proteomics-analysis skill
+- **Cell-type-specific expression validation (CELLxGENE)** -> use cell-type-expression skill
 
 ## Available MCP Tools
 

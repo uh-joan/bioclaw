@@ -24,6 +24,10 @@ Comprehensive computational validation of drug targets for early-stage drug disc
 - FDA regulatory pathway and precedent → use `fda-consultant`
 - Chemical safety and toxicology assessment → use `chemical-safety-toxicology`
 
+## Cross-Reference: Other Skills
+
+- **Cell-type-resolved expression for target selectivity** → use cell-type-expression skill
+
 ## Available MCP Tools
 
 ### `mcp__opentargets__opentargets_info` (Target-Disease Associations)

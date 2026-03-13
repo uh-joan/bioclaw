@@ -509,7 +509,11 @@ async function runQuery(
         'mcp__cosmic__*',
         'mcp__gwas__*',
         'mcp__hmdb__*',
-        'mcp__openalex__*'
+        'mcp__openalex__*',
+        'mcp__brenda__*',
+        'mcp__cellxgene__*',
+        'mcp__esm__*',
+        'mcp__metabolomics__*'
       ],
       env: sdkEnv,
       permissionMode: 'bypassPermissions',
@@ -530,7 +534,9 @@ async function runQuery(
           fda: {
             command: 'node',
             args: ['/tmp/fda-mcp-server/build/index.js'],
-            env: {},
+            env: {
+              FDA_API_KEY: process.env.FDA_API_KEY || '',
+            },
           },
         } : {}),
         ...(fs.existsSync('/tmp/ctgov-mcp-server/build/index.js') ? {
@@ -586,7 +592,9 @@ async function runQuery(
           cdc: {
             command: 'node',
             args: ['/tmp/cdc-mcp-server/build/index.js'],
-            env: {},
+            env: {
+              CDC_APP_TOKEN: process.env.CDC_APP_TOKEN || '',
+            },
           },
         } : {}),
         ...(fs.existsSync('/tmp/pubchem-mcp-server/build/index.js') ? {
@@ -782,6 +790,39 @@ async function runQuery(
           openalex: {
             command: 'node',
             args: ['/tmp/openalex-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/brenda-mcp-server/build/index.js') ? {
+          brenda: {
+            command: 'node',
+            args: ['/tmp/brenda-mcp-server/build/index.js'],
+            env: {
+              BRENDA_EMAIL: process.env.BRENDA_EMAIL || '',
+              BRENDA_PASSWORD: process.env.BRENDA_PASSWORD || '',
+            },
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/cellxgene-mcp-server/build/index.js') ? {
+          cellxgene: {
+            command: 'node',
+            args: ['/tmp/cellxgene-mcp-server/build/index.js'],
+            env: {},
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/esm-mcp-server/build/index.js') ? {
+          esm: {
+            command: 'node',
+            args: ['/tmp/esm-mcp-server/build/index.js'],
+            env: {
+              ESM_FORGE_TOKEN: process.env.ESM_FORGE_TOKEN || '',
+            },
+          },
+        } : {}),
+        ...(fs.existsSync('/tmp/metabolomics-mcp-server/build/index.js') ? {
+          metabolomics: {
+            command: 'node',
+            args: ['/tmp/metabolomics-mcp-server/build/index.js'],
             env: {},
           },
         } : {}),

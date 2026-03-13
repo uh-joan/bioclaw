@@ -47,6 +47,10 @@ const envConfig = readEnvFile([
   'GWAS_MCP_SERVER_PATH',
   'HMDB_MCP_SERVER_PATH',
   'OPENALEX_MCP_SERVER_PATH',
+  'BRENDA_MCP_SERVER_PATH',
+  'CELLXGENE_MCP_SERVER_PATH',
+  'ESM_MCP_SERVER_PATH',
+  'METABOLOMICS_MCP_SERVER_PATH',
 ]);
 
 export const ASSISTANT_NAME =
@@ -218,6 +222,22 @@ export const HMDB_MCP_SERVER_PATH =
 export const OPENALEX_MCP_SERVER_PATH =
   process.env.OPENALEX_MCP_SERVER_PATH ||
   envConfig.OPENALEX_MCP_SERVER_PATH ||
+  '';
+export const BRENDA_MCP_SERVER_PATH =
+  process.env.BRENDA_MCP_SERVER_PATH ||
+  envConfig.BRENDA_MCP_SERVER_PATH ||
+  '';
+export const CELLXGENE_MCP_SERVER_PATH =
+  process.env.CELLXGENE_MCP_SERVER_PATH ||
+  envConfig.CELLXGENE_MCP_SERVER_PATH ||
+  '';
+export const ESM_MCP_SERVER_PATH =
+  process.env.ESM_MCP_SERVER_PATH ||
+  envConfig.ESM_MCP_SERVER_PATH ||
+  '';
+export const METABOLOMICS_MCP_SERVER_PATH =
+  process.env.METABOLOMICS_MCP_SERVER_PATH ||
+  envConfig.METABOLOMICS_MCP_SERVER_PATH ||
   '';
 
 // Timezone for scheduled tasks (cron expressions, etc.)

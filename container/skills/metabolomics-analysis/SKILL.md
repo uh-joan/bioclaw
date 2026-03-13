@@ -33,6 +33,7 @@ Metabolomics data analysis for LC-MS and GC-MS experiments. The agent writes and
 - **Multi-omics integration with transcriptomics** -> use multiomic-disease-characterization skill
 - **Drug-metabolite interaction analysis** -> use drug-interaction-analyst skill
 - **Disease context for metabolic signatures** -> use disease-research skill
+- **Enzyme kinetic parameters for pathway flux interpretation** -> use enzyme-kinetics skill
 
 ## Python Environment
 

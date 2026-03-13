@@ -32,6 +32,7 @@ Predicts patient response to immune checkpoint inhibitors (ICIs) through systema
 - **FDA approval status and labeling for checkpoint inhibitors** -> use fda-consultant skill
 - **Target identification and druggability assessment** -> use drug-target-analyst skill
 - **Integrated treatment risk-benefit analysis** -> use clinical-decision-support skill
+- **Immune cell type expression signatures (CELLxGENE)** -> use cell-type-expression skill
 
 ## Available MCP Tools
 

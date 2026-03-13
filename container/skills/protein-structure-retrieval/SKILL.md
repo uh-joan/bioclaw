@@ -22,6 +22,7 @@ Retrieves and assesses protein structural data from PDB and AlphaFold with quali
 - **Binder design against structural targets** → use binder-discovery-specialist skill
 - **Antibody engineering with structural context** → use antibody-engineering skill
 - **Protein-protein interaction interfaces** → use protein-interactions skill
+- **ESMFold single-sequence structure prediction (no MSA needed)** → use esm-protein-design skill
 
 ## When NOT to Use This Skill
 

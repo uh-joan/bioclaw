@@ -50,6 +50,10 @@ import {
   GROUPS_DIR,
   IDLE_TIMEOUT,
   PUBMED_MCP_SERVER_PATH,
+  BRENDA_MCP_SERVER_PATH,
+  CELLXGENE_MCP_SERVER_PATH,
+  ESM_MCP_SERVER_PATH,
+  METABOLOMICS_MCP_SERVER_PATH,
   TIMEZONE,
 } from './config.js';
 import { readEnvFile } from './env.js';
@@ -195,7 +199,16 @@ function buildVolumeMounts(
   }
   // Write service tokens to session .env so container scripts can use
   // `node --env-file=~/.claude/.env` (e.g. Apify run_actor.js)
-  const sessionEnvTokens = readEnvFile(['APIFY_TOKEN']);
+  const sessionEnvTokens = readEnvFile([
+    'APIFY_TOKEN',
+    'BRENDA_EMAIL',
+    'BRENDA_PASSWORD',
+    'ESM_FORGE_TOKEN',
+    'FDA_API_KEY',
+    'CDC_APP_TOKEN',
+    'FRED_API_KEY',
+    'DC_API_KEY',
+  ]);
   if (Object.keys(sessionEnvTokens).length > 0) {
     const envLines = Object.entries(sessionEnvTokens)
       .map(([k, v]) => `${k}=${v}`)
@@ -302,6 +315,10 @@ function buildVolumeMounts(
     { envPath: GWAS_MCP_SERVER_PATH, containerName: 'gwas-mcp-server' },
     { envPath: HMDB_MCP_SERVER_PATH, containerName: 'hmdb-mcp-server' },
     { envPath: OPENALEX_MCP_SERVER_PATH, containerName: 'openalex-mcp-server' },
+    { envPath: BRENDA_MCP_SERVER_PATH, containerName: 'brenda-mcp-server' },
+    { envPath: CELLXGENE_MCP_SERVER_PATH, containerName: 'cellxgene-mcp-server' },
+    { envPath: ESM_MCP_SERVER_PATH, containerName: 'esm-mcp-server' },
+    { envPath: METABOLOMICS_MCP_SERVER_PATH, containerName: 'metabolomics-mcp-server' },
   ];
   for (const { envPath, containerName } of mcpMounts) {
     if (envPath && fs.existsSync(envPath)) {

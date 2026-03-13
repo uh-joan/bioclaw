@@ -22,6 +22,8 @@ Specialist skill for enzyme engineering, directed evolution, and rational design
 - **Small molecule substrate analysis and ADMET** -> use medicinal-chemistry skill
 - **Pathway context and gene enrichment** -> use systems-biology or gene-enrichment skill
 - **Clinical pharmacology of enzyme therapeutics** -> use clinical-pharmacology skill
+- **Enzyme kinetic benchmarks (Km, kcat, kcat/Km, inhibitors)** -> use enzyme-kinetics skill
+- **ESM structure prediction, inverse folding, and variant scoring** -> use esm-protein-design skill
 
 ## When NOT to Use This Skill
 

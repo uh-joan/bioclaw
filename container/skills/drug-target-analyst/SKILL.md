@@ -17,6 +17,10 @@ Drug target identification, validation, and molecular pharmacology analysis. Use
 4. **Never show raw tool output**: Synthesize findings into report sections
 5. **Final verification**: Ensure no `[Analyzing...]` placeholders remain
 
+## Cross-Reference: Other Skills
+
+- **Enzyme target kinetics (Km, kcat, inhibitors, cofactors)** -> use enzyme-kinetics skill
+
 ## When NOT to Use This Skill
 
 - Drug safety signals from target activity → use `pharmacovigilance-specialist`

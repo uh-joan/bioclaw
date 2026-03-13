@@ -22,6 +22,7 @@ Systematic clinical variant interpretation that classifies genetic variants acco
 - **GWAS SNP annotation and locus-to-gene mapping** -> use gwas-snp-interpretation skill
 - **Rare disease differential diagnosis with HPO phenotype matching** -> use rare-disease-diagnosis skill
 - **Genotype-guided dosing and CYP450 metabolizer phenotypes** -> use pharmacogenomics-specialist skill
+- **ESM variant effect scoring via log-likelihood ratios** -> use esm-protein-design skill
 
 ## Available MCP Tools
 

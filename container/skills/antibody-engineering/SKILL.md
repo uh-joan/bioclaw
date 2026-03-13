@@ -31,6 +31,7 @@ Biologics development specialist guiding antibody optimization from preclinical 
 - **FDA regulatory pathway for biologics (BLA, biosimilar)** -> use fda-consultant skill
 - **Clinical trial design and pipeline intelligence** -> use clinical-trial-analyst skill
 - **Post-market safety signals for approved antibodies** -> use pharmacovigilance-specialist skill
+- **ESM structure prediction and sequence design for CDR engineering** -> use esm-protein-design skill
 
 ## Available MCP Tools
 

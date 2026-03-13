@@ -15,6 +15,10 @@ Evidence-based clinical decision support for drug selection, interaction checkin
 4. **Never show raw tool output**: Synthesize findings into report sections
 5. **Final verification**: Ensure no `[Analyzing...]` placeholders remain
 
+## Cross-Reference: Other Skills
+
+- **Genotype-guided prescribing and CPIC guidelines (ClinPGx)** -> use pharmacogenomics-specialist skill
+
 ## When NOT to Use This Skill
 
 - Drug safety signals and adverse event analysis → use `pharmacovigilance-specialist`

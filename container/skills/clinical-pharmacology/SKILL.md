@@ -15,6 +15,11 @@ Specialist skill for pharmacokinetic/pharmacodynamic (PK/PD) analysis, dose opti
 4. **Never show raw tool output**: Synthesize findings into report sections
 5. **Final verification**: Ensure no `[Analyzing...]` placeholders remain
 
+## Cross-Reference: Other Skills
+
+- **Enzyme kinetic constants (Km, Vmax) for PK modeling** -> use enzyme-kinetics skill
+- **CPIC/DPWG pharmacogenomic dosing guidelines** -> use pharmacogenomics-specialist skill
+
 ## When NOT to Use This Skill
 
 - Comprehensive drug monographs and compound profiles → use `drug-research`
