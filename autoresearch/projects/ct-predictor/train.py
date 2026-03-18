@@ -16,7 +16,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.feature_selection import SelectKBest, mutual_info_classif
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
 
@@ -34,9 +35,6 @@ MODEL_PATH = Path(__file__).parent / "model.pkl"
 def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     """
     Build feature matrix X and label vector y from raw trial data.
-
-    The autoresearch agent should modify this function to engineer
-    better features and improve AUC-ROC.
     """
     y = df["label"].astype(int)
 
@@ -86,7 +84,7 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     available = [c for c in numeric_cols if c in df.columns]
     X = df[available].copy()
 
-    # Handle missing values
+    # Handle missing values — add missingness indicator for high-missing cols
     for col in available:
         missing_frac = X[col].isna().mean()
         if missing_frac > 0.1:
@@ -100,19 +98,23 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
             freq = df[col].value_counts(normalize=True)
             X[f"{col}_freq"] = df[col].map(freq).fillna(0)
 
-    # Engineered features
-    if "ot_genetic_score" in X.columns and "phase" in X.columns:
-        X["genetic_x_phase"] = X["ot_genetic_score"] * X["phase"]
-
-    if "chembl_selectivity" in X.columns:
-        X["log_selectivity"] = np.log1p(X["chembl_selectivity"])
-
-    for col in ["chembl_best_ic50_nm", "bindingdb_ki_nm", "bindingdb_kd_nm"]:
+    # Log transforms for skewed features
+    for col in ["chembl_best_ic50_nm", "bindingdb_ki_nm", "bindingdb_kd_nm",
+                "enrollment", "pubmed_target_pub_count", "pubmed_drug_pub_count",
+                "medicare_indication_spend", "medicaid_indication_spend",
+                "chembl_selectivity", "bindingdb_num_measurements",
+                "openalex_citation_velocity", "biorxiv_preprint_count",
+                "stringdb_betweenness", "reactome_pathway_count",
+                "clinvar_pathogenic_count", "gwas_hit_count"]:
         if col in X.columns:
             X[f"log_{col}"] = np.log1p(X[col])
 
-    if "enrollment" in X.columns:
-        X["log_enrollment"] = np.log1p(X["enrollment"])
+    # Engineered interactions
+    if "ot_genetic_score" in X.columns and "phase" in X.columns:
+        X["genetic_x_phase"] = X["ot_genetic_score"] * X["phase"]
+
+    if "ot_overall_score" in X.columns and "phase" in X.columns:
+        X["overall_score_x_phase"] = X["ot_overall_score"] * X["phase"]
 
     if "pubmed_target_pub_count" in X.columns and "pubmed_drug_pub_count" in X.columns:
         X["pub_ratio"] = (X["pubmed_drug_pub_count"] + 1) / (X["pubmed_target_pub_count"] + 1)
@@ -121,19 +123,13 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     if len(genetic) > 1:
         X["total_genetic_evidence"] = X[genetic].sum(axis=1)
 
-    safety = [c for c in ["fda_class_ae_count", "drugbank_interaction_count", "chembl_selectivity"] if c in X.columns]
-    if len(safety) > 1:
-        X["safety_risk_proxy"] = X[safety].sum(axis=1)
-
     reg = [c for c in ["fda_breakthrough", "fda_fast_track", "fda_orphan"] if c in X.columns]
     if reg:
         X["regulatory_advantage"] = X[reg].sum(axis=1)
 
-    if "stringdb_interaction_degree" in X.columns and "reactome_pathway_count" in X.columns:
-        X["network_importance"] = X["stringdb_interaction_degree"] * X["reactome_pathway_count"]
-
     if "medicare_indication_spend" in X.columns and "medicaid_indication_spend" in X.columns:
         X["total_healthcare_spend"] = X["medicare_indication_spend"] + X["medicaid_indication_spend"]
+        X["log_total_healthcare_spend"] = np.log1p(X["total_healthcare_spend"])
 
     return X, y
 
@@ -141,15 +137,15 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # Model definition — MODIFY THIS
 # ---------------------------------------------------------------------------
 
-MODEL = GradientBoostingClassifier(
-    n_estimators=100,
-    max_depth=4,
-    learning_rate=0.1,
-    min_samples_split=10,
-    min_samples_leaf=5,
-    subsample=0.8,
+MODEL = LogisticRegression(
+    C=0.1,
+    penalty="l2",
+    solver="lbfgs",
+    max_iter=1000,
     random_state=42,
 )
+
+K_FEATURES = 30  # select top K features by mutual information
 
 # ---------------------------------------------------------------------------
 # Training loop (structure is stable, but agent can modify)
@@ -163,7 +159,7 @@ def main():
 
     # Build features
     X, y = build_features(df)
-    feature_names = list(X.columns)
+    all_feature_names = list(X.columns)
 
     # Train/val split
     val_ids_path = DATA_DIR / "val_ids.json"
@@ -177,9 +173,19 @@ def main():
     X_train = X[train_mask].copy()
     y_train = y[train_mask].copy()
 
-    # Scale
+    # Feature selection using MI on training set only (use raw values for MI)
+    k = min(K_FEATURES, len(all_feature_names))
+    selector = SelectKBest(mutual_info_classif, k=k)
+    selector.fit(X_train, y_train)
+    selected_mask = selector.get_support()
+    feature_names_selected = [all_feature_names[i] for i in range(len(all_feature_names)) if selected_mask[i]]
+
+    # Keep only selected features
+    X_train_sel = X_train[feature_names_selected]
+
+    # Scale selected features
     scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(X_train)
+    X_scaled = scaler.fit_transform(X_train_sel)
 
     # Train
     MODEL.fit(X_scaled, y_train)
@@ -189,11 +195,12 @@ def main():
 
     elapsed = time.time() - start
 
-    # Save model bundle
+    # Save model bundle — feature_names holds only selected features
+    # prepare.py will align val features to this list, then scale + predict
     bundle = {
         "model": MODEL,
         "scaler": scaler,
-        "feature_names": feature_names,
+        "feature_names": feature_names_selected,
     }
     with open(MODEL_PATH, "wb") as f:
         pickle.dump(bundle, f)
@@ -201,17 +208,14 @@ def main():
     # Output in grep-friendly format
     print(f"cv_auc_roc:        {np.mean(cv):.6f}")
     print(f"cv_auc_std:        {np.std(cv):.6f}")
-    print(f"train_n_features:  {len(feature_names)}")
+    print(f"train_n_features:  {len(feature_names_selected)}")
     print(f"train_n_samples:   {len(X_train)}")
     print(f"training_seconds:  {elapsed:.1f}")
     print(f"train_model_type:  {type(MODEL).__name__}")
 
-    # Top features
-    importances = MODEL.feature_importances_
-    top_idx = np.argsort(importances)[::-1][:10]
-    print(f"\nTop 10 features:")
-    for i, idx in enumerate(top_idx):
-        print(f"  {i+1}. {feature_names[idx]}: {importances[idx]:.4f}")
+    print(f"\nSelected features:")
+    for f in feature_names_selected:
+        print(f"  - {f}")
 
 
 if __name__ == "__main__":
