@@ -18,6 +18,7 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
@@ -143,11 +144,9 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # Model definition — MODIFY THIS
 # ---------------------------------------------------------------------------
 
-MODEL = SVC(
-    C=2.0,
-    kernel="rbf",
-    gamma="scale",
-    probability=True,
+MODEL = LogisticRegression(
+    C=0.5,
+    max_iter=1000,
     random_state=42,
 )
 
