@@ -56,7 +56,7 @@ def medicaid_info(
         return _LOCAL_METHODS[method](**kwargs)
 
     # Forward all other methods to Node.js MCP server
-    client = get_client('medicaid-mcp-server')
+    client = get_client('medicaid')
 
     params = {'method': method}
     params.update(kwargs)

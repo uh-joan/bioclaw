@@ -139,7 +139,7 @@ def search(
         # Get nextPageToken from response (if available)
         # page2 = search(condition="diabetes", pageSize=100, pageToken=token)
     """
-    client = get_client('ctgov-mcp-server')
+    client = get_client('ctgov')
 
     params = {
         'method': 'search',
@@ -231,7 +231,7 @@ def get_study(
         enrollment = design.get('enrollmentInfo', {}).get('count', 0)
         print(f"Enrollment: {enrollment} participants")
     """
-    client = get_client('ctgov-mcp-server')
+    client = get_client('ctgov')
 
     params = {
         'method': 'get',
@@ -276,7 +276,7 @@ def suggest(
         suggestions = suggest(dictionary="LocationFacility", input="mayo")
         # Returns: ["Mayo Clinic", ...]
     """
-    client = get_client('ctgov-mcp-server')
+    client = get_client('ctgov')
 
     params = {
         'method': 'suggest',

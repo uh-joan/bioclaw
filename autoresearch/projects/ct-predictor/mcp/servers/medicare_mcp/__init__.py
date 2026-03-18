@@ -33,7 +33,7 @@ def medicare_info(
     Returns:
         dict: Medicare API response
     """
-    client = get_client('medicare-mcp-server')
+    client = get_client('medicare')
 
     params = {'method': method}
     params.update(kwargs)

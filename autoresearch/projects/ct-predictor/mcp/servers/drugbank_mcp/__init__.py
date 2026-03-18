@@ -32,7 +32,7 @@ def drugbank_info(
     Returns:
         dict: DrugBank API response
     """
-    client = get_client('drugbank-mcp-server')
+    client = get_client('drugbank')
 
     params = {'method': method}
     params.update(kwargs)

@@ -207,7 +207,7 @@ def lookup_drug(
     # We don't cap it here - let the API return its natural error message
     # For comprehensive data, use OpenTargets → FDA two-step pattern
 
-    client = get_client('fda-mcp-server')
+    client = get_client('fda')
 
     params = {
         'method': 'lookup_drug',
@@ -255,7 +255,7 @@ def lookup_device(
     Returns:
         dict: FDA API response with device records
     """
-    client = get_client('fda-mcp-server')
+    client = get_client('fda')
 
     params = {
         'method': 'lookup_device',
@@ -356,7 +356,7 @@ def search_purple_book(
         if result.get('data', {}).get('totalCount', 0) > 0:
             print("Found in Purple Book (licensed biologic)")
     """
-    client = get_client('fda-mcp-server')
+    client = get_client('fda')
 
     params = {
         'method': 'search_purple_book',
@@ -426,7 +426,7 @@ def get_patent_exclusivity(
             patent_dates = [p['patentExpireDate'] for p in patents['data']['patents']]
             # Parse dates and find the earliest one for LOE analysis
     """
-    client = get_client('fda-mcp-server')
+    client = get_client('fda')
 
     # Strip common prefixes from NDA number
     clean_nda = nda_number.replace('NDA', '').replace('nda', '').strip()

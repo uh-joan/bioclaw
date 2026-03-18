@@ -56,7 +56,7 @@ def search_targets(
         # Search by description
         results = search_targets(query="insulin receptor", size=10)
     """
-    client = get_client('opentargets-mcp-server')
+    client = get_client('opentargets')
 
     params = {
         'method': 'search_targets',
@@ -102,7 +102,7 @@ def search_diseases(
         # Search for cancer types
         results = search_diseases(query="breast cancer", size=10)
     """
-    client = get_client('opentargets-mcp-server')
+    client = get_client('opentargets')
 
     params = {
         'method': 'search_diseases',
@@ -177,7 +177,7 @@ def get_target_disease_associations(
             size=100
         )
     """
-    client = get_client('opentargets-mcp-server')
+    client = get_client('opentargets')
 
     params = {
         'method': 'get_target_disease_associations',
@@ -233,7 +233,7 @@ def get_disease_targets_summary(
         for target_id, score in targets[:10]:
             print(f"  {target_id}: {score:.2f}")
     """
-    client = get_client('opentargets-mcp-server')
+    client = get_client('opentargets')
 
     params = {
         'method': 'get_disease_targets_summary',
@@ -295,7 +295,7 @@ def get_target_details(
         if safety:
             print(f"Safety concerns: {len(safety)} identified")
     """
-    client = get_client('opentargets-mcp-server')
+    client = get_client('opentargets')
 
     params = {
         'method': 'get_target_details',
@@ -338,7 +338,7 @@ def get_disease_details(
         print(f"Description: {description}")
         print(f"Also known as: {', '.join(synonyms)}")
     """
-    client = get_client('opentargets-mcp-server')
+    client = get_client('opentargets')
 
     params = {
         'method': 'get_disease_details',

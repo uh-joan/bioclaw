@@ -21,7 +21,7 @@ from typing import Dict, Any, Optional
 
 def _call(method: str, **kwargs) -> Dict[str, Any]:
     """Internal: call a ChEMBL MCP tool method."""
-    client = get_client('chembl-mcp-server')
+    client = get_client('chembl')
     params = {k: v for k, v in kwargs.items() if v is not None}
     params['method'] = method
     return client.call_tool('chembl_info', params)

@@ -25,7 +25,7 @@ from typing import Dict, Any, Optional
 
 def _call(method: str, **kwargs) -> Dict[str, Any]:
     """Internal: call a bioRxiv MCP tool method."""
-    client = get_client('biorxiv-mcp-server')
+    client = get_client('biorxiv')
     params = {k: v for k, v in kwargs.items() if v is not None}
     params['method'] = method
     return client.call_tool('biorxiv_info', params)

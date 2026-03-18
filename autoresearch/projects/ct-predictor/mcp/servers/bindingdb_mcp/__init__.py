@@ -24,7 +24,31 @@ def search_by_name(query: str, limit: Optional[int] = None) -> Dict[str, Any]:
     Returns:
         dict with matching entries and binding data
     """
-    return _call('search_by_name', query=query, limit=limit)
+    return _call('search_by_name', compound_name=query, limit=limit)
+
+
+def search_by_smiles(smiles: str, limit: Optional[int] = None) -> Dict[str, Any]:
+    """Search BindingDB by SMILES string.
+
+    Args:
+        smiles: SMILES chemical notation
+        limit: Max results
+    Returns:
+        dict with matching compounds
+    """
+    return _call('search_by_smiles', smiles=smiles, limit=limit)
+
+
+def search_by_target_name(query: str, limit: Optional[int] = None) -> Dict[str, Any]:
+    """Search BindingDB by target name.
+
+    Args:
+        query: Target protein name
+        limit: Max results
+    Returns:
+        dict with matching targets
+    """
+    return _call('search_by_target_name', query=query, limit=limit)
 
 
 def get_ki_by_target(target: str, limit: Optional[int] = None) -> Dict[str, Any]:
@@ -39,17 +63,6 @@ def get_ki_by_target(target: str, limit: Optional[int] = None) -> Dict[str, Any]
     return _call('get_ki_by_target', target=target, limit=limit)
 
 
-def get_ligand_info(ligand_id: str) -> Dict[str, Any]:
-    """Get detailed info for a specific ligand.
-
-    Args:
-        ligand_id: BindingDB ligand monomer ID
-    Returns:
-        dict with ligand details and binding affinities
-    """
-    return _call('get_ligand_info', ligand_id=ligand_id)
-
-
 def get_ligands_by_target(target: str, limit: Optional[int] = None) -> Dict[str, Any]:
     """Get all ligands binding a target.
 
@@ -60,6 +73,17 @@ def get_ligands_by_target(target: str, limit: Optional[int] = None) -> Dict[str,
         dict with ligands and their binding data
     """
     return _call('get_ligands_by_target', target=target, limit=limit)
+
+
+def get_ligand_info(ligand_id: str) -> Dict[str, Any]:
+    """Get detailed info for a specific ligand.
+
+    Args:
+        ligand_id: BindingDB ligand monomer ID
+    Returns:
+        dict with ligand details and binding affinities
+    """
+    return _call('get_ligand_info', ligand_id=ligand_id)
 
 
 def get_target_info(target: str) -> Dict[str, Any]:
@@ -75,8 +99,10 @@ def get_target_info(target: str) -> Dict[str, Any]:
 
 __all__ = [
     'search_by_name',
+    'search_by_smiles',
+    'search_by_target_name',
     'get_ki_by_target',
-    'get_ligand_info',
     'get_ligands_by_target',
+    'get_ligand_info',
     'get_target_info',
 ]

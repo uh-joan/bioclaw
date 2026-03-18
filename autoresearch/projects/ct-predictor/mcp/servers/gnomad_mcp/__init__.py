@@ -4,14 +4,15 @@ Access population genetic constraint data: pLI, LOEUF, variant frequencies.
 """
 
 from mcp.client import get_client
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional
 
 
-def _call(tool: str, **kwargs) -> Dict[str, Any]:
-    """Internal: call a gnomAD MCP tool."""
+def _call(method: str, **kwargs) -> Dict[str, Any]:
+    """Internal: call a gnomAD MCP tool method."""
     client = get_client('gnomad')
     params = {k: v for k, v in kwargs.items() if v is not None}
-    return client.call_tool(tool, params)
+    params['method'] = method
+    return client.call_tool('gnomad_data', params)
 
 
 def get_gene_constraint(gene: str) -> Dict[str, Any]:
@@ -75,10 +76,47 @@ def filter_rare_variants(gene: str, max_af: Optional[float] = None,
     return _call('filter_rare_variants', gene=gene, max_af=max_af, consequence=consequence)
 
 
+def get_variant(variant_id: str) -> Dict[str, Any]:
+    """Get data for a specific variant.
+
+    Args:
+        variant_id: Variant ID (e.g. 1-55516888-G-A)
+    Returns:
+        dict with variant details and frequencies
+    """
+    return _call('get_variant', variant_id=variant_id)
+
+
+def get_population_frequencies(variant_id: str) -> Dict[str, Any]:
+    """Get population-specific allele frequencies for a variant.
+
+    Args:
+        variant_id: Variant ID
+    Returns:
+        dict with per-population frequencies
+    """
+    return _call('get_population_frequencies', variant_id=variant_id)
+
+
+def search_variants_by_region(region: str, limit: Optional[int] = None) -> Dict[str, Any]:
+    """Search variants in a genomic region.
+
+    Args:
+        region: Genomic region (e.g. "1:55500000-55600000")
+        limit: Max results
+    Returns:
+        dict with variants in region
+    """
+    return _call('search_variants_by_region', region=region, limit=limit)
+
+
 __all__ = [
     'get_gene_constraint',
     'batch_gene_constraint',
     'get_gene_info',
     'get_gene_variants',
     'filter_rare_variants',
+    'get_variant',
+    'get_population_frequencies',
+    'search_variants_by_region',
 ]

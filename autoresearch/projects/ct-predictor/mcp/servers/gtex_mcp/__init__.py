@@ -7,23 +7,48 @@ from mcp.client import get_client
 from typing import Dict, Any, Optional
 
 
-def _call(tool: str, **kwargs) -> Dict[str, Any]:
-    """Internal: call a GTEx MCP tool."""
+def _call(method: str, **kwargs) -> Dict[str, Any]:
+    """Internal: call a GTEx MCP tool method."""
     client = get_client('gtex')
     params = {k: v for k, v in kwargs.items() if v is not None}
-    return client.call_tool(tool, params)
+    params['method'] = method
+    return client.call_tool('gtex_data', params)
+
+
+def search_genes(query: str, limit: Optional[int] = None) -> Dict[str, Any]:
+    """Search for genes in GTEx.
+
+    Args:
+        query: Gene symbol or keyword
+        limit: Max results
+    Returns:
+        dict with matching genes
+    """
+    return _call('search_genes', query=query, limit=limit)
 
 
 def get_gene_expression(gene: str, tissue: Optional[str] = None) -> Dict[str, Any]:
     """Get gene expression data across tissues.
 
+    First searches by gene symbol to get gencodeId, then fetches expression.
+
     Args:
-        gene: Gene symbol or Ensembl ID
+        gene: Gene symbol (e.g. "PDCD1") or gencodeId
         tissue: Specific tissue (optional, all tissues if omitted)
     Returns:
         dict with expression values (TPM) per tissue
     """
-    return _call('get_gene_expression', gene=gene, tissue=tissue)
+    # If it looks like a symbol, resolve to gencodeId first
+    if not gene.startswith('ENSG'):
+        search = _call('search_genes', query=gene, limit=1)
+        genes = search.get('genes', search.get('data', []))
+        if isinstance(genes, list) and genes:
+            gencode_id = genes[0].get('gencodeId', genes[0].get('geneSymbol', gene))
+        else:
+            gencode_id = gene
+    else:
+        gencode_id = gene
+    return _call('get_gene_expression', gencodeId=gencode_id, tissue=tissue)
 
 
 def get_median_gene_expression(gene: str) -> Dict[str, Any]:
@@ -83,11 +108,38 @@ def get_top_expressed_genes(tissue: str, limit: Optional[int] = None) -> Dict[st
     return _call('get_top_expressed_genes', tissue=tissue, limit=limit)
 
 
+def get_variants(query: str, limit: Optional[int] = None) -> Dict[str, Any]:
+    """Get variant data from GTEx.
+
+    Args:
+        query: Variant ID or region
+        limit: Max results
+    Returns:
+        dict with variant data
+    """
+    return _call('get_variants', query=query, limit=limit)
+
+
+def get_multi_tissue_eqtls(gene: str, limit: Optional[int] = None) -> Dict[str, Any]:
+    """Get multi-tissue eQTLs for a gene.
+
+    Args:
+        gene: Gene symbol or Ensembl ID
+        limit: Max results
+    Returns:
+        dict with multi-tissue eQTL data
+    """
+    return _call('get_multi_tissue_eqtls', gene=gene, limit=limit)
+
+
 __all__ = [
+    'search_genes',
     'get_gene_expression',
     'get_median_gene_expression',
     'get_gene_info',
     'get_tissue_info',
     'get_single_tissue_eqtls',
     'get_top_expressed_genes',
+    'get_variants',
+    'get_multi_tissue_eqtls',
 ]

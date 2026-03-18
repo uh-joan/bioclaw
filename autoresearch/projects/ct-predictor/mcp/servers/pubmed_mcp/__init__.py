@@ -103,7 +103,7 @@ def search_keywords(
             num_results=10
         )
     """
-    client = get_client('pubmed-mcp-server')
+    client = get_client('pubmed')
 
     params = {
         'method': 'search_keywords',
@@ -176,7 +176,7 @@ def search_advanced(
             num_results=10
         )
     """
-    client = get_client('pubmed-mcp-server')
+    client = get_client('pubmed')
 
     params = {
         'method': 'search_advanced',
@@ -241,7 +241,7 @@ def get_article_metadata(
         mesh_terms = article.get('keywords', {}).get('mesh', [])
         print(f"MeSH terms: {', '.join(mesh_terms)}")
     """
-    client = get_client('pubmed-mcp-server')
+    client = get_client('pubmed')
 
     params = {
         'method': 'get_article_metadata',
@@ -294,7 +294,7 @@ def get_article_pdf(
         else:
             print("PDF not available:", pdf_result.get('message'))
     """
-    client = get_client('pubmed-mcp-server')
+    client = get_client('pubmed')
 
     params = {
         'method': 'get_article_pdf',

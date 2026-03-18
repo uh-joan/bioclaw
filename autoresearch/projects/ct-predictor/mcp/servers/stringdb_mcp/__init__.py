@@ -7,11 +7,12 @@ from mcp.client import get_client
 from typing import Dict, Any, Optional
 
 
-def _call(tool: str, **kwargs) -> Dict[str, Any]:
-    """Internal: call a STRING-DB MCP tool."""
+def _call(method: str, **kwargs) -> Dict[str, Any]:
+    """Internal: call a STRING-DB MCP tool method."""
     client = get_client('stringdb')
     params = {k: v for k, v in kwargs.items() if v is not None}
-    return client.call_tool(tool, params)
+    params['method'] = method
+    return client.call_tool('stringdb_data', params)
 
 
 def get_protein_interactions(protein: str, species: Optional[int] = None,
@@ -27,7 +28,7 @@ def get_protein_interactions(protein: str, species: Optional[int] = None,
     Returns:
         dict with interaction partners and scores
     """
-    return _call('get_protein_interactions', protein=protein, species=species,
+    return _call('get_protein_interactions', protein_id=protein, species=species,
                  score_threshold=score_threshold, limit=limit)
 
 
@@ -70,9 +71,24 @@ def get_protein_annotations(protein: str, species: Optional[int] = None) -> Dict
     return _call('get_protein_annotations', protein=protein, species=species)
 
 
+def search_proteins(query: str, species: Optional[int] = None,
+                    limit: Optional[int] = None) -> Dict[str, Any]:
+    """Search for proteins by name.
+
+    Args:
+        query: Protein name or keyword
+        species: NCBI taxonomy ID (9606 for human)
+        limit: Max results
+    Returns:
+        dict with matching proteins
+    """
+    return _call('search_proteins', query=query, species=species, limit=limit)
+
+
 __all__ = [
     'get_protein_interactions',
     'get_interaction_network',
     'get_functional_enrichment',
     'get_protein_annotations',
+    'search_proteins',
 ]
