@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+model.pkl
+last_eval.json
+data/trials_raw.csv
+data/val_ids.json
+logs/
