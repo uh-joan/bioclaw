@@ -1,0 +1,936 @@
+{
+  "drug_classes": [
+    {
+      "id": "testosterone_trt",
+      "name": "Testosterone / TRT",
+      "examples": ["testosterone enanthate", "testosterone cypionate", "HCG"]
+    },
+    {
+      "id": "anticoagulants",
+      "name": "Anticoagulants & Antiplatelets",
+      "examples": ["warfarin", "aspirin", "heparin"]
+    },
+    {
+      "id": "retinoids",
+      "name": "Retinoids",
+      "examples": ["isotretinoin (Accutane)", "tretinoin"]
+    },
+    {
+      "id": "ssri_snri",
+      "name": "SSRIs & SNRIs",
+      "examples": ["sertraline", "escitalopram", "venlafaxine"]
+    },
+    {
+      "id": "metformin",
+      "name": "Metformin",
+      "examples": ["metformin IR", "metformin XR"]
+    },
+    {
+      "id": "nsaids",
+      "name": "NSAIDs",
+      "examples": ["ibuprofen", "naproxen"]
+    },
+    {
+      "id": "thyroid_meds",
+      "name": "Thyroid Medications",
+      "examples": ["levothyroxine"]
+    },
+    {
+      "id": "stimulants",
+      "name": "Stimulants",
+      "examples": ["adderall", "modafinil", "caffeine"]
+    },
+    {
+      "id": "sleep_aids",
+      "name": "Sleep Aids",
+      "examples": ["melatonin", "trazodone", "zolpidem"]
+    },
+    {
+      "id": "peds_anabolics",
+      "name": "PEDs & Anabolics",
+      "examples": ["primobolan", "trenbolone", "anavar"]
+    },
+    {
+      "id": "statins",
+      "name": "Statins",
+      "examples": ["atorvastatin", "rosuvastatin"]
+    },
+    {
+      "id": "bp_meds",
+      "name": "Blood Pressure Medications",
+      "examples": ["ACE inhibitors", "ARBs", "beta-blockers"]
+    },
+    {
+      "id": "insulin",
+      "name": "Insulin",
+      "examples": ["rapid-acting (lispro, aspart)", "long-acting (glargine, detemir)"]
+    },
+    {
+      "id": "oral_contraceptives",
+      "name": "Oral Contraceptives",
+      "examples": ["combined pill", "progestin-only pill"]
+    },
+    {
+      "id": "immunosuppressants",
+      "name": "Immunosuppressants",
+      "examples": ["prednisone", "methotrexate", "biologics (adalimumab, infliximab)"]
+    }
+  ],
+  "interactions": [
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "anticoagulants",
+      "concern": "BPC-157 modulates platelet aggregation and thromboxane pathways; co-administration with anticoagulants may unpredictably alter bleeding risk",
+      "evidence_level": "yellow",
+      "mechanism": "BPC-157 influences nitric oxide and prostaglandin systems involved in platelet function, potentially amplifying or counteracting anticoagulant effects",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "critical"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "ssri_snri",
+      "concern": "BPC-157 modulates dopamine and serotonin receptor systems; concurrent SSRI/SNRI use may produce unpredictable monoamine effects including amplified anhedonia",
+      "evidence_level": "red",
+      "mechanism": "BPC-157 interacts with dopamine D2 receptors and serotonin transporter pathways, creating crosstalk with SSRI/SNRI reuptake inhibition that could destabilize mood regulation",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "testosterone_trt",
+      "concern": "Frequently co-administered in biohacking communities; no known direct pharmacological conflict",
+      "evidence_level": "green",
+      "mechanism": "Independent pathways: BPC-157 acts on growth factor and nitric oxide systems while TRT operates via androgen receptor. Tendon-protective effects of BPC-157 may complement TRT recovery",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "nsaids",
+      "concern": "BPC-157 may counteract NSAID-induced gastropathy, but combined effect on prostaglandin balance is complex",
+      "evidence_level": "yellow",
+      "mechanism": "BPC-157 is gastroprotective and upregulates prostaglandin pathways that NSAIDs suppress; net effect on COX-mediated inflammation may be partially antagonistic",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Stacking with anabolics increases cardiovascular and hepatic burden; BPC-157 hepatoprotective claims are unverified in this context",
+      "evidence_level": "red",
+      "mechanism": "Anabolics stress cardiovascular and hepatic systems; BPC-157's angiogenic and nitric oxide effects add vascular complexity",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "bp_meds",
+      "concern": "BPC-157 modulates nitric oxide-mediated vasodilation which may potentiate or interfere with antihypertensives",
+      "evidence_level": "yellow",
+      "mechanism": "Nitric oxide pathway modulation by BPC-157 could produce additive hypotensive effects with ACE inhibitors, ARBs, or beta-blockers",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "stimulants",
+      "concern": "BPC-157 dopaminergic activity may interact with stimulant-driven dopamine release",
+      "evidence_level": "yellow",
+      "mechanism": "BPC-157 modulates dopamine receptor sensitivity; stimulants increase synaptic dopamine. Combined effect on reward circuitry is unpredictable",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "immunosuppressants",
+      "concern": "BPC-157 has immunomodulatory properties that could partially counteract immunosuppressive therapy",
+      "evidence_level": "yellow",
+      "mechanism": "BPC-157 promotes wound healing and modulates inflammatory cytokines, potentially opposing broad immunosuppression",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "metformin",
+      "concern": "Additive GI side effects including nausea, vomiting, and diarrhea; high discontinuation risk during titration",
+      "evidence_level": "yellow",
+      "mechanism": "Both agents slow gastric motility and affect GI tract through different mechanisms; metformin causes GI distress via mitochondrial effects while GLP-1 agonists delay gastric emptying",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "insulin",
+      "concern": "Significant hypoglycemia risk; insulin dose reduction typically required when adding GLP-1 agonist",
+      "evidence_level": "yellow",
+      "mechanism": "GLP-1 agonists potentiate glucose-dependent insulin secretion; exogenous insulin adds glucose-independent insulin activity, creating additive hypoglycemic effect",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "critical"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "oral_contraceptives",
+      "concern": "Delayed gastric emptying may reduce oral contraceptive absorption and efficacy; risk of unintended pregnancy",
+      "evidence_level": "yellow",
+      "mechanism": "GLP-1 agonist-induced gastroparesis alters absorption kinetics of oral medications, particularly those with narrow therapeutic windows like hormonal contraceptives",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "critical"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "bp_meds",
+      "concern": "Additive blood pressure reduction; dehydration from GI side effects may exacerbate hypotension",
+      "evidence_level": "yellow",
+      "mechanism": "GLP-1 agonists reduce blood pressure 2-6 mmHg on average via natriuresis and vasodilation; combined with antihypertensives, orthostatic hypotension risk increases",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "thyroid_meds",
+      "concern": "Delayed gastric emptying may alter levothyroxine absorption; thyroid levels should be rechecked",
+      "evidence_level": "yellow",
+      "mechanism": "Gastroparesis induced by GLP-1 agonists changes absorption kinetics of levothyroxine, which requires consistent fasting absorption for stable TSH",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Opposing metabolic effects and combined cardiovascular stress; anabolics promote insulin resistance while GLP-1 agonists improve it",
+      "evidence_level": "red",
+      "mechanism": "Anabolics increase hematocrit, LDL, and hepatic stress; semaglutide's cardiovascular benefits may be negated. Metabolic signaling conflict",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "ssri_snri",
+      "concern": "Nausea compounding; both drug classes commonly cause nausea, increasing risk of non-adherence",
+      "evidence_level": "yellow",
+      "mechanism": "Serotonergic effects of SSRIs on gut motility combined with GLP-1 mediated gastric slowing can amplify GI distress",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "anticoagulants",
+      "concern": "Altered absorption of oral anticoagulants due to gastroparesis; INR instability possible with warfarin",
+      "evidence_level": "yellow",
+      "mechanism": "Delayed gastric emptying changes absorption profile of oral anticoagulants, potentially causing variable drug levels",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "statins",
+      "concern": "Generally complementary for cardiometabolic risk; altered statin absorption possible",
+      "evidence_level": "green",
+      "mechanism": "Both reduce cardiovascular risk through independent mechanisms; mild gastroparesis may delay but not significantly reduce statin bioavailability",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "drug_class_id": "metformin",
+      "concern": "Pronounced additive GI side effects; tirzepatide's dual GIP/GLP-1 action may cause more severe nausea than semaglutide alone",
+      "evidence_level": "yellow",
+      "mechanism": "Dual incretin agonism produces stronger gastric slowing; combined with metformin's GI effects, tolerability drops significantly during uptitration",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "drug_class_id": "insulin",
+      "concern": "High hypoglycemia risk; dual incretin action makes insulin dose adjustment critical",
+      "evidence_level": "yellow",
+      "mechanism": "GIP and GLP-1 both potentiate insulin secretion; combined with exogenous insulin, glucose-lowering effect is amplified beyond either agent alone",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "critical"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "drug_class_id": "oral_contraceptives",
+      "concern": "Significant gastroparesis delays oral contraceptive absorption; barrier method backup strongly recommended",
+      "evidence_level": "yellow",
+      "mechanism": "Tirzepatide causes more pronounced gastric emptying delay than mono-GLP-1 agonists; oral contraceptive bioavailability may be substantially reduced",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "critical"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "drug_class_id": "bp_meds",
+      "concern": "Additive hypotensive effects; weight loss from tirzepatide may necessitate BP medication dose reduction",
+      "evidence_level": "yellow",
+      "mechanism": "Significant weight loss (15-25%) reduces blood pressure independently; combined with antihypertensives, excessive lowering possible",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Metabolic and cardiovascular risk stacking; opposing insulin sensitivity effects",
+      "evidence_level": "red",
+      "mechanism": "Anabolics drive insulin resistance and cardiovascular strain while tirzepatide improves insulin sensitivity; net effect unpredictable, liver stress compounds",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "drug_class_id": "thyroid_meds",
+      "concern": "Gastroparesis may impair levothyroxine absorption; monitor TSH closely after initiation",
+      "evidence_level": "yellow",
+      "mechanism": "Dual incretin-induced gastric slowing alters levothyroxine absorption timing and bioavailability",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "retatrutide",
+      "drug_class_id": "metformin",
+      "concern": "Triple agonist produces the most severe GI side effects of incretin class; metformin amplifies this substantially",
+      "evidence_level": "yellow",
+      "mechanism": "GLP-1/GIP/glucagon triple agonism causes pronounced gastroparesis and nausea; metformin's GI effects compound tolerability issues",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "retatrutide",
+      "drug_class_id": "insulin",
+      "concern": "Highest hypoglycemia risk among incretin agonists due to triple receptor activity; insulin doses need aggressive reduction",
+      "evidence_level": "yellow",
+      "mechanism": "Glucagon receptor agonism adds hepatic glucose output modulation to GLP-1/GIP insulin potentiation; blood glucose control becomes highly dynamic",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "critical"
+    },
+    {
+      "compound_id": "retatrutide",
+      "drug_class_id": "oral_contraceptives",
+      "concern": "Most pronounced gastroparesis in incretin class; oral contraceptive failure risk is highest with retatrutide",
+      "evidence_level": "yellow",
+      "mechanism": "Triple agonism produces the strongest gastric emptying delay, maximally impairing oral drug absorption",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "critical"
+    },
+    {
+      "compound_id": "retatrutide",
+      "drug_class_id": "bp_meds",
+      "concern": "Aggressive weight loss and glucagon-mediated hemodynamic effects compound antihypertensive action",
+      "evidence_level": "yellow",
+      "mechanism": "Glucagon receptor activation affects cardiac output and vascular tone; combined with weight loss and antihypertensives, hypotension risk is elevated",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "retatrutide",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Cardiovascular and hepatic stress stacking with triple agonist metabolic effects",
+      "evidence_level": "red",
+      "mechanism": "Glucagon receptor agonism adds hepatic metabolic load; anabolics compound liver stress and cardiovascular strain",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "retatrutide",
+      "drug_class_id": "thyroid_meds",
+      "concern": "Strongest gastroparesis effect in class; levothyroxine absorption likely significantly impaired",
+      "evidence_level": "yellow",
+      "mechanism": "Triple agonism maximally delays gastric emptying, disrupting levothyroxine's narrow absorption window",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tb-500",
+      "drug_class_id": "anticoagulants",
+      "concern": "TB-500 promotes angiogenesis and tissue remodeling; combined with anticoagulants, bleeding risk from new vasculature is theoretically elevated",
+      "evidence_level": "red",
+      "mechanism": "Thymosin beta-4 upregulates angiogenesis and endothelial cell migration; new blood vessel formation under anticoagulation increases hemorrhage risk",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tb-500",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Combined angiogenic and androgenic cardiovascular stress; cardiac remodeling risk",
+      "evidence_level": "red",
+      "mechanism": "TB-500's angiogenic and cardiac repair properties interact unpredictably with anabolic-induced left ventricular hypertrophy",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tb-500",
+      "drug_class_id": "testosterone_trt",
+      "concern": "Common co-administration for recovery; independent mechanisms but additive angiogenic load",
+      "evidence_level": "green",
+      "mechanism": "TB-500 promotes tissue repair via actin regulation while TRT operates via androgen receptor; some additive cardiovascular consideration at high TRT doses",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "tb-500",
+      "drug_class_id": "immunosuppressants",
+      "concern": "TB-500 has immunomodulatory and wound-healing properties that may be dampened by immunosuppressants",
+      "evidence_level": "yellow",
+      "mechanism": "Thymosin beta-4 modulates inflammatory responses and tissue repair; immunosuppressants may blunt these effects or create opposing immune signals",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tb-500",
+      "drug_class_id": "nsaids",
+      "concern": "Both affect inflammation pathways; NSAIDs may partially counteract TB-500's healing cascade",
+      "evidence_level": "yellow",
+      "mechanism": "TB-500 promotes healing partly through controlled inflammation; NSAID-mediated COX inhibition may impair this signaling",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "drug_class_id": "statins",
+      "concern": "GH/IGF-1 elevation may alter lipid metabolism, potentially reducing statin efficacy or changing lipid panel interpretation",
+      "evidence_level": "yellow",
+      "mechanism": "CJC-1295 elevates GH and IGF-1 which increase lipolysis and alter hepatic lipid processing; statin dose may need adjustment based on lipid response",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "drug_class_id": "insulin",
+      "concern": "Growth hormone antagonizes insulin action; may worsen glycemic control in diabetic patients",
+      "evidence_level": "yellow",
+      "mechanism": "GH promotes hepatic gluconeogenesis and peripheral insulin resistance; exogenous insulin requirements may increase",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "drug_class_id": "metformin",
+      "concern": "GH-induced insulin resistance may partially counteract metformin's glucose-lowering effects",
+      "evidence_level": "yellow",
+      "mechanism": "CJC-1295 raises GH which promotes gluconeogenesis; metformin suppresses hepatic glucose output. Opposing hepatic effects",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Combined GH and anabolic load substantially increases cardiovascular and metabolic risk",
+      "evidence_level": "red",
+      "mechanism": "GH/IGF-1 elevation plus anabolic steroids creates compounded cardiac hypertrophy risk, insulin resistance, and fluid retention",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "drug_class_id": "thyroid_meds",
+      "concern": "GH affects thyroid hormone conversion; may alter levothyroxine requirements",
+      "evidence_level": "yellow",
+      "mechanism": "Growth hormone increases T4 to T3 conversion; patients on levothyroxine may experience altered thyroid hormone balance",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "drug_class_id": "sleep_aids",
+      "concern": "CJC-1295 is typically dosed at bedtime to synergize with natural GH pulse; sleep aids may alter this pulsatility",
+      "evidence_level": "green",
+      "mechanism": "Some sleep aids (especially GABAergic ones) may actually enhance GH release during sleep; timing is complementary but GH surge amplitude may change",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "drug_class_id": "statins",
+      "concern": "GH secretagogue-induced IGF-1 elevation alters lipid metabolism and statin response",
+      "evidence_level": "yellow",
+      "mechanism": "Ipamorelin stimulates GH release via ghrelin receptor; resulting IGF-1 elevation affects hepatic lipid processing and LDL receptor expression",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "drug_class_id": "insulin",
+      "concern": "GH release antagonizes insulin action; glycemic control may deteriorate",
+      "evidence_level": "yellow",
+      "mechanism": "Ipamorelin-induced GH pulses promote insulin resistance via lipolysis and gluconeogenesis stimulation",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Stacking GH secretagogues with anabolics amplifies cardiovascular remodeling risk",
+      "evidence_level": "red",
+      "mechanism": "GH/IGF-1 elevation combined with androgenic cardiac stress increases left ventricular hypertrophy and fluid retention",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "drug_class_id": "metformin",
+      "concern": "GH-induced glucose elevation may reduce metformin efficacy",
+      "evidence_level": "yellow",
+      "mechanism": "Ipamorelin triggers GH pulses that promote hepatic glucose output; metformin works to suppress this same pathway",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "drug_class_id": "sleep_aids",
+      "concern": "Both typically dosed at bedtime; GABAergic sleep aids may modify GH pulse dynamics",
+      "evidence_level": "green",
+      "mechanism": "Ipamorelin is timed with natural GH pulsatility; GABAergic sleep aids may enhance deep sleep-associated GH release",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "drug_class_id": "thyroid_meds",
+      "concern": "GH affects peripheral thyroid hormone conversion; monitor thyroid levels",
+      "evidence_level": "yellow",
+      "mechanism": "GH secretagogue-driven GH elevation increases T4 to T3 conversion, potentially altering levothyroxine dose requirements",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "drug_class_id": "retinoids",
+      "concern": "Combined use on skin may cause excessive irritation, barrier disruption, and copper-retinoid redox reactions",
+      "evidence_level": "yellow",
+      "mechanism": "GHK-Cu promotes collagen remodeling and copper-dependent enzymatic activity; retinoids accelerate cell turnover. Combined barrier stress may cause inflammation",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Combined tissue remodeling and anabolic effects; cardiovascular strain with systemic GHK-Cu",
+      "evidence_level": "red",
+      "mechanism": "GHK-Cu promotes tissue remodeling and has systemic effects on gene expression; anabolics add cardiovascular and hepatic load",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "drug_class_id": "anticoagulants",
+      "concern": "Copper peptide may affect wound healing and clotting factor activity",
+      "evidence_level": "yellow",
+      "mechanism": "GHK-Cu modulates tissue repair, collagen synthesis, and metalloproteinase activity; these pathways intersect with coagulation cascade components",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "drug_class_id": "immunosuppressants",
+      "concern": "GHK-Cu has anti-inflammatory and immune-modulating gene expression effects that may interact with immunosuppressive therapy",
+      "evidence_level": "yellow",
+      "mechanism": "GHK-Cu resets gene expression toward anti-inflammatory and tissue repair patterns; immunosuppressants may blunt or conflict with these signals",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "drug_class_id": "statins",
+      "concern": "GHRH-induced GH elevation alters lipid metabolism; tesamorelin actually reduces visceral fat and may complement statins",
+      "evidence_level": "yellow",
+      "mechanism": "Tesamorelin increases GH which promotes lipolysis and alters hepatic lipid processing; lipid panel changes may affect statin dosing decisions",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "drug_class_id": "insulin",
+      "concern": "GH-mediated insulin resistance may worsen glycemic control; FDA-approved tesamorelin labeling warns of glucose elevation",
+      "evidence_level": "yellow",
+      "mechanism": "Tesamorelin's GH elevation promotes hepatic gluconeogenesis and peripheral insulin resistance; insulin dose may need increase",
+      "recommendation": "monitor_closely",
+      "alert_level": "critical"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "drug_class_id": "metformin",
+      "concern": "GH-driven glucose elevation partially opposes metformin's glucose-lowering mechanism",
+      "evidence_level": "yellow",
+      "mechanism": "Tesamorelin elevates GH which increases hepatic glucose output; metformin suppresses this pathway. Clinical data shows modest HbA1c increase",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Combined GHRH and anabolic load creates compounded cardiovascular, metabolic, and fluid retention risks",
+      "evidence_level": "red",
+      "mechanism": "Tesamorelin's sustained GH elevation plus anabolic steroids amplifies cardiac hypertrophy, edema, and insulin resistance",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "drug_class_id": "thyroid_meds",
+      "concern": "GH affects thyroid hormone metabolism; levothyroxine requirements may shift",
+      "evidence_level": "yellow",
+      "mechanism": "Tesamorelin-induced GH increases T4 to T3 peripheral conversion; thyroid hormone balance may shift requiring dose adjustment",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "drug_class_id": "testosterone_trt",
+      "concern": "Common co-administration for body composition; generally complementary but monitor metabolic markers",
+      "evidence_level": "green",
+      "mechanism": "Tesamorelin reduces visceral fat via GH; TRT promotes lean mass via androgen receptor. Synergistic body composition effects with additive insulin resistance risk",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "thymosin-alpha-1",
+      "drug_class_id": "immunosuppressants",
+      "concern": "Directly opposing mechanisms: thymosin-alpha-1 stimulates immune function while immunosuppressants suppress it; may reduce transplant/autoimmune therapy efficacy",
+      "evidence_level": "yellow",
+      "mechanism": "Thymosin-alpha-1 activates dendritic cells, enhances T-cell function, and promotes Th1 responses; this directly counteracts immunosuppressive agents designed to dampen immune activity",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "critical"
+    },
+    {
+      "compound_id": "thymosin-alpha-1",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Immune stimulation under anabolic-induced physiological stress; unpredictable immune activation",
+      "evidence_level": "red",
+      "mechanism": "Anabolics alter immune function and stress hormones; thymosin-alpha-1's immune activation in this altered milieu may produce aberrant immune responses",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "thymosin-alpha-1",
+      "drug_class_id": "testosterone_trt",
+      "concern": "TRT has mild immunomodulatory effects; generally independent pathways at physiological TRT doses",
+      "evidence_level": "green",
+      "mechanism": "Testosterone modestly suppresses some immune parameters; thymosin-alpha-1 enhances them. At TRT doses, net effect is likely neutral",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "thymosin-alpha-1",
+      "drug_class_id": "ssri_snri",
+      "concern": "Immune-neural crosstalk; thymosin-alpha-1's cytokine modulation may affect neuroinflammation relevant to depression",
+      "evidence_level": "yellow",
+      "mechanism": "Thymosin-alpha-1 modulates inflammatory cytokines that influence serotonin metabolism; SSRIs/SNRIs may have altered efficacy under shifted cytokine profiles",
+      "recommendation": "no_data_caution",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "semax",
+      "drug_class_id": "stimulants",
+      "concern": "Additive CNS stimulation; semax enhances BDNF and catecholamine activity which compounds stimulant effects",
+      "evidence_level": "yellow",
+      "mechanism": "Semax increases BDNF, modulates dopamine/serotonin, and has nootropic stimulatory effects; combined with amphetamines or modafinil, overstimulation and anxiety risk increases",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semax",
+      "drug_class_id": "ssri_snri",
+      "concern": "Semax modulates serotonin and dopamine systems; combined with SSRIs, serotonergic excess is theoretically possible",
+      "evidence_level": "yellow",
+      "mechanism": "Semax influences melanocortin and monoamine pathways; SSRIs increase synaptic serotonin. Combined serotonergic load may increase side effects",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semax",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Neuropeptide under anabolic-altered physiology; unpredictable neurotransmitter effects",
+      "evidence_level": "red",
+      "mechanism": "Anabolics alter neurosteroid production and neurotransmitter balance; semax's BDNF and melanocortin effects interact with altered neuroendocrine state",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semax",
+      "drug_class_id": "anticoagulants",
+      "concern": "Semax has reported effects on vascular tone and fibrinolysis in animal models",
+      "evidence_level": "yellow",
+      "mechanism": "ACTH(4-10) fragment may modulate fibrinolytic pathways; clinical significance unclear but theoretical bleeding risk with anticoagulants",
+      "recommendation": "no_data_caution",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "semax",
+      "drug_class_id": "thyroid_meds",
+      "concern": "Semax may influence thyroid axis via melanocortin system effects on TSH regulation",
+      "evidence_level": "yellow",
+      "mechanism": "Melanocortin pathway modulation can affect hypothalamic-pituitary-thyroid axis; levothyroxine patients may see TSH fluctuations",
+      "recommendation": "no_data_caution",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "semax",
+      "drug_class_id": "sleep_aids",
+      "concern": "Semax's stimulatory nootropic effects may counteract sleep aid efficacy if dosed too late",
+      "evidence_level": "green",
+      "mechanism": "BDNF elevation and catecholamine modulation by semax promote wakefulness; sleep aids work to suppress arousal. Timing separation resolves most conflicts",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "selank",
+      "drug_class_id": "stimulants",
+      "concern": "Selank's anxiolytic effects may partially counteract stimulant-induced anxiety, but additive monoamine effects are possible",
+      "evidence_level": "yellow",
+      "mechanism": "Selank modulates GABA, serotonin, and enkephalin systems; stimulants increase dopamine and norepinephrine. Complex interaction on arousal/anxiety balance",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "selank",
+      "drug_class_id": "sleep_aids",
+      "concern": "Additive sedation and GABA potentiation; excessive CNS depression possible",
+      "evidence_level": "yellow",
+      "mechanism": "Selank enhances GABAergic transmission and has anxiolytic properties; combined with GABAergic sleep aids (zolpidem, trazodone), excessive sedation risk increases",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "selank",
+      "drug_class_id": "ssri_snri",
+      "concern": "Selank modulates serotonin metabolism; combined with SSRIs, serotonin excess is a theoretical concern",
+      "evidence_level": "yellow",
+      "mechanism": "Selank influences serotonin transporter and enkephalin degradation; SSRIs increase synaptic serotonin. Combined serotonergic activity may cause side effects",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "selank",
+      "drug_class_id": "peds_anabolics",
+      "concern": "Anxiolytic peptide under anabolic-altered neuroendocrine state; unpredictable mood effects",
+      "evidence_level": "red",
+      "mechanism": "Anabolics significantly alter neurosteroid and neurotransmitter balance; selank's GABA/serotonin modulation under these conditions is unpredictable",
+      "recommendation": "avoid_or_consult_provider",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "selank",
+      "drug_class_id": "bp_meds",
+      "concern": "Selank's anxiolytic effects may produce additive blood pressure lowering",
+      "evidence_level": "green",
+      "mechanism": "Anxiety reduction lowers sympathetic tone and blood pressure; combined with antihypertensives, modest additive effect possible",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "selank",
+      "drug_class_id": "immunosuppressants",
+      "concern": "Selank has documented immunomodulatory effects that may conflict with immunosuppressive therapy",
+      "evidence_level": "yellow",
+      "mechanism": "Selank influences cytokine production and immune cell activity; immunosuppressants aim to dampen these same pathways",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "nsaids",
+      "concern": "NSAIDs increase GI mucosal injury risk; GLP-1 agonist gastroparesis may concentrate NSAID exposure in stomach",
+      "evidence_level": "yellow",
+      "mechanism": "Delayed gastric emptying prolongs NSAID contact time with gastric mucosa; increased ulceration and GI bleeding risk",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "drug_class_id": "nsaids",
+      "concern": "Dual incretin gastroparesis concentrates NSAID in stomach longer; GI ulceration risk elevated",
+      "evidence_level": "yellow",
+      "mechanism": "Prolonged gastric retention of NSAIDs due to delayed emptying increases mucosal damage potential",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "retatrutide",
+      "drug_class_id": "nsaids",
+      "concern": "Strongest gastroparesis in incretin class maximizes NSAID gastric exposure time",
+      "evidence_level": "yellow",
+      "mechanism": "Triple agonism produces maximum gastric emptying delay; NSAID mucosal injury risk proportionally increased",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "metformin",
+      "concern": "BPC-157 may have glucose-modulating effects; limited data on interaction with metformin",
+      "evidence_level": "green",
+      "mechanism": "BPC-157 has shown glucose-protective effects in animal models; mechanism is independent from metformin's AMPK pathway",
+      "recommendation": "no_data_caution",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "drug_class_id": "testosterone_trt",
+      "concern": "Very common co-administration in anti-aging protocols; generally complementary",
+      "evidence_level": "green",
+      "mechanism": "CJC-1295 elevates GH/IGF-1 axis while TRT activates androgen receptor; synergistic body composition effects with independent pathways",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "drug_class_id": "testosterone_trt",
+      "concern": "Standard combination in anti-aging medicine; well-tolerated co-administration",
+      "evidence_level": "green",
+      "mechanism": "Ipamorelin's GH secretagogue activity complements TRT's androgenic effects through independent receptor systems",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "drug_class_id": "bp_meds",
+      "concern": "GH-mediated fluid retention may counteract antihypertensive effects",
+      "evidence_level": "yellow",
+      "mechanism": "Growth hormone promotes sodium and water retention; may elevate blood pressure and reduce antihypertensive efficacy",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "drug_class_id": "bp_meds",
+      "concern": "GH-related fluid retention may counteract blood pressure medication",
+      "evidence_level": "yellow",
+      "mechanism": "GH elevation promotes renal sodium retention and fluid expansion; may partially oppose antihypertensive agents",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "drug_class_id": "bp_meds",
+      "concern": "GH secretagogue-induced fluid retention may modestly oppose blood pressure control",
+      "evidence_level": "yellow",
+      "mechanism": "GH pulses promote sodium retention; effect is typically milder with ipamorelin than with direct GH or GHRH analogs",
+      "recommendation": "monitor_closely",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "tb-500",
+      "drug_class_id": "retinoids",
+      "concern": "TB-500's tissue remodeling effects combined with retinoid-induced skin sensitivity may cause excessive tissue turnover",
+      "evidence_level": "yellow",
+      "mechanism": "Thymosin beta-4 promotes cell migration and tissue repair while retinoids accelerate cell turnover; combined dermal effects may cause irritation",
+      "recommendation": "no_data_caution",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "semaglutide",
+      "drug_class_id": "testosterone_trt",
+      "concern": "Increasingly common co-administration; semaglutide may help counteract TRT-related weight gain",
+      "evidence_level": "green",
+      "mechanism": "Independent pathways; GLP-1 agonism and androgen receptor activation do not directly conflict. Weight loss from semaglutide may complement TRT body composition goals",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "drug_class_id": "testosterone_trt",
+      "concern": "Co-administration for metabolic optimization; no direct pharmacological conflict",
+      "evidence_level": "green",
+      "mechanism": "Dual incretin agonism and androgen receptor activation operate independently; complementary body composition effects",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "retatrutide",
+      "drug_class_id": "anticoagulants",
+      "concern": "Gastroparesis may alter oral anticoagulant absorption; INR instability with warfarin",
+      "evidence_level": "yellow",
+      "mechanism": "Triple agonism produces strongest gastric emptying delay in class; oral anticoagulant absorption kinetics significantly altered",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "drug_class_id": "anticoagulants",
+      "concern": "Gastroparesis may affect oral anticoagulant absorption and INR stability",
+      "evidence_level": "yellow",
+      "mechanism": "Dual incretin-induced gastric slowing alters absorption of oral anticoagulants with narrow therapeutic indices",
+      "recommendation": "monitor_closely",
+      "alert_level": "warning"
+    },
+    {
+      "compound_id": "thymosin-alpha-1",
+      "drug_class_id": "oral_contraceptives",
+      "concern": "Thymosin-alpha-1's immune activation may theoretically affect hormonal contraceptive efficacy through inflammatory cytokine effects on HPG axis",
+      "evidence_level": "green",
+      "mechanism": "Immune modulation may indirectly influence hypothalamic-pituitary-gonadal axis, but effect is likely clinically insignificant",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "retinoids",
+      "concern": "BPC-157's wound healing and angiogenic properties may interact with retinoid-altered tissue turnover",
+      "evidence_level": "yellow",
+      "mechanism": "BPC-157 promotes growth factor expression and angiogenesis; isotretinoin impairs wound healing and alters sebaceous gland function",
+      "recommendation": "no_data_caution",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "bpc-157",
+      "drug_class_id": "sleep_aids",
+      "concern": "BPC-157's GABAergic effects may compound with sedative sleep aids",
+      "evidence_level": "green",
+      "mechanism": "BPC-157 has GABA-B receptor interactions; combined with GABAergic sleep aids, mild additive sedation possible",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "drug_class_id": "testosterone_trt",
+      "concern": "Common co-administration for anti-aging; no direct pharmacological conflict",
+      "evidence_level": "green",
+      "mechanism": "GHK-Cu acts on extracellular matrix and gene expression; TRT operates via androgen receptor. Independent pathways",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "semax",
+      "drug_class_id": "metformin",
+      "concern": "No known direct interaction; semax is a neuropeptide with minimal metabolic effects",
+      "evidence_level": "green",
+      "mechanism": "Semax acts via melanocortin and BDNF pathways; metformin acts via AMPK. No overlapping mechanisms",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "selank",
+      "drug_class_id": "anticoagulants",
+      "concern": "Selank has documented effects on blood coagulation parameters in animal studies",
+      "evidence_level": "yellow",
+      "mechanism": "Selank influences fibrinolytic balance and platelet activity through enkephalin pathway modulation; may alter coagulation parameters",
+      "recommendation": "no_data_caution",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "drug_class_id": "anticoagulants",
+      "concern": "GH elevation may affect coagulation factor synthesis",
+      "evidence_level": "green",
+      "mechanism": "Growth hormone influences hepatic protein synthesis including some coagulation factors; clinical significance at GHRH-analog doses is likely minimal",
+      "recommendation": "no_data_caution",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "drug_class_id": "nsaids",
+      "concern": "GHK-Cu's anti-inflammatory gene expression effects may complement or partially overlap with NSAID action",
+      "evidence_level": "green",
+      "mechanism": "GHK-Cu modulates inflammatory gene expression including IL-6 and TGF-beta; NSAIDs inhibit COX enzymes. Different anti-inflammatory mechanisms",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    },
+    {
+      "compound_id": "tb-500",
+      "drug_class_id": "testosterone_trt",
+      "concern": "Very common recovery stack; TB-500 tissue repair complements TRT-enhanced recovery",
+      "evidence_level": "green",
+      "mechanism": "Thymosin beta-4 promotes actin-mediated cell migration and wound healing; TRT promotes protein synthesis. Complementary tissue repair pathways",
+      "recommendation": "safe_to_stack",
+      "alert_level": "info"
+    }
+  ]
+}

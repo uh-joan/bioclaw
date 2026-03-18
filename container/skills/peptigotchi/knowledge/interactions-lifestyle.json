@@ -1,0 +1,504 @@
+{
+  "lifestyle_factors": [
+    {
+      "id": "fasting_intermittent",
+      "name": "Intermittent Fasting",
+      "examples": ["16:8", "OMAD", "5:2"]
+    },
+    {
+      "id": "resistance_training",
+      "name": "Resistance Training",
+      "examples": ["weight lifting", "bodyweight exercises", "resistance bands"]
+    },
+    {
+      "id": "cardio_endurance",
+      "name": "Cardio & Endurance",
+      "examples": ["running", "cycling", "swimming"]
+    },
+    {
+      "id": "sleep_quality",
+      "name": "Sleep Quality",
+      "examples": ["sleep duration", "sleep quality", "sleep schedule"]
+    },
+    {
+      "id": "alcohol",
+      "name": "Alcohol Consumption",
+      "examples": ["beer", "wine", "spirits"]
+    },
+    {
+      "id": "sun_exposure",
+      "name": "Sun Exposure",
+      "examples": ["tanning", "outdoor work", "beach days"]
+    },
+    {
+      "id": "stress_cortisol",
+      "name": "Stress & Cortisol",
+      "examples": ["work stress", "life events", "chronic stress"]
+    },
+    {
+      "id": "temperature_sauna_cold",
+      "name": "Temperature Extremes",
+      "examples": ["sauna", "cold plunge", "ice bath"]
+    },
+    {
+      "id": "travel",
+      "name": "Travel",
+      "examples": ["timezone changes", "cold chain disruption", "syringe transport"]
+    },
+    {
+      "id": "menstrual_cycle",
+      "name": "Menstrual Cycle",
+      "examples": ["cycle phase", "hormonal fluctuations", "PMS"]
+    }
+  ],
+  "interactions": [
+    {
+      "compound_id": "semaglutide",
+      "factor_id": "fasting_intermittent",
+      "concern": "Aggressive caloric restriction combined with GLP-1 appetite suppression amplifies lean muscle mass loss beyond fat loss",
+      "recommendation": "Limit fasting windows to 16:8 max. Prioritize protein during eating windows (1.2-1.6g/kg). Avoid OMAD while on GLP-1s.",
+      "creature_effect": "Creature becomes visibly thinner but weaker, muscle definition fades"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "factor_id": "fasting_intermittent",
+      "concern": "Dual GIP/GLP-1 action causes stronger appetite suppression than semaglutide alone, making prolonged fasts risky for muscle preservation",
+      "recommendation": "Keep eating windows at least 8 hours. Track protein intake carefully, aiming for 30g+ per meal. Consider creatine supplementation.",
+      "creature_effect": "Creature loses bulk rapidly, stamina bar drops if protein intake insufficient"
+    },
+    {
+      "compound_id": "retatrutide",
+      "factor_id": "fasting_intermittent",
+      "concern": "Triple receptor agonist creates the strongest appetite suppression of all GLP-1s, making adequate nutrition during fasting windows extremely difficult",
+      "recommendation": "Avoid extended fasts entirely. Focus on nutrient-dense meals with high protein. Consider a registered dietitian for meal planning.",
+      "creature_effect": "Creature shrinks noticeably, mood drops from inadequate nutrition"
+    },
+    {
+      "compound_id": "semaglutide",
+      "factor_id": "resistance_training",
+      "concern": "Without resistance training, up to 30-40% of weight lost on GLP-1s can be lean mass rather than fat",
+      "recommendation": "Resistance training 3-4x/week is critical. This is the single most important lifestyle factor while on GLP-1 therapy. Progressive overload with compound movements.",
+      "creature_effect": "Creature gains muscle definition and maintains strength. Without it, creature becomes 'skinny-fat' appearance"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "factor_id": "resistance_training",
+      "concern": "Rapid weight loss from dual agonism makes resistance training even more critical than with semaglutide to preserve lean mass",
+      "recommendation": "Non-negotiable: lift weights 3-4x/week. Focus on progressive overload. Protein timing around workouts is essential.",
+      "creature_effect": "Creature maintains strong posture and energy. Skipping triggers visible muscle loss animation"
+    },
+    {
+      "compound_id": "retatrutide",
+      "factor_id": "resistance_training",
+      "concern": "Fastest weight loss of all GLP-1s means muscle loss risk is highest without structured resistance training",
+      "recommendation": "Begin resistance training before or simultaneously with starting retatrutide. 4x/week minimum. Consider working with a trainer.",
+      "creature_effect": "Critical mitigation factor. Creature visibly deteriorates without it, thrives with consistent training"
+    },
+    {
+      "compound_id": "semaglutide",
+      "factor_id": "cardio_endurance",
+      "concern": "Cardio alone without resistance training accelerates muscle loss during GLP-1 therapy. Excessive cardio on reduced calories risks overtraining.",
+      "recommendation": "Cardio is fine but never as a substitute for resistance training. Moderate intensity 2-3x/week. Monitor for excessive fatigue.",
+      "creature_effect": "Creature becomes leaner but loses muscle tone if cardio replaces lifting"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "factor_id": "cardio_endurance",
+      "concern": "High-volume cardio combined with strong appetite suppression creates large caloric deficits that preferentially burn muscle",
+      "recommendation": "Cap cardio at 150 min/week of moderate intensity. Always pair with resistance training. Increase calories on high-cardio days.",
+      "creature_effect": "Creature endurance stat rises but strength plummets if resistance training neglected"
+    },
+    {
+      "compound_id": "retatrutide",
+      "factor_id": "cardio_endurance",
+      "concern": "Extreme appetite suppression makes fueling endurance exercise very difficult, risking hypoglycemia and muscle catabolism",
+      "recommendation": "Reduce cardio volume during dose titration. Carry fast-acting carbs during sessions. Prioritize resistance training over cardio.",
+      "creature_effect": "Creature shows fatigue signs during cardio, energy bar depletes faster"
+    },
+    {
+      "compound_id": "semaglutide",
+      "factor_id": "alcohol",
+      "concern": "GLP-1 delays gastric emptying (gastroparesis effect). Alcohol stays in stomach longer, causing unpredictable and dangerously intensified intoxication.",
+      "recommendation": "Dramatically reduce alcohol intake. One drink may feel like three. Never drink on an empty stomach. Alert social circle about changed tolerance.",
+      "creature_effect": "Creature becomes dizzy and disoriented with even small alcohol exposure, mood swings"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "factor_id": "alcohol",
+      "concern": "Dual agonist gastroparesis effect is even more pronounced, making alcohol absorption extremely unpredictable",
+      "recommendation": "Minimize or eliminate alcohol. If drinking, start with half your previous tolerance as baseline. Hydrate extensively.",
+      "creature_effect": "Creature stumbles, nausea indicator flashes, recovery takes longer"
+    },
+    {
+      "compound_id": "retatrutide",
+      "factor_id": "alcohol",
+      "concern": "Strongest gastroparesis of all GLP-1s combined with glucagon receptor effects on liver metabolism creates highest risk profile with alcohol",
+      "recommendation": "Strongly consider eliminating alcohol entirely. Liver is already working harder with triple agonist. Discuss with prescriber.",
+      "creature_effect": "Creature shows severe adverse reaction, health bar drops sharply"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "factor_id": "sleep_quality",
+      "concern": "GH is primarily released during deep sleep. Bedtime dosing of CJC-1295 amplifies natural nocturnal GH pulses. Poor sleep undermines the entire protocol.",
+      "recommendation": "Dose 30-60 minutes before bed on an empty stomach. Prioritize 7-9 hours of quality sleep. Sleep hygiene is non-negotiable for GH peptides.",
+      "creature_effect": "Creature glows during good sleep nights, GH pulse animation visible. Poor sleep dims the creature"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "factor_id": "sleep_quality",
+      "concern": "Ipamorelin stimulates ghrelin receptor to trigger GH release, most effective when aligned with natural sleep-wake GH rhythms",
+      "recommendation": "Bedtime dosing preferred. Maintain consistent sleep schedule. Avoid screens 1hr before bed. Dark, cool room enhances both sleep and GH response.",
+      "creature_effect": "Creature recovery and growth stats boosted during well-timed sleep, stunted with poor sleep"
+    },
+    {
+      "compound_id": "retatrutide",
+      "factor_id": "sleep_quality",
+      "concern": "Approximately 8% of users report significant sleep disruption. Poor sleep blunts GH release and increases cortisol, creating a vicious cycle of impaired recovery.",
+      "recommendation": "Monitor sleep quality closely after starting. If disrupted, discuss dose timing with prescriber. Consider magnesium glycinate before bed.",
+      "creature_effect": "Creature tosses and turns at night, dark circles appear, recovery stats penalized"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "factor_id": "fasting_intermittent",
+      "concern": "Food intake, especially carbohydrates, blunts GH release. CJC-1295 efficacy significantly reduced if taken with or shortly after meals.",
+      "recommendation": "Always dose CJC-1295 in a fasted state. Wait at least 2 hours after last meal. Morning fasted or bedtime dosing works best.",
+      "creature_effect": "Creature GH boost animation only triggers when dosed fasted, no effect shown if fed"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "factor_id": "fasting_intermittent",
+      "concern": "Ipamorelin GH release is blunted by elevated blood sugar and insulin. Eating before dosing diminishes the GH pulse.",
+      "recommendation": "Dose on empty stomach, at least 90 minutes after eating. Fasting windows naturally create ideal dosing opportunities.",
+      "creature_effect": "Creature shows amplified GH pulse when dosed during fasting window"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "factor_id": "temperature_sauna_cold",
+      "concern": "Sauna sessions independently increase endogenous GH by 200-300%. Combined with CJC-1295, total GH elevation may become excessive, risking joint pain, water retention, and insulin resistance.",
+      "recommendation": "Separate sauna sessions from CJC-1295 dosing by at least 4 hours. Monitor for signs of GH excess: joint aches, carpal tunnel, edema.",
+      "creature_effect": "Creature overheats if sauna and peptide overlap, water retention visible as puffiness"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "factor_id": "temperature_sauna_cold",
+      "concern": "Sauna-induced GH release stacks with ipamorelin-stimulated pulses, potentially causing supraphysiological GH levels",
+      "recommendation": "Use sauna on non-dosing days or separate by several hours. Cold plunge is generally safe and may enhance recovery synergistically.",
+      "creature_effect": "Creature shows positive response to cold exposure, overheating warning with same-day sauna"
+    },
+    {
+      "compound_id": "bpc-157",
+      "factor_id": "resistance_training",
+      "concern": "BPC-157 promotes tendon and tissue healing. Training the injured area post-workout may enhance local blood flow and peptide delivery to injury site.",
+      "recommendation": "Time BPC-157 injection near injury site shortly after training the affected area. Light blood flow work preferred over heavy loading of injured tissue.",
+      "creature_effect": "Creature healing animation accelerates when light training follows injection near injury"
+    },
+    {
+      "compound_id": "tb-500",
+      "factor_id": "resistance_training",
+      "concern": "TB-500 promotes systemic tissue repair and reduces inflammation. Post-exercise inflammation is a normal healing signal that TB-500 may modulate.",
+      "recommendation": "Dose TB-500 after training sessions for best synergy with natural repair processes. Moderate training volume during active healing protocols.",
+      "creature_effect": "Creature recovery bar fills faster when training and TB-500 are well-timed"
+    },
+    {
+      "compound_id": "bpc-157",
+      "factor_id": "stress_cortisol",
+      "concern": "BPC-157 can modulate dopamine and serotonin systems. Some users report anxiety, which is amplified in individuals with existing high stress or cortisol levels.",
+      "recommendation": "Start with lower doses if under significant stress. Monitor mood changes closely. Consider pausing during acute life stressors.",
+      "creature_effect": "Creature becomes anxious and jittery when stress and BPC-157 overlap, mood instability"
+    },
+    {
+      "compound_id": "bpc-157",
+      "factor_id": "alcohol",
+      "concern": "BPC-157 is used for gut healing and gastroprotection. Alcohol directly damages gastric mucosa, counteracting BPC-157's protective and healing effects.",
+      "recommendation": "Eliminate or drastically reduce alcohol during BPC-157 gut healing protocols. Even moderate drinking undermines the repair process.",
+      "creature_effect": "Creature gut health bar progress resets when alcohol is consumed, healing animation stops"
+    },
+    {
+      "compound_id": "semaglutide",
+      "factor_id": "travel",
+      "concern": "Semaglutide pens require refrigeration before first use. Timezone changes shift weekly injection schedules. Airport security may question injectable medications.",
+      "recommendation": "Carry medications in insulated travel pouch with ice packs. Bring prescription documentation. Adjust injection day if crossing many timezones rather than shifting hours.",
+      "creature_effect": "Creature shows travel stress, medication efficacy indicator dims if cold chain broken"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "factor_id": "travel",
+      "concern": "Similar cold chain requirements to semaglutide. Multi-dose pens are temperature-sensitive. Meal timing disruption during travel compounds GI side effects.",
+      "recommendation": "Pack in insulated case. Keep prescription label on medication. Plan meals around timezone to minimize nausea. Carry anti-nausea medication.",
+      "creature_effect": "Creature gets nauseous during travel, stability decreases with disrupted routine"
+    },
+    {
+      "compound_id": "bpc-157",
+      "factor_id": "travel",
+      "concern": "Reconstituted BPC-157 requires refrigeration. Syringes and vials may trigger security scrutiny. Dosing schedule disrupted by timezone changes.",
+      "recommendation": "Carry bacteriostatic water and lyophilized peptide separately if possible. Pack prescription or purchase documentation. Use insulated travel case.",
+      "creature_effect": "Creature healing protocol interrupted, progress bar pauses during travel"
+    },
+    {
+      "compound_id": "tb-500",
+      "factor_id": "travel",
+      "concern": "Reconstituted TB-500 is temperature-sensitive. Loading phase protocols requiring frequent dosing are difficult to maintain while traveling.",
+      "recommendation": "Consider timing travel between loading and maintenance phases. Carry in insulated pouch. Pre-load syringes only if traveling short duration.",
+      "creature_effect": "Creature repair progress slows during travel, maintenance mode activated"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "factor_id": "travel",
+      "concern": "Daily dosing schedule disrupted by timezone shifts. Reconstituted peptide requires cold storage. Evening dosing timing affected by jet lag.",
+      "recommendation": "Gradually shift dosing time to destination timezone over 2-3 days. Keep cold chain intact. Pack backup supplies.",
+      "creature_effect": "Creature GH rhythm disrupted, sleep cycle indicator desynchronizes"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "factor_id": "travel",
+      "concern": "Bedtime dosing protocol disrupted by timezone changes and jet lag. GH pulse timing becomes suboptimal.",
+      "recommendation": "Dose at local bedtime in destination timezone. Prioritize sleep normalization. Cold chain maintenance essential.",
+      "creature_effect": "Creature sleep-GH sync breaks during travel, gradually re-syncs after arrival"
+    },
+    {
+      "compound_id": "semaglutide",
+      "factor_id": "menstrual_cycle",
+      "concern": "GLP-1 efficacy may vary across menstrual cycle phases. Delayed gastric emptying can affect oral contraceptive absorption timing and reliability.",
+      "recommendation": "Track symptoms across cycle phases. Use backup contraception if on oral birth control. Report cycle irregularities to prescriber.",
+      "creature_effect": "Creature effectiveness fluctuates with cycle phase, contraceptive warning icon appears"
+    },
+    {
+      "compound_id": "tirzepatide",
+      "factor_id": "menstrual_cycle",
+      "concern": "Rapid weight loss can disrupt menstrual regularity. Dual agonist gastroparesis may further affect oral contraceptive absorption.",
+      "recommendation": "Monitor cycle regularity closely. Consider non-oral contraception methods. Report any cycle changes to prescriber immediately.",
+      "creature_effect": "Creature hormonal balance indicator fluctuates, cycle regularity stat affected"
+    },
+    {
+      "compound_id": "retatrutide",
+      "factor_id": "menstrual_cycle",
+      "concern": "Most aggressive weight loss of GLP-1s creates highest risk of menstrual disruption. Hormonal fluctuations may affect tolerability.",
+      "recommendation": "Expect potential cycle disruption during rapid weight loss phase. Use non-oral contraception. Track symptoms by cycle phase for dose adjustment discussions.",
+      "creature_effect": "Creature shows hormonal instability markers, cycle tracking becomes important game mechanic"
+    },
+    {
+      "compound_id": "semax",
+      "factor_id": "stress_cortisol",
+      "concern": "Semax is a nootropic that modulates BDNF and can have stimulatory effects. High baseline stress/cortisol may amplify overstimulation or anxiety in sensitive individuals.",
+      "recommendation": "Start with lower doses during high-stress periods. Morning dosing preferred to avoid sleep disruption. Pair with stress management practices.",
+      "creature_effect": "Creature becomes overstimulated and wired when stress is high, focus stat fluctuates"
+    },
+    {
+      "compound_id": "selank",
+      "factor_id": "stress_cortisol",
+      "concern": "Selank has anxiolytic properties and modulates GABA. Context of existing stress levels affects optimal dosing. May cause excess sedation in some.",
+      "recommendation": "Selank can be beneficial during stress but calibrate dose to stress level. Start low. May be more useful during acute stress than chronic.",
+      "creature_effect": "Creature calms visibly with selank during stress, but may become too relaxed if over-dosed"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "factor_id": "sun_exposure",
+      "concern": "GHK-Cu promotes collagen synthesis and skin repair. UV radiation causes direct DNA damage and collagen breakdown, directly counteracting GHK-Cu's benefits.",
+      "recommendation": "Use broad-spectrum SPF 30+ daily while on GHK-Cu protocols. Avoid peak sun hours. Topical GHK-Cu should be applied after sun exposure, not before.",
+      "creature_effect": "Creature skin repair progress reversed by sun damage, sunburn animation overrides healing"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "factor_id": "sleep_quality",
+      "concern": "Tesamorelin is a GHRH analog that stimulates GH release. Like other GH peptides, sleep quality directly impacts the efficacy of GH protocols.",
+      "recommendation": "Dose before bed on empty stomach. Maintain consistent sleep schedule. Sleep deprivation significantly reduces tesamorelin effectiveness.",
+      "creature_effect": "Creature fat reduction and body composition improvements tied to sleep quality score"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "factor_id": "fasting_intermittent",
+      "concern": "Food intake blunts GH release stimulated by tesamorelin. Insulin elevation from meals directly suppresses GH secretion.",
+      "recommendation": "Always dose in fasted state. Minimum 2 hours after last meal. Morning fasted or bedtime dosing optimal.",
+      "creature_effect": "Creature GH response only activates when fasting state confirmed"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "factor_id": "resistance_training",
+      "concern": "Tesamorelin reduces visceral adipose tissue. Resistance training enhances body recomposition effects synergistically.",
+      "recommendation": "Combine with regular resistance training for optimal body composition changes. Training amplifies the visceral fat reduction effects.",
+      "creature_effect": "Creature body composition visibly improves when training and tesamorelin are combined"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "factor_id": "temperature_sauna_cold",
+      "concern": "Sauna-induced GH release may stack with tesamorelin GHRH stimulation, risking excessive GH levels",
+      "recommendation": "Separate sauna from tesamorelin dosing by 4+ hours. Monitor for water retention and joint pain as signs of GH excess.",
+      "creature_effect": "Creature shows swelling indicator if sauna and dosing overlap too closely"
+    },
+    {
+      "compound_id": "thymosin-alpha-1",
+      "factor_id": "stress_cortisol",
+      "concern": "Chronic stress suppresses immune function via cortisol. Thymosin alpha-1 modulates immune response but may be less effective when cortisol is chronically elevated.",
+      "recommendation": "Address chronic stress alongside thymosin alpha-1 protocols. Stress management enhances immune modulation effects. Consider adaptogenic support.",
+      "creature_effect": "Creature immune shield weakened when stress bar is high, thymosin boost partially blocked"
+    },
+    {
+      "compound_id": "thymosin-alpha-1",
+      "factor_id": "sleep_quality",
+      "concern": "Immune restoration and T-cell maturation occur primarily during deep sleep. Poor sleep undermines thymosin alpha-1's immunomodulatory effects.",
+      "recommendation": "Prioritize consistent 7-9 hours sleep. Immune peptide protocols are significantly more effective with good sleep hygiene.",
+      "creature_effect": "Creature immune stat rebuilds during sleep, stagnates with poor sleep quality"
+    },
+    {
+      "compound_id": "thymosin-alpha-1",
+      "factor_id": "travel",
+      "concern": "Travel exposes immune system to novel pathogens while disrupting sleep and increasing stress, all of which affect thymosin alpha-1 protocols.",
+      "recommendation": "Consider increasing thymosin alpha-1 frequency before and during travel. Maintain cold chain. Prioritize sleep at destination.",
+      "creature_effect": "Creature immune shield activates protectively during travel, pathogen exposure indicators appear"
+    },
+    {
+      "compound_id": "semax",
+      "factor_id": "sleep_quality",
+      "concern": "Semax's stimulatory and BDNF-enhancing effects can disrupt sleep if dosed too late in the day",
+      "recommendation": "Dose semax in the morning only. Avoid afternoon or evening administration. If sleep disruption occurs, reduce dose.",
+      "creature_effect": "Creature becomes wired and unable to sleep if semax dosed late, focus trades off with rest"
+    },
+    {
+      "compound_id": "selank",
+      "factor_id": "sleep_quality",
+      "concern": "Selank's GABAergic anxiolytic effects can promote sleep when dosed in the evening, but may cause daytime drowsiness if timing is wrong",
+      "recommendation": "Evening dosing can aid sleep quality. Avoid high doses before activities requiring alertness. Adjust timing based on response.",
+      "creature_effect": "Creature sleeps peacefully with evening selank, but may be drowsy if dosed at wrong time"
+    },
+    {
+      "compound_id": "bpc-157",
+      "factor_id": "sun_exposure",
+      "concern": "BPC-157 promotes angiogenesis and tissue repair. Theoretical concern that enhanced angiogenesis near sun-damaged skin could promote abnormal cell growth.",
+      "recommendation": "Use sun protection during BPC-157 protocols. Avoid injecting near sun-damaged or suspicious skin lesions. Discuss with dermatologist if concerned.",
+      "creature_effect": "Creature skin area shows caution marker near sun-exposed injection sites"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "factor_id": "resistance_training",
+      "concern": "GHK-Cu supports connective tissue repair and collagen synthesis. Resistance training creates micro-damage that GHK-Cu may help repair faster.",
+      "recommendation": "Apply topical GHK-Cu to areas worked during training. Systemic GHK-Cu may support joint and tendon health in active lifters.",
+      "creature_effect": "Creature joint health and skin elasticity improve when training and GHK-Cu aligned"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "factor_id": "stress_cortisol",
+      "concern": "Chronic cortisol elevation accelerates collagen breakdown and skin aging, counteracting GHK-Cu's regenerative effects",
+      "recommendation": "Address stress management alongside GHK-Cu skin protocols. Cortisol reduction amplifies GHK-Cu benefits for skin and tissue quality.",
+      "creature_effect": "Creature skin repair slowed when stress is elevated, aging indicators appear"
+    },
+    {
+      "compound_id": "semaglutide",
+      "factor_id": "sleep_quality",
+      "concern": "GLP-1 induced nausea and GI discomfort can disrupt sleep, especially during dose titration. Some report vivid dreams.",
+      "recommendation": "Take injection earlier in the day if nighttime nausea occurs. Elevate head of bed if reflux is an issue. Report persistent insomnia to prescriber.",
+      "creature_effect": "Creature tosses restlessly on dose-up weeks, settles once adjusted"
+    },
+    {
+      "compound_id": "semaglutide",
+      "factor_id": "stress_cortisol",
+      "concern": "Stress eating is suppressed by GLP-1s, removing a coping mechanism. Cortisol elevation may also slow weight loss progress.",
+      "recommendation": "Develop alternative stress coping strategies before starting. Recognize that plateau periods may correlate with high-stress phases. Consider therapy support.",
+      "creature_effect": "Creature mood drops when stress coping mechanisms are blocked, needs alternative comfort sources"
+    },
+    {
+      "compound_id": "bpc-157",
+      "factor_id": "temperature_sauna_cold",
+      "concern": "Heat increases blood flow and may enhance BPC-157 distribution. Cold reduces inflammation which may synergize with or partially overlap BPC-157's anti-inflammatory effects.",
+      "recommendation": "Mild heat exposure after injection may enhance local delivery. Cold exposure post-training can complement healing. Avoid extreme temperature at injection site.",
+      "creature_effect": "Creature healing boosted by moderate heat, cold provides complementary recovery"
+    },
+    {
+      "compound_id": "tb-500",
+      "factor_id": "cardio_endurance",
+      "concern": "TB-500 reduces inflammation and promotes vascular repair. Endurance training creates cardiovascular adaptations that may synergize with TB-500's vascular effects.",
+      "recommendation": "TB-500 can support endurance athletes recovering from overtraining. Moderate training volume during active loading phase.",
+      "creature_effect": "Creature cardiovascular health indicator improves with combined cardio and TB-500"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "factor_id": "resistance_training",
+      "concern": "CJC-1295 elevates GH which supports muscle protein synthesis and recovery. Resistance training provides the stimulus that GH amplifies.",
+      "recommendation": "Train consistently while on CJC-1295 to maximize body composition benefits. Post-workout dosing on training days can enhance recovery.",
+      "creature_effect": "Creature muscle growth and recovery amplified when training and GH peptides are synced"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "factor_id": "resistance_training",
+      "concern": "Ipamorelin-stimulated GH pulses support muscle recovery and growth. Without training stimulus, GH elevation provides minimal anabolic benefit.",
+      "recommendation": "Pair ipamorelin with structured resistance training program for meaningful body composition improvements.",
+      "creature_effect": "Creature muscle stats only improve when both ipamorelin and training are active"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "factor_id": "stress_cortisol",
+      "concern": "Chronic cortisol elevation antagonizes GH effects on body composition. Stress undermines the anabolic benefits of GH peptide protocols.",
+      "recommendation": "Manage stress actively during GH peptide protocols. Consider meditation, therapy, or adaptogens. Cortisol control amplifies GH benefits.",
+      "creature_effect": "Creature GH benefits muted when stress bar is high, cortisol cloud blocks growth animation"
+    },
+    {
+      "compound_id": "semaglutide",
+      "factor_id": "sun_exposure",
+      "concern": "Rapid weight loss can leave skin less resilient. Sun damage compounds reduced skin elasticity from fat loss.",
+      "recommendation": "Use sun protection during weight loss phases. Consider collagen supplementation. Gradual weight loss preserves skin quality better.",
+      "creature_effect": "Creature skin quality indicator drops when rapid weight loss and sun exposure combine"
+    },
+    {
+      "compound_id": "semax",
+      "factor_id": "cardio_endurance",
+      "concern": "Semax enhances BDNF which supports neuroplasticity and may improve mind-body coordination. Cardiovascular exercise also raises BDNF independently.",
+      "recommendation": "Morning semax followed by cardio may create synergistic BDNF elevation. Excellent combination for cognitive performance.",
+      "creature_effect": "Creature brain and body stats both boosted when semax and cardio combine, synergy bonus"
+    },
+    {
+      "compound_id": "selank",
+      "factor_id": "cardio_endurance",
+      "concern": "Selank's anxiolytic effects may reduce exercise-induced anxiety and improve performance in those who experience exercise anxiety",
+      "recommendation": "Pre-workout selank may help anxious exercisers. Monitor for drowsiness affecting workout quality. Adjust dose to find performance sweet spot.",
+      "creature_effect": "Creature exercises with less anxiety, smoother cardio sessions, calmer heart rate display"
+    },
+    {
+      "compound_id": "ghk-cu",
+      "factor_id": "temperature_sauna_cold",
+      "concern": "Heat stress from sauna can damage skin collagen. Cold exposure constricts blood vessels, potentially reducing topical GHK-Cu absorption.",
+      "recommendation": "Apply topical GHK-Cu after temperature exposure sessions, not before. Sauna heat without skin protection counteracts collagen benefits.",
+      "creature_effect": "Creature skin repair most effective when GHK-Cu applied post-temperature session"
+    },
+    {
+      "compound_id": "retatrutide",
+      "factor_id": "alcohol",
+      "concern": "Triple agonist has glucagon receptor activity affecting liver metabolism. Alcohol adds hepatic burden on top of strongest gastroparesis effect.",
+      "recommendation": "Eliminate alcohol. Liver function monitoring recommended. The combination carries highest hepatic risk of any GLP-1 + alcohol pairing.",
+      "creature_effect": "Creature liver health indicator flashes red, severe nausea and health penalty"
+    },
+    {
+      "compound_id": "retatrutide",
+      "factor_id": "travel",
+      "concern": "Newer compound with less established protocols for travel. Cold chain critical. Weekly injection timing disrupted by timezone shifts.",
+      "recommendation": "Plan injection day around travel schedule. Carry medication with temperature monitoring. Keep prescriber contact information accessible.",
+      "creature_effect": "Creature routine disruption amplified due to newer protocol, stability decreases more than other GLP-1s"
+    },
+    {
+      "compound_id": "tesamorelin",
+      "factor_id": "travel",
+      "concern": "Daily injection schedule makes travel particularly challenging. Reconstituted tesamorelin requires refrigeration.",
+      "recommendation": "Pack enough reconstituted medication plus backup lyophilized vials. Insulated travel case essential. Plan for daily dosing across timezones.",
+      "creature_effect": "Creature fat loss progress pauses during travel if dosing schedule disrupted"
+    },
+    {
+      "compound_id": "tb-500",
+      "factor_id": "stress_cortisol",
+      "concern": "Chronic stress impairs wound healing and tissue repair through cortisol-mediated mechanisms, reducing TB-500's regenerative benefits.",
+      "recommendation": "Address stress during healing protocols. TB-500 works best in a recovery-supportive environment with managed cortisol levels.",
+      "creature_effect": "Creature healing rate slowed by stress cloud, repair animations dimmed"
+    },
+    {
+      "compound_id": "ipamorelin",
+      "factor_id": "alcohol",
+      "concern": "Alcohol suppresses GH release and disrupts sleep quality. Both effects directly undermine ipamorelin's mechanism of action.",
+      "recommendation": "Avoid alcohol on dosing days, especially evening doses. Even moderate drinking significantly reduces the GH pulse response.",
+      "creature_effect": "Creature GH pulse blocked on nights with alcohol, sleep quality and growth stats drop"
+    },
+    {
+      "compound_id": "cjc-1295",
+      "factor_id": "alcohol",
+      "concern": "Alcohol suppresses GH secretion and impairs sleep architecture, eliminating the deep sleep phases where CJC-1295 amplifies GH pulses.",
+      "recommendation": "Minimize alcohol, especially on dosing days. Alcohol before bed negates the entire purpose of bedtime GH peptide dosing.",
+      "creature_effect": "Creature nighttime GH pulse animation absent after alcohol consumption"
+    }
+  ]
+}

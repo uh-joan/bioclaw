@@ -224,17 +224,13 @@ export const OPENALEX_MCP_SERVER_PATH =
   envConfig.OPENALEX_MCP_SERVER_PATH ||
   '';
 export const BRENDA_MCP_SERVER_PATH =
-  process.env.BRENDA_MCP_SERVER_PATH ||
-  envConfig.BRENDA_MCP_SERVER_PATH ||
-  '';
+  process.env.BRENDA_MCP_SERVER_PATH || envConfig.BRENDA_MCP_SERVER_PATH || '';
 export const CELLXGENE_MCP_SERVER_PATH =
   process.env.CELLXGENE_MCP_SERVER_PATH ||
   envConfig.CELLXGENE_MCP_SERVER_PATH ||
   '';
 export const ESM_MCP_SERVER_PATH =
-  process.env.ESM_MCP_SERVER_PATH ||
-  envConfig.ESM_MCP_SERVER_PATH ||
-  '';
+  process.env.ESM_MCP_SERVER_PATH || envConfig.ESM_MCP_SERVER_PATH || '';
 export const METABOLOMICS_MCP_SERVER_PATH =
   process.env.METABOLOMICS_MCP_SERVER_PATH ||
   envConfig.METABOLOMICS_MCP_SERVER_PATH ||

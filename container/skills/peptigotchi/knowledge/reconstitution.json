@@ -1,0 +1,108 @@
+{
+  "solvents": [
+    {
+      "id": "bacteriostatic_water",
+      "name": "Bacteriostatic Water (BAC)",
+      "storage_days": 28,
+      "storage_temp_c": { "min": 2, "max": 8 },
+      "notes": "Contains 0.9% benzyl alcohol as preservative. Standard for multi-use vials."
+    },
+    {
+      "id": "sterile_water",
+      "name": "Sterile Water",
+      "storage_days": 1,
+      "storage_temp_c": { "min": 2, "max": 8 },
+      "notes": "No preservative. Single use only. Discard remainder."
+    }
+  ],
+  "syringes": [
+    {
+      "type": "insulin_1ml",
+      "total_units": 100,
+      "total_ml": 1.0,
+      "graduations": [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],
+      "notes": "Standard insulin syringe. 1 unit = 0.01mL."
+    },
+    {
+      "type": "insulin_0.5ml",
+      "total_units": 50,
+      "total_ml": 0.5,
+      "graduations": [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
+      "notes": "Half-size insulin syringe. Same unit scale, smaller barrel."
+    }
+  ],
+  "compounds": {
+    "bpc-157": {
+      "common_vial_sizes_mg": [5, 10],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1, 2],
+      "notes": "Trickle water down side of vial, don't inject directly onto powder."
+    },
+    "semaglutide": {
+      "common_vial_sizes_mg": [3, 5, 10],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1, 2, 3],
+      "notes": "Pre-filled pens don't require reconstitution. Only compounded powder vials need mixing."
+    },
+    "tirzepatide": {
+      "common_vial_sizes_mg": [5, 10, 15, 30, 60],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1, 2, 3],
+      "notes": "Compounded vials vary widely. Check concentration label (mg/mL) before calculating."
+    },
+    "retatrutide": {
+      "common_vial_sizes_mg": [5, 10, 15],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1, 2],
+      "notes": "May take longer to dissolve. Roll gently, do not shake."
+    },
+    "tb-500": {
+      "common_vial_sizes_mg": [2, 5, 10],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1, 2],
+      "notes": "Fragile peptide bond. Temperature sensitivity higher than most. Keep cold."
+    },
+    "cjc-1295": {
+      "common_vial_sizes_mg": [2, 5],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1, 2],
+      "notes": "Often sold with or without DAC. Check label."
+    },
+    "ipamorelin": {
+      "common_vial_sizes_mg": [2, 5],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1, 2],
+      "notes": "Commonly blended with CJC-1295. If blended, reconstitute as one."
+    },
+    "ghk-cu": {
+      "common_vial_sizes_mg": [5, 10, 50],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1, 2, 3, 4, 5],
+      "notes": "Also available as topical cream/serum. Only SubQ vials require reconstitution."
+    },
+    "tesamorelin": {
+      "common_vial_sizes_mg": [2],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [2],
+      "notes": "FDA version (Egrifta) comes with specific diluent."
+    },
+    "thymosin-alpha-1": {
+      "common_vial_sizes_mg": [1.6, 3.2],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1],
+      "notes": "Often pre-dosed at 1.6mg per vial for single injection."
+    },
+    "semax": {
+      "common_vial_sizes_mg": [3],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1],
+      "notes": "Intranasal. Usually comes as pre-mixed nasal spray."
+    },
+    "selank": {
+      "common_vial_sizes_mg": [3, 5],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [1],
+      "notes": "Intranasal. Same delivery as Semax."
+    }
+  }
+}

@@ -316,9 +316,15 @@ function buildVolumeMounts(
     { envPath: HMDB_MCP_SERVER_PATH, containerName: 'hmdb-mcp-server' },
     { envPath: OPENALEX_MCP_SERVER_PATH, containerName: 'openalex-mcp-server' },
     { envPath: BRENDA_MCP_SERVER_PATH, containerName: 'brenda-mcp-server' },
-    { envPath: CELLXGENE_MCP_SERVER_PATH, containerName: 'cellxgene-mcp-server' },
+    {
+      envPath: CELLXGENE_MCP_SERVER_PATH,
+      containerName: 'cellxgene-mcp-server',
+    },
     { envPath: ESM_MCP_SERVER_PATH, containerName: 'esm-mcp-server' },
-    { envPath: METABOLOMICS_MCP_SERVER_PATH, containerName: 'metabolomics-mcp-server' },
+    {
+      envPath: METABOLOMICS_MCP_SERVER_PATH,
+      containerName: 'metabolomics-mcp-server',
+    },
   ];
   for (const { envPath, containerName } of mcpMounts) {
     if (envPath && fs.existsSync(envPath)) {

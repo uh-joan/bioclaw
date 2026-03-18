@@ -1,0 +1,194 @@
+{
+  "fingerprints": [
+    {
+      "compound_id": "bpc-157",
+      "watch_for": [
+        { "symptom": "anxiety_panic", "frequency": "common", "severity": "moderate_to_severe", "mechanism": "Suspected dopamine system modulation", "onset_days": { "min": 3, "max": 14 } },
+        { "symptom": "anhedonia", "frequency": "uncommon", "severity": "severe", "mechanism": "Dopamine downregulation hypothesis", "onset_days": { "min": 7, "max": 21 }, "persistence_note": "Reports of persistence 6+ weeks post-cessation" },
+        { "symptom": "insomnia", "frequency": "common", "severity": "moderate", "mechanism": "Unknown — possibly CNS stimulation", "onset_days": { "min": 3, "max": 10 } },
+        { "symptom": "light_sensitivity", "frequency": "rare", "severity": "moderate", "mechanism": "Unknown — possible retinal VEGF effect", "onset_days": { "min": 7, "max": 14 } },
+        { "symptom": "joint_pain_paradoxical", "frequency": "uncommon", "severity": "moderate", "mechanism": "Inflammatory remodeling during healing process", "onset_days": { "min": 5, "max": 14 } },
+        { "symptom": "brain_fog", "frequency": "uncommon", "severity": "moderate", "mechanism": "Possibly related to dopamine modulation", "onset_days": { "min": 7, "max": 21 } }
+      ],
+      "critical_alerts": [
+        { "condition": "anxiety AND anhedonia co-occurring", "action": "Stop and consult provider — possible dopamine system disruption" },
+        { "condition": "light_sensitivity AND eye_pain", "action": "Stop immediately and see an ophthalmologist" }
+      ],
+      "dose_dependent": false,
+      "context_modifiers": [
+        { "when": "user_on_ssri_snri", "effect": "Elevated priority for anhedonia and emotional_blunting watch" },
+        { "when": "user_high_stress", "effect": "Anxiety side effect may be amplified by existing cortisol elevation" }
+      ]
+    },
+    {
+      "compound_id": "semaglutide",
+      "watch_for": [
+        { "symptom": "nausea", "frequency": "very_common", "severity": "mild_to_moderate", "mechanism": "GLP-1 receptor activation in area postrema (brainstem vomiting center)", "onset_days": { "min": 1, "max": 7 } },
+        { "symptom": "hair_loss", "frequency": "uncommon", "severity": "moderate", "mechanism": "Telogen effluvium from rapid weight loss and caloric deficit", "onset_days": { "min": 60, "max": 180 } },
+        { "symptom": "gastroparesis", "frequency": "uncommon", "severity": "severe", "mechanism": "Excessive gastric emptying delay from GLP-1 effect", "onset_days": { "min": 14, "max": 60 } },
+        { "symptom": "muscle_loss", "frequency": "common", "severity": "moderate", "mechanism": "30% of weight lost is lean mass without resistance training", "onset_days": { "min": 30, "max": 90 } },
+        { "symptom": "emotional_blunting", "frequency": "uncommon", "severity": "moderate", "mechanism": "GLP-1 receptors in reward circuitry may dampen dopamine signaling", "onset_days": { "min": 14, "max": 60 } },
+        { "symptom": "constipation", "frequency": "common", "severity": "mild", "mechanism": "Slowed GI motility", "onset_days": { "min": 3, "max": 14 } }
+      ],
+      "critical_alerts": [
+        { "condition": "persistent_vomiting OR inability_to_eat for 48+ hours", "action": "Seek medical attention — possible gastroparesis or pancreatitis" },
+        { "condition": "severe_abdominal_pain radiating to back", "action": "Seek emergency care — rule out pancreatitis" }
+      ],
+      "dose_dependent": true,
+      "context_modifiers": [
+        { "when": "user_fasting_aggressive", "effect": "Elevated risk of excessive caloric deficit and muscle loss" },
+        { "when": "user_no_resistance_training", "effect": "Muscle loss risk significantly increased — flag as warning" },
+        { "when": "user_on_oral_contraceptive", "effect": "Gastroparesis may delay absorption — effectiveness of oral contraceptive may be reduced" }
+      ]
+    },
+    {
+      "compound_id": "tirzepatide",
+      "watch_for": [
+        { "symptom": "nausea", "frequency": "common", "severity": "mild_to_moderate", "mechanism": "GLP-1/GIP receptor activation", "onset_days": { "min": 1, "max": 7 } },
+        { "symptom": "sulfur_burps", "frequency": "common", "severity": "mild", "mechanism": "Delayed gastric emptying causing bacterial fermentation", "onset_days": { "min": 1, "max": 14 } },
+        { "symptom": "diarrhea", "frequency": "common", "severity": "moderate", "mechanism": "GI motility changes, especially when switching from branded to compounded", "onset_days": { "min": 1, "max": 7 } },
+        { "symptom": "injection_site_reaction", "frequency": "common", "severity": "mild", "mechanism": "Local inflammatory response", "onset_days": { "min": 0, "max": 1 } },
+        { "symptom": "fatigue", "frequency": "uncommon", "severity": "mild", "mechanism": "Caloric deficit and metabolic adaptation", "onset_days": { "min": 7, "max": 30 } }
+      ],
+      "critical_alerts": [
+        { "condition": "severe_diarrhea lasting 3+ days after source switch", "action": "Contact provider — may be formulation-related, not dose-related" },
+        { "condition": "persistent_vomiting OR inability_to_eat for 48+ hours", "action": "Seek medical attention" }
+      ],
+      "dose_dependent": true,
+      "context_modifiers": [
+        { "when": "user_switched_source", "effect": "Monitor closely for 7 days — different excipients can cause different GI profiles" }
+      ]
+    },
+    {
+      "compound_id": "retatrutide",
+      "watch_for": [
+        { "symptom": "sleep_disruption", "frequency": "common", "severity": "moderate", "mechanism": "Overnight glucose dips triggering cortisol release", "onset_days": { "min": 14, "max": 56 } },
+        { "symptom": "emotional_blunting", "frequency": "uncommon", "severity": "moderate", "mechanism": "Triple agonism affecting reward circuitry more aggressively than single GLP-1", "onset_days": { "min": 14, "max": 42 } },
+        { "symptom": "joint_pain", "frequency": "uncommon", "severity": "moderate", "mechanism": "Unknown — may be related to glucagon receptor activation", "onset_days": { "min": 14, "max": 56 } },
+        { "symptom": "nausea", "frequency": "common", "severity": "moderate", "mechanism": "GLP-1 component", "onset_days": { "min": 1, "max": 14 } },
+        { "symptom": "fatigue", "frequency": "common", "severity": "mild_to_moderate", "mechanism": "Aggressive caloric deficit from triple agonism", "onset_days": { "min": 7, "max": 30 } }
+      ],
+      "critical_alerts": [
+        { "condition": "sleep_disruption > 5 consecutive days", "action": "Consider dose reduction — sleep disruption is dose-dependent" },
+        { "condition": "suspected_fake_product (no expected effects at reasonable dose)", "action": "Product may be underdosed or counterfeit — a major issue with gray market retatrutide" }
+      ],
+      "dose_dependent": true,
+      "context_modifiers": [
+        { "when": "user_on_testosterone", "effect": "Testosterone increases appetite, potentially counteracting GLP-1 suppression — may need higher dose" }
+      ]
+    },
+    {
+      "compound_id": "tb-500",
+      "watch_for": [
+        { "symptom": "joint_pain_paradoxical", "frequency": "uncommon", "severity": "moderate", "mechanism": "Inflammatory remodeling during tissue repair, especially when stacked with BPC-157", "onset_days": { "min": 3, "max": 14 } },
+        { "symptom": "headache", "frequency": "uncommon", "severity": "mild", "mechanism": "Possibly related to angiogenesis effects", "onset_days": { "min": 1, "max": 7 } },
+        { "symptom": "fatigue", "frequency": "rare", "severity": "mild", "mechanism": "Immune modulation", "onset_days": { "min": 3, "max": 10 } }
+      ],
+      "critical_alerts": [
+        { "condition": "rapid_tumor_growth OR new_mass_detected", "action": "Stop immediately and consult oncologist — TB-500 promotes angiogenesis which could theoretically feed tumors" }
+      ],
+      "dose_dependent": false,
+      "context_modifiers": [
+        { "when": "user_has_cancer_history", "effect": "Angiogenesis promotion is contraindicated — strongly advise against use" },
+        { "when": "user_stacking_bpc157", "effect": "Dual angiogenesis amplification — monitor for paradoxical joint pain" }
+      ]
+    },
+    {
+      "compound_id": "cjc-1295",
+      "watch_for": [
+        { "symptom": "water_retention", "frequency": "common", "severity": "mild_to_moderate", "mechanism": "GH-mediated sodium and water retention", "onset_days": { "min": 3, "max": 14 } },
+        { "symptom": "lower_back_pain", "frequency": "uncommon", "severity": "moderate", "mechanism": "GH-mediated — more common in older users", "onset_days": { "min": 7, "max": 21 } },
+        { "symptom": "tingling_numbness", "frequency": "uncommon", "severity": "mild", "mechanism": "GH-induced carpal tunnel-like compression", "onset_days": { "min": 14, "max": 42 } },
+        { "symptom": "vivid_dreams", "frequency": "common", "severity": "mild", "mechanism": "GH release during sleep altering REM patterns", "onset_days": { "min": 1, "max": 7 } }
+      ],
+      "critical_alerts": [
+        { "condition": "severe_edema OR rapid_weight_gain (>2kg in 1 week)", "action": "Reduce dose or stop — excessive GH-mediated fluid retention" }
+      ],
+      "dose_dependent": true,
+      "context_modifiers": [
+        { "when": "user_age_over_50", "effect": "GH side effects (edema, joint pain, carpal tunnel) are more pronounced in older users" },
+        { "when": "user_taking_before_bed_with_food", "effect": "GH release blunted by insulin — take fasted for optimal effect" }
+      ]
+    },
+    {
+      "compound_id": "ipamorelin",
+      "watch_for": [
+        { "symptom": "headache", "frequency": "uncommon", "severity": "mild", "mechanism": "Transient vasodilation from GH release", "onset_days": { "min": 1, "max": 3 } },
+        { "symptom": "dizziness", "frequency": "rare", "severity": "mild", "mechanism": "Blood pressure fluctuation from GH pulse", "onset_days": { "min": 1, "max": 3 } },
+        { "symptom": "flushing", "frequency": "uncommon", "severity": "mild", "mechanism": "Vasodilation", "onset_days": { "min": 0, "max": 1 } }
+      ],
+      "critical_alerts": [],
+      "dose_dependent": true,
+      "context_modifiers": [
+        { "when": "user_overdosed_blend", "effect": "CJC/IPA/Tesa blends can cause headache, tingling, and heat sensation if dose is too high — calculate carefully" }
+      ]
+    },
+    {
+      "compound_id": "ghk-cu",
+      "watch_for": [
+        { "symptom": "skin_irritation", "frequency": "common", "severity": "mild", "mechanism": "Copper-mediated local reaction, especially with retinoid co-application", "onset_days": { "min": 1, "max": 7 } },
+        { "symptom": "injection_site_discoloration", "frequency": "uncommon", "severity": "mild", "mechanism": "Copper deposition at injection site", "onset_days": { "min": 7, "max": 21 } }
+      ],
+      "critical_alerts": [],
+      "dose_dependent": false,
+      "context_modifiers": [
+        { "when": "user_using_retinol_topical", "effect": "Skin irritation significantly increased — alternate days, don't co-apply" }
+      ]
+    },
+    {
+      "compound_id": "tesamorelin",
+      "watch_for": [
+        { "symptom": "joint_pain", "frequency": "common", "severity": "moderate", "mechanism": "GH-mediated — dose-dependent, affects 1-10% of users", "onset_days": { "min": 7, "max": 30 } },
+        { "symptom": "carpal_tunnel", "frequency": "uncommon", "severity": "moderate", "mechanism": "GH-induced soft tissue swelling compressing median nerve", "onset_days": { "min": 14, "max": 60 } },
+        { "symptom": "fluid_retention", "frequency": "common", "severity": "mild", "mechanism": "GH-mediated sodium retention", "onset_days": { "min": 3, "max": 14 } },
+        { "symptom": "injection_site_reaction", "frequency": "common", "severity": "mild", "mechanism": "Local inflammatory response", "onset_days": { "min": 0, "max": 1 } }
+      ],
+      "critical_alerts": [
+        { "condition": "severe_joint_pain limiting daily activities", "action": "Reduce dose — joint pain is dose-dependent and typically resolves with dose reduction" }
+      ],
+      "dose_dependent": true,
+      "context_modifiers": [
+        { "when": "user_stacking_cjc1295", "effect": "Redundant GHRH pathway — no benefit, amplified GH side effects" }
+      ]
+    },
+    {
+      "compound_id": "thymosin-alpha-1",
+      "watch_for": [
+        { "symptom": "flu_like_symptoms", "frequency": "uncommon", "severity": "mild", "mechanism": "Immune activation response — typically first few doses only", "onset_days": { "min": 1, "max": 3 } },
+        { "symptom": "injection_site_reaction", "frequency": "uncommon", "severity": "mild", "mechanism": "Local inflammatory response", "onset_days": { "min": 0, "max": 1 } }
+      ],
+      "critical_alerts": [],
+      "dose_dependent": false,
+      "context_modifiers": [
+        { "when": "user_on_immunosuppressants", "effect": "Thymosin Alpha-1 modulates immune function — potential conflict with immunosuppressive therapy. Consult provider." }
+      ]
+    },
+    {
+      "compound_id": "semax",
+      "watch_for": [
+        { "symptom": "nasal_irritation", "frequency": "common", "severity": "mild", "mechanism": "Direct mucosal contact from intranasal delivery", "onset_days": { "min": 1, "max": 3 } },
+        { "symptom": "tolerance", "frequency": "common", "severity": "moderate", "mechanism": "Receptor downregulation with continuous use", "onset_days": { "min": 14, "max": 30 } },
+        { "symptom": "overstimulation", "frequency": "uncommon", "severity": "mild_to_moderate", "mechanism": "Dopaminergic and serotonergic enhancement", "onset_days": { "min": 1, "max": 7 } }
+      ],
+      "critical_alerts": [],
+      "dose_dependent": true,
+      "context_modifiers": [
+        { "when": "user_on_stimulants", "effect": "Additive CNS stimulation — reduce dose or avoid combining with amphetamines/modafinil" }
+      ]
+    },
+    {
+      "compound_id": "selank",
+      "watch_for": [
+        { "symptom": "sedation", "frequency": "uncommon", "severity": "mild", "mechanism": "GABA modulation at higher doses", "onset_days": { "min": 1, "max": 3 } },
+        { "symptom": "nasal_irritation", "frequency": "common", "severity": "mild", "mechanism": "Direct mucosal contact", "onset_days": { "min": 1, "max": 3 } },
+        { "symptom": "tolerance", "frequency": "uncommon", "severity": "moderate", "mechanism": "Possible receptor adaptation with prolonged use", "onset_days": { "min": 21, "max": 60 } }
+      ],
+      "critical_alerts": [],
+      "dose_dependent": true,
+      "context_modifiers": [
+        { "when": "user_on_benzodiazepines", "effect": "Additive GABA modulation — monitor for excessive sedation" },
+        { "when": "user_in_addiction_recovery", "effect": "Selank's anxiolytic effect may be helpful but don't treat it as a benzo replacement — different mechanism and evidence base" }
+      ]
+    }
+  ]
+}

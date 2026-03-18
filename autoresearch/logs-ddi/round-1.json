@@ -1,0 +1,155 @@
+{
+  "round": 1,
+  "score": 0.8390000000000001,
+  "dimension_averages": {
+    "severity_accuracy": 0.77,
+    "mechanism_coverage": 0.9,
+    "key_facts_coverage": 0.9,
+    "management_quality": 0.8949999999999999,
+    "clinical_reasoning": 0.8949999999999999,
+    "risk_score_accuracy": 0.63
+  },
+  "results": [
+    {
+      "id": "warfarin-fluconazole",
+      "scores": {
+        "severity_accuracy": 0.7,
+        "mechanism_coverage": 1,
+        "key_facts_coverage": 1,
+        "management_quality": 1,
+        "clinical_reasoning": 1,
+        "risk_score_accuracy": 0.5
+      },
+      "composite_score": 0.8750000000000001,
+      "predicted_severity": "Contraindicated",
+      "judge_reasoning": "1.0"
+    },
+    {
+      "id": "simvastatin-clarithromycin",
+      "scores": {
+        "severity_accuracy": 1,
+        "mechanism_coverage": 1,
+        "key_facts_coverage": 1,
+        "management_quality": 1,
+        "clinical_reasoning": 1,
+        "risk_score_accuracy": 1
+      },
+      "composite_score": 1,
+      "predicted_severity": "Contraindicated",
+      "judge_reasoning": "1.0"
+    },
+    {
+      "id": "metformin-lisinopril",
+      "scores": {
+        "severity_accuracy": 1,
+        "mechanism_coverage": 1,
+        "key_facts_coverage": 1,
+        "management_quality": 0.95,
+        "clinical_reasoning": 0.95,
+        "risk_score_accuracy": 1
+      },
+      "composite_score": 0.9849999999999999,
+      "predicted_severity": "Minor",
+      "judge_reasoning": "0.95"
+    },
+    {
+      "id": "fluoxetine-tramadol",
+      "scores": {
+        "severity_accuracy": 0.7,
+        "mechanism_coverage": 1,
+        "key_facts_coverage": 1,
+        "management_quality": 1,
+        "clinical_reasoning": 1,
+        "risk_score_accuracy": 0.5
+      },
+      "composite_score": 0.8750000000000001,
+      "predicted_severity": "Contraindicated",
+      "judge_reasoning": "1.0"
+    },
+    {
+      "id": "amiodarone-digoxin",
+      "scores": {
+        "severity_accuracy": 1,
+        "mechanism_coverage": 1,
+        "key_facts_coverage": 1,
+        "management_quality": 1,
+        "clinical_reasoning": 1,
+        "risk_score_accuracy": 0.5
+      },
+      "composite_score": 0.9500000000000001,
+      "predicted_severity": "Major",
+      "judge_reasoning": "1.0"
+    },
+    {
+      "id": "omeprazole-clopidogrel",
+      "scores": {
+        "severity_accuracy": 0.5,
+        "mechanism_coverage": 1,
+        "key_facts_coverage": 1,
+        "management_quality": 1,
+        "clinical_reasoning": 1,
+        "risk_score_accuracy": 0.5
+      },
+      "composite_score": 0.8250000000000001,
+      "predicted_severity": "MAJOR",
+      "judge_reasoning": "1.0"
+    },
+    {
+      "id": "lithium-ibuprofen",
+      "scores": {
+        "severity_accuracy": 1,
+        "mechanism_coverage": 1,
+        "key_facts_coverage": 1,
+        "management_quality": 1,
+        "clinical_reasoning": 1,
+        "risk_score_accuracy": 1
+      },
+      "composite_score": 1,
+      "predicted_severity": "Contraindicated (Major)",
+      "judge_reasoning": "1.0"
+    },
+    {
+      "id": "metoprolol-verapamil",
+      "scores": {
+        "severity_accuracy": 0.8,
+        "mechanism_coverage": 1,
+        "key_facts_coverage": 1,
+        "management_quality": 1,
+        "clinical_reasoning": 1,
+        "risk_score_accuracy": 0.3
+      },
+      "composite_score": 0.8800000000000001,
+      "predicted_severity": "Contraindicated (IV) / Major (oral)",
+      "judge_reasoning": "1.0"
+    },
+    {
+      "id": "amlodipine-atorvastatin",
+      "scores": {
+        "severity_accuracy": 1,
+        "mechanism_coverage": 1,
+        "key_facts_coverage": 1,
+        "management_quality": 1,
+        "clinical_reasoning": 1,
+        "risk_score_accuracy": 1
+      },
+      "composite_score": 1,
+      "predicted_severity": "MINOR",
+      "judge_reasoning": "1.0"
+    },
+    {
+      "id": "phenytoin-valproate",
+      "scores": {
+        "severity_accuracy": 0,
+        "mechanism_coverage": 0,
+        "key_facts_coverage": 0,
+        "management_quality": 0,
+        "clinical_reasoning": 0,
+        "risk_score_accuracy": 0
+      },
+      "composite_score": 0,
+      "predicted_severity": "None (error response)",
+      "judge_reasoning": "0.0"
+    }
+  ],
+  "timestamp": "2026-03-12T08:51:47.712Z"
+}

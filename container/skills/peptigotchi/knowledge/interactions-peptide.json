@@ -1,0 +1,662 @@
+[
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "semaglutide",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "tirzepatide",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "retatrutide",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "tb-500",
+    "commonly_stacked": true,
+    "evidence_level": "yellow",
+    "concern": "Both promote angiogenesis through different pathways; theoretical concern about excessive vascular growth in susceptible individuals.",
+    "mechanism": "BPC-157 upregulates VEGF and NO pathways while TB-500 promotes endothelial cell migration via actin sequestration. Dual angiogenic stimulation may compound vascular effects.",
+    "recommendation": "monitor_closely",
+    "community_signal": "Most commonly reported healing stack on Reddit. Users frequently combine for tendon/ligament injuries and report accelerated recovery. Some concerns about tumor risk in cancer-prone individuals."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "cjc-1295",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "ipamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "ghk-cu",
+    "commonly_stacked": true,
+    "evidence_level": "yellow",
+    "concern": "Both promote tissue remodeling and collagen synthesis; combined effect on wound healing and fibrosis is not well characterized.",
+    "mechanism": "GHK-Cu stimulates collagen synthesis, glycosaminoglycan production, and metalloproteinase activity while BPC-157 promotes angiogenesis and tendon healing. Overlapping tissue repair pathways.",
+    "recommendation": "monitor_closely",
+    "community_signal": "Popular healing and anti-aging stack. Users combine for skin, tendon, and joint repair. Generally positive reports with no major adverse events noted."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "tesamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "thymosin-alpha-1",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "bpc-157",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "tirzepatide",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": "Both act on GLP-1 receptors. Combining creates redundant and excessive GLP-1 agonism with high risk of severe GI side effects, pancreatitis, and hypoglycemia.",
+    "mechanism": "Semaglutide is a selective GLP-1 agonist; tirzepatide is a dual GIP/GLP-1 agonist. Stacking doubles GLP-1 receptor activation without therapeutic benefit.",
+    "recommendation": "avoid",
+    "community_signal": "Universally discouraged. Users and clinicians agree this combination is redundant and dangerous. Reports of severe nausea and vomiting from those who tried switching without adequate washout."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "retatrutide",
+    "commonly_stacked": false,
+    "evidence_level": "yellow",
+    "concern": "Overlapping GLP-1 agonism. Retatrutide already includes GLP-1 activity alongside GIP and glucagon receptor agonism, making semaglutide redundant.",
+    "mechanism": "Retatrutide is a triple agonist (GLP-1/GIP/glucagon). Adding semaglutide creates excessive GLP-1 stimulation without additional receptor coverage.",
+    "recommendation": "avoid",
+    "community_signal": "Community consensus is to choose one or the other. Some users discuss switching protocols but not concurrent use."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "tb-500",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "cjc-1295",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "ipamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "ghk-cu",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "tesamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "thymosin-alpha-1",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "semaglutide",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tirzepatide",
+    "compound_b": "retatrutide",
+    "commonly_stacked": false,
+    "evidence_level": "yellow",
+    "concern": "Overlapping GIP and GLP-1 agonism. Retatrutide adds glucagon receptor activity but shares two of three receptor targets with tirzepatide.",
+    "mechanism": "Tirzepatide is a dual GIP/GLP-1 agonist; retatrutide is a triple GLP-1/GIP/glucagon agonist. Combining creates excessive incretin stimulation across shared pathways.",
+    "recommendation": "avoid",
+    "community_signal": "No reports of concurrent use. Community treats these as alternatives, not complements."
+  },
+  {
+    "compound_a": "tirzepatide",
+    "compound_b": "tb-500",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tirzepatide",
+    "compound_b": "cjc-1295",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tirzepatide",
+    "compound_b": "ipamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tirzepatide",
+    "compound_b": "ghk-cu",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tirzepatide",
+    "compound_b": "tesamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tirzepatide",
+    "compound_b": "thymosin-alpha-1",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tirzepatide",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tirzepatide",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "retatrutide",
+    "compound_b": "tb-500",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "retatrutide",
+    "compound_b": "cjc-1295",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "retatrutide",
+    "compound_b": "ipamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "retatrutide",
+    "compound_b": "ghk-cu",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "retatrutide",
+    "compound_b": "tesamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": "Creates a multi-compound protocol with zero safety data. Retatrutide's triple agonism combined with tesamorelin's GHRH activity introduces unpredictable metabolic interactions.",
+    "mechanism": "Retatrutide activates GLP-1, GIP, and glucagon receptors; tesamorelin is a GHRH analog. The interaction between incretin-mediated glucose control and GH axis stimulation is uncharacterized.",
+    "recommendation": "avoid",
+    "community_signal": "No community data for this specific combination. Protocol complexity alone is flagged as a risk factor."
+  },
+  {
+    "compound_a": "retatrutide",
+    "compound_b": "thymosin-alpha-1",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "retatrutide",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "retatrutide",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tb-500",
+    "compound_b": "cjc-1295",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tb-500",
+    "compound_b": "ipamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tb-500",
+    "compound_b": "ghk-cu",
+    "commonly_stacked": true,
+    "evidence_level": "yellow",
+    "concern": "Both promote tissue repair and angiogenesis. Combined vascular growth stimulation warrants monitoring in individuals with cancer history or risk factors.",
+    "mechanism": "TB-500 promotes endothelial cell migration and angiogenesis via actin regulation. GHK-Cu stimulates collagen, decorin, and glycosaminoglycan synthesis. Both contribute to wound healing through complementary but overlapping vascular and extracellular matrix pathways.",
+    "recommendation": "monitor_closely",
+    "community_signal": "Used together in healing protocols. Users report good results for joint and skin repair. Less commonly stacked than BPC-157 + TB-500."
+  },
+  {
+    "compound_a": "tb-500",
+    "compound_b": "tesamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tb-500",
+    "compound_b": "thymosin-alpha-1",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tb-500",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tb-500",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "cjc-1295",
+    "compound_b": "ipamorelin",
+    "commonly_stacked": true,
+    "evidence_level": "green",
+    "concern": null,
+    "mechanism": "CJC-1295 is a GHRH analog that stimulates GH release from the pituitary. Ipamorelin is a ghrelin mimetic (GHSR agonist) that amplifies GH pulses. Together they synergistically increase GH output through complementary receptor pathways without significantly affecting cortisol or prolactin.",
+    "recommendation": "safe_to_stack",
+    "community_signal": "The most well-established peptide stack. Widely used in anti-aging and performance communities. Extensive positive reports with predictable GH elevation. Considered the gold standard GH secretagogue combination."
+  },
+  {
+    "compound_a": "cjc-1295",
+    "compound_b": "ghk-cu",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "cjc-1295",
+    "compound_b": "tesamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": "Both are GHRH analogs acting on the same receptor. Combining provides no additional benefit and increases risk of GH-related side effects (water retention, joint pain, insulin resistance).",
+    "mechanism": "CJC-1295 and tesamorelin both bind and activate the GHRH receptor on pituitary somatotrophs. Redundant pathway stimulation with no synergistic benefit.",
+    "recommendation": "avoid",
+    "community_signal": "Community consensus is that this is redundant. Clinicians and experienced users advise choosing one GHRH analog, not both."
+  },
+  {
+    "compound_a": "cjc-1295",
+    "compound_b": "thymosin-alpha-1",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "cjc-1295",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "cjc-1295",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "ipamorelin",
+    "compound_b": "ghk-cu",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "ipamorelin",
+    "compound_b": "tesamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "ipamorelin",
+    "compound_b": "thymosin-alpha-1",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "ipamorelin",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "ipamorelin",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "ghk-cu",
+    "compound_b": "tesamorelin",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "ghk-cu",
+    "compound_b": "thymosin-alpha-1",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "ghk-cu",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "ghk-cu",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tesamorelin",
+    "compound_b": "thymosin-alpha-1",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tesamorelin",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "tesamorelin",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "thymosin-alpha-1",
+    "compound_b": "semax",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "thymosin-alpha-1",
+    "compound_b": "selank",
+    "commonly_stacked": false,
+    "evidence_level": "red",
+    "concern": null,
+    "mechanism": null,
+    "recommendation": "no_data_caution",
+    "community_signal": "No community data for this specific combination."
+  },
+  {
+    "compound_a": "semax",
+    "compound_b": "selank",
+    "commonly_stacked": true,
+    "evidence_level": "yellow",
+    "concern": "Both modulate immune and neurotrophin pathways. Combined immunomodulatory effects are not fully characterized outside Russian clinical literature.",
+    "mechanism": "Semax upregulates BDNF and modulates melanocortin receptors. Selank modulates GABA and acts as an anxiolytic tuftsin analog. Both have immunomodulatory properties. Used together in Russian clinical practice for cognitive and anxiety disorders.",
+    "recommendation": "monitor_closely",
+    "community_signal": "Well-known nootropic stack originating from Russian clinical practice. Users report complementary cognitive and anxiolytic effects. Generally well-tolerated per community reports."
+  }
+]
