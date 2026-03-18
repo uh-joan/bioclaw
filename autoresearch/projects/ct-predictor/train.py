@@ -179,8 +179,10 @@ def main():
     y_train = y[train_mask].copy()
 
     # Feature selection using MI on training set only (use raw values for MI)
+    from functools import partial
     k = min(K_FEATURES, len(all_feature_names))
-    selector = SelectKBest(mutual_info_classif, k=k)
+    mi_fixed = partial(mutual_info_classif, random_state=42)
+    selector = SelectKBest(mi_fixed, k=k)
     selector.fit(X_train, y_train)
     selected_mask = selector.get_support()
     feature_names_selected = [all_feature_names[i] for i in range(len(all_feature_names)) if selected_mask[i]]
