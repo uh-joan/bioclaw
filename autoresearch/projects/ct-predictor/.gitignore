@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
 model.pkl
-last_eval.json
+run.log
+results.tsv
 data/trials_raw.csv
 data/val_ids.json
-logs/

@@ -1,95 +1,139 @@
 # Clinical Trial Outcome Predictor — Research Program
 
-You are an autonomous ML research agent optimizing a clinical trial outcome predictor. Your goal is to maximize **AUC-ROC** on a held-out validation set of clinical trials with known outcomes.
+You are an autonomous ML research agent. You will run experiments in a loop to improve a clinical trial outcome predictor. You operate without human supervision — do NOT pause to ask if you should continue. Loop until interrupted.
 
-## Objective
+## SETUP
 
-Build a classifier that predicts whether a Phase 2/3 clinical trial will succeed (meet primary endpoint → FDA approval) or fail (terminated, withdrawn, or no approval).
+1. Agree on a run tag based on today's date (e.g. `mar18`)
+2. Create a branch: `git checkout -b autoresearch/<tag>`
+3. Read these files for context:
+   - `program.md` (this file — your instructions)
+   - `prepare.py` (frozen — data loading and evaluation function)
+   - `train.py` (mutable — feature engineering, model, training)
+4. Verify data exists: `ls data/trials_raw.csv data/val_ids.json`
+5. Initialize `results.tsv` with header row only:
+   ```
+   commit	auc_roc	n_features	status	description
+   ```
+6. Run the baseline (unmodified `train.py`), evaluate, record in results.tsv
+7. Begin the experiment loop
 
-## Metric
+## CONSTRAINTS
 
-- **Primary**: AUC-ROC on validation set (higher = better)
-- **Secondary**: Precision at 80% recall (useful for portfolio decisions)
-- Report both after every experiment.
+- **Fixed 60-second time budget** for training (CPU-only, no GPU)
+- **CANNOT** modify `prepare.py` (contains evaluation function)
+- **CANNOT** modify `data/trials_raw.csv` or `data/val_ids.json`
+- **CANNOT** add new pip dependencies (only numpy, pandas, scikit-learn are available)
+- **CAN** modify anything in `train.py` — features, model, hyperparameters, architecture
+- All else equal, simpler is better. 0.001 AUC improvement from deleting code beats 0.001 from adding complexity.
 
-## What You May Modify
+## GOAL
 
-1. **`features.py`** — Feature engineering, selection, transformations, interactions, encoding strategies
-2. **`train.py`** — Model architecture, hyperparameters, training procedure, ensemble methods
+Maximize `auc_roc` on the held-out validation set.
 
-## What You May NOT Modify
+Higher is better. Extract with: `grep "^auc_roc:" run.log`
 
-1. **`evaluate.py`** — Evaluation logic and held-out validation set (prevents reward hacking)
-2. **`data/trials_raw.csv`** — Raw cached data from MCP extraction
-3. **`data/val_ids.json`** — Validation trial IDs (fixed split)
+## OUTPUT FORMAT
 
-## Constraints
+`train.py` prints grep-friendly output:
+```
+cv_auc_roc:        0.650000
+n_features:        42
+training_seconds:  3.2
+model_type:        GradientBoostingClassifier
+```
 
-- Each experiment must complete in under 60 seconds (CPU-only sklearn/xgboost)
-- No external API calls during the experiment loop — all data is pre-cached in `data/`
-- No neural networks unless they train within the time budget
-- All else equal, simpler is better — marginal improvements don't justify complexity
+`prepare.py` (evaluation) prints:
+```
+auc_roc:           0.620000
+p_at_80_recall:    0.550000
+n_features:        42
+model_type:        GradientBoostingClassifier
+```
 
-## Experiment Loop
+Extract the key metric: `grep "^auc_roc:" run.log`
 
-1. Read the current `features.py` and `train.py`
-2. Review `results.tsv` and git log to understand what has been tried
-3. Formulate a hypothesis about what change will improve AUC-ROC
-4. Modify `features.py` and/or `train.py`
-5. Run: `python train.py` → outputs model to `model.pkl`
-6. Run: `python evaluate.py` → outputs metrics to stdout
-7. Parse AUC-ROC from output
-8. If AUC-ROC improved: `git commit` with descriptive message, log to results.tsv
-9. If AUC-ROC regressed: `git checkout -- features.py train.py` to revert
-10. Repeat from step 1
+## EXPERIMENT LOOP
 
-## Decision Logic
+```
+LOOP FOREVER:
+  1. Review results.tsv and git log to see what's been tried
+  2. Formulate a hypothesis (ONE change at a time)
+  3. Modify train.py
+  4. git add train.py && git commit -m "<description of change>"
+  5. Run: python train.py > run.log 2>&1
+  6. Run: python prepare.py >> run.log 2>&1
+  7. Extract: grep "^auc_roc:\|^n_features:" run.log
+  8. If grep empty → CRASH: tail -n 50 run.log, debug
+  9. Record in results.tsv (DO NOT commit results.tsv)
+  10. If auc_roc improved → keep the commit, continue
+  11. If auc_roc same or worse → git reset --hard HEAD~1
+  12. Go to 1
+```
 
-- **Keep** if AUC-ROC improves by ≥ 0.001 (0.1%)
-- **Keep** if AUC-ROC is equal but model is simpler (fewer features, simpler model)
-- **Discard** if AUC-ROC decreases
-- **Discard** if training takes > 60 seconds
+## RESULTS.TSV FORMAT
 
-## Feature Engineering Hints
+Tab-separated. Do NOT use commas (they break descriptions).
 
-The dataset contains features extracted from these MCP sources:
+```
+commit	auc_roc	n_features	status	description
+a1b2c3d	0.620000	82	keep	baseline
+b2c3d4e	0.635000	45	keep	LASSO feature selection reduces to 45 features
+c3d4e5f	0.630000	45	discard	switch to random forest
+d4e5f6g	0.000000	0	crash	XGBoost import error
+```
+
+- Column 1: short git hash (7 chars)
+- Column 2: auc_roc (6 decimals, 0.000000 for crashes)
+- Column 3: n_features
+- Column 4: `keep`, `discard`, or `crash`
+- Column 5: short description (no tabs or newlines)
+
+## WHAT TO TRY
+
+The dataset has ~85 raw features from 18 MCP biomedical data sources:
+
+**Data sources and what they provide:**
 - ClinicalTrials.gov: trial design, phase, enrollment, endpoints, sponsors
-- OpenTargets: genetic evidence scores for target-disease pairs
-- ChEMBL: compound bioactivity, selectivity
-- DrugBank: drug-target pharmacology, interactions
-- BindingDB: binding affinity data
-- ClinPGx: pharmacogenomic complexity
-- FDA: regulatory precedent
-- PubMed + OpenAlex + bioRxiv: publication signals
-- Medicare + Medicaid: healthcare spend
-- Reactome + STRING-db: pathway and network features
+- OpenTargets: genetic evidence scores (genetic, somatic, literature, animal, known_drug, pathway)
+- ChEMBL: compound bioactivity, selectivity, IC50, mechanism of action count
+- DrugBank: drug interactions, targets, enzymes, transporters, half-life, molecular weight
+- BindingDB: binding affinity (Ki, Kd), measurement count
+- ClinPGx: pharmacogenomic guidelines, CYP substrate count
+- FDA: regulatory designations (breakthrough, fast track, orphan), adverse events
+- PubMed + OpenAlex + bioRxiv: publication counts, citation velocity, preprints
+- Medicare + Medicaid: healthcare spend on indication
+- Reactome + STRING-db: pathway count, PPI network degree, betweenness
 - GTEx: tissue expression specificity
-- gnomAD: population genetics constraint
-- ClinVar: pathogenic variant evidence
-- GWAS Catalog: genetic association strength
-- DepMap: cancer dependency evidence
-- cBioPortal: tumor mutation landscape
-- HPO + Monarch: disease complexity
+- gnomAD: loss-of-function intolerance (pLI, LOEUF)
+- ClinVar: pathogenic variant count
+- GWAS Catalog: hit count, best p-value
+- DepMap: cancer gene essentiality
+- cBioPortal: tumor mutation frequency
+- HPO + Monarch: disease phenotype count, associated gene count
 - EMA + EU Filings: European regulatory signals
 
-Consider:
-- Feature interactions (genetic_evidence × phase, selectivity × indication_area)
-- Non-linear transformations (log, sqrt for skewed distributions)
-- Missing value strategies (imputation vs. indicator variables)
-- Feature selection (mutual information, LASSO, recursive elimination)
-- Categorical encoding (target encoding, frequency encoding for indication areas)
-- Ensemble methods (stacking, blending multiple model types)
+**Ideas (non-exhaustive — try your own):**
+- Feature selection: mutual information, LASSO, recursive elimination
+- Feature interactions: genetic_evidence × phase, selectivity × indication
+- Log transforms for skewed features (IC50, enrollment, publication counts)
+- Missing value strategies: indicator variables, KNN imputation
+- Categorical encoding: target encoding, one-hot for indication_area
+- Model types: LogisticRegression, RandomForest, XGBoost (if fast enough), SVM
+- Ensemble methods: stacking, voting, blending
+- Regularization tuning
+- Feature clustering to reduce multicollinearity
 
-## Error Handling
+## ERROR HANDLING
 
-- If `train.py` errors: fix the error, don't just skip
-- If `evaluate.py` errors: you likely broke the output format — check train.py produces model.pkl
-- If training takes > 60s: reduce model complexity or feature count
-- If AUC-ROC is stuck: try a fundamentally different approach (different model family, different feature set)
+- If `train.py` crashes: read the error, fix it in train.py, try again
+- If training takes >60s: reduce model complexity or feature count
+- If AUC is stuck after 5+ experiments: try a fundamentally different approach
+- Log all crashes to results.tsv with status=`crash` and auc_roc=0.000000
+- After fixing a crash, do NOT amend — make a new commit
 
-## Initialization
+## AUTONOMY
 
-On first run, if no `results.tsv` exists, create it with headers:
-```
-experiment_id	timestamp	changes	auc_roc	precision_at_80recall	n_features	model_type	decision
-```
+Do NOT pause to ask the human if you should continue.
+Do NOT ask "should I keep going?" or "shall I try another approach?"
+Just keep looping. The human will interrupt you when they want you to stop.
