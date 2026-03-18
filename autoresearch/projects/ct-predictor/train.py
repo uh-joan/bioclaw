@@ -139,7 +139,7 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # ---------------------------------------------------------------------------
 
 MODEL = SVC(
-    C=1.0,
+    C=2.0,
     kernel="rbf",
     gamma="scale",
     probability=True,
