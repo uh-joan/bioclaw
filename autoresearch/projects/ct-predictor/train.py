@@ -85,12 +85,17 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     available = [c for c in numeric_cols if c in df.columns]
     X = df[available].copy()
 
+    # Force numeric conversion (real data may have strings)
+    for col in available:
+        X[col] = pd.to_numeric(X[col], errors='coerce')
+
     # Handle missing values — add missingness indicator for high-missing cols
     for col in available:
         missing_frac = X[col].isna().mean()
         if missing_frac > 0.1:
             X[f"{col}_missing"] = X[col].isna().astype(int)
-        X[col] = X[col].fillna(X[col].median())
+        med = X[col].median()
+        X[col] = X[col].fillna(med if pd.notna(med) else 0)
 
     # Categorical features (frequency encoding)
     for col in ["indication_area", "endpoint_type", "sponsor_type",
