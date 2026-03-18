@@ -16,8 +16,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
-from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
 
@@ -137,12 +137,13 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # Model definition — MODIFY THIS
 # ---------------------------------------------------------------------------
 
-MODEL = LogisticRegression(
-    C=0.1,
-    penalty="l2",
-    solver="lbfgs",
-    max_iter=1000,
+MODEL = RandomForestClassifier(
+    n_estimators=200,
+    max_depth=3,
+    min_samples_leaf=10,
+    max_features="sqrt",
     random_state=42,
+    n_jobs=-1,
 )
 
 K_FEATURES = 30  # select top K features by mutual information
