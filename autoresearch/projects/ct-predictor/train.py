@@ -20,6 +20,7 @@ from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
 from sklearn.model_selection import cross_val_score
 from sklearn.preprocessing import StandardScaler
+from sklearn.svm import SVC
 
 # ---------------------------------------------------------------------------
 # Paths (do not change)
@@ -137,12 +138,11 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # Model definition — MODIFY THIS
 # ---------------------------------------------------------------------------
 
-MODEL = GradientBoostingClassifier(
-    n_estimators=50,
-    max_depth=2,
-    learning_rate=0.05,
-    subsample=0.7,
-    min_samples_leaf=10,
+MODEL = SVC(
+    C=1.0,
+    kernel="rbf",
+    gamma="scale",
+    probability=True,
     random_state=42,
 )
 
