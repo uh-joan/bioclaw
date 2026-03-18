@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  A biomedical AI assistant with 37 MCP-powered research tools and 128 specialized skills running securely in containers. Built on <a href="https://github.com/qwibitai/nanoclaw">NanoClaw</a>.
+  A biomedical AI assistant with 37 MCP-powered research tools and 124 specialized domain skills running securely in containers. Built on <a href="https://github.com/qwibitai/nanoclaw">NanoClaw</a>.
 </p>
 
 BioClaw bundles 37 [OpenPharma](https://github.com/openpharma-org) MCP servers directly into the container image — no cloning repos, no configuring paths. One image, zero setup.
@@ -24,29 +24,31 @@ BioClaw bundles 37 [OpenPharma](https://github.com/openpharma-org) MCP servers d
 | **Pharmacogenomics** | [ClinPGx](https://github.com/openpharma-org/clinpgx-mcp-server) |
 | **Healthcare** | [Medicare](https://github.com/openpharma-org/medicare-mcp), [Medicaid](https://github.com/openpharma-org/medicaid-mcp-server), [CDC](https://github.com/openpharma-org/cdc-mcp), [EU Filings](https://github.com/openpharma-org/eu-filings-mcp-server) |
 
-## Agent Skills (128) + Recipes (43)
+## Agent Skills (124 domain + 30 tooling) + Recipes (75)
 
-The container agent has access to 128 specialized skills and 43 recipe sets that guide its reasoning and workflows:
+The container agent has access to 124 specialized domain skills, 14 superpowers workflow skills, 12 Apify scraping skills, 4 tool skills, and 75 recipe/reference files that guide its reasoning and workflows:
 
 | Domain | Skills |
 |--------|--------|
 | **Genomics & Variants** | variant-interpretation, variant-analysis, cancer-variant-interpreter, GWAS (SNP interpretation, fine-mapping, trait-to-gene, study explorer, drug discoverer), structural-variant-analysis, copy-number-analysis, rare-disease-diagnosis, comparative-genomics, regulatory-genomics, sequence-retrieval |
-| **Transcriptomics** | RNA-seq/DESeq2, single-cell-analysis, spatial-transcriptomics, spatial-omics, ribo-seq, alternative-splicing, temporal-genomics, gene-enrichment |
-| **Epigenomics** | ATAC-seq, ChIP-seq, chromatin-conformation, methylation-analysis, RNA-modification-analysis, epigenomics |
-| **Proteomics & Structure** | AlphaFold structures, PDB structures, protein-interactions, STRING-db, proteomics-analysis, antibody-engineering, protein-therapeutic-design, enzyme-engineering |
-| **Pathways & Annotation** | Reactome, KEGG, Gene Ontology, HPO phenotypes, UniProt, Ensembl, GTEx expression, gene-regulatory-networks |
+| **Transcriptomics** | rnaseq-deseq2, single-cell-analysis, spatial-transcriptomics, spatial-omics-analysis, ribo-seq-analysis, alternative-splicing, temporal-genomics, gene-enrichment |
+| **Epigenomics** | atac-seq-analysis, chip-seq-analysis, chromatin-conformation, methylation-analysis, rna-modification-analysis, epigenomics |
+| **Proteomics & Structure** | alphafold-structures, pdb-structures, protein-interactions, protein-structure-retrieval, stringdb-interactions, proteomics-analysis, antibody-engineering, protein-therapeutic-design, enzyme-engineering |
+| **Pathways & Annotation** | reactome-pathways, kegg-database, geneontology, hpo-phenotypes, uniprot-protein-data, ensembl-genomics, gtex-expression, gene-regulatory-networks |
 | **Multi-Omics** | multi-omics-integration, multiomic-disease-characterization, metabolomics-analysis, toxicogenomics, systems-biology |
-| **Drug Discovery** | drug-target-analyst, drug-target-validator, drug-repurposing, binder-discovery, medicinal-chemistry, formulation-science, network-pharmacologist, molecular-glue-discovery, neuroscience-drug-discovery |
-| **Pharmacology** | pharmacogenomics-specialist, clinical-pharmacology, drug-interaction-analyst, chemical-safety-toxicology |
+| **Drug Discovery** | drug-target-analyst, drug-target-validator, drug-repurposing-analyst, target-research, binder-discovery-specialist, medicinal-chemistry, formulation-science, network-pharmacologist, molecular-glue-discovery, neuroscience-drug-discovery, drug-research |
+| **Pharmacology** | pharmacogenomics-specialist, clinical-pharmacology, drug-interaction-analyst, chemical-safety-toxicology, pharmacovigilance-specialist |
 | **Precision Medicine** | biomarker-discovery, precision-medicine-stratifier, precision-oncology-advisor, immunotherapy-response-predictor, polygenic-risk-score |
 | **Clinical** | clinical-trial-protocol-designer, clinical-trial-analyst, clinical-report-writer, clinical-decision-support, clinical-guidelines, prior-auth-reviewer |
-| **Regulatory & Safety** | FDA consultant, ISO 13485, MDR 745/2017, CAPA officer, QMS audit, pharmacovigilance, adverse-event-detection, GDPR privacy, risk-management, biologic-quality |
+| **Regulatory & Safety** | fda-consultant, iso-13485-consultant, mdr-745-consultant, capa-officer, qms-audit-expert, adverse-event-detection, gdpr-privacy-expert, risk-management-specialist, biologic-quality |
 | **Population & Metagenomics** | phylogenetics, metagenomics-analyst, microbiome-analyst, genome-assembly, long-read-sequencing, immune-repertoire-analysis, flow-cytometry |
-| **Immunology & Oncology** | immunology-analyst, immunotherapy-response-predictor, cancer-variant-interpreter, infectious-disease-analyst, CRISPR-screen-analysis |
+| **Immunology & Oncology** | immunology-analyst, infectious-disease-analyst, crispr-screen-analysis |
 | **Healthcare IT** | fhir-developer, lab-data-standardization |
-| **Research & Reasoning** | deep-research, literature-deep-research, systematic-literature-reviewer, hypothesis-generation, experimental-design, research-problem-selection, research-synthesis, research-grants, competitive-intelligence, statistical-modeling, scientific-writing, scientific-critical-thinking, peer-review, reproducibility-audit, exploratory-data-analysis, scientific-visualization, drug-research, disease-research |
-| **Thinking Frameworks** | first-principles, abductive-reasoning, adversarial-collaboration, socratic-inquiry, Delphi method, what-if-oracle, meta-cognition, red-team-science, systems-thinking |
-| **Tools** | agent-browser (web automation), pdf-reader, image-analysis, pipeline-engineering |
+| **Research & Reasoning** | deep-research, literature-deep-research, systematic-literature-reviewer, hypothesis-generation, experimental-design, research-problem-selection, research-synthesis, research-grants, competitive-intelligence, statistical-modeling, scientific-writing, scientific-critical-thinking, scientific-visualization, peer-review, reproducibility-audit, exploratory-data-analysis, disease-research |
+| **Thinking Frameworks** | first-principles, abductive-reasoning, adversarial-collaboration, socratic-inquiry, delphi-method, what-if-oracle, meta-cognition, red-team-science, systems-thinking |
+| **Apify Scraping** | apify-ultimate-scraper, apify-actor-development, apify-actorization, apify-audience-analysis, apify-brand-reputation-monitoring, apify-competitor-intelligence, apify-content-analytics, apify-ecommerce, apify-influencer-discovery, apify-lead-generation, apify-market-research, apify-trend-analysis |
+| **Superpowers (Dev Workflow)** | brainstorming, writing-plans, executing-plans, subagent-driven-development, dispatching-parallel-agents, test-driven-development, systematic-debugging, requesting-code-review, receiving-code-review, finishing-a-development-branch, using-git-worktrees, using-superpowers, verification-before-completion, writing-skills |
+| **Tools** | agent-browser, pdf-reader, image-analysis, pipeline-engineering |
 
 ## Quick Start
 
@@ -94,7 +96,7 @@ Single Node.js process. Agents run in isolated Linux containers with all MCP ser
 Key additions over NanoClaw:
 - `container/Dockerfile.mcp-bundled` — Dockerfile with all MCP servers baked in
 - `container/build-mcp-bundled.sh` — Build script that stages and bundles MCP artifacts
-- `container/skills/` — 128 specialized skill sets with 43 recipe files
+- `container/skills/` — 154 specialized skill sets with 75 recipe/reference files
 
 For the full NanoClaw architecture, see [docs/SPEC.md](docs/SPEC.md).
 
