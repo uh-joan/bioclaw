@@ -207,7 +207,7 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # ---------------------------------------------------------------------------
 
 MODEL = GradientBoostingClassifier(
-    n_estimators=600,
+    n_estimators=1000,
     max_depth=3,
     learning_rate=0.03,
     subsample=0.8,
