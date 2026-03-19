@@ -164,7 +164,7 @@ MODEL = GradientBoostingClassifier(
     random_state=42,
 )
 
-K_FEATURES = 15  # select top K features by mutual information
+K_FEATURES = 40  # select top K features by mutual information
 
 # ---------------------------------------------------------------------------
 # Training loop (structure is stable, but agent can modify)
@@ -196,8 +196,8 @@ def main():
     non_const = [f for f in all_feature_names if X_train[f].std() > 0]
     X_train_nc = X_train[non_const]
 
-    # MI-based feature selection: pick top 25 from non-constant features
-    selector = SelectKBest(mutual_info_classif, k=min(25, len(non_const)))
+    # MI-based feature selection: pick top K from non-constant features
+    selector = SelectKBest(mutual_info_classif, k=min(K_FEATURES, len(non_const)))
     selector.fit(X_train_nc, y_train)
     feature_names_selected = [non_const[i] for i in selector.get_support(indices=True)]
 
