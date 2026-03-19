@@ -229,7 +229,7 @@ MODEL = VotingClassifier(
     weights=[2, 1],
 )
 
-K_FEATURES = 80  # select top K features by mutual information
+K_FEATURES = 90  # select top K features by mutual information
 
 # ---------------------------------------------------------------------------
 # Training loop (structure is stable, but agent can modify)
