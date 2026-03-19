@@ -188,7 +188,7 @@ MODEL = RandomForestClassifier(
     n_jobs=-1,
 )
 
-K_FEATURES = 60  # select top K features by mutual information
+K_FEATURES = 80  # select top K features by mutual information
 
 # ---------------------------------------------------------------------------
 # Training loop (structure is stable, but agent can modify)
