@@ -70,7 +70,7 @@ def get_disease_genes(disease: str, limit: Optional[int] = None) -> Dict[str, An
     """
     # Resolve text name to MONDO ID
     if not disease.startswith(('MONDO:', 'HP:', 'OMIM:')):
-        results = search(query=disease, category='disease', limit=1)
+        results = search(query=disease, category='biolink:Disease', limit=1)
         items = results.get('results', results.get('items', []))
         if isinstance(items, list) and items:
             disease_id = items[0].get('id', disease)

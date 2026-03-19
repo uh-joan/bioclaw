@@ -77,15 +77,16 @@ def get_mutations(profileId, sampleListId, entrezGeneIds=None, genes=None):
                  entrezGeneIds=entrezGeneIds, genes=genes)
 
 
-def get_gene_cancer_studies(gene):
-    """Get gene info from cBioPortal."""
-    result = {}
-    info = _call('get_gene', gene=gene)
-    if info and isinstance(info, dict) and 'error' not in info:
-        result['entrezGeneId'] = info.get('entrezGeneId', '')
-        result['hugoGeneSymbol'] = info.get('hugoGeneSymbol', '')
-        result['type'] = info.get('type', '')
-    return result
+def get_mutation_frequency(gene: str, study_id: str = 'msk_impact_2017') -> Dict[str, Any]:
+    """Get mutation frequency for a gene in a cancer study.
+
+    Args:
+        gene: Gene symbol (e.g. EGFR, TP53)
+        study_id: cBioPortal study ID (default: msk_impact_2017 for pan-cancer)
+    Returns:
+        dict with frequency, mutatedSamples, totalSamples
+    """
+    return _call('get_mutation_frequency', studyId=study_id, genes=[gene])
 
 
 __all__ = [

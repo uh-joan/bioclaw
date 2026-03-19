@@ -198,9 +198,9 @@ def main():
         "pubmed_target_pub_count", "reactome_pathway_count",
         "gnomad_pli", "gnomad_loeuf", "depmap_essentiality",
         "pubmed_drug_pub_count_missing", "clinvar_pathogenic_count_missing",
-        "gwas_hit_count_missing", "is_immunology",
+        "gwas_hit_count_missing", "ema_approved_similar",
         "log_reactome_pathway_count", "overall_score_x_phase",
-        "total_genetic_evidence", "ema_approved_similar",
+        "total_genetic_evidence",
     ]
     feature_names_selected = [f for f in hardcoded if f in all_feature_names]
 

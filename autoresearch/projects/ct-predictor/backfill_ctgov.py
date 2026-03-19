@@ -110,6 +110,31 @@ def parse_markdown_study(text: str) -> dict:
     else:
         out['has_dmc'] = 0
 
+    # Primary endpoint type from "Primary Outcomes" section
+    m = re.search(r'Primary Outcomes.*?Measure:\*?\*?\s*(.+)', text, re.I | re.S)
+    if m:
+        endpoint = m.group(1).strip().split('\n')[0][:200].lower()
+        if any(x in endpoint for x in ['overall survival', 'death', 'mortality']):
+            out['endpoint_type'] = 'OS'
+        elif any(x in endpoint for x in ['progression.free', 'pfs']):
+            out['endpoint_type'] = 'PFS'
+        elif any(x in endpoint for x in ['response rate', 'orr', 'objective response']):
+            out['endpoint_type'] = 'ORR'
+        elif any(x in endpoint for x in ['disease.free', 'dfs', 'relapse.free', 'rfs']):
+            out['endpoint_type'] = 'DFS'
+        elif any(x in endpoint for x in ['biomarker', 'ctdna', 'psa', 'hba1c']):
+            out['endpoint_type'] = 'biomarker'
+        elif any(x in endpoint for x in ['composite', 'mace', 'major adverse']):
+            out['endpoint_type'] = 'composite'
+        elif any(x in endpoint for x in ['patient reported', 'quality of life', 'pro', 'qol']):
+            out['endpoint_type'] = 'PRO'
+        else:
+            out['endpoint_type'] = 'other'
+
+    # Biomarker selection
+    if re.search(r'biomarker|molecular|genomic|mutation.*select|HER2.*positive|PD-L1.*positive|BRCA.*positive|ALK.*positive|EGFR.*mutant', text, re.I):
+        out['has_biomarker_selection'] = 1
+
     return out
 
 

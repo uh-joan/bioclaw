@@ -204,8 +204,8 @@ def enrich_trial(drug, target, condition):
 
     # Medicare (prescriber count and spending)
     try:
-        from mcp.servers.medicare_mcp import search_prescribers
-        r = safe_call(search_prescribers, drug_name=drug, size=100, timeout_sec=20)
+        from mcp.servers.medicare_mcp import medicare_info
+        r = safe_call(medicare_info, method='search_prescribers', drug_name=drug, limit=100, timeout_sec=20)
         if r and isinstance(r, dict):
             prescribers = r.get('prescribers', [])
             out['medicare_prescriber_count'] = r.get('total', len(prescribers))
@@ -219,8 +219,8 @@ def enrich_trial(drug, target, condition):
 
     # Medicaid (NADAC pricing + drug utilization)
     try:
-        from mcp.servers.medicaid_mcp import get_nadac_pricing, get_drug_utilization
-        r = safe_call(get_nadac_pricing, drug_name=drug, limit=5, timeout_sec=20)
+        from mcp.servers.medicaid_mcp import medicaid_info
+        r = safe_call(medicaid_info, method='get_nadac_pricing', drug_name=drug, limit=5, timeout_sec=20)
         if r and isinstance(r, dict):
             data = r.get('data', [])
             if isinstance(data, list) and data:
@@ -228,7 +228,7 @@ def enrich_trial(drug, target, condition):
                 if prices:
                     out['medicaid_nadac_per_unit'] = round(sum(prices) / len(prices), 4)
                     out['medicaid_nadac_count'] = r.get('meta', {}).get('total_count', len(data))
-        r2 = safe_call(get_drug_utilization, drug_name=drug, limit=10, timeout_sec=20)
+        r2 = safe_call(medicaid_info, method='get_drug_utilization', drug_name=drug, limit=10, timeout_sec=20)
         if r2 and isinstance(r2, dict):
             data2 = r2.get('data', [])
             if isinstance(data2, list) and data2:
@@ -359,13 +359,14 @@ def enrich_trial(drug, target, condition):
         except Exception:
             pass
 
-        # cBioPortal (gene info)
+        # cBioPortal (pan-cancer mutation frequency)
         try:
-            from mcp.servers.cbioportal_mcp import get_gene as cbio_get_gene
-            r = safe_call(cbio_get_gene, gene=target, timeout_sec=15)
-            if r and isinstance(r, dict) and 'error' not in r:
-                out['cbioportal_entrez_id'] = r.get('entrezGeneId', '')
-                out['cbioportal_gene_type'] = r.get('type', '')
+            from mcp.servers.cbioportal_mcp import get_mutation_frequency
+            r = safe_call(get_mutation_frequency, gene=target, study_id='msk_impact_2017', timeout_sec=15)
+            if r and isinstance(r, dict) and 'frequencies' in r:
+                freqs = r['frequencies']
+                if freqs:
+                    out['cbioportal_mutation_freq'] = freqs[0].get('frequency', '')
         except Exception:
             pass
 
