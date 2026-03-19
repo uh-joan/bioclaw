@@ -298,6 +298,7 @@ def enrich_trial(drug, target, condition):
         pass
 
     # === Target-dependent features ===
+    ensembl_id = ''
     if target:
         # OpenTargets
         try:
@@ -452,18 +453,18 @@ def enrich_trial(drug, target, condition):
         except Exception:
             pass
 
-        # Ensembl (transcript count, gene biotype)
-        try:
-            from mcp.servers.ensembl_mcp import lookup_gene, get_transcripts
-            r = safe_call(lookup_gene, gene=target, timeout_sec=15)
-            if r and isinstance(r, dict):
-                out['ensembl_gene_biotype'] = r.get('biotype', '')
-            tr = safe_call(get_transcripts, gene=target, timeout_sec=15)
-            if tr and isinstance(tr, dict):
-                transcripts = tr.get('transcripts', tr.get('results', []))
-                out['ensembl_transcript_count'] = len(transcripts) if isinstance(transcripts, list) else ''
-        except Exception:
-            pass
+        # Ensembl (transcript count, gene biotype — needs Ensembl ID from OT search)
+        if ensembl_id:
+            try:
+                from mcp.servers.ensembl_mcp import lookup_gene, get_transcripts
+                r = safe_call(lookup_gene, gene_id=ensembl_id, timeout_sec=15)
+                if r and isinstance(r, dict) and 'error' not in r:
+                    out['ensembl_gene_biotype'] = r.get('biotype', '')
+                tr = safe_call(get_transcripts, gene_id=ensembl_id, timeout_sec=15)
+                if tr and isinstance(tr, dict):
+                    out['ensembl_transcript_count'] = tr.get('transcript_count', len(tr.get('transcripts', [])))
+            except Exception:
+                pass
 
         # PDB (structure count)
         try:
