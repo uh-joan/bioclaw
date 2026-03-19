@@ -2,100 +2,216 @@
   "mcpServers": {
     "fda": {
       "command": "node",
-      "args": ["/Users/janisaez/code/fda-mcp-server/build/index.js"],
-      "env": { "FDA_API_KEY": "jWdSDmjpbpwXVa80y1yvlDrJR6bMrUkf2Ima4dtw" }
+      "args": [
+        "/Users/janisaez/code/fda-mcp-server/build/index.js"
+      ],
+      "env": {
+        "FDA_API_KEY": "jWdSDmjpbpwXVa80y1yvlDrJR6bMrUkf2Ima4dtw"
+      }
     },
     "ctgov": {
       "command": "node",
-      "args": ["/Users/janisaez/code/ctgov-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/ctgov-mcp-server/build/index.js"
+      ]
     },
     "opentargets": {
       "command": "node",
-      "args": ["/Users/janisaez/code/opentargets-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/opentargets-mcp-server/build/index.js"
+      ]
     },
     "chembl": {
       "command": "node",
-      "args": ["/Users/janisaez/code/chembl-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/chembl-mcp-server/build/index.js"
+      ]
     },
     "drugbank": {
       "command": "node",
-      "args": ["/Users/janisaez/code/drugbank-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/drugbank-mcp-server/build/index.js"
+      ]
     },
     "bindingdb": {
       "command": "node",
-      "args": ["/Users/janisaez/code/bindingdb-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/bindingdb-mcp-server/build/index.js"
+      ]
     },
     "clinpgx": {
       "command": "node",
-      "args": ["/Users/janisaez/code/clinpgx-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/clinpgx-mcp-server/build/index.js"
+      ]
     },
     "pubmed": {
       "command": "node",
-      "args": ["/Users/janisaez/code/pubmed-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/pubmed-mcp-server/build/index.js"
+      ]
     },
     "openalex": {
       "command": "node",
-      "args": ["/Users/janisaez/code/openalex-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/openalex-mcp-server/build/index.js"
+      ]
     },
     "biorxiv": {
       "command": "node",
-      "args": ["/Users/janisaez/code/biorxiv-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/biorxiv-mcp-server/build/index.js"
+      ]
     },
     "medicare": {
       "command": "node",
-      "args": ["/Users/janisaez/code/medicare-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/medicare-mcp-server/build/index.js"
+      ]
     },
     "medicaid": {
       "command": "node",
-      "args": ["/Users/janisaez/code/medicaid-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/medicaid-mcp-server/build/index.js"
+      ]
     },
     "reactome": {
       "command": "node",
-      "args": ["/Users/janisaez/code/reactome-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/reactome-mcp-server/build/index.js"
+      ]
     },
     "stringdb": {
       "command": "node",
-      "args": ["/Users/janisaez/code/stringdb-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/stringdb-mcp-server/build/index.js"
+      ]
     },
     "gtex": {
       "command": "node",
-      "args": ["/Users/janisaez/code/gtex-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/gtex-mcp-server/build/index.js"
+      ]
     },
     "gnomad": {
       "command": "node",
-      "args": ["/Users/janisaez/code/gnomad-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/gnomad-mcp-server/build/index.js"
+      ]
     },
     "clinvar": {
       "command": "node",
-      "args": ["/Users/janisaez/code/clinvar-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/clinvar-mcp-server/build/index.js"
+      ]
     },
     "gwas": {
       "command": "node",
-      "args": ["/Users/janisaez/code/gwas-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/gwas-mcp-server/build/index.js"
+      ]
     },
     "depmap": {
       "command": "node",
-      "args": ["/Users/janisaez/code/depmap-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/depmap-mcp-server/build/index.js"
+      ]
     },
     "cbioportal": {
       "command": "node",
-      "args": ["/Users/janisaez/code/cbioportal-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/cbioportal-mcp-server/build/index.js"
+      ]
     },
     "hpo": {
       "command": "node",
-      "args": ["/Users/janisaez/code/hpo-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/hpo-mcp-server/build/index.js"
+      ]
     },
     "monarch": {
       "command": "node",
-      "args": ["/Users/janisaez/code/monarch-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/monarch-mcp-server/build/index.js"
+      ]
     },
     "ema": {
       "command": "node",
-      "args": ["/Users/janisaez/code/ema-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/ema-mcp-server/build/index.js"
+      ]
     },
     "uniprot": {
       "command": "node",
-      "args": ["/Users/janisaez/code/uniprot-mcp-server/build/index.js"]
+      "args": [
+        "/Users/janisaez/code/uniprot-mcp-server/build/index.js"
+      ]
+    },
+    "cosmic": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/cosmic-mcp-server/build/index.js"
+      ]
+    },
+    "ensembl": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/ensembl-mcp-server/build/index.js"
+      ]
+    },
+    "pdb": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/pdb-mcp-server/build/index.js"
+      ]
+    },
+    "alphafold": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/alphafold-mcp-server/build/index.js"
+      ]
+    },
+    "pubchem": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/pubchem-mcp-server/build/index.js"
+      ]
+    },
+    "geneontology": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/geneontology-mcp-server/build/index.js"
+      ]
+    },
+    "kegg": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/kegg-mcp-server/build/index.js"
+      ]
+    },
+    "geo": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/geo-mcp-server/build/index.js"
+      ]
+    },
+    "nlm": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/nlm-mcp-server/build/index.js"
+      ]
+    },
+    "cdc": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/cdc-mcp-server/build/index.js"
+      ]
+    },
+    "brenda": {
+      "command": "node",
+      "args": [
+        "/Users/janisaez/code/brenda-mcp-server/build/index.js"
+      ]
     }
   }
 }

@@ -142,6 +142,7 @@ def enrich_trial(drug, target, condition):
 
     # BindingDB (Ki/Kd via UniProt ID lookup)
     # Chain: target gene → UniProt → BindingDB affinities
+    uniprot_id = ''
     if target:
         try:
             from mcp.client import get_client as _get_client
@@ -212,6 +213,48 @@ def enrich_trial(drug, target, condition):
         r = safe_call(search_hpo_terms, query=condition, timeout_sec=15)
         if r and isinstance(r, dict):
             out['hpo_phenotype_count'] = r.get('totalResults', '')
+    except Exception:
+        pass
+
+    # PubChem (molecular properties for drug)
+    try:
+        from mcp.servers.pubchem_mcp import search_compounds, get_compound_properties
+        r = safe_call(search_compounds, query=drug, limit=1, timeout_sec=15)
+        if r and isinstance(r, dict):
+            compounds = r.get('compounds', r.get('results', []))
+            if isinstance(compounds, list) and compounds:
+                cid = str(compounds[0].get('cid', compounds[0].get('CID', '')))
+                if cid:
+                    props = safe_call(get_compound_properties, cid=cid, timeout_sec=15)
+                    if props and isinstance(props, dict):
+                        p = props.get('properties', props)
+                        if isinstance(p, dict):
+                            out['pubchem_molecular_weight'] = p.get('MolecularWeight', p.get('molecular_weight', ''))
+                            out['pubchem_xlogp'] = p.get('XLogP', p.get('xlogp', ''))
+                            out['pubchem_hbond_donor'] = p.get('HBondDonorCount', p.get('hbond_donor_count', ''))
+                            out['pubchem_hbond_acceptor'] = p.get('HBondAcceptorCount', p.get('hbond_acceptor_count', ''))
+                            out['pubchem_rotatable_bonds'] = p.get('RotatableBondCount', p.get('rotatable_bond_count', ''))
+                            out['pubchem_complexity'] = p.get('Complexity', p.get('complexity', ''))
+    except Exception:
+        pass
+
+    # NLM (ICD code count = disease complexity)
+    try:
+        from mcp.servers.nlm_mcp import search_conditions
+        r = safe_call(search_conditions, query=condition, limit=50, timeout_sec=15)
+        if r and isinstance(r, dict):
+            codes = r.get('codes', r.get('results', []))
+            out['nlm_condition_codes'] = len(codes) if isinstance(codes, list) else ''
+    except Exception:
+        pass
+
+    # CDC (has surveillance data)
+    try:
+        from mcp.servers.cdc_mcp import search_dataset
+        r = safe_call(search_dataset, query=condition, limit=5, timeout_sec=15)
+        if r and isinstance(r, dict):
+            datasets = r.get('datasets', r.get('results', []))
+            out['cdc_has_surveillance'] = 1 if (isinstance(datasets, list) and len(datasets) > 0) else 0
     except Exception:
         pass
 
@@ -395,6 +438,104 @@ def enrich_trial(drug, target, condition):
                 freqs = r['frequencies']
                 if freqs:
                     out['cbioportal_mutation_freq'] = freqs[0].get('frequency', '')
+        except Exception:
+            pass
+
+        # COSMIC (somatic mutation count, driver status)
+        try:
+            from mcp.servers.cosmic_mcp import search_by_gene as cosmic_search
+            r = safe_call(cosmic_search, gene=target, limit=50, timeout_sec=15)
+            if r and isinstance(r, dict):
+                mutations = r.get('mutations', r.get('results', []))
+                out['cosmic_mutation_count'] = len(mutations) if isinstance(mutations, list) else r.get('total', '')
+                out['cosmic_is_driver'] = 1 if r.get('is_driver', r.get('driver', False)) else 0
+        except Exception:
+            pass
+
+        # Ensembl (transcript count, gene biotype)
+        try:
+            from mcp.servers.ensembl_mcp import lookup_gene, get_transcripts
+            r = safe_call(lookup_gene, gene=target, timeout_sec=15)
+            if r and isinstance(r, dict):
+                out['ensembl_gene_biotype'] = r.get('biotype', '')
+            tr = safe_call(get_transcripts, gene=target, timeout_sec=15)
+            if tr and isinstance(tr, dict):
+                transcripts = tr.get('transcripts', tr.get('results', []))
+                out['ensembl_transcript_count'] = len(transcripts) if isinstance(transcripts, list) else ''
+        except Exception:
+            pass
+
+        # PDB (structure count)
+        try:
+            from mcp.servers.pdb_mcp import search_structures as pdb_search
+            r = safe_call(pdb_search, query=target, limit=50, timeout_sec=15)
+            if r and isinstance(r, dict):
+                out['pdb_structure_count'] = r.get('total_count', len(r.get('result_set', [])))
+        except Exception:
+            pass
+
+        # AlphaFold (pLDDT confidence, requires UniProt ID)
+        try:
+            if uniprot_id:
+                from mcp.servers.alphafold_mcp import get_structure as af_get_structure
+                r = safe_call(af_get_structure, uniprot_id=uniprot_id, timeout_sec=15)
+                if r and isinstance(r, dict):
+                    out['alphafold_available'] = 1
+                    plddt = r.get('plddt', r.get('confidence', r.get('avg_plddt', '')))
+                    if plddt:
+                        out['alphafold_confidence'] = plddt
+                else:
+                    out['alphafold_available'] = 0
+        except Exception:
+            pass
+
+        # Gene Ontology (GO term counts)
+        try:
+            from mcp.servers.geneontology_mcp import search_go_terms
+            r = safe_call(search_go_terms, query=target, limit=100, timeout_sec=15)
+            if r and isinstance(r, dict):
+                terms = r.get('results', r.get('terms', []))
+                if isinstance(terms, list):
+                    out['go_term_count'] = len(terms)
+                    out['go_biological_process_count'] = sum(
+                        1 for t in terms if isinstance(t, dict) and
+                        t.get('aspect', t.get('category', '')) in ('P', 'biological_process', 'BP')
+                    )
+                    out['go_molecular_function_count'] = sum(
+                        1 for t in terms if isinstance(t, dict) and
+                        t.get('aspect', t.get('category', '')) in ('F', 'molecular_function', 'MF')
+                    )
+        except Exception:
+            pass
+
+        # KEGG (pathway count)
+        try:
+            from mcp.servers.kegg_mcp import search_pathways as kegg_search
+            r = safe_call(kegg_search, query=target, organism='hsa', timeout_sec=15)
+            if r and isinstance(r, dict):
+                pathways = r.get('pathways', r.get('results', []))
+                out['kegg_pathway_count'] = len(pathways) if isinstance(pathways, list) else r.get('total', '')
+        except Exception:
+            pass
+
+        # GEO (dataset count = research maturity)
+        try:
+            from mcp.servers.geo_mcp import search_by_gene as geo_search
+            r = safe_call(geo_search, gene=target, limit=50, timeout_sec=15)
+            if r and isinstance(r, dict):
+                datasets = r.get('datasets', r.get('results', []))
+                out['geo_dataset_count'] = len(datasets) if isinstance(datasets, list) else r.get('total', '')
+        except Exception:
+            pass
+
+        # BRENDA (enzyme kinetics)
+        try:
+            from mcp.servers.brenda_mcp import get_km_value
+            r = safe_call(get_km_value, substrate=target, timeout_sec=15)
+            if r and isinstance(r, dict):
+                km_vals = r.get('values', r.get('results', []))
+                out['brenda_km_count'] = len(km_vals) if isinstance(km_vals, list) else ''
+                out['brenda_has_kinetics'] = 1 if (isinstance(km_vals, list) and len(km_vals) > 0) else 0
         except Exception:
             pass
 
