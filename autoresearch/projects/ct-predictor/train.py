@@ -173,6 +173,33 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     if "depmap_essentiality" in X.columns and "chembl_max_phase" in X.columns:
         X["depmap_x_maxphase"] = X["depmap_essentiality"] * X["chembl_max_phase"]
 
+    # Phase squared (non-linear phase effect)
+    if "phase" in X.columns:
+        X["phase_sq"] = X["phase"] ** 2
+
+    # Enrollment per site (trial efficiency)
+    if "enrollment" in X.columns and "num_sites" in X.columns:
+        denom = X["num_sites"].clip(lower=1)
+        X["enrollment_per_site"] = X["enrollment"] / denom
+        X["log_enrollment_per_site"] = np.log1p(X["enrollment_per_site"])
+
+    # Biomarker selection × target evidence (precision medicine signal)
+    if "has_biomarker_selection" in X.columns and "ot_overall_score" in X.columns:
+        X["biomarker_x_evidence"] = X["has_biomarker_selection"] * X["ot_overall_score"]
+
+    # Prior phase success × phase (compounding success signal)
+    if "prior_phase_success" in X.columns and "phase" in X.columns:
+        X["prior_success_x_phase"] = X["prior_phase_success"] * X["phase"]
+
+    # Citation velocity × preprint count (research momentum)
+    if "openalex_citation_velocity" in X.columns and "biorxiv_preprint_count" in X.columns:
+        X["research_momentum"] = X["openalex_citation_velocity"] + X["biorxiv_preprint_count"]
+        X["log_research_momentum"] = np.log1p(X["research_momentum"])
+
+    # DMC presence × num sites (rigor signal)
+    if "has_dmc" in X.columns and "num_sites" in X.columns:
+        X["dmc_x_sites"] = X["has_dmc"] * np.log1p(X["num_sites"])
+
     return X, y
 
 # ---------------------------------------------------------------------------
