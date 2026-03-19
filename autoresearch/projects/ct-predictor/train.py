@@ -16,7 +16,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, VotingClassifier
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
@@ -206,13 +206,27 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # Model definition — MODIFY THIS
 # ---------------------------------------------------------------------------
 
-MODEL = RandomForestClassifier(
+_rf = RandomForestClassifier(
     n_estimators=500,
     max_depth=8,
     min_samples_leaf=3,
     max_features="sqrt",
     random_state=42,
     n_jobs=-1,
+)
+_gbm = GradientBoostingClassifier(
+    n_estimators=500,
+    max_depth=3,
+    learning_rate=0.05,
+    subsample=0.7,
+    min_samples_leaf=5,
+    max_features="sqrt",
+    random_state=42,
+)
+MODEL = VotingClassifier(
+    estimators=[("rf", _rf), ("gbm", _gbm)],
+    voting="soft",
+    weights=[2, 1],
 )
 
 K_FEATURES = 80  # select top K features by mutual information
