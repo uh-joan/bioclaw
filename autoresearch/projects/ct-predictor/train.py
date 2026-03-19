@@ -231,7 +231,7 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 
 MODEL = HistGradientBoostingClassifier(
     max_iter=1000,
-    max_depth=3,
+    max_depth=4,
     learning_rate=0.02,
     min_samples_leaf=20,
     l2_regularization=0.1,
