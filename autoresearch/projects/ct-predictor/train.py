@@ -215,7 +215,7 @@ MODEL = RandomForestClassifier(
     n_jobs=-1,
 )
 
-K_FEATURES = 90  # select top K features by mutual information
+K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
 
 # ---------------------------------------------------------------------------
 # Training loop (structure is stable, but agent can modify)
