@@ -20,7 +20,7 @@ from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, RobustScaler
 from sklearn.svm import SVC
 
 # ---------------------------------------------------------------------------
@@ -205,7 +205,7 @@ def main():
     X_train_sel = X_train[feature_names_selected]
 
     # Scale selected features
-    scaler = StandardScaler()
+    scaler = RobustScaler()
     X_scaled = scaler.fit_transform(X_train_sel)
 
     # Train
