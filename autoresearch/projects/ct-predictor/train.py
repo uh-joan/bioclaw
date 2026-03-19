@@ -144,9 +144,12 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # Model definition — MODIFY THIS
 # ---------------------------------------------------------------------------
 
-MODEL = LogisticRegression(
-    C=0.5,
-    max_iter=1000,
+MODEL = GradientBoostingClassifier(
+    n_estimators=200,
+    max_depth=3,
+    learning_rate=0.05,
+    subsample=0.8,
+    min_samples_leaf=5,
     random_state=42,
 )
 
