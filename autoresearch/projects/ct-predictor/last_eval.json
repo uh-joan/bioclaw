@@ -1,0 +1,13 @@
+{
+  "auc_roc": 0.501684,
+  "precision_at_80_recall": 0.45,
+  "average_precision": 0.525848,
+  "brier_score": 0.311092,
+  "n_val_samples": 60,
+  "n_features": 82,
+  "model_type": "GradientBoostingClassifier",
+  "tp": 10,
+  "fp": 10,
+  "fn": 17,
+  "tn": 23
+}
