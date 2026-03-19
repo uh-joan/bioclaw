@@ -215,22 +215,20 @@ def enrich_trial(drug, target, condition):
     except Exception:
         pass
 
-    # Medicare (prescriber count and spending)
+    # Medicare → write to schema column name medicare_indication_spend
     try:
         from mcp.servers.medicare_mcp import medicare_info
         r = safe_call(medicare_info, method='search_prescribers', drug_name=drug, limit=100, timeout_sec=20)
         if r and isinstance(r, dict):
             prescribers = r.get('prescribers', [])
-            out['medicare_prescriber_count'] = r.get('total', len(prescribers))
             if prescribers:
-                total_claims = sum(int(p.get('total_claims', 0) or 0) for p in prescribers)
                 total_cost = sum(float(p.get('total_drug_cost', 0) or 0) for p in prescribers)
-                out['medicare_total_claims'] = total_claims
-                out['medicare_total_cost'] = round(total_cost, 2)
+                if total_cost > 0:
+                    out['medicare_indication_spend'] = round(total_cost, 2)
     except Exception:
         pass
 
-    # Medicaid (NADAC pricing + drug utilization)
+    # Medicaid → write to schema column name medicaid_indication_spend
     try:
         from mcp.servers.medicaid_mcp import medicaid_info
         r = safe_call(medicaid_info, method='get_nadac_pricing', drug_name=drug, limit=5, timeout_sec=20)
@@ -239,18 +237,20 @@ def enrich_trial(drug, target, condition):
             if isinstance(data, list) and data:
                 prices = [d.get('nadac_per_unit', 0) for d in data if d.get('nadac_per_unit')]
                 if prices:
-                    out['medicaid_nadac_per_unit'] = round(sum(prices) / len(prices), 4)
-                    out['medicaid_nadac_count'] = r.get('meta', {}).get('total_count', len(data))
-        r2 = safe_call(medicaid_info, method='get_drug_utilization', drug_name=drug, limit=10, timeout_sec=20)
-        if r2 and isinstance(r2, dict):
-            data2 = r2.get('data', [])
-            if isinstance(data2, list) and data2:
-                total_rx = sum(d.get('number_of_prescriptions', 0) or 0 for d in data2)
-                total_reimbursed = sum(d.get('total_amount_reimbursed', 0) or 0 for d in data2)
-                if total_rx > 0:
-                    out['medicaid_total_prescriptions'] = total_rx
-                if total_reimbursed > 0:
-                    out['medicaid_total_reimbursed'] = round(total_reimbursed, 2)
+                    out['medicaid_indication_spend'] = round(sum(prices) / len(prices), 4)
+    except Exception:
+        pass
+
+    # Competitor trial count (CT.gov search with pageSize=1 for count only)
+    try:
+        from mcp.servers.ct_gov_mcp import search as ctgov_search
+        import re as _re
+        r = safe_call(ctgov_search, condition=condition, phase='PHASE3', pageSize=1, timeout_sec=15)
+        if r:
+            text = r if isinstance(r, str) else r.get('text', str(r))
+            m = _re.search(r'(\d+)\s+(?:of\s+)?(\d+)\s+(?:studies|trials)', text, _re.I)
+            if m:
+                out['competitor_trial_count'] = m.group(2)
     except Exception:
         pass
 
@@ -275,6 +275,21 @@ def enrich_trial(drug, target, condition):
                             out['ot_disease_association_count'] = total_assoc
                             if rows:
                                 out['ot_overall_score'] = rows[0].get('score', '')
+
+                        # Tractability + safety via get_target_details
+                        from mcp.client import get_client as _gc
+                        ot_client = _gc('opentargets')
+                        details = safe_call(ot_client.call_tool, 'opentargets_info',
+                                           {'method': 'get_target_details', 'id': ensembl_id},
+                                           timeout_sec=15)
+                        if details and isinstance(details, dict):
+                            td = details.get('data', {}).get('target', details.get('data', {}))
+                            tract = td.get('tractability', [])
+                            if tract:
+                                out['ot_target_tractability'] = sum(1 for t in tract if t.get('value'))
+                            safety = td.get('safetyLiabilities', [])
+                            if isinstance(safety, list):
+                                out['ot_safety_liability_count'] = len(safety)
         except Exception:
             pass
 
