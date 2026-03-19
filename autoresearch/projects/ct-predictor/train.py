@@ -200,7 +200,7 @@ def main():
         "pubmed_drug_pub_count_missing", "clinvar_pathogenic_count_missing",
         "gwas_hit_count_missing", "is_immunology",
         "log_reactome_pathway_count", "overall_score_x_phase",
-        "total_genetic_evidence",
+        "total_genetic_evidence", "ema_approved_similar",
     ]
     feature_names_selected = [f for f in hardcoded if f in all_feature_names]
 
