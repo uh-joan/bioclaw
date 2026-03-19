@@ -81,6 +81,29 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         "hpo_phenotype_count", "monarch_gene_count",
         # EMA
         "ema_approved_similar", "eu_filings_count",
+        # AlphaFold
+        "alphafold_available", "alphafold_confidence",
+        # BRENDA (enzyme kinetics)
+        "brenda_has_kinetics", "brenda_km_count",
+        # CDC surveillance
+        "cdc_has_surveillance",
+        # COSMIC (cancer)
+        "cosmic_is_driver", "cosmic_mutation_count",
+        # Ensembl
+        "ensembl_transcript_count",
+        # GEO datasets
+        "geo_dataset_count",
+        # Gene Ontology
+        "go_biological_process_count", "go_molecular_function_count", "go_term_count",
+        # KEGG pathways
+        "kegg_pathway_count",
+        # OpenTargets additional
+        "ot_disease_association_count", "ot_safety_liability_count",
+        # PDB structure
+        "pdb_has_ligand_bound", "pdb_structure_count",
+        # PubChem molecular descriptors
+        "pubchem_complexity", "pubchem_hbond_acceptor", "pubchem_hbond_donor",
+        "pubchem_molecular_weight", "pubchem_rotatable_bonds", "pubchem_xlogp",
     ]
 
     available = [c for c in numeric_cols if c in df.columns]
