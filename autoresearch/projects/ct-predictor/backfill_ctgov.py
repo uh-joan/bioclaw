@@ -135,6 +135,16 @@ def parse_markdown_study(text: str) -> dict:
     if re.search(r'biomarker|molecular|genomic|mutation.*select|HER2.*positive|PD-L1.*positive|BRCA.*positive|ALK.*positive|EGFR.*mutant', text, re.I):
         out['has_biomarker_selection'] = 1
 
+    # Number of sites (count Facility entries)
+    sites = re.findall(r'-\s*\*\*Facility:\*\*', text)
+    if sites:
+        out['num_sites'] = len(sites)
+
+    # Number of secondary endpoints (total measures minus 1 for primary)
+    measures = re.findall(r'\d+\.\s*\*\*Measure:\*\*', text)
+    if len(measures) > 1:
+        out['num_secondary_endpoints'] = len(measures) - 1
+
     return out
 
 
