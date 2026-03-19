@@ -150,6 +150,7 @@ MODEL = GradientBoostingClassifier(
     learning_rate=0.05,
     subsample=0.8,
     min_samples_leaf=5,
+    max_features="sqrt",
     random_state=42,
 )
 
