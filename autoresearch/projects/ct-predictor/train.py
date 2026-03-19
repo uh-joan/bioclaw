@@ -192,18 +192,10 @@ def main():
     X_train = X[train_mask].copy()
     y_train = y[train_mask].copy()
 
-    # Hardcoded best-15 features (from MI random_state=0 experiments)
-    hardcoded = [
-        "enrollment", "chembl_max_phase", "fda_prior_approval_class",
-        "pubmed_target_pub_count", "reactome_pathway_count",
-        "gnomad_pli", "gnomad_loeuf", "depmap_essentiality",
-        "pubmed_drug_pub_count_missing", "clinvar_pathogenic_count_missing",
-        "gwas_hit_count_missing", "ema_approved_similar",
-        "log_reactome_pathway_count", "overall_score_x_phase",
-        "total_genetic_evidence",
-        "clinvar_pathogenic_count", "gwas_hit_count", "log_enrollment",
-    ]
-    feature_names_selected = [f for f in hardcoded if f in all_feature_names]
+    # MI-based feature selection: pick top 25 features
+    selector = SelectKBest(mutual_info_classif, k=min(25, len(all_feature_names)))
+    selector.fit(X_train, y_train)
+    feature_names_selected = [all_feature_names[i] for i in selector.get_support(indices=True)]
 
     # Keep only selected features
     X_train_sel = X_train[feature_names_selected]
