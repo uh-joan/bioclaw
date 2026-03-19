@@ -164,7 +164,7 @@ MODEL = GradientBoostingClassifier(
     random_state=42,
 )
 
-K_FEATURES = 50  # select top K features by mutual information
+K_FEATURES = 35  # select top K features by mutual information
 
 # ---------------------------------------------------------------------------
 # Training loop (structure is stable, but agent can modify)
