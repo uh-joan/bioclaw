@@ -148,6 +148,31 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         X["total_healthcare_spend"] = X["medicare_indication_spend"] + X["medicaid_indication_spend"]
         X["log_total_healthcare_spend"] = np.log1p(X["total_healthcare_spend"])
 
+    # Drug maturity × target evidence
+    if "chembl_max_phase" in X.columns and "ot_overall_score" in X.columns:
+        X["drug_maturity_x_evidence"] = X["chembl_max_phase"] * X["ot_overall_score"]
+
+    # Phase × regulatory advantage
+    if "phase" in X.columns and "regulatory_advantage" in X.columns:
+        X["phase_x_regulatory"] = X["phase"] * X["regulatory_advantage"]
+
+    # ChEMBL selectivity × target tractability
+    if "chembl_selectivity" in X.columns and "ot_target_tractability" in X.columns:
+        X["selectivity_x_tractability"] = X["chembl_selectivity"] * X["ot_target_tractability"]
+
+    # Prior approval + prior phase success combined
+    prior = [c for c in ["fda_prior_approval_class", "prior_phase_success", "chembl_max_phase"] if c in X.columns]
+    if len(prior) > 1:
+        X["prior_evidence_score"] = X[prior].mean(axis=1)
+
+    # Genetic evidence × target tractability
+    if "total_genetic_evidence" in X.columns and "ot_target_tractability" in X.columns:
+        X["genetic_x_tractability"] = X["total_genetic_evidence"] * X["ot_target_tractability"]
+
+    # DepMap essentiality × ChEMBL max phase (cancer-relevant)
+    if "depmap_essentiality" in X.columns and "chembl_max_phase" in X.columns:
+        X["depmap_x_maxphase"] = X["depmap_essentiality"] * X["chembl_max_phase"]
+
     return X, y
 
 # ---------------------------------------------------------------------------
