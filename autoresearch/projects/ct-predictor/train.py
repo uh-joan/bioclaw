@@ -192,10 +192,14 @@ def main():
     X_train = X[train_mask].copy()
     y_train = y[train_mask].copy()
 
-    # MI-based feature selection: pick top 25 features
-    selector = SelectKBest(mutual_info_classif, k=min(25, len(all_feature_names)))
-    selector.fit(X_train, y_train)
-    feature_names_selected = [all_feature_names[i] for i in selector.get_support(indices=True)]
+    # Drop constant features (zero variance) before MI selection
+    non_const = [f for f in all_feature_names if X_train[f].std() > 0]
+    X_train_nc = X_train[non_const]
+
+    # MI-based feature selection: pick top 25 from non-constant features
+    selector = SelectKBest(mutual_info_classif, k=min(25, len(non_const)))
+    selector.fit(X_train_nc, y_train)
+    feature_names_selected = [non_const[i] for i in selector.get_support(indices=True)]
 
     # Keep only selected features
     X_train_sel = X_train[feature_names_selected]
