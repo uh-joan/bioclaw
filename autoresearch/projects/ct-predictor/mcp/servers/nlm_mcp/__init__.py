@@ -27,7 +27,8 @@ def search_conditions(query: str, limit: Optional[int] = None) -> Dict[str, Any]
     Returns:
         dict: Matching condition codes and terminology
     """
-    return _call('conditions', query=query, limit=limit)
+    # MCP server uses 'terms' not 'query'
+    return _call('conditions', terms=query, limit=limit)
 
 
 def search_icd10(query: str, limit: Optional[int] = None) -> Dict[str, Any]:
@@ -41,7 +42,7 @@ def search_icd10(query: str, limit: Optional[int] = None) -> Dict[str, Any]:
     Returns:
         dict: Matching ICD-10-CM codes (count = disease complexity signal)
     """
-    return _call('icd-10-cm', query=query, limit=limit)
+    return _call('icd-10-cm', terms=query, limit=limit)
 
 
 __all__ = [

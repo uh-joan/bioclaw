@@ -216,35 +216,43 @@ def enrich_trial(drug, target, condition):
     except Exception:
         pass
 
-    # PubChem (molecular properties for drug)
+    # PubChem (search → get CID → get full properties)
     try:
         from mcp.servers.pubchem_mcp import search_compounds, get_compound_properties
         r = safe_call(search_compounds, query=drug, limit=1, timeout_sec=15)
         if r and isinstance(r, dict):
-            compounds = r.get('compounds', r.get('results', []))
-            if isinstance(compounds, list) and compounds:
-                cid = str(compounds[0].get('cid', compounds[0].get('CID', '')))
-                if cid:
-                    props = safe_call(get_compound_properties, cid=cid, timeout_sec=15)
-                    if props and isinstance(props, dict):
-                        p = props.get('properties', props)
-                        if isinstance(p, dict):
-                            out['pubchem_molecular_weight'] = p.get('MolecularWeight', p.get('molecular_weight', ''))
-                            out['pubchem_xlogp'] = p.get('XLogP', p.get('xlogp', ''))
-                            out['pubchem_hbond_donor'] = p.get('HBondDonorCount', p.get('hbond_donor_count', ''))
-                            out['pubchem_hbond_acceptor'] = p.get('HBondAcceptorCount', p.get('hbond_acceptor_count', ''))
-                            out['pubchem_rotatable_bonds'] = p.get('RotatableBondCount', p.get('rotatable_bond_count', ''))
-                            out['pubchem_complexity'] = p.get('Complexity', p.get('complexity', ''))
+            props_list = r.get('details', {}).get('PropertyTable', {}).get('Properties', [])
+            cid = str(props_list[0].get('CID', '')) if props_list else ''
+            if cid:
+                # Full properties via second call
+                props = safe_call(get_compound_properties, cid=cid, timeout_sec=15)
+                if props and isinstance(props, dict):
+                    p_list = props.get('PropertyTable', {}).get('Properties', [])
+                    if p_list:
+                        p = p_list[0]
+                        out['pubchem_molecular_weight'] = p.get('MolecularWeight', '')
+                        out['pubchem_xlogp'] = p.get('XLogP', '')
+                        out['pubchem_hbond_donor'] = p.get('HBondDonorCount', '')
+                        out['pubchem_hbond_acceptor'] = p.get('HBondAcceptorCount', '')
+                        out['pubchem_rotatable_bonds'] = p.get('RotatableBondCount', '')
+                        out['pubchem_complexity'] = p.get('Complexity', '')
     except Exception:
         pass
 
     # NLM (ICD code count = disease complexity)
     try:
-        from mcp.servers.nlm_mcp import search_conditions
-        r = safe_call(search_conditions, query=condition, limit=50, timeout_sec=15)
+        from mcp.servers.nlm_mcp import search_icd10
+        r = safe_call(search_icd10, query=condition, timeout_sec=15)
         if r and isinstance(r, dict):
-            codes = r.get('codes', r.get('results', []))
-            out['nlm_condition_codes'] = len(codes) if isinstance(codes, list) else ''
+            total = r.get('totalCount', 0)
+            if total:
+                out['nlm_condition_codes'] = total
+            else:
+                # Fallback: try conditions method
+                from mcp.servers.nlm_mcp import search_conditions
+                r2 = safe_call(search_conditions, query=condition, timeout_sec=15)
+                if isinstance(r2, list):
+                    out['nlm_condition_codes'] = len(r2)
     except Exception:
         pass
 
@@ -476,19 +484,20 @@ def enrich_trial(drug, target, condition):
             pass
 
         # AlphaFold (pLDDT confidence, requires UniProt ID)
-        try:
-            if uniprot_id:
+        if uniprot_id:
+            try:
                 from mcp.servers.alphafold_mcp import get_structure as af_get_structure
                 r = safe_call(af_get_structure, uniprot_id=uniprot_id, timeout_sec=15)
-                if r and isinstance(r, dict):
+                if r and isinstance(r, dict) and 'error' not in r and 'Error' not in str(r.get('text', '')):
                     out['alphafold_available'] = 1
-                    plddt = r.get('plddt', r.get('confidence', r.get('avg_plddt', '')))
+                    # globalMetricValue is the overall pLDDT
+                    plddt = r.get('globalMetricValue', '')
                     if plddt:
                         out['alphafold_confidence'] = plddt
                 else:
                     out['alphafold_available'] = 0
-        except Exception:
-            pass
+            except Exception:
+                pass
 
         # Gene Ontology (GO term counts)
         try:

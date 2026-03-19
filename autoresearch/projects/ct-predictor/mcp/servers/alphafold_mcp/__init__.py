@@ -26,7 +26,8 @@ def get_structure(uniprot_id: str) -> Dict[str, Any]:
     Returns:
         dict: Structure prediction data and availability
     """
-    return _call('get_structure', uniprot_id=uniprot_id)
+    # MCP server uses camelCase 'uniprotId'
+    return _call('get_structure', uniprotId=uniprot_id)
 
 
 def get_confidence_scores(uniprot_id: str) -> Dict[str, Any]:
@@ -39,7 +40,7 @@ def get_confidence_scores(uniprot_id: str) -> Dict[str, Any]:
     Returns:
         dict: Confidence scores (pLDDT 0-100, higher = more confident)
     """
-    return _call('get_confidence_scores', uniprot_id=uniprot_id)
+    return _call('get_confidence_scores', uniprotId=uniprot_id)
 
 
 __all__ = [
