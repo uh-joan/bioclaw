@@ -201,6 +201,7 @@ def main():
         "gwas_hit_count_missing", "ema_approved_similar",
         "log_reactome_pathway_count", "overall_score_x_phase",
         "total_genetic_evidence",
+        "clinvar_pathogenic_count", "gwas_hit_count",
     ]
     feature_names_selected = [f for f in hardcoded if f in all_feature_names]
 
