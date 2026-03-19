@@ -88,13 +88,16 @@ def get_variant_associations(variant_id: str, limit: Optional[int] = None) -> Di
 def search_by_trait(query: str, limit: Optional[int] = None) -> Dict[str, Any]:
     """Search GWAS studies by trait name.
 
+    Note: Uses search_associations which works reliably.
+    The dedicated trait endpoint requires an EFO ID.
+
     Args:
         query: Trait or disease name
         limit: Max results
     Returns:
-        dict with matching traits and studies
+        dict with matching associations (total, associations with pvalue data)
     """
-    return _call('search_by_trait', query=query, limit=limit)
+    return _call('search_associations', query=query, limit=limit)
 
 
 def search_studies(query: str, limit: Optional[int] = None) -> Dict[str, Any]:

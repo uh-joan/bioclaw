@@ -60,9 +60,41 @@ def get_copy_number(gene: str, study_id: Optional[str] = None) -> Dict[str, Any]
     return _call('get_copy_number', gene=gene, study_id=study_id)
 
 
+def list_studies():
+    """List all available cancer studies."""
+    return _call('list_studies')
+
+
+def search_studies(query):
+    """Search cancer studies by keyword."""
+    return _call('search_studies', query=query)
+
+
+def get_mutations(profileId, sampleListId, entrezGeneIds=None, genes=None):
+    """Get mutations for a gene in a specific study profile."""
+    return _call('get_mutations', profileId=profileId,
+                 sampleListId=sampleListId,
+                 entrezGeneIds=entrezGeneIds, genes=genes)
+
+
+def get_gene_cancer_studies(gene):
+    """Get gene info from cBioPortal."""
+    result = {}
+    info = _call('get_gene', gene=gene)
+    if info and isinstance(info, dict) and 'error' not in info:
+        result['entrezGeneId'] = info.get('entrezGeneId', '')
+        result['hugoGeneSymbol'] = info.get('hugoGeneSymbol', '')
+        result['type'] = info.get('type', '')
+    return result
+
+
 __all__ = [
     'get_gene',
     'get_molecular_profiles',
     'get_clinical_attributes',
     'get_copy_number',
+    'list_studies',
+    'search_studies',
+    'get_mutations',
+    'get_gene_cancer_studies',
 ]

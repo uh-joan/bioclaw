@@ -23,26 +23,24 @@ def get_ot_features(target_gene):
     r = safe_call(search_targets, query=target_gene, size=1)
     if not r:
         return out
+    # Response: {"data": {"search": {"hits": [{"id": "ENSG...", ...}]}}}
     hits = r.get('data', {}).get('search', {}).get('hits', [])
     if not hits:
         return out
     ensembl_id = hits[0].get('id', '')
+    if not ensembl_id:
+        return out
     assoc = safe_call(get_target_disease_associations, targetId=ensembl_id, size=5)
-    if assoc:
-        rows = assoc.get('data', {}).get('associatedDiseases', {}).get('rows', [])
+    if assoc and isinstance(assoc, dict):
+        # Response: {"data": {"target": {"associatedDiseases": {"count": N, "rows": [...]}}}}
+        target_data = assoc.get('data', {}).get('target', {})
+        assoc_diseases = target_data.get('associatedDiseases', {})
+        rows = assoc_diseases.get('rows', [])
+        total_assoc = assoc_diseases.get('count', len(rows))
+        out['ot_disease_association_count'] = total_assoc
         if rows:
             best = rows[0]
             out['ot_overall_score'] = best.get('score', '')
-            dts = best.get('datatypeScores', [])
-            for dt in (dts if isinstance(dts, list) else []):
-                cid = dt.get('componentId', dt.get('id', ''))
-                score = dt.get('score', '')
-                if 'genetic' in cid: out['ot_genetic_score'] = score
-                elif 'somatic' in cid: out['ot_somatic_score'] = score
-                elif 'literature' in cid: out['ot_literature_score'] = score
-                elif 'animal' in cid: out['ot_animal_model_score'] = score
-                elif 'known_drug' in cid: out['ot_known_drug_score'] = score
-                elif 'affected_pathway' in cid: out['ot_affected_pathway_score'] = score
     return out
 
 
@@ -79,7 +77,8 @@ def get_chembl_features(drug):
 
 
 def get_drugbank_features(drug):
-    from mcp.servers.drugbank_mcp import search_by_name
+    import re as _re
+    from mcp.servers.drugbank_mcp import search_by_name, get_drug_details
     out = {}
     r = safe_call(search_by_name, query=drug)
     if not r:
@@ -88,14 +87,38 @@ def get_drugbank_features(drug):
     if not results:
         return out
     d = results[0]
-    out['drugbank_half_life_hours'] = d.get('half_life', d.get('half-life', ''))
-    out['drugbank_interaction_count'] = d.get('drug_interactions_count', d.get('interactions_count', ''))
-    targets = d.get('targets', [])
-    out['drugbank_target_count'] = len(targets) if isinstance(targets, list) else ''
-    enzymes = d.get('enzymes', [])
-    out['drugbank_enzyme_count'] = len(enzymes) if isinstance(enzymes, list) else ''
-    transporters = d.get('transporters', [])
-    out['drugbank_transporter_count'] = len(transporters) if isinstance(transporters, list) else ''
+    db_id = d.get('drugbank_id', '')
+    # search_by_name returns minimal info; get_drug_details has full data
+    if db_id:
+        details = safe_call(get_drug_details, drugbank_id=db_id)
+        if details and isinstance(details, dict):
+            drug_data = details.get('drug', details.get('data', {}))
+            if isinstance(drug_data, dict):
+                # Half-life (parse text to hours)
+                hl_text = drug_data.get('half_life', '')
+                if hl_text and isinstance(hl_text, str):
+                    m = _re.search(r'(\d+\.?\d*)\s*(?:to|and|-)\s*(?:\d+\.?\d*)?\s*hour', hl_text, _re.IGNORECASE)
+                    if m:
+                        out['drugbank_half_life_hours'] = float(m.group(1))
+                    else:
+                        m = _re.search(r'(\d+\.?\d*)\s*day', hl_text, _re.IGNORECASE)
+                        if m:
+                            out['drugbank_half_life_hours'] = float(m.group(1)) * 24
+                # Molecular weight
+                mw = drug_data.get('average_mass', drug_data.get('molecular_weight', ''))
+                if mw:
+                    out['drugbank_molecular_weight'] = mw
+                # Interaction count
+                interactions = drug_data.get('drug_interactions', [])
+                if isinstance(interactions, list):
+                    out['drugbank_interaction_count'] = len(interactions)
+                # Target/enzyme counts
+                targets = drug_data.get('targets', [])
+                out['drugbank_target_count'] = len(targets) if isinstance(targets, list) else ''
+                enzymes = drug_data.get('enzymes', [])
+                out['drugbank_enzyme_count'] = len(enzymes) if isinstance(enzymes, list) else ''
+                return out
+    # Fallback: use search result data if details failed
     out['drugbank_molecular_weight'] = d.get('molecular_weight', d.get('average_mass', ''))
     return out
 
@@ -163,18 +186,22 @@ def get_gtex_features(target_gene):
     if r and isinstance(r, dict):
         data = r.get('data', [])
         if isinstance(data, list) and data:
-            # Try to compute tissue specificity (tau index)
-            if isinstance(data[0], dict):
-                values = [d.get('median', 0) for d in data if d.get('median')]
-            elif isinstance(data[0], list):
-                # Nested array format
-                values = [max(d) if isinstance(d, list) else d for d in data]
-            else:
-                values = [float(x) for x in data if x]
-            if values and max(values) > 0:
-                norm = [v / max(values) for v in values]
+            import statistics
+            # Each item: {tissueSiteDetailId, data: [TPM values per sample], ...}
+            medians = []
+            for tissue_item in data:
+                if isinstance(tissue_item, dict):
+                    vals = tissue_item.get('data', [])
+                    if isinstance(vals, list) and vals:
+                        medians.append(statistics.median(vals))
+                elif isinstance(tissue_item, (int, float)):
+                    medians.append(float(tissue_item))
+            if medians and max(medians) > 0:
+                norm = [v / max(medians) for v in medians]
                 tau = sum(1 - v for v in norm) / (len(norm) - 1) if len(norm) > 1 else 0
                 out['gtex_tissue_specificity'] = round(tau, 4)
+                out['gtex_max_tpm'] = round(max(medians), 2)
+                out['gtex_num_tissues'] = len(medians)
     return out
 
 
@@ -198,15 +225,24 @@ def get_clinvar_features(target_gene):
     return out
 
 
-def get_gwas_features(target_gene):
-    from mcp.servers.gwas_mcp import get_gene_associations
+def get_gwas_features(target_gene, condition=''):
+    from mcp.servers.gwas_mcp import search_associations
     out = {}
-    r = safe_call(get_gene_associations, gene=target_gene)
+    query = f"{target_gene} {condition}" if condition else target_gene
+    r = safe_call(search_associations, query=query, limit=20)
     if r and isinstance(r, dict) and 'error' not in r:
         assocs = r.get('associations', [])
-        out['gwas_hit_count'] = len(assocs) if isinstance(assocs, list) else ''
+        out['gwas_hit_count'] = r.get('total', len(assocs) if isinstance(assocs, list) else '')
         if isinstance(assocs, list) and assocs:
-            pvals = [a.get('pvalue', 1) for a in assocs if a.get('pvalue')]
+            pvals = []
+            for a in assocs:
+                m = a.get('pvalueMantissa')
+                e = a.get('pvalueExponent')
+                if m is not None and e is not None:
+                    try:
+                        pvals.append(float(m) * (10 ** float(e)))
+                    except (ValueError, TypeError):
+                        pass
             if pvals:
                 out['gwas_best_pvalue'] = min(pvals)
     return out
@@ -226,8 +262,9 @@ def get_cbioportal_features(target_gene):
     from mcp.servers.cbioportal_mcp import get_gene
     out = {}
     r = safe_call(get_gene, gene=target_gene)
-    if r and isinstance(r, dict):
-        out['cbioportal_mutation_freq'] = r.get('mutation_frequency', '')
+    if r and isinstance(r, dict) and 'error' not in r:
+        out['cbioportal_entrez_id'] = r.get('entrezGeneId', '')
+        out['cbioportal_gene_type'] = r.get('type', '')
     return out
 
 
@@ -288,7 +325,30 @@ def get_bindingdb_features(drug):
     r = safe_call(search_by_name, query=drug)
     if r and isinstance(r, dict) and 'error' not in r:
         results = r.get('results', r.get('data', []))
-        out['bindingdb_num_measurements'] = len(results) if isinstance(results, list) else ''
+        if isinstance(results, list):
+            out['bindingdb_num_measurements'] = len(results)
+            ki_vals = []
+            kd_vals = []
+            for entry in results:
+                if isinstance(entry, dict):
+                    for ki_key in ['Ki', 'ki', 'Ki (nM)', 'ki_nm', 'Ki_nM']:
+                        val = entry.get(ki_key)
+                        if val and str(val).strip() not in ('', 'None', 'nan', '>'):
+                            try:
+                                ki_vals.append(float(str(val).replace('>', '').replace('<', '').strip()))
+                            except (ValueError, TypeError):
+                                pass
+                    for kd_key in ['Kd', 'kd', 'Kd (nM)', 'kd_nm', 'Kd_nM']:
+                        val = entry.get(kd_key)
+                        if val and str(val).strip() not in ('', 'None', 'nan', '>'):
+                            try:
+                                kd_vals.append(float(str(val).replace('>', '').replace('<', '').strip()))
+                            except (ValueError, TypeError):
+                                pass
+            if ki_vals:
+                out['bindingdb_best_ki_nm'] = min(ki_vals)
+            if kd_vals:
+                out['bindingdb_best_kd_nm'] = min(kd_vals)
     return out
 
 
@@ -340,7 +400,7 @@ def main():
             updates.update(get_gtex_features(target) or {})
             updates.update(get_gnomad_features(target) or {})
             updates.update(get_clinvar_features(target) or {})
-            updates.update(get_gwas_features(target) or {})
+            updates.update(get_gwas_features(target, condition) or {})
             updates.update(get_depmap_features(target) or {})
             updates.update(get_cbioportal_features(target) or {})
             updates.update(get_pubmed_features(target, condition) or {})
