@@ -16,7 +16,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, VotingClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, VotingClassifier, HistGradientBoostingClassifier
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
@@ -206,12 +206,12 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # Model definition — MODIFY THIS
 # ---------------------------------------------------------------------------
 
-MODEL = GradientBoostingClassifier(
-    n_estimators=1000,
-    max_depth=3,
+MODEL = HistGradientBoostingClassifier(
+    max_iter=500,
+    max_depth=4,
     learning_rate=0.03,
-    subsample=0.8,
-    min_samples_leaf=5,
+    min_samples_leaf=10,
+    l2_regularization=0.1,
     random_state=42,
 )
 
