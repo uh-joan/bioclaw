@@ -98,9 +98,19 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         med = X[col].median()
         X[col] = X[col].fillna(med if pd.notna(med) else 0)
 
-    # Categorical features (frequency encoding)
-    for col in ["indication_area", "endpoint_type", "sponsor_type",
-                "allocation", "masking", "intervention_type"]:
+    # One-hot encode indication_area (low cardinality, 8 values)
+    if "indication_area" in df.columns:
+        for val in df["indication_area"].dropna().unique():
+            X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+
+    # Normalized sponsor_type: merge industry variants
+    if "sponsor_type" in df.columns:
+        st = df["sponsor_type"].str.lower().str.strip().fillna("unknown")
+        for val in ["industry", "nih", "other"]:
+            X[f"sponsor_{val}"] = (st == val).astype(int)
+
+    # Frequency encode lower-signal categoricals
+    for col in ["allocation", "masking", "intervention_type"]:
         if col in df.columns:
             freq = df[col].value_counts(normalize=True)
             X[f"{col}_freq"] = df[col].map(freq).fillna(0)
