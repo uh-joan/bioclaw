@@ -140,38 +140,51 @@ def enrich_trial(drug, target, condition):
     except Exception:
         pass
 
-    # BindingDB (Ki/Kd extraction)
-    try:
-        from mcp.servers.bindingdb_mcp import search_by_name as bindingdb_search
-        r = safe_call(bindingdb_search, query=drug, timeout_sec=15)
-        if r and isinstance(r, dict) and 'error' not in r:
-            results = r.get('results', r.get('data', []))
-            if isinstance(results, list):
-                out['bindingdb_num_measurements'] = len(results)
-                ki_vals = []
-                kd_vals = []
-                for entry in results:
-                    if isinstance(entry, dict):
-                        for ki_key in ['Ki', 'ki', 'Ki (nM)', 'ki_nm', 'Ki_nM']:
-                            val = entry.get(ki_key)
-                            if val and str(val).strip() not in ('', 'None', 'nan', '>'):
-                                try:
-                                    ki_vals.append(float(str(val).replace('>', '').replace('<', '').strip()))
-                                except (ValueError, TypeError):
-                                    pass
-                        for kd_key in ['Kd', 'kd', 'Kd (nM)', 'kd_nm', 'Kd_nM']:
-                            val = entry.get(kd_key)
-                            if val and str(val).strip() not in ('', 'None', 'nan', '>'):
-                                try:
-                                    kd_vals.append(float(str(val).replace('>', '').replace('<', '').strip()))
-                                except (ValueError, TypeError):
-                                    pass
-                if ki_vals:
-                    out['bindingdb_best_ki_nm'] = min(ki_vals)
-                if kd_vals:
-                    out['bindingdb_best_kd_nm'] = min(kd_vals)
-    except Exception:
-        pass
+    # BindingDB (Ki/Kd via UniProt ID lookup)
+    # Chain: target gene → UniProt → BindingDB affinities
+    if target:
+        try:
+            from mcp.client import get_client as _get_client
+            # Step 1: gene → UniProt ID
+            uc = _get_client('uniprot')
+            ur = safe_call(uc.call_tool, 'uniprot_data',
+                          {'method': 'search_by_gene', 'gene': target, 'organism': 'human'},
+                          timeout_sec=15)
+            uniprot_id = ''
+            if ur and isinstance(ur, dict):
+                results = ur.get('results', [])
+                if results:
+                    uniprot_id = results[0].get('primaryAccession', '')
+
+            if uniprot_id:
+                # Step 2: UniProt → BindingDB Ki/Kd
+                bc = _get_client('bindingdb')
+                br = safe_call(bc.call_tool, 'bindingdb_data',
+                              {'method': 'get_ligands_by_target', 'uniprot_id': uniprot_id, 'affinity_cutoff': 10000},
+                              timeout_sec=20)
+                if br and isinstance(br, dict):
+                    out['bindingdb_num_measurements'] = br.get('total', 0)
+                    results = br.get('results', [])
+                    ki_vals = []
+                    kd_vals = []
+                    for entry in results:
+                        if isinstance(entry, dict):
+                            atype = entry.get('affinity_type', '')
+                            aval = str(entry.get('affinity', '')).replace('<', '').replace('>', '').strip()
+                            try:
+                                val = float(aval)
+                                if atype == 'Ki':
+                                    ki_vals.append(val)
+                                elif atype == 'Kd':
+                                    kd_vals.append(val)
+                            except (ValueError, TypeError):
+                                pass
+                    if ki_vals:
+                        out['bindingdb_ki_nm'] = min(ki_vals)
+                    if kd_vals:
+                        out['bindingdb_kd_nm'] = min(kd_vals)
+        except Exception:
+            pass
 
     # ClinPGx
     try:

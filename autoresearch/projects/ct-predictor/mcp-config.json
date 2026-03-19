@@ -92,6 +92,10 @@
     "ema": {
       "command": "node",
       "args": ["/Users/janisaez/code/ema-mcp-server/build/index.js"]
+    },
+    "uniprot": {
+      "command": "node",
+      "args": ["/Users/janisaez/code/uniprot-mcp-server/build/index.js"]
     }
   }
 }
