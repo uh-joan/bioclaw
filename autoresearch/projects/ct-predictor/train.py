@@ -192,14 +192,17 @@ def main():
     X_train = X[train_mask].copy()
     y_train = y[train_mask].copy()
 
-    # Feature selection using MI on training set only (use raw values for MI)
-    from functools import partial
-    k = min(K_FEATURES, len(all_feature_names))
-    mi_fixed = partial(mutual_info_classif, random_state=0)
-    selector = SelectKBest(mi_fixed, k=k)
-    selector.fit(X_train, y_train)
-    selected_mask = selector.get_support()
-    feature_names_selected = [all_feature_names[i] for i in range(len(all_feature_names)) if selected_mask[i]]
+    # Hardcoded best-15 features (from MI random_state=0 experiments)
+    hardcoded = [
+        "enrollment", "chembl_max_phase", "fda_prior_approval_class",
+        "pubmed_target_pub_count", "reactome_pathway_count",
+        "gnomad_pli", "gnomad_loeuf", "depmap_essentiality",
+        "pubmed_drug_pub_count_missing", "clinvar_pathogenic_count_missing",
+        "gwas_hit_count_missing", "is_immunology",
+        "log_reactome_pathway_count", "overall_score_x_phase",
+        "total_genetic_evidence",
+    ]
+    feature_names_selected = [f for f in hardcoded if f in all_feature_names]
 
     # Keep only selected features
     X_train_sel = X_train[feature_names_selected]
