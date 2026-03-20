@@ -244,6 +244,41 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     if "competitor_trial_count" in X.columns and "phase" in X.columns:
         X["competitor_x_phase"] = X["competitor_trial_count"] * X["phase"]
 
+    # Same-target historical success rate (from training data)
+    # "How have other drugs targeting the same gene performed?"
+    import json as _json
+    _cache_path = DATA_DIR / "drug_target_cache.json"
+    if _cache_path.exists():
+        with open(_cache_path) as _f:
+            _target_cache = {k: v for k, v in _json.load(_f).items() if v}
+        # Map each trial to its target
+        _targets = df["intervention_name"].str.lower().str.strip().map(
+            lambda d: _target_cache.get(str(d).split("+")[0].strip(), "")
+        )
+        # Compute per-target success rate (leave-one-out to avoid leakage)
+        _labels = y.values if hasattr(y, 'values') else y
+        target_success = {}
+        target_count = {}
+        for t, l in zip(_targets, _labels):
+            if t:
+                target_success[t] = target_success.get(t, 0) + l
+                target_count[t] = target_count.get(t, 0) + 1
+
+        same_target_rate = []
+        same_target_n = []
+        for t, l in zip(_targets, _labels):
+            if t and target_count.get(t, 0) > 1:
+                # Leave-one-out: exclude this trial's label
+                rate = (target_success[t] - l) / (target_count[t] - 1)
+                same_target_rate.append(rate)
+                same_target_n.append(target_count[t] - 1)
+            else:
+                same_target_rate.append(0.5)  # No data → neutral prior
+                same_target_n.append(0)
+
+        X["same_target_success_rate"] = same_target_rate
+        X["same_target_trial_count"] = same_target_n
+
     # Combo quality score: drug2 evidence strength (high = proven combo partner)
     if "combo_drug2_fda_approved" in X.columns and "combo_drug2_completed_trials" in X.columns:
         X["combo_drug2_evidence"] = (
