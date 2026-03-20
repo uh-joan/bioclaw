@@ -298,30 +298,51 @@ def search_trial(query):
     from mcp.servers.ct_gov_mcp import search
 
     print(f"Searching: {query}")
-    r = sc(search, condition=query, phase="PHASE3", pageSize=5, timeout_sec=15)
-    if not r:
-        # Try as intervention
-        r = sc(search, intervention=query, phase="PHASE3", pageSize=5, timeout_sec=15)
-    if not r:
-        print("  No results found.")
-        return None
 
-    text = r if isinstance(r, str) else r.get('text', str(r))
-    ncts = re.findall(r'NCT\d{8}', text)
-    titles = re.findall(r'\*\*Title:\*\*\s*(.+)', text)
+    # Split query into likely drug and condition parts
+    words = query.strip().split()
+    # Try multiple search strategies, collect all unique results
+    all_results = []  # (nct, title, status, phase)
+    seen = set()
 
-    if not ncts:
+    # Strategy 1: full query as intervention (most specific)
+    r = sc(search, intervention=query, phase="PHASE3", pageSize=10, timeout_sec=15)
+    if r:
+        text = r if isinstance(r, str) else r.get('text', str(r))
+        ncts = re.findall(r'NCT\d{8}', text)
+        titles = re.findall(r'\*\*Title:\*\*\s*(.+)', text)
+        statuses = re.findall(r'\*\*Status:\*\*\s*(\w+)', text)
+        for n, t, s in zip(ncts, titles, statuses):
+            if n not in seen:
+                seen.add(n)
+                all_results.append((n, t.strip()[:70], s))
+
+    # Strategy 2: first word as intervention, rest as condition
+    if len(words) >= 2:
+        drug = words[0]
+        condition = ' '.join(words[1:])
+        r2 = sc(search, intervention=drug, condition=condition, phase="PHASE3", pageSize=10, timeout_sec=15)
+        if r2:
+            text2 = r2 if isinstance(r2, str) else r2.get('text', str(r2))
+            for n, t, s in zip(re.findall(r'NCT\d{8}', text2),
+                               re.findall(r'\*\*Title:\*\*\s*(.+)', text2),
+                               re.findall(r'\*\*Status:\*\*\s*(\w+)', text2)):
+                if n not in seen:
+                    seen.add(n)
+                    all_results.append((n, t.strip()[:70], s))
+
+    if not all_results:
         print("  No trials found.")
         return None
 
-    # Show matches and let user see which one
-    print(f"  Found {len(ncts)} trials:")
-    for i, (nct, title) in enumerate(zip(ncts[:5], titles[:5])):
-        print(f"    {i+1}. {nct} — {title[:70]}")
+    # Show matches
+    print(f"  Found {len(all_results)} trials:")
+    for i, (nct, title, status) in enumerate(all_results[:8]):
+        print(f"    {i+1}. {nct} [{status:12s}] {title}")
 
     # Auto-pick first match
-    print(f"  → Using {ncts[0]}")
-    return ncts[0]
+    print(f"  → Using {all_results[0][0]}")
+    return all_results[0][0]
 
 
 if __name__ == '__main__':
