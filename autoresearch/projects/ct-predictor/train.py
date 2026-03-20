@@ -87,7 +87,7 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         # BRENDA (enzyme kinetics)
         "brenda_has_kinetics", "brenda_km_count",
         # CDC surveillance
-        "cdc_has_surveillance",
+        "cdc_has_surveillance", "nlm_condition_codes",
         # COSMIC (cancer)
         "cosmic_is_driver", "cosmic_mutation_count",
         # Ensembl
@@ -134,6 +134,11 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     if "indication_area" in df.columns:
         for val in df["indication_area"].dropna().unique():
             X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+
+    # One-hot encode endpoint_type (OS/PFS/ORR/etc. are strong success signals)
+    if "endpoint_type" in df.columns:
+        for val in df["endpoint_type"].dropna().unique():
+            X[f"endpoint_{val}"] = (df["endpoint_type"] == val).astype(int)
 
     # Normalized sponsor_type: merge industry variants
     if "sponsor_type" in df.columns:
