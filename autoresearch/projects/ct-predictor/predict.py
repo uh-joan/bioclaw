@@ -46,14 +46,54 @@ def get_trial_data(nct_id):
     features = parse_markdown_study(text)
     features['nct_id'] = nct_id
 
-    # Extract drug name
-    drugs = re.findall(r'###\s+(?:Drug|Biological):\s*(.+)', text)
-    if drugs:
-        drug = drugs[0].strip()
-        drug = re.split(r'\s+\d+\s*(?:mg|ml|mcg)', drug, flags=re.I)[0].strip()
-        drug = re.sub(r'\s*\(.*?\)', '', drug).strip().rstrip('/, ')
-        if drug.lower() not in ('placebo','chemotherapy','standard of care','observation','radiation',''):
-            features['intervention_name'] = drug
+    # Extract ALL drugs from Interventions section
+    raw_drugs = re.findall(r'###\s+(?:Drug|Biological|Combination Product):\s*(.+)', text)
+    skip = {'placebo', 'matching placebo', 'oral placebo', 'iv placebo',
+            'placebo oral', 'placebo iv', 'chemotherapy', 'standard of care',
+            'observation', 'radiation', 'normal saline', 'dextrose'}
+    cleaned_drugs = []
+    for d in raw_drugs:
+        name = d.strip()
+        name = re.split(r'\s+\d+\s*(?:mg|ml|mcg|µg)', name, flags=re.I)[0].strip()
+        name = re.sub(r'\s*\(.*?\)', '', name).strip().rstrip('/, ')
+        # Remove trailing descriptions
+        name = re.split(r',\s+an?\s+', name, flags=re.I)[0].strip()
+        if name.lower() not in skip and len(name) > 2:
+            cleaned_drugs.append(name)
+
+    if cleaned_drugs:
+        # Standard chemo agents (control arm, not experimental)
+        standard_chemo = {'carboplatin', 'paclitaxel', 'docetaxel', 'pemetrexed',
+                         'cisplatin', 'gemcitabine', 'fluorouracil', 'capecitabine',
+                         'doxorubicin', 'cyclophosphamide', 'etoposide', 'irinotecan',
+                         'oxaliplatin', 'vincristine', 'methotrexate', 'leucovorin'}
+
+        # Separate experimental vs standard
+        experimental = [d for d in cleaned_drugs if d.lower() not in standard_chemo]
+        standard = [d for d in cleaned_drugs if d.lower() in standard_chemo]
+
+        if len(experimental) >= 2:
+            # Multi-drug experimental combo
+            features['intervention_name'] = ' + '.join(experimental[:3])
+            features['is_combination'] = '1'
+            features['n_drugs'] = str(len(experimental))
+        elif experimental:
+            if standard:
+                # Experimental + chemo backbone
+                features['intervention_name'] = experimental[0] + ' + ' + standard[0]
+                features['is_combination'] = '1'
+                features['n_drugs'] = str(len(experimental) + len(standard))
+            else:
+                features['intervention_name'] = experimental[0]
+                features['is_combination'] = '0'
+                features['n_drugs'] = '1'
+        elif standard:
+            features['intervention_name'] = standard[0]
+            features['is_combination'] = '0'
+            features['n_drugs'] = '1'
+
+        print(f"  All drugs found: {cleaned_drugs}")
+        print(f"  Experimental: {experimental}, Standard: {standard}")
 
     # Infer indication
     condition = features.get('condition', '')
