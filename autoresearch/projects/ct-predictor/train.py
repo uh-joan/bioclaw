@@ -275,7 +275,7 @@ _rf = RandomForestClassifier(n_estimators=400, max_depth=None, min_samples_leaf=
 MODEL = VotingClassifier(
     estimators=[("gbm", _gbm), ("lr", _lr), ("rf", _rf)],
     voting="soft",
-    weights=[3, 1, 3],
+    weights=[4, 1, 2],
 )
 
 K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
