@@ -252,7 +252,7 @@ MODEL = HistGradientBoostingClassifier(
     max_depth=5,
     learning_rate=0.02,
     min_samples_leaf=8,
-    l2_regularization=0.05,
+    l2_regularization=0.0,
     random_state=42,
 )
 
