@@ -1,0 +1,559 @@
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:133: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"sponsor_{val}"] = (st == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:133: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"sponsor_{val}"] = (st == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:133: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"sponsor_{val}"] = (st == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:139: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_freq"] = df[col].map(freq).fillna(0)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:150: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"log_{col}"] = np.log1p(X[col])
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:154: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["genetic_x_phase"] = X["ot_genetic_score"] * X["phase"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:157: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["overall_score_x_phase"] = X["ot_overall_score"] * X["phase"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:160: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["pub_ratio"] = (X["pubmed_drug_pub_count"] + 1) / (X["pubmed_target_pub_count"] + 1)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:164: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["total_genetic_evidence"] = X[genetic].sum(axis=1)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:168: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["regulatory_advantage"] = X[reg].sum(axis=1)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:171: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["total_healthcare_spend"] = X["medicare_indication_spend"] + X["medicaid_indication_spend"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:172: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["log_total_healthcare_spend"] = np.log1p(X["total_healthcare_spend"])
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:176: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["drug_maturity_x_evidence"] = X["chembl_max_phase"] * X["ot_overall_score"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:180: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["phase_x_regulatory"] = X["phase"] * X["regulatory_advantage"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:184: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["selectivity_x_tractability"] = X["chembl_selectivity"] * X["ot_target_tractability"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:189: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["prior_evidence_score"] = X[prior].mean(axis=1)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:193: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["genetic_x_tractability"] = X["total_genetic_evidence"] * X["ot_target_tractability"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:197: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["depmap_x_maxphase"] = X["depmap_essentiality"] * X["chembl_max_phase"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:201: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["phase_sq"] = X["phase"] ** 2
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:206: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["enrollment_per_site"] = X["enrollment"] / denom
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:207: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["log_enrollment_per_site"] = np.log1p(X["enrollment_per_site"])
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:211: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["biomarker_x_evidence"] = X["has_biomarker_selection"] * X["ot_overall_score"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:215: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["prior_success_x_phase"] = X["prior_phase_success"] * X["phase"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:219: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["research_momentum"] = X["openalex_citation_velocity"] + X["biorxiv_preprint_count"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:220: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["log_research_momentum"] = np.log1p(X["research_momentum"])
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:224: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["dmc_x_sites"] = X["has_dmc"] * np.log1p(X["num_sites"])
+cv_auc_roc:        0.627458
+cv_auc_std:        0.192256
+train_n_features:  172
+train_n_samples:   1040
+training_seconds:  9.8
+train_model_type:  HistGradientBoostingClassifier
+
+Selected features:
+  - phase
+  - enrollment
+  - num_arms
+  - has_dmc
+  - num_secondary_endpoints
+  - num_sites
+  - has_biomarker_selection
+  - competitor_trial_count
+  - prior_phase_success
+  - ot_overall_score
+  - ot_target_tractability
+  - chembl_selectivity
+  - chembl_best_ic50_nm
+  - chembl_num_assays
+  - chembl_max_phase
+  - chembl_moa_count
+  - drugbank_interaction_count
+  - drugbank_target_count
+  - drugbank_enzyme_count
+  - drugbank_half_life_hours
+  - drugbank_molecular_weight
+  - bindingdb_ki_nm
+  - bindingdb_kd_nm
+  - bindingdb_num_measurements
+  - clinpgx_guideline_count
+  - clinpgx_actionable
+  - fda_prior_approval_class
+  - fda_class_ae_count
+  - pubmed_target_pub_count
+  - pubmed_drug_pub_count
+  - openalex_citation_velocity
+  - biorxiv_preprint_count
+  - medicare_indication_spend
+  - medicaid_indication_spend
+  - reactome_pathway_count
+  - stringdb_interaction_degree
+  - gtex_tissue_specificity
+  - gnomad_pli
+  - gnomad_loeuf
+  - clinvar_pathogenic_count
+  - gwas_hit_count
+  - gwas_best_pvalue
+  - depmap_essentiality
+  - cbioportal_mutation_freq
+  - hpo_phenotype_count
+  - ema_approved_similar
+  - eu_filings_count
+  - alphafold_available
+  - alphafold_confidence
+  - cosmic_mutation_count
+  - ensembl_transcript_count
+  - go_term_count
+  - ot_disease_association_count
+  - ot_safety_liability_count
+  - pdb_structure_count
+  - pubchem_complexity
+  - pubchem_hbond_acceptor
+  - pubchem_hbond_donor
+  - pubchem_molecular_weight
+  - pubchem_rotatable_bonds
+  - pubchem_xlogp
+  - num_arms_missing
+  - num_secondary_endpoints_missing
+  - has_biomarker_selection_missing
+  - competitor_trial_count_missing
+  - prior_phase_success_missing
+  - ot_overall_score_missing
+  - ot_target_tractability_missing
+  - chembl_selectivity_missing
+  - chembl_best_ic50_nm_missing
+  - chembl_num_assays_missing
+  - chembl_max_phase_missing
+  - chembl_moa_count_missing
+  - drugbank_interaction_count_missing
+  - drugbank_target_count_missing
+  - drugbank_enzyme_count_missing
+  - drugbank_transporter_count_missing
+  - drugbank_half_life_hours_missing
+  - drugbank_molecular_weight_missing
+  - bindingdb_ki_nm_missing
+  - bindingdb_kd_nm_missing
+  - bindingdb_num_measurements_missing
+  - clinpgx_cyp_substrate_count_missing
+  - fda_prior_approval_class_missing
+  - fda_class_ae_count_missing
+  - pubmed_target_pub_count_missing
+  - pubmed_drug_pub_count_missing
+  - openalex_citation_velocity_missing
+  - biorxiv_preprint_count_missing
+  - medicare_indication_spend_missing
+  - medicaid_indication_spend_missing
+  - reactome_pathway_count_missing
+  - stringdb_interaction_degree_missing
+  - gtex_tissue_specificity_missing
+  - gnomad_pli_missing
+  - gnomad_loeuf_missing
+  - clinvar_pathogenic_count_missing
+  - gwas_hit_count_missing
+  - gwas_best_pvalue_missing
+  - depmap_essentiality_missing
+  - cbioportal_mutation_freq_missing
+  - monarch_gene_count_missing
+  - eu_filings_count_missing
+  - alphafold_available_missing
+  - alphafold_confidence_missing
+  - brenda_has_kinetics_missing
+  - brenda_km_count_missing
+  - cdc_has_surveillance_missing
+  - cosmic_is_driver_missing
+  - cosmic_mutation_count_missing
+  - ensembl_transcript_count_missing
+  - geo_dataset_count_missing
+  - go_biological_process_count_missing
+  - go_molecular_function_count_missing
+  - go_term_count_missing
+  - kegg_pathway_count_missing
+  - ot_disease_association_count_missing
+  - ot_safety_liability_count_missing
+  - pdb_structure_count_missing
+  - pubchem_complexity_missing
+  - pubchem_hbond_acceptor_missing
+  - pubchem_hbond_donor_missing
+  - pubchem_molecular_weight_missing
+  - pubchem_rotatable_bonds_missing
+  - pubchem_xlogp_missing
+  - is_oncology
+  - is_immunology
+  - is_cardiovascular
+  - is_cns
+  - is_other
+  - is_respiratory
+  - is_infectious
+  - is_metabolic
+  - sponsor_industry
+  - sponsor_nih
+  - sponsor_other
+  - allocation_freq
+  - masking_freq
+  - intervention_type_freq
+  - log_chembl_best_ic50_nm
+  - log_bindingdb_ki_nm
+  - log_bindingdb_kd_nm
+  - log_enrollment
+  - log_pubmed_target_pub_count
+  - log_pubmed_drug_pub_count
+  - log_medicare_indication_spend
+  - log_medicaid_indication_spend
+  - log_chembl_selectivity
+  - log_bindingdb_num_measurements
+  - log_openalex_citation_velocity
+  - log_biorxiv_preprint_count
+  - log_reactome_pathway_count
+  - log_clinvar_pathogenic_count
+  - log_gwas_hit_count
+  - overall_score_x_phase
+  - pub_ratio
+  - total_genetic_evidence
+  - total_healthcare_spend
+  - log_total_healthcare_spend
+  - drug_maturity_x_evidence
+  - selectivity_x_tractability
+  - prior_evidence_score
+  - genetic_x_tractability
+  - depmap_x_maxphase
+  - phase_sq
+  - enrollment_per_site
+  - log_enrollment_per_site
+  - biomarker_x_evidence
+  - prior_success_x_phase
+  - research_momentum
+  - log_research_momentum
+  - dmc_x_sites
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:120: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_missing"] = X[col].isna().astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:127: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"is_{val}"] = (df["indication_area"] == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:133: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"sponsor_{val}"] = (st == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:133: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"sponsor_{val}"] = (st == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:133: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"sponsor_{val}"] = (st == val).astype(int)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:139: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"{col}_freq"] = df[col].map(freq).fillna(0)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:150: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X[f"log_{col}"] = np.log1p(X[col])
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:154: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["genetic_x_phase"] = X["ot_genetic_score"] * X["phase"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:157: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["overall_score_x_phase"] = X["ot_overall_score"] * X["phase"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:160: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["pub_ratio"] = (X["pubmed_drug_pub_count"] + 1) / (X["pubmed_target_pub_count"] + 1)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:164: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["total_genetic_evidence"] = X[genetic].sum(axis=1)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:168: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["regulatory_advantage"] = X[reg].sum(axis=1)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:171: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["total_healthcare_spend"] = X["medicare_indication_spend"] + X["medicaid_indication_spend"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:172: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["log_total_healthcare_spend"] = np.log1p(X["total_healthcare_spend"])
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:176: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["drug_maturity_x_evidence"] = X["chembl_max_phase"] * X["ot_overall_score"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:180: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["phase_x_regulatory"] = X["phase"] * X["regulatory_advantage"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:184: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["selectivity_x_tractability"] = X["chembl_selectivity"] * X["ot_target_tractability"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:189: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["prior_evidence_score"] = X[prior].mean(axis=1)
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:193: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["genetic_x_tractability"] = X["total_genetic_evidence"] * X["ot_target_tractability"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:197: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["depmap_x_maxphase"] = X["depmap_essentiality"] * X["chembl_max_phase"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:201: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["phase_sq"] = X["phase"] ** 2
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:206: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["enrollment_per_site"] = X["enrollment"] / denom
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:207: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["log_enrollment_per_site"] = np.log1p(X["enrollment_per_site"])
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:211: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["biomarker_x_evidence"] = X["has_biomarker_selection"] * X["ot_overall_score"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:215: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["prior_success_x_phase"] = X["prior_phase_success"] * X["phase"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:219: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["research_momentum"] = X["openalex_citation_velocity"] + X["biorxiv_preprint_count"]
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:220: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["log_research_momentum"] = np.log1p(X["research_momentum"])
+/Users/janisaez/code/nanoclaw/autoresearch/projects/ct-predictor/train.py:224: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X["dmc_x_sites"] = X["has_dmc"] * np.log1p(X["num_sites"])
+auc_roc:           0.880208
+p_at_80_recall:    0.888199
+avg_precision:     0.935125
+brier_score:       0.128841
+n_val_samples:     260
+n_features:        172
+model_type:        HistGradientBoostingClassifier
+tp:                158
+fp:                27
+fn:                18
+tn:                57

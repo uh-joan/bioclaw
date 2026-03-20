@@ -223,6 +223,16 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     if "has_dmc" in X.columns and "num_sites" in X.columns:
         X["dmc_x_sites"] = X["has_dmc"] * np.log1p(X["num_sites"])
 
+    # Oncology × enrollment_per_site (top feature interactions)
+    if "is_oncology" in X.columns and "enrollment_per_site" in X.columns:
+        X["oncology_x_enr_per_site"] = X["is_oncology"] * X["enrollment_per_site"]
+    if "is_oncology" in X.columns and "phase" in X.columns:
+        X["oncology_x_phase"] = X["is_oncology"] * X["phase"]
+    if "is_immunology" in X.columns and "enrollment_per_site" in X.columns:
+        X["immunology_x_enr_per_site"] = X["is_immunology"] * X["enrollment_per_site"]
+    if "competitor_trial_count" in X.columns and "phase" in X.columns:
+        X["competitor_x_phase"] = X["competitor_trial_count"] * X["phase"]
+
     return X, y
 
 # ---------------------------------------------------------------------------
