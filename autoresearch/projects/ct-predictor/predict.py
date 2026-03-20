@@ -292,11 +292,52 @@ def predict(nct_id):
     return prob
 
 
+def search_trial(query):
+    """Search CT.gov for a trial by name/drug/condition and return NCT ID."""
+    import re
+    from mcp.servers.ct_gov_mcp import search
+
+    print(f"Searching: {query}")
+    r = sc(search, condition=query, phase="PHASE3", pageSize=5, timeout_sec=15)
+    if not r:
+        # Try as intervention
+        r = sc(search, intervention=query, phase="PHASE3", pageSize=5, timeout_sec=15)
+    if not r:
+        print("  No results found.")
+        return None
+
+    text = r if isinstance(r, str) else r.get('text', str(r))
+    ncts = re.findall(r'NCT\d{8}', text)
+    titles = re.findall(r'\*\*Title:\*\*\s*(.+)', text)
+
+    if not ncts:
+        print("  No trials found.")
+        return None
+
+    # Show matches and let user see which one
+    print(f"  Found {len(ncts)} trials:")
+    for i, (nct, title) in enumerate(zip(ncts[:5], titles[:5])):
+        print(f"    {i+1}. {nct} — {title[:70]}")
+
+    # Auto-pick first match
+    print(f"  → Using {ncts[0]}")
+    return ncts[0]
+
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Usage: python predict.py NCT05580562 [NCT04191421 ...]")
+        print("Usage:")
+        print("  python predict.py NCT05580562              # by NCT ID")
+        print("  python predict.py --search 'empagliflozin heart failure'  # by name")
         sys.exit(1)
 
-    for nct_id in sys.argv[1:]:
-        predict(nct_id)
-        print()
+    args = sys.argv[1:]
+    if args[0] == '--search':
+        query = ' '.join(args[1:])
+        nct_id = search_trial(query)
+        if nct_id:
+            predict(nct_id)
+    else:
+        for nct_id in args:
+            predict(nct_id)
+            print()
