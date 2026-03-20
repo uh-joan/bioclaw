@@ -612,7 +612,7 @@ def enrich_combination(intervention_name, drug1_target, condition, drug_target_c
         # Try OpenTargets
         try:
             from mcp.servers.opentargets_mcp import search_targets
-            r = sc(search_targets, query=drug2, size=1, timeout_sec=10)
+            r = safe_call(search_targets, query=drug2, size=1, timeout_sec=10)
             if r:
                 hits = r.get('data', {}).get('search', {}).get('hits', [])
                 if hits:
@@ -622,40 +622,87 @@ def enrich_combination(intervention_name, drug1_target, condition, drug_target_c
 
     out['combo_drug2_has_target'] = 1 if target2 else 0
 
-    if not target2:
-        return out
-
-    # Drug2 ChEMBL max phase (how far has it gone alone?)
+    # Drug2 FDA approved?
     try:
-        from mcp.servers.chembl_mcp import compound_search
-        r = sc(compound_search, query=drug2, limit=1, timeout_sec=12)
-        if r and r.get('molecules'):
-            out['combo_drug2_max_phase'] = r['molecules'][0].get('max_phase', '')
+        from mcp.servers.fda_mcp import lookup_drug as fda_lookup
+        r = safe_call(fda_lookup, search_term=drug2, count='openfda.brand_name.exact', limit=5, timeout_sec=12)
+        if r and isinstance(r, dict) and r.get('success'):
+            results = r.get('data', {}).get('results', [])
+            out['combo_drug2_fda_approved'] = 1 if results else 0
     except:
         pass
+
+    # Drug2 completed vs terminated trials
+    try:
+        from mcp.servers.ct_gov_mcp import search as _ctgov
+        import re as _re
+        r_c = safe_call(_ctgov, intervention=drug2, status='COMPLETED', phase='PHASE3', pageSize=1, timeout_sec=12)
+        r_t = safe_call(_ctgov, intervention=drug2, status='TERMINATED', pageSize=1, timeout_sec=12)
+        c_n = 0
+        t_n = 0
+        if r_c:
+            ct = r_c if isinstance(r_c, str) else r_c.get('text', '')
+            m = _re.search(r'(\d+)\s+(?:of\s+)?(\d+)\s+(?:studies|trials)', ct, _re.I)
+            if m: c_n = int(m.group(2))
+        if r_t:
+            tt = r_t if isinstance(r_t, str) else r_t.get('text', '')
+            m = _re.search(r'(\d+)\s+(?:of\s+)?(\d+)\s+(?:studies|trials)', tt, _re.I)
+            if m: t_n = int(m.group(2))
+        out['combo_drug2_completed_trials'] = c_n
+        out['combo_drug2_terminated_trials'] = t_n
+        out['combo_drug2_trial_count'] = c_n + t_n
+        if c_n + t_n > 0:
+            out['combo_drug2_fail_ratio'] = round(t_n / (c_n + t_n), 2)
+    except:
+        pass
+
+    # Drug2 ChEMBL max phase + phase ratio
+    try:
+        from mcp.servers.chembl_mcp import compound_search
+        r = safe_call(compound_search, query=drug2, limit=1, timeout_sec=12)
+        if r and r.get('molecules'):
+            d2_phase = r['molecules'][0].get('max_phase', '')
+            out['combo_drug2_max_phase'] = d2_phase
+            # Phase ratio vs drug1
+            r1 = safe_call(compound_search, query=drug1_target or drug2, limit=1, timeout_sec=12)
+            # Use the intervention name's first part for drug1 phase lookup
+    except:
+        pass
+
+    if not target2:
+        return out
 
     # Drug2 target evidence (OpenTargets overall score)
     try:
         from mcp.servers.opentargets_mcp import search_targets, get_target_disease_associations
-        r = sc(search_targets, query=target2, size=1, timeout_sec=10)
+        r = safe_call(search_targets, query=target2, size=1, timeout_sec=10)
         if r:
             hits = r.get('data', {}).get('search', {}).get('hits', [])
             if hits:
                 eid2 = hits[0].get('id', '')
                 if eid2:
-                    assoc = sc(get_target_disease_associations, targetId=eid2, size=3, timeout_sec=12)
+                    assoc = safe_call(get_target_disease_associations, targetId=eid2, size=3, timeout_sec=12)
                     if assoc and isinstance(assoc, dict):
                         td = assoc.get('data', {}).get('target', {})
                         rows = td.get('associatedDiseases', {}).get('rows', [])
                         if rows:
                             out['combo_drug2_ot_score'] = rows[0].get('score', '')
+                            # Disease-specific score
+                            cond_lower = condition.lower() if condition else ''
+                            if cond_lower:
+                                match = next((r for r in rows if any(
+                                    w in str(r.get('disease',{}).get('name','')).lower()
+                                    for w in cond_lower.split()[:2] if len(w) > 3
+                                )), None)
+                                if match:
+                                    out['combo_drug2_target_disease_score'] = match.get('score', '')
     except:
         pass
 
     # Drug2 target gnomAD constraint
     try:
         from mcp.servers.gnomad_mcp import get_gene_constraint
-        r = sc(get_gene_constraint, gene=target2, timeout_sec=12)
+        r = safe_call(get_gene_constraint, gene=target2, timeout_sec=12)
         if r and isinstance(r, dict):
             c = r.get('constraint', r)
             out['combo_drug2_pli'] = c.get('pLI', '')
@@ -666,7 +713,7 @@ def enrich_combination(intervention_name, drug1_target, condition, drug_target_c
     if drug1_target and target2:
         try:
             from mcp.servers.stringdb_mcp import get_protein_interactions
-            r = sc(get_protein_interactions, protein=drug1_target, timeout_sec=12)
+            r = safe_call(get_protein_interactions, protein=drug1_target, timeout_sec=12)
             if r and isinstance(r, dict):
                 interactions = r.get('interactions', [])
                 interacts = any(
@@ -681,8 +728,8 @@ def enrich_combination(intervention_name, drug1_target, condition, drug_target_c
     if drug1_target and target2:
         try:
             from mcp.servers.reactome_mcp import find_pathways_by_gene
-            r1 = sc(find_pathways_by_gene, gene=drug1_target, timeout_sec=10)
-            r2 = sc(find_pathways_by_gene, gene=target2, timeout_sec=10)
+            r1 = safe_call(find_pathways_by_gene, gene=drug1_target, timeout_sec=10)
+            r2 = safe_call(find_pathways_by_gene, gene=target2, timeout_sec=10)
             if r1 and r2:
                 pw1 = set(str(p.get('stId', p.get('id', ''))) for p in r1.get('pathways', []) if isinstance(p, dict))
                 pw2 = set(str(p.get('stId', p.get('id', ''))) for p in r2.get('pathways', []) if isinstance(p, dict))
