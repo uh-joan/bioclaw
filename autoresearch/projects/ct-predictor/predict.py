@@ -50,7 +50,11 @@ def get_trial_data(nct_id):
     raw_drugs = re.findall(r'###\s+(?:Drug|Biological|Combination Product):\s*(.+)', text)
     skip = {'placebo', 'matching placebo', 'oral placebo', 'iv placebo',
             'placebo oral', 'placebo iv', 'chemotherapy', 'standard of care',
-            'observation', 'radiation', 'normal saline', 'dextrose'}
+            'observation', 'radiation', 'normal saline', 'dextrose',
+            'saline solution', 'saline', 'dexamethasone', 'prednisone',
+            'prednisolone', 'methylprednisolone', 'hydrocortisone',
+            'diphenhydramine', 'acetaminophen', 'ondansetron', 'filgrastim',
+            'pegfilgrastim', 'folinic acid'}
     cleaned_drugs = []
     for d in raw_drugs:
         name = d.strip()
@@ -59,7 +63,8 @@ def get_trial_data(nct_id):
         # Remove trailing descriptions
         name = re.split(r',\s+an?\s+', name, flags=re.I)[0].strip()
         if name.lower() not in skip and len(name) > 2:
-            cleaned_drugs.append(name)
+            if name.lower() not in [d.lower() for d in cleaned_drugs]:
+                cleaned_drugs.append(name)
 
     if cleaned_drugs:
         # Standard chemo agents (control arm, not experimental)
