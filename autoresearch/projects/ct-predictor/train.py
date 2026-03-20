@@ -271,7 +271,7 @@ _gbm = HistGradientBoostingClassifier(
     random_state=42,
 )
 _lr = LogisticRegression(C=0.5, max_iter=1000, random_state=42, solver="lbfgs")
-_rf = RandomForestClassifier(n_estimators=400, max_depth=8, min_samples_leaf=4, random_state=42, n_jobs=-1)
+_rf = RandomForestClassifier(n_estimators=400, max_depth=None, min_samples_leaf=3, random_state=42, n_jobs=-1)
 MODEL = VotingClassifier(
     estimators=[("gbm", _gbm), ("lr", _lr), ("rf", _rf)],
     voting="soft",
