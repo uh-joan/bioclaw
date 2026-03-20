@@ -250,16 +250,18 @@ def predict(nct_id):
         print(f"    Drug2 target: {combo.get('combo_drug2_has_target', '?')}, interact: {combo.get('combo_targets_interact', '?')}, shared pathways: {combo.get('combo_shared_pathways', '?')}")
     trial.update(extra)
 
-    # Build features using train.py's build_features
+    # Build features: append new trial to full training data so one-hot encoding
+    # creates all columns (indication_area, endpoint_type, etc.)
     from train import build_features
-    # Create a single-row DataFrame with all columns from training data
-    train_df = pd.read_csv('data/trials_raw.csv', nrows=1)
+    train_df = pd.read_csv(os.path.join(os.path.dirname(__file__), 'data', 'trials_raw.csv'))
     row = {col: '' for col in train_df.columns}
     row.update(trial)
     row['label'] = 0  # dummy
-    single_df = pd.DataFrame([row])
+    full_df = pd.concat([train_df, pd.DataFrame([row])], ignore_index=True)
 
-    X, _ = build_features(single_df)
+    X, _ = build_features(full_df)
+    # Extract last row (our new trial)
+    X = X.iloc[[-1]].copy()
 
     # Align to model features
     for f in feature_names:
