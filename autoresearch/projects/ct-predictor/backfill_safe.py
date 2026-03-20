@@ -318,7 +318,7 @@ def enrich_trial(drug, target, condition):
                     ensembl_id = hits[0].get('id', '')
                     if ensembl_id:
                         assoc = safe_call(get_target_disease_associations,
-                                          targetId=ensembl_id, size=5, timeout_sec=20)
+                                          targetId=ensembl_id, size=25, timeout_sec=20)
                         if assoc and isinstance(assoc, dict):
                             target_data = assoc.get('data', {}).get('target', {})
                             assoc_diseases = target_data.get('associatedDiseases', {})
@@ -327,6 +327,19 @@ def enrich_trial(drug, target, condition):
                             out['ot_disease_association_count'] = total_assoc
                             if rows:
                                 out['ot_overall_score'] = rows[0].get('score', '')
+                                # Target-disease specific score
+                                import re as _re2
+                                cond_lower = condition.lower() if condition else ''
+                                if cond_lower:
+                                    cond_words = [w for w in cond_lower.split() if len(w) > 3]
+                                    match = next((r for r in rows if any(
+                                        w in str(r.get('disease',{}).get('name','')).lower()
+                                        for w in cond_words
+                                    )), None)
+                                    if match:
+                                        out['target_disease_score'] = match.get('score', '')
+                                    else:
+                                        out['target_disease_score'] = 0  # Target has NO evidence for this disease
 
                         # Tractability + safety via get_target_details
                         from mcp.client import get_client as _gc
