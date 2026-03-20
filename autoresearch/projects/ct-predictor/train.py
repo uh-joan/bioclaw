@@ -47,9 +47,6 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         "num_secondary_endpoints", "num_sites", "has_biomarker_selection",
         "competitor_trial_count", "prior_phase_success",
         # OpenTargets
-        "ot_genetic_score", "ot_somatic_score", "ot_literature_score",
-        "ot_animal_model_score", "ot_known_drug_score",
-        "ot_affected_pathway_score", "ot_overall_score", "ot_target_tractability",
         # ChEMBL
         "chembl_selectivity", "chembl_best_ic50_nm", "chembl_num_assays",
         "chembl_max_phase", "chembl_moa_count",
@@ -63,8 +60,6 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         "clinpgx_guideline_count", "clinpgx_actionable",
         "clinpgx_cyp_substrate_count",
         # FDA
-        "fda_prior_approval_class", "fda_breakthrough", "fda_fast_track",
-        "fda_orphan", "fda_class_ae_count",
         # Publication signals
         "pubmed_target_pub_count", "pubmed_drug_pub_count",
         "openalex_citation_velocity", "biorxiv_preprint_count",
@@ -72,7 +67,6 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         "medicare_indication_spend", "medicaid_indication_spend",
         # Pathway/network
         "reactome_pathway_count", "stringdb_interaction_degree",
-        "stringdb_betweenness",
         # Genomic
         "gtex_tissue_specificity", "gnomad_pli", "gnomad_loeuf",
         "clinvar_pathogenic_count", "gwas_hit_count", "gwas_best_pvalue",
@@ -100,7 +94,6 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         # OpenTargets additional
         "ot_disease_association_count", "ot_safety_liability_count",
         # PDB structure
-        "pdb_has_ligand_bound", "pdb_structure_count",
         # PubChem molecular descriptors
         "pubchem_complexity", "pubchem_hbond_acceptor", "pubchem_hbond_donor",
         "pubchem_molecular_weight", "pubchem_rotatable_bonds", "pubchem_xlogp",
@@ -153,14 +146,11 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
                 "medicare_indication_spend", "medicaid_indication_spend",
                 "chembl_selectivity", "bindingdb_num_measurements",
                 "openalex_citation_velocity", "biorxiv_preprint_count",
-                "stringdb_betweenness", "reactome_pathway_count",
                 "clinvar_pathogenic_count", "gwas_hit_count"]:
         if col in X.columns:
             X[f"log_{col}"] = np.log1p(X[col])
 
     # Engineered interactions
-    if "ot_genetic_score" in X.columns and "phase" in X.columns:
-        X["genetic_x_phase"] = X["ot_genetic_score"] * X["phase"]
 
     if "ot_overall_score" in X.columns and "phase" in X.columns:
         X["overall_score_x_phase"] = X["ot_overall_score"] * X["phase"]
@@ -168,11 +158,11 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     if "pubmed_target_pub_count" in X.columns and "pubmed_drug_pub_count" in X.columns:
         X["pub_ratio"] = (X["pubmed_drug_pub_count"] + 1) / (X["pubmed_target_pub_count"] + 1)
 
-    genetic = [c for c in ["ot_genetic_score", "gwas_hit_count", "clinvar_pathogenic_count"] if c in X.columns]
+    genetic = [c for c in ["ot_overall_score", "gwas_hit_count", "clinvar_pathogenic_count"] if c in X.columns]
     if len(genetic) > 1:
         X["total_genetic_evidence"] = X[genetic].sum(axis=1)
 
-    reg = [c for c in ["fda_breakthrough", "fda_fast_track", "fda_orphan"] if c in X.columns]
+    reg = [c for c in ["fda_prior_approval_class", "ema_approved_similar"] if c in X.columns]
     if reg:
         X["regulatory_advantage"] = X[reg].sum(axis=1)
 
@@ -241,6 +231,18 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         X["immunology_x_enr_per_site"] = X["is_immunology"] * X["enrollment_per_site"]
     if "competitor_trial_count" in X.columns and "phase" in X.columns:
         X["competitor_x_phase"] = X["competitor_trial_count"] * X["phase"]
+
+    # Combo quality score: drug2 evidence strength (high = proven combo partner)
+    if "combo_drug2_fda_approved" in X.columns and "combo_drug2_completed_trials" in X.columns:
+        X["combo_drug2_evidence"] = (
+            X["combo_drug2_fda_approved"] * 3 +
+            np.log1p(X.get("combo_drug2_completed_trials", 0)) +
+            X.get("combo_drug2_max_phase", 0) / 4
+        )
+
+    # Combo mechanism complementarity (low GO overlap = good)
+    if "combo_go_overlap" in X.columns and "is_combination" in X.columns:
+        X["combo_complementary"] = X["is_combination"] * (1 - X["combo_go_overlap"])
 
     return X, y
 
