@@ -111,6 +111,8 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         "combo_drug2_pub_count", "combo_drug2_ot_score", "combo_drug2_pli",
         "combo_targets_interact", "combo_shared_pathways", "combo_targets_same_pathway",
         "combo_go_overlap", "combo_bp_overlap", "combo_shared_bp_count",
+        # Safety signals
+        "target_expression_breadth",
         "combo_drug2_target_disease_score", "combo_drug2_completed_trials",
         "combo_drug2_terminated_trials", "combo_drug2_fail_ratio",
     ]
@@ -278,6 +280,22 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 
         X["same_target_success_rate"] = same_target_rate
         X["same_target_trial_count"] = same_target_n
+
+    # Safety risk: novel mechanism on ubiquitous target
+    if "same_target_trial_count" in X.columns and "target_expression_breadth" in X.columns:
+        # Novel target (few prior trials) × ubiquitous expression = high safety risk
+        novelty = 1 / (X["same_target_trial_count"] + 1)  # Higher for novel targets
+        X["safety_risk_novel_ubiquitous"] = novelty * X["target_expression_breadth"]
+
+    if "ot_safety_liability_count" in X.columns and "target_expression_breadth" in X.columns:
+        # Known safety issues × broad expression = compounding risk
+        X["safety_risk_compound"] = X["ot_safety_liability_count"] * X["target_expression_breadth"] / 54
+
+    # Genetic validation strength (matters most for novel targets)
+    if "same_target_trial_count" in X.columns:
+        genetic_evidence = X.get("clinvar_pathogenic_count", 0) + X.get("gwas_hit_count", 0) * 0.1
+        novelty = 1 / (X["same_target_trial_count"] + 1)
+        X["genetic_validation_for_novel"] = genetic_evidence * novelty
 
     # Combo quality score: drug2 evidence strength (high = proven combo partner)
     if "combo_drug2_fda_approved" in X.columns and "combo_drug2_completed_trials" in X.columns:

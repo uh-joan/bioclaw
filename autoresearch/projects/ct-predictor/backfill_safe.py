@@ -426,6 +426,8 @@ def enrich_trial(drug, target, condition):
                         out['gtex_tissue_specificity'] = round(tau, 4)
                         out['gtex_max_tpm'] = round(max(medians), 2)
                         out['gtex_num_tissues'] = len(medians)
+                        # Expression breadth: tissues with TPM > 1 (safety signal)
+                        out['target_expression_breadth'] = sum(1 for m in medians if m > 1)
         except Exception:
             pass
 
