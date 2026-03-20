@@ -709,6 +709,41 @@ def enrich_combination(intervention_name, drug1_target, condition, drug_target_c
     except:
         pass
 
+    # GO term overlap = mechanism redundancy signal (UniProt GO annotations)
+    if drug1_target and target2:
+        try:
+            from mcp.client import get_client as _gc2
+            _uc = _gc2('uniprot')
+            def _get_go(gene):
+                r = safe_call(_uc.call_tool, 'uniprot_data',
+                             {'method': 'search_by_gene', 'gene': gene, 'organism': 'human'},
+                             timeout_sec=12)
+                if r and isinstance(r, dict) and r.get('results'):
+                    xrefs = r['results'][0].get('uniProtKBCrossReferences', [])
+                    terms = set()
+                    for x in xrefs:
+                        if isinstance(x, dict) and x.get('database') == 'GO':
+                            for p in x.get('properties', []):
+                                if p.get('key') == 'GoTerm':
+                                    terms.add(p.get('value', ''))
+                    return terms
+                return set()
+
+            go1 = _get_go(drug1_target)
+            go2 = _get_go(target2)
+            if go1 and go2:
+                total = go1 | go2
+                shared = go1 & go2
+                out['combo_go_overlap'] = round(len(shared) / max(len(total), 1), 3)
+                bp1 = set(t for t in go1 if t.startswith('P:'))
+                bp2 = set(t for t in go2 if t.startswith('P:'))
+                bp_total = bp1 | bp2
+                bp_shared = bp1 & bp2
+                out['combo_bp_overlap'] = round(len(bp_shared) / max(len(bp_total), 1), 3)
+                out['combo_shared_bp_count'] = len(bp_shared)
+        except:
+            pass
+
     # Do drug1 and drug2 targets interact? (STRING-db)
     if drug1_target and target2:
         try:

@@ -110,6 +110,7 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         "combo_drug2_max_phase", "combo_phase_ratio",
         "combo_drug2_pub_count", "combo_drug2_ot_score", "combo_drug2_pli",
         "combo_targets_interact", "combo_shared_pathways", "combo_targets_same_pathway",
+        "combo_go_overlap", "combo_bp_overlap", "combo_shared_bp_count",
         "combo_drug2_target_disease_score", "combo_drug2_completed_trials",
         "combo_drug2_terminated_trials", "combo_drug2_fail_ratio",
     ]
