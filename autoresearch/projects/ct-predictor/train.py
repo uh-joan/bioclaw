@@ -266,7 +266,7 @@ _gbm = HistGradientBoostingClassifier(
     max_iter=1000,
     max_depth=5,
     learning_rate=0.02,
-    min_samples_leaf=12,
+    min_samples_leaf=16,
     l2_regularization=1.0,
     random_state=42,
 )
