@@ -32,6 +32,11 @@ def parse_markdown_study(text: str) -> dict:
     if m:
         out['status'] = m.group(1).strip()
 
+    # Condition — from "## Conditions" section
+    m = re.search(r'## Conditions\s*\n-\s*(.+)', text)
+    if m:
+        out['condition'] = m.group(1).strip()
+
     # Phase
     m = re.search(r'\*\*Phase:\*\*\s*(.+)', text)
     if m:

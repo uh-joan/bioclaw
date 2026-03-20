@@ -573,6 +573,128 @@ def enrich_trial(drug, target, condition):
     return out
 
 
+def enrich_combination(intervention_name, drug1_target, condition, drug_target_cache):
+    """Extract second drug features for combination trials.
+
+    Returns dict with combo_ prefixed features.
+    """
+    import re
+    out = {}
+
+    name = str(intervention_name).lower().strip()
+
+    # Split combination
+    for sep in [' + ', ' plus ', ' combined with ', ' in combination with ']:
+        if sep in name:
+            parts = name.split(sep)
+            break
+    else:
+        out['is_combination'] = 0
+        out['n_drugs'] = 1
+        return out
+
+    out['is_combination'] = 1
+    out['n_drugs'] = len(parts)
+
+    # Get second drug
+    drug2 = parts[1].strip() if len(parts) > 1 else ''
+    drug2 = re.split(r'\s+\d+\s*(?:mg|ml)', drug2, flags=re.I)[0].strip()
+    drug2 = drug2.rstrip('/, ')
+
+    if not drug2 or drug2 in ('placebo', 'chemotherapy', ''):
+        return out
+
+    out['combo_drug2_name'] = drug2
+
+    # Resolve drug2 target
+    target2 = drug_target_cache.get(drug2, '')
+    if not target2:
+        # Try OpenTargets
+        try:
+            from mcp.servers.opentargets_mcp import search_targets
+            r = sc(search_targets, query=drug2, size=1, timeout_sec=10)
+            if r:
+                hits = r.get('data', {}).get('search', {}).get('hits', [])
+                if hits:
+                    target2 = hits[0].get('approvedSymbol', hits[0].get('name', ''))
+        except:
+            pass
+
+    out['combo_drug2_has_target'] = 1 if target2 else 0
+
+    if not target2:
+        return out
+
+    # Drug2 ChEMBL max phase (how far has it gone alone?)
+    try:
+        from mcp.servers.chembl_mcp import compound_search
+        r = sc(compound_search, query=drug2, limit=1, timeout_sec=12)
+        if r and r.get('molecules'):
+            out['combo_drug2_max_phase'] = r['molecules'][0].get('max_phase', '')
+    except:
+        pass
+
+    # Drug2 target evidence (OpenTargets overall score)
+    try:
+        from mcp.servers.opentargets_mcp import search_targets, get_target_disease_associations
+        r = sc(search_targets, query=target2, size=1, timeout_sec=10)
+        if r:
+            hits = r.get('data', {}).get('search', {}).get('hits', [])
+            if hits:
+                eid2 = hits[0].get('id', '')
+                if eid2:
+                    assoc = sc(get_target_disease_associations, targetId=eid2, size=3, timeout_sec=12)
+                    if assoc and isinstance(assoc, dict):
+                        td = assoc.get('data', {}).get('target', {})
+                        rows = td.get('associatedDiseases', {}).get('rows', [])
+                        if rows:
+                            out['combo_drug2_ot_score'] = rows[0].get('score', '')
+    except:
+        pass
+
+    # Drug2 target gnomAD constraint
+    try:
+        from mcp.servers.gnomad_mcp import get_gene_constraint
+        r = sc(get_gene_constraint, gene=target2, timeout_sec=12)
+        if r and isinstance(r, dict):
+            c = r.get('constraint', r)
+            out['combo_drug2_pli'] = c.get('pLI', '')
+    except:
+        pass
+
+    # Do drug1 and drug2 targets interact? (STRING-db)
+    if drug1_target and target2:
+        try:
+            from mcp.servers.stringdb_mcp import get_protein_interactions
+            r = sc(get_protein_interactions, protein=drug1_target, timeout_sec=12)
+            if r and isinstance(r, dict):
+                interactions = r.get('interactions', [])
+                interacts = any(
+                    target2.lower() in str(i.get('preferredName_B', i.get('partner', ''))).lower()
+                    for i in interactions if isinstance(i, dict)
+                )
+                out['combo_targets_interact'] = 1 if interacts else 0
+        except:
+            pass
+
+    # Do they share Reactome pathways?
+    if drug1_target and target2:
+        try:
+            from mcp.servers.reactome_mcp import find_pathways_by_gene
+            r1 = sc(find_pathways_by_gene, gene=drug1_target, timeout_sec=10)
+            r2 = sc(find_pathways_by_gene, gene=target2, timeout_sec=10)
+            if r1 and r2:
+                pw1 = set(str(p.get('stId', p.get('id', ''))) for p in r1.get('pathways', []) if isinstance(p, dict))
+                pw2 = set(str(p.get('stId', p.get('id', ''))) for p in r2.get('pathways', []) if isinstance(p, dict))
+                shared = pw1 & pw2
+                out['combo_shared_pathways'] = len(shared)
+                out['combo_targets_same_pathway'] = 1 if shared else 0
+        except:
+            pass
+
+    return out
+
+
 def main():
     df = pd.read_csv(DATA_FILE, dtype=str)
     df = df.drop_duplicates(subset='nct_id', keep='first').reset_index(drop=True)

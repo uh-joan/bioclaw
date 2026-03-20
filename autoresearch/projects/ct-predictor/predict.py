@@ -182,9 +182,22 @@ def predict(nct_id):
                 target = hits[0].get('approvedSymbol', hits[0].get('name', ''))
     print(f"  Target: {target or 'unknown'}")
 
-    # Quick enrichment
-    print(f"  Enriching from MCPs...")
-    extra = enrich_trial_quick(drug.lower(), target, condition)
+    # Full enrichment from all MCPs
+    print(f"  Enriching from MCPs (full)...")
+    from backfill_safe import enrich_trial, enrich_combination
+    extra = enrich_trial(drug.lower(), target, condition)
+
+    # Combination enrichment
+    if '+' in drug or ' plus ' in drug.lower():
+        print(f"  Enriching combination drug...")
+        import json as _json
+        _cache = {}
+        if os.path.exists(CACHE_FILE):
+            with open(CACHE_FILE) as _f:
+                _cache = {k: v for k, v in _json.load(_f).items() if v}
+        combo = enrich_combination(drug, target, condition, _cache)
+        extra.update(combo)
+        print(f"    Drug2 target: {combo.get('combo_drug2_has_target', '?')}, interact: {combo.get('combo_targets_interact', '?')}, shared pathways: {combo.get('combo_shared_pathways', '?')}")
     trial.update(extra)
 
     # Build features using train.py's build_features
