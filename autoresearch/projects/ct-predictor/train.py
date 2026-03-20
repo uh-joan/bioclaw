@@ -104,6 +104,12 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         # PubChem molecular descriptors
         "pubchem_complexity", "pubchem_hbond_acceptor", "pubchem_hbond_donor",
         "pubchem_molecular_weight", "pubchem_rotatable_bonds", "pubchem_xlogp",
+        # Combination drug features
+        "is_combination", "n_drugs", "combo_drug2_has_target",
+        "combo_drug2_fda_approved", "combo_drug2_trial_count",
+        "combo_drug2_max_phase", "combo_phase_ratio",
+        "combo_drug2_pub_count", "combo_drug2_ot_score", "combo_drug2_pli",
+        "combo_targets_interact", "combo_shared_pathways", "combo_targets_same_pathway",
     ]
 
     available = [c for c in numeric_cols if c in df.columns]
