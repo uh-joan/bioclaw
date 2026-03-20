@@ -47,6 +47,9 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         "num_secondary_endpoints", "num_sites", "has_biomarker_selection",
         "competitor_trial_count", "prior_phase_success",
         # OpenTargets
+        "ot_overall_score", "ot_target_tractability",
+        "ot_genetic_score", "ot_somatic_score", "ot_literature_score",
+        "ot_animal_model_score", "ot_known_drug_score", "ot_affected_pathway_score",
         # ChEMBL
         "chembl_selectivity", "chembl_best_ic50_nm", "chembl_num_assays",
         "chembl_max_phase", "chembl_moa_count",
@@ -60,13 +63,15 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         "clinpgx_guideline_count", "clinpgx_actionable",
         "clinpgx_cyp_substrate_count",
         # FDA
+        "fda_prior_approval_class", "fda_breakthrough", "fda_fast_track",
+        "fda_orphan", "fda_class_ae_count",
         # Publication signals
         "pubmed_target_pub_count", "pubmed_drug_pub_count",
         "openalex_citation_velocity", "biorxiv_preprint_count",
         # Healthcare spend
         "medicare_indication_spend", "medicaid_indication_spend",
         # Pathway/network
-        "reactome_pathway_count", "stringdb_interaction_degree",
+        "reactome_pathway_count", "stringdb_interaction_degree", "stringdb_betweenness",
         # Genomic
         "gtex_tissue_specificity", "gnomad_pli", "gnomad_loeuf",
         "clinvar_pathogenic_count", "gwas_hit_count", "gwas_best_pvalue",
@@ -75,6 +80,8 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         "hpo_phenotype_count", "monarch_gene_count",
         # EMA
         "ema_approved_similar", "eu_filings_count",
+        # PDB structure
+        "pdb_structure_count", "pdb_has_ligand_bound",
         # AlphaFold
         "alphafold_available", "alphafold_confidence",
         # BRENDA (enzyme kinetics)
