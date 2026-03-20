@@ -262,13 +262,19 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 # Model definition — MODIFY THIS
 # ---------------------------------------------------------------------------
 
-MODEL = HistGradientBoostingClassifier(
+_gbm = HistGradientBoostingClassifier(
     max_iter=1000,
     max_depth=5,
     learning_rate=0.02,
     min_samples_leaf=8,
     l2_regularization=0.0,
     random_state=42,
+)
+_lr = LogisticRegression(C=0.5, max_iter=1000, random_state=42, solver="lbfgs")
+MODEL = VotingClassifier(
+    estimators=[("gbm", _gbm), ("lr", _lr)],
+    voting="soft",
+    weights=[3, 1],
 )
 
 K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
