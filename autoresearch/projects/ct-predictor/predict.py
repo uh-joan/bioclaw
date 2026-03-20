@@ -60,11 +60,16 @@ def get_trial_data(nct_id):
         name = d.strip()
         name = re.split(r'\s+\d+\s*(?:mg|ml|mcg|µg)', name, flags=re.I)[0].strip()
         name = re.sub(r'\s*\(.*?\)', '', name).strip().rstrip('/, ')
-        # Remove trailing descriptions
         name = re.split(r',\s+an?\s+', name, flags=re.I)[0].strip()
-        if name.lower() not in skip and len(name) > 2:
-            if name.lower() not in [d.lower() for d in cleaned_drugs]:
-                cleaned_drugs.append(name)
+        # Split arm labels that contain "+" (e.g. "pembrolizumab + epacadostat")
+        if ' + ' in name:
+            sub_drugs = [s.strip() for s in name.split(' + ')]
+        else:
+            sub_drugs = [name]
+        for sub in sub_drugs:
+            if sub.lower() not in skip and len(sub) > 2:
+                if sub.lower() not in [d.lower() for d in cleaned_drugs]:
+                    cleaned_drugs.append(sub)
 
     if cleaned_drugs:
         # Standard chemo agents (control arm, not experimental)
