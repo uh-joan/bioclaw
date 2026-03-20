@@ -16,7 +16,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, VotingClassifier, HistGradientBoostingClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier, VotingClassifier, HistGradientBoostingClassifier, ExtraTreesClassifier
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_val_score
