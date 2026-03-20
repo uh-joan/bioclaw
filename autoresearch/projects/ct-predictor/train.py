@@ -246,36 +246,54 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
     if "competitor_trial_count" in X.columns and "phase" in X.columns:
         X["competitor_x_phase"] = X["competitor_trial_count"] * X["phase"]
 
-    # Same-target historical success rate (from training data)
-    # "How have other drugs targeting the same gene performed?"
+    # === LEAKAGE GUARD: all target-encoding uses TRAINING labels only ===
     import json as _json
+    _val_ids_path = DATA_DIR / "val_ids.json"
+    if _val_ids_path.exists():
+        with open(_val_ids_path) as _vf:
+            _val_ids = set(_json.load(_vf))
+        _is_train = ~df["nct_id"].isin(_val_ids)
+    else:
+        _is_train = pd.Series([True] * len(df))
+    _is_train_arr = _is_train.values
+
+    # Same-target historical success rate (TRAIN labels only)
+    # "How have other drugs targeting the same gene performed?"
     _cache_path = DATA_DIR / "drug_target_cache.json"
     if _cache_path.exists():
         with open(_cache_path) as _f:
             _target_cache = {k: v for k, v in _json.load(_f).items() if v}
-        # Map each trial to its target
         _targets = df["intervention_name"].str.lower().str.strip().map(
             lambda d: _target_cache.get(str(d).split("+")[0].strip(), "")
         )
-        # Compute per-target success rate (leave-one-out to avoid leakage)
         _labels = y.values if hasattr(y, 'values') else y
+        # Aggregate from training rows only
         target_success = {}
         target_count = {}
-        for t, l in zip(_targets, _labels):
-            if t:
+        for t, l, is_tr in zip(_targets, _labels, _is_train_arr):
+            if t and is_tr:
                 target_success[t] = target_success.get(t, 0) + l
                 target_count[t] = target_count.get(t, 0) + 1
 
         same_target_rate = []
         same_target_n = []
-        for t, l in zip(_targets, _labels):
-            if t and target_count.get(t, 0) > 1:
-                # Leave-one-out: exclude this trial's label
-                rate = (target_success[t] - l) / (target_count[t] - 1)
-                same_target_rate.append(rate)
-                same_target_n.append(target_count[t] - 1)
+        for t, l, is_tr in zip(_targets, _labels, _is_train_arr):
+            if t and target_count.get(t, 0) > 0:
+                if is_tr and target_count.get(t, 0) > 1:
+                    # LOO for train rows
+                    rate = (target_success[t] - l) / (target_count[t] - 1)
+                    same_target_rate.append(rate)
+                    same_target_n.append(target_count[t] - 1)
+                elif not is_tr:
+                    # Val rows: plain group rate from training data
+                    rate = target_success[t] / target_count[t]
+                    same_target_rate.append(rate)
+                    same_target_n.append(target_count[t])
+                else:
+                    same_target_rate.append(0.5)
+                    same_target_n.append(0)
             else:
-                same_target_rate.append(0.5)  # No data → neutral prior
+                same_target_rate.append(0.5)
                 same_target_n.append(0)
 
         X["same_target_success_rate"] = same_target_rate
