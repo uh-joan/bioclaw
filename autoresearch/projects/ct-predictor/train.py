@@ -271,10 +271,11 @@ _gbm = HistGradientBoostingClassifier(
     random_state=42,
 )
 _lr = LogisticRegression(C=0.5, max_iter=1000, random_state=42, solver="lbfgs")
+_rf = RandomForestClassifier(n_estimators=200, max_depth=6, min_samples_leaf=6, random_state=42, n_jobs=-1)
 MODEL = VotingClassifier(
-    estimators=[("gbm", _gbm), ("lr", _lr)],
+    estimators=[("gbm", _gbm), ("lr", _lr), ("rf", _rf)],
     voting="soft",
-    weights=[3, 1],
+    weights=[3, 1, 2],
 )
 
 K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
