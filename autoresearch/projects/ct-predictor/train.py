@@ -317,6 +317,10 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
             combo2_rate.append(rate2)
         X["combo_drug2_target_rate"] = combo2_rate
 
+        # Both drugs proven: multiplicative signal
+        if "same_target_success_rate" in X.columns:
+            X["both_drugs_proven"] = X["same_target_success_rate"] * X["combo_drug2_target_rate"]
+
 
     # Safety risk: novel mechanism on ubiquitous target
     if "same_target_trial_count" in X.columns and "target_expression_breadth" in X.columns:
@@ -366,10 +370,11 @@ _et2 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, 
 _et3 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=13, n_jobs=-1)
 _et4 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=99, max_features=0.7, n_jobs=-1)
 _et5 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=31, max_features=0.7, n_jobs=-1)
+_et6 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=53, max_features=0.7, n_jobs=-1)
 MODEL = VotingClassifier(
-    estimators=[("gbm", _gbm), ("et", _et), ("et2", _et2), ("et3", _et3), ("et4", _et4), ("et5", _et5)],
+    estimators=[("gbm", _gbm), ("et", _et), ("et2", _et2), ("et3", _et3), ("et4", _et4), ("et5", _et5), ("et6", _et6)],
     voting="soft",
-    weights=[3, 2, 2, 2, 2, 2],
+    weights=[3, 2, 2, 2, 2, 2, 2],
 )
 
 K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
