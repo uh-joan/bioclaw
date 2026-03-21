@@ -374,20 +374,20 @@ _gbm = HistGradientBoostingClassifier(
     max_iter=1000,
     max_depth=7,
     learning_rate=0.02,
-    min_samples_leaf=16,
+    min_samples_leaf=4,
     l2_regularization=0.0,
     max_leaf_nodes=31,
     random_state=42,
 )
 _lr = LogisticRegression(C=0.5, max_iter=1000, random_state=42, solver="lbfgs")
-_et = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=42, n_jobs=-1)
-_et2 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=7, n_jobs=-1)
-_et3 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=13, n_jobs=-1)
-_et4 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=99, max_features=0.7, n_jobs=-1)
-_et5 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=31, max_features=0.7, n_jobs=-1)
-_et6 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=53, max_features=0.7, n_jobs=-1)
-_et7 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=71, max_features=0.5, n_jobs=-1)
-_et8 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=89, max_features=0.5, n_jobs=-1)
+_et = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=4, random_state=42, n_jobs=-1)
+_et2 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=4, random_state=7, n_jobs=-1)
+_et3 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=4, random_state=13, n_jobs=-1)
+_et4 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=4, random_state=99, max_features=0.7, n_jobs=-1)
+_et5 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=4, random_state=31, max_features=0.7, n_jobs=-1)
+_et6 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=4, random_state=53, max_features=0.7, n_jobs=-1)
+_et7 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=4, random_state=71, max_features=0.5, n_jobs=-1)
+_et8 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=4, random_state=89, max_features=0.5, n_jobs=-1)
 MODEL = VotingClassifier(
     estimators=[("gbm", _gbm), ("et", _et), ("et2", _et2), ("et3", _et3), ("et4", _et4), ("et5", _et5), ("et6", _et6), ("et7", _et7), ("et8", _et8)],
     voting="soft",
