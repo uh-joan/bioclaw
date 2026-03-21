@@ -346,7 +346,7 @@ _et = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, r
 MODEL = VotingClassifier(
     estimators=[("gbm", _gbm), ("lr", _lr), ("et", _et)],
     voting="soft",
-    weights=[4, 1, 3],
+    weights=[3, 1, 5],
 )
 
 K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
