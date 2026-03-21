@@ -299,6 +299,25 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         X["same_target_success_rate"] = same_target_rate
         X["same_target_trial_count"] = same_target_n
 
+        # Drug2 success rate for combination therapies (split intervention_name on "+")
+        _targets2 = df["intervention_name"].str.lower().str.strip().map(
+            lambda d: _target_cache.get(str(d).split("+")[1].strip(), "") if "+" in str(d) else ""
+        )
+        combo2_rate = []
+        for t2, l2, is_tr2 in zip(_targets2, _labels, _is_train_arr):
+            if t2 and target_count.get(t2, 0) > 0:
+                if is_tr2 and target_count.get(t2, 0) > 1:
+                    rate2 = (target_success[t2] - l2) / (target_count[t2] - 1)
+                elif not is_tr2:
+                    rate2 = target_success[t2] / target_count[t2]
+                else:
+                    rate2 = 0.5
+            else:
+                rate2 = 0.5
+            combo2_rate.append(rate2)
+        X["combo_drug2_target_rate"] = combo2_rate
+
+
     # Safety risk: novel mechanism on ubiquitous target
     if "same_target_trial_count" in X.columns and "target_expression_breadth" in X.columns:
         # Novel target (few prior trials) × ubiquitous expression = high safety risk
@@ -346,10 +365,11 @@ _et = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, r
 _et2 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=7, n_jobs=-1)
 _et3 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=13, n_jobs=-1)
 _et4 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=99, max_features=0.7, n_jobs=-1)
+_et5 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=31, max_features=0.7, n_jobs=-1)
 MODEL = VotingClassifier(
-    estimators=[("gbm", _gbm), ("et", _et), ("et2", _et2), ("et3", _et3), ("et4", _et4)],
+    estimators=[("gbm", _gbm), ("et", _et), ("et2", _et2), ("et3", _et3), ("et4", _et4), ("et5", _et5)],
     voting="soft",
-    weights=[3, 2, 2, 2, 2],
+    weights=[3, 2, 2, 2, 2, 2],
 )
 
 K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
