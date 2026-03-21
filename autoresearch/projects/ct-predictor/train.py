@@ -344,10 +344,11 @@ _gbm = HistGradientBoostingClassifier(
 _lr = LogisticRegression(C=0.5, max_iter=1000, random_state=42, solver="lbfgs")
 _et = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=42, n_jobs=-1)
 _et2 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=7, n_jobs=-1)
+_et3 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=13, n_jobs=-1)
 MODEL = VotingClassifier(
-    estimators=[("gbm", _gbm), ("lr", _lr), ("et", _et), ("et2", _et2)],
+    estimators=[("gbm", _gbm), ("lr", _lr), ("et", _et), ("et2", _et2), ("et3", _et3)],
     voting="soft",
-    weights=[3, 1, 3, 2],
+    weights=[3, 1, 2, 2, 2],
 )
 
 K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
