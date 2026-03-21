@@ -373,7 +373,7 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
 _gbm = HistGradientBoostingClassifier(
     max_iter=1000,
     max_depth=7,
-    learning_rate=0.02,
+    learning_rate=0.03,
     min_samples_leaf=4,
     l2_regularization=0.0,
     max_leaf_nodes=31,
