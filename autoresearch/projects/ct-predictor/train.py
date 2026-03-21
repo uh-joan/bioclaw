@@ -279,7 +279,7 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         _total_success = sum(target_success.values())
         _total_count = sum(target_count.values())
         _global_rate = _total_success / _total_count if _total_count > 0 else 0.5
-        _alpha = 5  # smoothing strength toward global prior
+        _alpha = 25  # smoothing strength toward global prior
 
         same_target_rate = []
         same_target_n = []
@@ -386,10 +386,11 @@ _et4 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, 
 _et5 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=31, max_features=0.7, n_jobs=-1)
 _et6 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=53, max_features=0.7, n_jobs=-1)
 _et7 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=71, max_features=0.5, n_jobs=-1)
+_et8 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=89, max_features=0.5, n_jobs=-1)
 MODEL = VotingClassifier(
-    estimators=[("gbm", _gbm), ("et", _et), ("et2", _et2), ("et3", _et3), ("et4", _et4), ("et5", _et5), ("et6", _et6), ("et7", _et7)],
+    estimators=[("gbm", _gbm), ("et", _et), ("et2", _et2), ("et3", _et3), ("et4", _et4), ("et5", _et5), ("et6", _et6), ("et7", _et7), ("et8", _et8)],
     voting="soft",
-    weights=[3, 2, 2, 2, 2, 2, 2, 2],
+    weights=[3, 2, 2, 2, 2, 2, 2, 2, 2],
 )
 
 K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
