@@ -275,25 +275,35 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
                 target_success[t] = target_success.get(t, 0) + l
                 target_count[t] = target_count.get(t, 0) + 1
 
+        # Global prior for Bayesian smoothing
+        _total_success = sum(target_success.values())
+        _total_count = sum(target_count.values())
+        _global_rate = _total_success / _total_count if _total_count > 0 else 0.5
+        _alpha = 5  # smoothing strength toward global prior
+
         same_target_rate = []
         same_target_n = []
         for t, l, is_tr in zip(_targets, _labels, _is_train_arr):
             if t and target_count.get(t, 0) > 0:
                 if is_tr and target_count.get(t, 0) > 1:
                     # LOO for train rows
-                    rate = (target_success[t] - l) / (target_count[t] - 1)
+                    loo_n = target_count[t] - 1
+                    loo_s = target_success[t] - l
+                    rate = (loo_s + _alpha * _global_rate) / (loo_n + _alpha)
                     same_target_rate.append(rate)
-                    same_target_n.append(target_count[t] - 1)
+                    same_target_n.append(loo_n)
                 elif not is_tr:
                     # Val rows: plain group rate from training data
-                    rate = target_success[t] / target_count[t]
+                    n = target_count[t]
+                    s = target_success[t]
+                    rate = (s + _alpha * _global_rate) / (n + _alpha)
                     same_target_rate.append(rate)
-                    same_target_n.append(target_count[t])
+                    same_target_n.append(n)
                 else:
-                    same_target_rate.append(0.5)
+                    same_target_rate.append(_global_rate)
                     same_target_n.append(0)
             else:
-                same_target_rate.append(0.5)
+                same_target_rate.append(_global_rate)
                 same_target_n.append(0)
 
         X["same_target_success_rate"] = same_target_rate
@@ -307,13 +317,17 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         for t2, l2, is_tr2 in zip(_targets2, _labels, _is_train_arr):
             if t2 and target_count.get(t2, 0) > 0:
                 if is_tr2 and target_count.get(t2, 0) > 1:
-                    rate2 = (target_success[t2] - l2) / (target_count[t2] - 1)
+                    loo_n2 = target_count[t2] - 1
+                    loo_s2 = target_success[t2] - l2
+                    rate2 = (loo_s2 + _alpha * _global_rate) / (loo_n2 + _alpha)
                 elif not is_tr2:
-                    rate2 = target_success[t2] / target_count[t2]
+                    n2 = target_count[t2]
+                    s2 = target_success[t2]
+                    rate2 = (s2 + _alpha * _global_rate) / (n2 + _alpha)
                 else:
-                    rate2 = 0.5
+                    rate2 = _global_rate
             else:
-                rate2 = 0.5
+                rate2 = _global_rate
             combo2_rate.append(rate2)
         X["combo_drug2_target_rate"] = combo2_rate
 
