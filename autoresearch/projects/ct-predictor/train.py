@@ -345,10 +345,11 @@ _lr = LogisticRegression(C=0.5, max_iter=1000, random_state=42, solver="lbfgs")
 _et = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=42, n_jobs=-1)
 _et2 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=7, n_jobs=-1)
 _et3 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=13, n_jobs=-1)
+_et4 = ExtraTreesClassifier(n_estimators=200, max_depth=20, min_samples_leaf=2, random_state=99, max_features=0.7, n_jobs=-1)
 MODEL = VotingClassifier(
-    estimators=[("gbm", _gbm), ("et", _et), ("et2", _et2), ("et3", _et3)],
+    estimators=[("gbm", _gbm), ("et", _et), ("et2", _et2), ("et3", _et3), ("et4", _et4)],
     voting="soft",
-    weights=[3, 2, 2, 2],
+    weights=[3, 2, 2, 2, 2],
 )
 
 K_FEATURES = 999  # select all non-constant features (effectively no MI filter)
