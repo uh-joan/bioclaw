@@ -279,7 +279,7 @@ def build_features(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series]:
         _total_success = sum(target_success.values())
         _total_count = sum(target_count.values())
         _global_rate = _total_success / _total_count if _total_count > 0 else 0.5
-        _alpha = 25  # smoothing strength toward global prior
+        _alpha = 5  # smoothing strength toward global prior
 
         same_target_rate = []
         same_target_n = []
