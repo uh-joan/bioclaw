@@ -338,7 +338,7 @@ _gbm = HistGradientBoostingClassifier(
     max_depth=7,
     learning_rate=0.02,
     min_samples_leaf=16,
-    l2_regularization=1.0,
+    l2_regularization=0.5,
     random_state=42,
 )
 _lr = LogisticRegression(C=0.5, max_iter=1000, random_state=42, solver="lbfgs")
