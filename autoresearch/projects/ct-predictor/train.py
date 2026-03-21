@@ -377,14 +377,16 @@ def main():
     X_train = X[train_mask].copy()
     y_train = y[train_mask].copy()
 
-    # Drop constant features (zero variance) before MI selection
+    # Drop constant features (zero variance)
     non_const = [f for f in all_feature_names if X_train[f].std() > 0]
-    X_train_nc = X_train[non_const]
 
-    # MI-based feature selection: pick top K from non-constant features
-    selector = SelectKBest(mutual_info_classif, k=min(K_FEATURES, len(non_const)))
-    selector.fit(X_train_nc, y_train)
-    feature_names_selected = [non_const[i] for i in selector.get_support(indices=True)]
+    # MI-based feature selection only when K < n_features (MI is O(n^2*d) — skip if unnecessary)
+    if K_FEATURES < len(non_const):
+        selector = SelectKBest(mutual_info_classif, k=K_FEATURES)
+        selector.fit(X_train[non_const], y_train)
+        feature_names_selected = [non_const[i] for i in selector.get_support(indices=True)]
+    else:
+        feature_names_selected = non_const
 
     # Keep only selected features
     X_train_sel = X_train[feature_names_selected]
@@ -395,9 +397,6 @@ def main():
 
     # Train
     MODEL.fit(X_scaled, y_train)
-
-    # CV score (informational only — real eval is in prepare.py)
-    cv = cross_val_score(MODEL, X_scaled, y_train, cv=5, scoring="roc_auc")
 
     elapsed = time.time() - start
 
@@ -412,8 +411,7 @@ def main():
         pickle.dump(bundle, f)
 
     # Output in grep-friendly format
-    print(f"cv_auc_roc:        {np.mean(cv):.6f}")
-    print(f"cv_auc_std:        {np.std(cv):.6f}")
+    print(f"cv_auc_roc:        N/A")
     print(f"train_n_features:  {len(feature_names_selected)}")
     print(f"train_n_samples:   {len(X_train)}")
     print(f"training_seconds:  {elapsed:.1f}")
