@@ -571,21 +571,25 @@
       "category": "glp1",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "subcutaneous",
+          "oral"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 600,
+          "max_mcg": 3000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily",
+        "common_vial_sizes_mg": [
+          6,
+          18
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: Liraglutide reduces the apoptosis of feeding and appetite-suppressing neurons in; Muscle atrophy associated with glucagon-like Peptide-1 receptor agonists: A popu",
+      "mechanism_summary": "Glucagon-like peptide 1 receptor agonist.",
       "evidence": {
         "grade": "green",
         "detail": "FDA-approved. 8 PubMed results found, 1 clinical studies."
@@ -593,14 +597,14 @@
       "regulatory": {
         "fda_status": "approved",
         "fda_category": "prescription",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Sustained weight loss and glycemic control — LEADER trial showed 13% CV event reduction",
+        "top_negative_report": "Nausea (40% in trials), injection site reactions, pancreatitis risk",
+        "common_mistake": "Not titrating slowly enough — start at 0.6mg, increase by 0.6mg weekly to target dose",
+        "pro_tip": "Daily injection vs semaglutide's weekly. Consider switching to semaglutide for convenience unless liraglutide is specifically indicated."
       }
     },
     {
@@ -616,18 +620,20 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 1750,
+          "max_mcg": 1750
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "As needed, max 1x per 24h",
+        "common_vial_sizes_mg": [
+          10
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: Practical considerations and emerging approaches for the management of vasomotor; A biodegradable suction patch for sustainable transbuccal peptide delivery.",
+      "mechanism_summary": "Melanocortin receptor 4 agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -635,14 +641,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "FDA-approved for female HSDD — works via central melanocortin pathway, not vascular",
+        "top_negative_report": "Nausea (40%), flushing, headache. Skin darkening with repeated use (melanocortin effect)",
+        "common_mistake": "Using as a daily supplement — it's an as-needed medication, not a routine peptide",
+        "pro_tip": "Inject 45 minutes before desired effect. Nausea is dose-dependent — some users find 500-1000mcg effective with fewer side effects."
       }
     },
     {
@@ -675,12 +681,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Efficacy and Safety of Cagrilintide and Cagrisema Versus Semaglutide as Anti-Obesity Medications: A Systematic Review, M",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -715,12 +721,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Long-acting amylin-related peptides as therapies for obesity and type 2 diabetes.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -757,12 +763,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Efficacy and Safety of Mazdutide in Managing Overweight and Obesity Among Non-Diabetic Adults: A Meta-Analysis of Random",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -777,13 +783,13 @@
       "category": "glp1",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "oral"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 3000,
+          "max_mcg": 45000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
+        "frequency": "1x daily (oral)",
         "common_vial_sizes_mg": [],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
@@ -799,14 +805,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Oral GLP-1 — no injections. Phase 2: 14.7% weight loss. Phase 3 ongoing by Eli Lilly.",
+        "top_negative_report": "Not yet approved. GI side effects similar to injectable GLP-1s. Limited real-world data.",
+        "common_mistake": "Treating gray market orforglipron as equivalent to the clinical formulation — bioavailability depends heavily on formulation",
+        "pro_tip": "First non-peptide oral GLP-1 agonist. If Phase 3 succeeds, this will be game-changing for the GLP-1 space."
       }
     },
     {
@@ -822,18 +828,21 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 600,
+          "max_mcg": 4800
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x weekly",
+        "common_vial_sizes_mg": [
+          5,
+          10
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: Survodutide acts through circumventricular organs in the brain and activates neu; IUPHAR review: From foe to friend: Repurposing glucagon to treat obesity and typ",
+      "mechanism_summary": "Glucagon-like peptide 1 receptor agonist. Glucagon receptor agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "Late-stage clinical development. 8 PubMed results, 2 clinical studies. Phase 2/3 data available."
@@ -841,14 +850,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Dual GLP-1/glucagon agonist — Phase 2 showed 18.7% weight loss + liver fat reduction (NAFLD potential)",
+        "top_negative_report": "Not yet approved. Standard GLP-1 GI side effects. Less data than tirzepatide.",
+        "common_mistake": "Confusing with survodutide — currently only available through clinical trials or gray market",
+        "pro_tip": "Interesting for NASH/NAFLD patients where the glucagon component may provide liver-specific benefits beyond weight loss."
       }
     },
     {
@@ -861,14 +870,18 @@
       "category": "weight_loss",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "subcutaneous",
+          "oral"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 250,
+          "max_mcg": 500
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily (fasted)",
+        "common_vial_sizes_mg": [
+          3,
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -883,14 +896,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Targeted fat loss without GH side effects — the lipolytic fragment of HGH",
+        "top_negative_report": "Failed Phase IIb trial (900+ subjects, no efficacy vs placebo). Questionable real-world efficacy.",
+        "common_mistake": "Expecting results comparable to GLP-1 agonists — AOD-9604 failed its clinical trial for obesity",
+        "pro_tip": "If using, take fasted in the morning. Be aware this peptide FAILED its pivotal trial — evidence is very weak."
       }
     },
     {
@@ -904,18 +917,22 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 200,
+          "max_mcg": 300
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily (before bed)",
+        "common_vial_sizes_mg": [
+          3,
+          9,
+          15
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Direc; Growth hormone - releasing hormone antagonists induce autophagy in cancer cells.",
+      "mechanism_summary": "Growth hormone-releasing hormone receptor agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "Limited human data. 8 PubMed results, 1 clinical studies. Mostly animal/preclinical evidence."
@@ -923,14 +940,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Sleep quality and anti-aging via physiologic GH stimulation — was FDA-approved for pediatric GH deficiency",
+        "top_negative_report": "Voluntarily withdrawn from US market in 2008 (manufacturing, not safety). Quality concerns with compounded versions.",
+        "common_mistake": "Stacking with other GHRH analogs (CJC-1295, tesamorelin) — redundant pathway stimulation",
+        "pro_tip": "One of the oldest and best-studied GH secretagogues. Inject before bed fasted. Effects are subtle — expect 4-6 weeks for noticeable sleep improvement."
       }
     },
     {
@@ -943,14 +960,18 @@
       "category": "anti_aging",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "subcutaneous",
+          "intravenous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 5000,
+          "max_mcg": 40000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily or per clinical protocol",
+        "common_vial_sizes_mg": [
+          5,
+          40
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -969,10 +990,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Mitochondrial-targeted peptide — FDA-approved Sept 2025 for Barth syndrome. Cardiolipin stabilization.",
+        "top_negative_report": "Extremely expensive. Mostly studied via IV infusion. SubQ bioavailability uncertain.",
+        "common_mistake": "Expecting oral bioavailability — SS-31 must be injected (SubQ or IV)",
+        "pro_tip": "The only mitochondrial peptide with FDA approval. If you're interested in mito-targeted peptides, this has the strongest evidence base."
       }
     },
     {
@@ -989,11 +1010,14 @@
           "intranasal"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 100,
+          "max_mcg": 250
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily (before bed)",
+        "common_vial_sizes_mg": [
+          2,
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -1008,14 +1032,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Sleep onset and quality improvement — the 'delta sleep' peptide",
+        "top_negative_report": "Tolerance builds quickly with daily use. Inconsistent effects reported. Limited evidence.",
+        "common_mistake": "Using nightly without cycling — tolerance develops within 1-2 weeks",
+        "pro_tip": "Cycle 5 days on, 2 days off maximum. Stack with low-dose melatonin for synergistic effect. Keep expectations modest."
       }
     },
     {
@@ -1031,11 +1055,15 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 5000,
+          "max_mcg": 10000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily for 10-20 day cycles",
+        "common_vial_sizes_mg": [
+          10,
+          20,
+          50
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -1054,10 +1082,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Telomerase activation and anti-aging — based on Khavinson's research",
+        "top_negative_report": "All evidence from a single Russian lab. Zero Western replication. Telomerase activation claims based on cell culture only.",
+        "common_mistake": "Expecting measurable anti-aging results — no validated biomarkers to track its effect",
+        "pro_tip": "Typically cycled 10 days on, 6 months off. Evidence is Tier 4 (no human clinical trials). Pure faith-based supplementation."
       }
     },
     {
@@ -1073,11 +1101,14 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 100,
+          "max_mcg": 300
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1-3x daily",
+        "common_vial_sizes_mg": [
+          2,
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -1092,14 +1123,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Strong GH release — most potent GHRP. Good for body recomposition goals.",
+        "top_negative_report": "Significant hunger increase (ghrelin mimetic), cortisol and prolactin elevation",
+        "common_mistake": "Not accounting for appetite increase when using for cutting/fat loss",
+        "pro_tip": "More potent than ipamorelin but dirtier (raises cortisol/prolactin). Start at 100mcg. Take fasted."
       }
     },
     {
@@ -1113,11 +1144,14 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 100,
+          "max_mcg": 300
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1-3x daily",
+        "common_vial_sizes_mg": [
+          2,
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -1136,10 +1170,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Strong GH release with pronounced appetite stimulation — useful for underweight/recovery",
+        "top_negative_report": "Extreme hunger (strongest appetite stimulant in GHRP class), cortisol/prolactin spikes",
+        "common_mistake": "Using GHRP-6 when appetite increase is unwanted — choose ipamorelin instead",
+        "pro_tip": "Reserved for when appetite stimulation is a FEATURE not a bug (cachexia, recovery from illness, underweight)."
       }
     },
     {
@@ -1155,11 +1189,14 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 100,
+          "max_mcg": 200
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1-2x daily",
+        "common_vial_sizes_mg": [
+          2,
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -1178,10 +1215,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Strongest GH release of any GHRP — cardiac protective properties in animal studies",
+        "top_negative_report": "Rapid desensitization (GH response diminishes within 2-4 weeks of continuous use)",
+        "common_mistake": "Using continuously — hexarelin desensitizes faster than other GHRPs. Must cycle.",
+        "pro_tip": "Use in short cycles (2 weeks on, 2 weeks off) to prevent receptor desensitization. Some users rotate with ipamorelin."
       }
     },
     {
@@ -1195,11 +1232,14 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 5000,
+          "max_mcg": 10000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "3-5x weekly",
+        "common_vial_sizes_mg": [
+          5,
+          10
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -1218,10 +1258,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Exercise mimetic — AMPK activation, metabolic improvement without exercise",
+        "top_negative_report": "Entirely preclinical. Zero human data. Expensive. Questionable if injectable form reaches mitochondria.",
+        "common_mistake": "Replacing exercise with MOTS-C — even if it works, it's meant to complement, not replace physical activity",
+        "pro_tip": "Mitochondrial-derived peptide with interesting biology but zero clinical validation. Pure research compound."
       }
     },
     {
@@ -1302,7 +1342,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Deep learning model for early acute lymphoblastic leukemia detection using microscopic images.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -1369,7 +1409,7 @@
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: The effect of tripeptide-copper complex on human hair growth in vitro.",
+      "mechanism_summary": "Diagnostic agent.",
       "evidence": {
         "grade": "yellow",
         "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -1377,7 +1417,7 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
@@ -1400,11 +1440,13 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 150000,
+          "max_mcg": 500000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily for limited cycles",
+        "common_vial_sizes_mg": [
+          50
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -1423,10 +1465,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Exercise mimetic — AMPK activator. Increases endurance capacity in animal studies.",
+        "top_negative_report": "Zero human efficacy data for performance. WADA banned substance. Very expensive. Potential cardiac risk.",
+        "common_mistake": "Using as a replacement for exercise — AICAR is a WADA-banned research compound, not a fitness supplement",
+        "pro_tip": "Acadesine (the clinical name) was studied for cardiac surgery, not performance. The 'exercise pill' hype comes from a single 2008 mouse study."
       }
     },
     {
@@ -1454,7 +1496,7 @@
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: Phase-targeted erythropoietin derivatives for traumatic brain injury: bridging m; Anti-Inflammatory Effects of Clarstatin, a Shared-Epitope-Antagonistic Cyclic Pe",
+      "mechanism_summary": "Innate repair receptor agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -1462,12 +1504,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: The protective effect of erythropoietin and its novel derived peptides in peripheral nerve injury.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -1509,7 +1551,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: BAK and ARG Have Moisturizing, Anti-Inflammatory, Antioxidant, and Antioxidant Bioactivities, in the Zebrafish Model.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -1547,7 +1589,7 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
@@ -1579,7 +1621,7 @@
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: [ANTIINFLAMMATORY AND REGENERATIVE EFFECT OF PEPTIDE THERAPY IN THE MODEL OF OBS; Modulating Effect of Peptide Therapy on the Morphofunctional State of Bronchial ",
+      "mechanism_summary": "Glucocorticoid receptor agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -1587,7 +1629,7 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
@@ -1627,12 +1669,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Efficacy and Safety of Cagrilintide and Cagrisema Versus Semaglutide as Anti-Obesity Medications: A Systematic Review, M",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -1667,12 +1709,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: An Analysis of 3 Common CardioGen-82 82Rb Infusion System Injection Methods and Their Impact on Clinical Volume and Imag",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -1725,14 +1767,14 @@
       "category": "nootropic",
       "administration": {
         "routes": [
-          "intranasal",
-          "subcutaneous"
+          "intramuscular",
+          "intravenous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 5000000,
+          "max_mcg": 30000000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
+        "frequency": "1x daily for 10-20 day cycles (IV/IM)",
         "common_vial_sizes_mg": [],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
@@ -1752,10 +1794,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Neuroprotection and cognitive enhancement — approved in 40+ countries for stroke and TBI recovery",
+        "top_negative_report": "Not FDA-approved. Requires IV/IM administration. Derived from porcine brain tissue.",
+        "common_mistake": "Attempting SubQ — cerebrolysin is designed for IM or IV only. Large volumes needed.",
+        "pro_tip": "One of few nootropics with actual clinical trial data (stroke recovery, dementia). Approved widely outside US. Needs medical supervision."
       }
     },
     {
@@ -1834,7 +1876,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Production of lymphocyte-activating factors by mouse macrophages during aging and under the effect of short peptides.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -1874,7 +1916,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Open-label evaluation of a novel skin brightening system containing 0.01% decapeptide-12 in combination with 20% buffere",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -1915,7 +1957,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Respiratory and Cardiovascular Activity of LENART01, an Analgesic Dermorphin-Ranatensin Hybrid Peptide, in Anesthetized ",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -1928,15 +1970,19 @@
       "category": "nootropic",
       "administration": {
         "routes": [
+          "oral",
           "intranasal",
-          "subcutaneous"
+          "topical"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 10000,
+          "max_mcg": 20000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily (oral or intranasal)",
+        "common_vial_sizes_mg": [
+          10,
+          30
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -1955,10 +2001,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Potent nootropic — 10 million times more potent than BDNF at promoting synaptogenesis in vitro",
+        "top_negative_report": "Zero human data. HGF/c-Met pathway activation raises theoretical cancer risk. Single lab.",
+        "common_mistake": "Citing the '10 million times more potent than BDNF' stat without context — that's an in vitro binding assay, not a clinical outcome",
+        "pro_tip": "One of the most controversial nootropic peptides. Theoretical cancer risk from c-Met activation is real. Not for long-term use."
       }
     },
     {
@@ -1997,7 +2043,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Characterization and inhibition of hydrogen sulfide-producing bacteria from petroleum reservoirs subjected to alkali-sur",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -2013,10 +2059,10 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 750,
+          "max_mcg": 4500
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
+        "frequency": "1x weekly",
         "common_vial_sizes_mg": [],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
@@ -2024,7 +2070,7 @@
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: GLP-1 receptor agonists and sexual function in women and men: a narrative review; Association between GLP-1 receptor agonist use and worsening mental illness in p",
+      "mechanism_summary": "Glucagon-like peptide 1 receptor agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -2032,14 +2078,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "FDA-approved GLP-1 agonist (Trulicity). Auto-injector pen — easiest GLP-1 to self-administer.",
+        "top_negative_report": "Less weight loss than semaglutide or tirzepatide. Standard GLP-1 GI side effects.",
+        "common_mistake": "Choosing dulaglutide over semaglutide for weight loss — semaglutide has superior efficacy data for obesity",
+        "pro_tip": "Best for patients who want the simplest possible injection experience. The auto-injector pen is very user-friendly."
       }
     },
     {
@@ -2050,13 +2096,13 @@
       "category": "sexual_health",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "oral"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 12500,
+          "max_mcg": 25000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
+        "frequency": "1x daily (oral)",
         "common_vial_sizes_mg": [],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
@@ -2072,14 +2118,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Raises testosterone by blocking estrogen feedback at the pituitary — alternative to TRT that preserves fertility",
+        "top_negative_report": "Not FDA-approved (FDA rejected in 2015). Visual disturbances, headaches, mood changes.",
+        "common_mistake": "Confusing with clomiphene (Clomid) — enclomiphene is the trans-isomer only, fewer side effects than racemic clomiphene",
+        "pro_tip": "Popular in the peptide/optimization community as TRT alternative. Oral, no injections. Monitor estrogen levels."
       }
     },
     {
@@ -2093,11 +2139,13 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 100,
+          "max_mcg": 200
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily for limited cycles",
+        "common_vial_sizes_mg": [
+          1
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -2116,10 +2164,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Myostatin inhibitor — promotes muscle growth by blocking the muscle-growth-limiting protein",
+        "top_negative_report": "Extremely expensive. Very limited human data. Theoretical reproductive concerns (follistatin regulates FSH).",
+        "common_mistake": "Expecting steroid-like muscle gains — myostatin inhibition effects in adults are modest at best",
+        "pro_tip": "315 and 344 are different isoforms. 344 is more commonly available but less tissue-specific. Cycle short (10-30 days)."
       }
     },
     {
@@ -2232,12 +2280,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Cellular Senescence Contributes to the Progression of Hyperoxic Bronchopulmonary Dysplasia.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -2279,7 +2327,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Road traffic noise exposure and blood DNA methylation at birth and in childhood: An epigenome-wide meta-analysis.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -2292,14 +2340,19 @@
       "category": "anti_aging",
       "administration": {
         "routes": [
+          "intravenous",
+          "oral",
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 200000,
+          "max_mcg": 600000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1-3x weekly (IV) or daily (oral)",
+        "common_vial_sizes_mg": [
+          200,
+          600
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -2318,10 +2371,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Master antioxidant — supports detoxification, immune function, skin brightening",
+        "top_negative_report": "Oral bioavailability is poor. IV is expensive. Skin lightening effect is controversial.",
+        "common_mistake": "Taking oral glutathione expecting same effect as IV — oral glutathione is largely degraded in the gut",
+        "pro_tip": "Liposomal oral forms have better absorption. IV is most effective but expensive. NAC (N-acetyl cysteine) is a cheaper precursor."
       }
     },
     {
@@ -2335,18 +2388,20 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 100,
+          "max_mcg": 500
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "2x weekly",
+        "common_vial_sizes_mg": [
+          2
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: Analysis of pubertal height gain in post-menarche girls.; Effects of Microplastics on the Central Reproductive Neuroendocrine System in a ",
+      "mechanism_summary": "Gonadotropin-releasing hormone receptor agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -2354,14 +2409,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Maintains testicular function during TRT — stimulates natural LH/FSH release",
+        "top_negative_report": "Short half-life (~4 min) means pulsatile dosing is key. Headache, nausea in some users.",
+        "common_mistake": "Using continuous (daily) instead of pulsatile — continuous GnRH actually SUPPRESSES LH (same mechanism as triptorelin for chemical castration)",
+        "pro_tip": "Alternative to HCG for preserving fertility on TRT. 2x/week SubQ. Half-life is very short so timing matters less than frequency."
       }
     },
     {
@@ -2399,7 +2454,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Human Growth Hormone Fragment 176-191 Peptide Enhances the Toxicity of Doxorubicin-Loaded Chitosan Nanoparticles Against",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -2415,11 +2470,13 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 500,
+          "max_mcg": 3000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily",
+        "common_vial_sizes_mg": [
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -2438,10 +2495,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Mitochondrial-derived peptide with neuroprotective and metabolic benefits — related to MOTS-C",
+        "top_negative_report": "Entirely preclinical. Zero human clinical trials. Very expensive.",
+        "common_mistake": "Conflating in-vitro neuroprotection with clinical cognitive enhancement",
+        "pro_tip": "Humanin and MOTS-C are both mitochondrial peptides. Research is promising but at discovery stage, not therapeutic stage."
       }
     },
     {
@@ -2479,7 +2536,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Exploring the Therapeutic Potential of Bovine Colostrum for Cancer Therapies.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -2506,7 +2563,7 @@
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: Revolutionary decellularized Alstroemeria stem-based nerve conduit integrated wi; Intranasal long R3 insulin-like growth factor-1 treatment promotes amyloid plaqu",
+      "mechanism_summary": "Insulin-like growth factor I receptor agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -2514,12 +2571,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Revolutionary decellularized Alstroemeria stem-based nerve conduit integrated with GelMA and controlled IGF-1 LR3 releas",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -2532,14 +2589,17 @@
       "category": "sexual_health",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "subcutaneous",
+          "intravenous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 1000,
+          "max_mcg": 10000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "As needed or per research protocol",
+        "common_vial_sizes_mg": [
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -2558,10 +2618,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Upstream regulator of GnRH — stimulates natural testosterone production via hypothalamic kisspeptin neurons",
+        "top_negative_report": "Very short half-life (~28 min). Limited human data for off-label uses. Expensive.",
+        "common_mistake": "Expecting sustained testosterone elevation — kisspeptin-10 has a very short half-life, effects are transient",
+        "pro_tip": "Interesting research compound for understanding HPG axis. Not practical for ongoing testosterone optimization due to short half-life."
       }
     },
     {
@@ -2572,14 +2632,18 @@
       "category": "immune",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "subcutaneous",
+          "oral",
+          "topical"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 200,
+          "max_mcg": 500
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1-2x daily",
+        "common_vial_sizes_mg": [
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -2598,10 +2662,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Anti-inflammatory — fragment of alpha-MSH. Used for gut inflammation, skin conditions.",
+        "top_negative_report": "Very limited evidence. Most data extrapolated from alpha-MSH research.",
+        "common_mistake": "Expecting it to work like a standalone treatment for IBD — use as adjunctive, not primary therapy",
+        "pro_tip": "Oral bioavailability may be sufficient for GI targeting. Some users take oral for gut, SubQ for systemic."
       }
     },
     {
@@ -2657,11 +2721,13 @@
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 50,
+          "max_mcg": 100
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily",
+        "common_vial_sizes_mg": [
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -2680,10 +2746,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Antimicrobial peptide — natural part of innate immunity. Used for chronic infections, biofilm disruption.",
+        "top_negative_report": "Very limited dosing data. Can cause injection site reactions. Pro-inflammatory at high doses.",
+        "common_mistake": "Using high doses — LL-37 is pro-inflammatory at elevated concentrations, anti-inflammatory at low doses",
+        "pro_tip": "Start at 50mcg. This is a human cathelicidin — your body naturally produces it. SubQ for systemic, topical for skin infections."
       }
     },
     {
@@ -2723,7 +2789,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Boosting Cosmeceutical Peptides: Coupling Imidazolium-Based Ionic Liquids to Pentapeptide-4 Originates New Leads with An",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -2738,14 +2804,16 @@
       "category": "cosmetic",
       "administration": {
         "routes": [
-          "topical"
+          "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 1000,
+          "max_mcg": 16000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "Per protocol — FDA-approved as Scenesse implant",
+        "common_vial_sizes_mg": [
+          10
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -2764,10 +2832,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "FDA-approved (as afamelanotide/Scenesse) for EPP — photoprotective tanning",
+        "top_negative_report": "Less potent than MT-II. Nausea, headache. Implant form only in approved use.",
+        "common_mistake": "Confusing MT-I with MT-II — MT-I is more selective (less sexual side effects) but weaker tanning effect",
+        "pro_tip": "If you want tanning without the sexual side effects of MT-II, MT-I is the cleaner option."
       }
     },
     {
@@ -2778,14 +2846,16 @@
       "category": "cosmetic",
       "administration": {
         "routes": [
-          "topical"
+          "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 250,
+          "max_mcg": 1000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "Loading: 1x daily for 1-2 weeks, then 1-2x weekly maintenance",
+        "common_vial_sizes_mg": [
+          10
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -2804,10 +2874,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Tanning without UV exposure — also increases libido (melanocortin agonist)",
+        "top_negative_report": "Nausea (very common), facial flushing, mole darkening (raises melanoma screening concerns), spontaneous erections",
+        "common_mistake": "Not getting a full skin check before starting — MT-II darkens moles and can mask melanoma changes",
+        "pro_tip": "Start at 250mcg to assess nausea tolerance. ALWAYS get a baseline mole check. Darkened moles are expected but need monitoring."
       }
     },
     {
@@ -2840,12 +2910,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Focused ultrasound-enhanced cell therapy for brain tumors: Summary of roundtable discussions.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -2860,13 +2930,13 @@
       "category": "gh_secretagogue",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "oral"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 10000,
+          "max_mcg": 25000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
+        "frequency": "1x daily (oral)",
         "common_vial_sizes_mg": [],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
@@ -2886,10 +2956,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Oral GH secretagogue — no injections needed. Sleep quality and appetite increase.",
+        "top_negative_report": "Water retention, increased appetite (problematic for weight loss), elevated blood sugar, lethargy",
+        "common_mistake": "Using for weight loss — MK-677 dramatically increases appetite and can cause weight gain",
+        "pro_tip": "Not actually a peptide — it's a non-peptide ghrelin mimetic. Take before bed to minimize appetite effects. Monitor fasting glucose."
       }
     },
     {
@@ -2902,14 +2972,20 @@
       "category": "anti_aging",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "intravenous",
+          "subcutaneous",
+          "oral"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 100000,
+          "max_mcg": 500000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1-2x weekly (IV) or daily (SubQ/oral precursor)",
+        "common_vial_sizes_mg": [
+          100,
+          250,
+          500
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -2928,10 +3004,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Anti-aging and cellular energy — supports sirtuins, DNA repair, mitochondrial function",
+        "top_negative_report": "IV infusions cause intense flushing, nausea, chest tightness. Very expensive. Oral NAD+ has poor bioavailability.",
+        "common_mistake": "Choosing expensive IV NAD+ over oral precursors (NMN, NR) which have better evidence and are vastly cheaper",
+        "pro_tip": "Most longevity researchers recommend NMN or NR (oral precursors) over direct NAD+ supplementation. Save IV NAD+ for acute recovery."
       }
     },
     {
@@ -2969,7 +3045,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: A randomized controlled pilot study of a proprietary combination versus sunscreen in melasma maintenance.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3009,7 +3085,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Pulmonary Recruitment Maneuver Reduces Shoulder Pain and Nausea After Laparoscopic Cholecystectomy: A Randomized Control",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3022,15 +3098,19 @@
       "category": "sleep_stress",
       "administration": {
         "routes": [
+          "intranasal",
           "subcutaneous",
-          "intranasal"
+          "intravenous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 10000,
+          "max_mcg": 24000
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "As needed (intranasal) or per protocol",
+        "common_vial_sizes_mg": [
+          10,
+          30
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -3049,10 +3129,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Social bonding, anxiety reduction, trust — the 'love hormone'. FDA-approved for labor induction.",
+        "top_negative_report": "Tolerance with chronic use. Can paradoxically increase anxiety in some contexts. Nasal irritation.",
+        "common_mistake": "Using daily for anxiety — tolerance develops. Works best as-needed for social situations.",
+        "pro_tip": "Intranasal is standard for behavioral effects. FDA-approved for obstetric use. Off-label for autism, social anxiety research."
       }
     },
     {
@@ -3091,7 +3171,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Targeting senescent cells in post-traumatic osteoarthritis: mechanisms, microenvironment remodeling, and translational p",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3213,7 +3293,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Thermoradiotherapy-Driven Enhancement of Cuproptosis by Copper-Nitroimidazole Based Nanoparticles.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3281,7 +3361,7 @@
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "Mechanism of action not well characterized in available databases.",
+      "mechanism_summary": "Epithelial cell adhesion molecule binding agent.",
       "evidence": {
         "grade": "yellow",
         "detail": "5 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -3289,12 +3369,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Shortened Spadin Analogs Display Better TREK-1 Inhibition, In Vivo Stability and Antidepressant Activity.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3376,7 +3456,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Pentapeptide-18 as an anti-aging candidate: Spectroscopic characterization and molecular interaction analysis.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3458,7 +3538,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: [Analysis of some parameters of biological age and adaptation possibilities of workers of locomotive brigades].",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3498,7 +3578,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Conjugated PNC-27 peptide/PEI-superparamagnetic iron oxide nanoparticles (SPIONs) as a double targeting agent for early ",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3578,7 +3658,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: [Genetic analysis of toxic ion tolerance in barley].",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3689,7 +3769,7 @@
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: Understanding the impact of growth hormone on ventilatory control stability in c; Iatrogenic Cerebral Amyloid Angiopathy After Cardiac Surgery: Two Case Reports.",
+      "mechanism_summary": "Growth hormone receptor agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -3697,12 +3777,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Endocrine Therapy versus Chemotherapy After CDK4/6 Inhibitor Progression in HR+/HER2- Metastatic Breast Cancer: A Multic",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3744,7 +3824,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Anti-aging activity of Syn-Ake peptide by in silico approaches and in vitro tests.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3813,7 +3893,7 @@
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: Centrally Acting Agents for Obesity: Past, Present, and Future.; Future Pharmacotherapy for Obesity: New Anti-obesity Drugs on the Horizon.",
+      "mechanism_summary": "Monoamine transporter inhibitor.",
       "evidence": {
         "grade": "yellow",
         "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -3821,12 +3901,12 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Structural basis for pharmacotherapeutic action of triple reuptake inhibitors.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3946,7 +4026,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: [Influence of peptides from pineal gland on thymus function at aging].",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -3999,13 +4079,13 @@
       "category": "sexual_health",
       "administration": {
         "routes": [
-          "subcutaneous"
+          "intramuscular"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 100,
+          "max_mcg": 100
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
+        "frequency": "Single dose or per protocol",
         "common_vial_sizes_mg": [],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
@@ -4013,7 +4093,7 @@
           "storage_days_refrigerated": 28
         }
       },
-      "mechanism_summary": "See literature: [Efficacy and safety of triptorelin acetate microspheres for injection versus tr; Efficacy and outcomes of 6-month triptorelin formulation in girls treated for ce",
+      "mechanism_summary": "Gonadotropin-releasing hormone receptor agonist.",
       "evidence": {
         "grade": "yellow",
         "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
@@ -4021,14 +4101,14 @@
       "regulatory": {
         "fda_status": "not_approved",
         "fda_category": "research_chemical",
-        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "note": "ChEMBL max phase: 0. Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "HPTA restart after steroid cycle — single 100mcg dose is common PCT protocol",
+        "top_negative_report": "CONTINUOUS use causes chemical castration (used clinically for prostate cancer). Must be pulsed, not continuous.",
+        "common_mistake": "Using repeated doses — a single 100mcg IM injection is the standard PCT protocol. Repeated dosing SUPPRESSES testosterone.",
+        "pro_tip": "GnRH agonist. A single pulse stimulates LH/FSH. Continuous exposure suppresses them. This is NOT a peptide to cycle."
       }
     },
     {
@@ -4106,7 +4186,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: [The efficacy of peptide bioregulators of vessels in lower limbs chronic arterial insufficiency treatment in old and eld",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -4190,7 +4270,7 @@
       },
       "community_insights": {
         "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
+        "top_negative_report": "See literature: Production of lymphocyte-activating factors by mouse macrophages during aging and under the effect of short peptides.",
         "common_mistake": "Pending MCP hydration",
         "pro_tip": "Pending MCP hydration"
       }
@@ -4205,14 +4285,17 @@
       "category": "immune",
       "administration": {
         "routes": [
+          "intranasal",
           "subcutaneous"
         ],
         "typical_dose": {
-          "min_mcg": 0,
-          "max_mcg": 0
+          "min_mcg": 50,
+          "max_mcg": 200
         },
-        "frequency": "See literature — dosing data pending MCP hydration",
-        "common_vial_sizes_mg": [],
+        "frequency": "1x daily (intranasal)",
+        "common_vial_sizes_mg": [
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -4231,10 +4314,10 @@
         "last_updated": "2026-03"
       },
       "community_insights": {
-        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
-        "top_negative_report": "Pending MCP hydration",
-        "common_mistake": "Pending MCP hydration",
-        "pro_tip": "Pending MCP hydration"
+        "top_positive_use": "Immune modulation and CIRS (chronic inflammatory response syndrome) treatment — popularized by Dr. Shoemaker protocol",
+        "top_negative_report": "Must be used as final step in Shoemaker protocol. Can worsen symptoms if used prematurely. Limited evidence.",
+        "common_mistake": "Using VIP before completing upstream CIRS treatments (binders, antifungals, etc.)",
+        "pro_tip": "Vasoactive intestinal peptide — naturally produced. Intranasal is standard route for CIRS. Must be compounded fresh."
       }
     }
   ]

@@ -694,16 +694,78 @@
     },
     {
       "compound_id": "liraglutide",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "nausea",
+          "frequency": "very_common",
+          "severity": "mild_to_moderate",
+          "mechanism": "GLP-1 receptor activation in brainstem",
+          "onset_days": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        {
+          "symptom": "diarrhea",
+          "frequency": "common",
+          "severity": "mild",
+          "mechanism": "GI motility changes",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "pancreatitis",
+          "frequency": "rare",
+          "severity": "severe",
+          "mechanism": "GLP-1 mediated pancreatic stimulation",
+          "onset_days": {
+            "min": 30,
+            "max": 180
+          }
+        }
+      ],
       "critical_alerts": [],
-      "dose_dependent": false,
+      "dose_dependent": true,
       "context_modifiers": []
     },
     {
       "compound_id": "pt-141",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "nausea",
+          "frequency": "very_common",
+          "severity": "moderate",
+          "mechanism": "Melanocortin receptor activation in area postrema",
+          "onset_days": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "symptom": "flushing",
+          "frequency": "common",
+          "severity": "mild",
+          "mechanism": "Vasodilation from melanocortin activation",
+          "onset_days": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "symptom": "skin_darkening",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "MC1R activation stimulates melanogenesis",
+          "onset_days": {
+            "min": 14,
+            "max": 60
+          }
+        }
+      ],
       "critical_alerts": [],
-      "dose_dependent": false,
+      "dose_dependent": true,
       "context_modifiers": []
     },
     {
@@ -778,9 +840,40 @@
     },
     {
       "compound_id": "ghrp-2",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "intense_hunger",
+          "frequency": "very_common",
+          "severity": "moderate",
+          "mechanism": "Ghrelin receptor agonism",
+          "onset_days": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "symptom": "water_retention",
+          "frequency": "common",
+          "severity": "mild",
+          "mechanism": "GH-mediated",
+          "onset_days": {
+            "min": 3,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "cortisol_elevation",
+          "frequency": "common",
+          "severity": "mild",
+          "mechanism": "GHRP-2 stimulates ACTH/cortisol release",
+          "onset_days": {
+            "min": 1,
+            "max": 7
+          }
+        }
+      ],
       "critical_alerts": [],
-      "dose_dependent": false,
+      "dose_dependent": true,
       "context_modifiers": []
     },
     {
@@ -1072,9 +1165,50 @@
     },
     {
       "compound_id": "melanotan-ii",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "nausea",
+          "frequency": "very_common",
+          "severity": "moderate",
+          "mechanism": "Melanocortin receptor activation",
+          "onset_days": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "symptom": "facial_flushing",
+          "frequency": "very_common",
+          "severity": "mild",
+          "mechanism": "Vasodilation from MC receptor activation",
+          "onset_days": {
+            "min": 0,
+            "max": 0
+          }
+        },
+        {
+          "symptom": "mole_darkening",
+          "frequency": "very_common",
+          "severity": "moderate",
+          "mechanism": "MC1R activation increases melanin production in nevi",
+          "onset_days": {
+            "min": 7,
+            "max": 30
+          }
+        },
+        {
+          "symptom": "spontaneous_erections",
+          "frequency": "common",
+          "severity": "mild",
+          "mechanism": "MC4R activation in hypothalamus",
+          "onset_days": {
+            "min": 0,
+            "max": 1
+          }
+        }
+      ],
       "critical_alerts": [],
-      "dose_dependent": false,
+      "dose_dependent": true,
       "context_modifiers": []
     },
     {
@@ -1086,9 +1220,50 @@
     },
     {
       "compound_id": "mk-677",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "water_retention",
+          "frequency": "very_common",
+          "severity": "moderate",
+          "mechanism": "GH-mediated sodium retention",
+          "onset_days": {
+            "min": 3,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "increased_appetite",
+          "frequency": "very_common",
+          "severity": "moderate",
+          "mechanism": "Ghrelin receptor activation",
+          "onset_days": {
+            "min": 1,
+            "max": 3
+          }
+        },
+        {
+          "symptom": "elevated_blood_sugar",
+          "frequency": "common",
+          "severity": "moderate",
+          "mechanism": "GH antagonizes insulin action",
+          "onset_days": {
+            "min": 14,
+            "max": 60
+          }
+        },
+        {
+          "symptom": "lethargy",
+          "frequency": "common",
+          "severity": "mild",
+          "mechanism": "GH release during waking hours",
+          "onset_days": {
+            "min": 1,
+            "max": 7
+          }
+        }
+      ],
       "critical_alerts": [],
-      "dose_dependent": false,
+      "dose_dependent": true,
       "context_modifiers": []
     },
     {
