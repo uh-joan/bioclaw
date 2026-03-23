@@ -3,14 +3,27 @@
     {
       "id": "bpc-157",
       "name": "BPC-157",
-      "aliases": ["Body Protection Compound-157", "Bepecin"],
+      "aliases": [
+        "Body Protection Compound-157",
+        "Bepecin"
+      ],
       "pubchem_cid": 9941957,
       "category": "healing",
       "administration": {
-        "routes": ["subcutaneous", "intramuscular", "oral"],
-        "typical_dose": { "min_mcg": 250, "max_mcg": 500 },
+        "routes": [
+          "subcutaneous",
+          "intramuscular",
+          "oral"
+        ],
+        "typical_dose": {
+          "min_mcg": 250,
+          "max_mcg": 500
+        },
         "frequency": "1-2x daily",
-        "common_vial_sizes_mg": [5, 10],
+        "common_vial_sizes_mg": [
+          5,
+          10
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -38,14 +51,28 @@
     {
       "id": "semaglutide",
       "name": "Semaglutide",
-      "aliases": ["Ozempic", "Wegovy", "Rybelsus"],
+      "aliases": [
+        "Ozempic",
+        "Wegovy",
+        "Rybelsus"
+      ],
       "pubchem_cid": 56843331,
       "category": "glp1",
       "administration": {
-        "routes": ["subcutaneous", "oral"],
-        "typical_dose": { "min_mcg": 250, "max_mcg": 2400 },
+        "routes": [
+          "subcutaneous",
+          "oral"
+        ],
+        "typical_dose": {
+          "min_mcg": 250,
+          "max_mcg": 2400
+        },
         "frequency": "1x weekly (SubQ), daily (oral)",
-        "common_vial_sizes_mg": [3, 5, 10],
+        "common_vial_sizes_mg": [
+          3,
+          5,
+          10
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -73,14 +100,28 @@
     {
       "id": "tirzepatide",
       "name": "Tirzepatide",
-      "aliases": ["Mounjaro", "Zepbound"],
+      "aliases": [
+        "Mounjaro",
+        "Zepbound"
+      ],
       "pubchem_cid": 156588324,
       "category": "glp1",
       "administration": {
-        "routes": ["subcutaneous"],
-        "typical_dose": { "min_mcg": 2500, "max_mcg": 15000 },
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 2500,
+          "max_mcg": 15000
+        },
         "frequency": "1x weekly",
-        "common_vial_sizes_mg": [5, 10, 15, 30, 60],
+        "common_vial_sizes_mg": [
+          5,
+          10,
+          15,
+          30,
+          60
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -108,14 +149,26 @@
     {
       "id": "retatrutide",
       "name": "Retatrutide",
-      "aliases": ["Reta", "LY3437943"],
-      "pubchem_cid": 0,
+      "aliases": [
+        "Reta",
+        "LY3437943"
+      ],
+      "pubchem_cid": 171390338,
       "category": "glp1",
       "administration": {
-        "routes": ["subcutaneous"],
-        "typical_dose": { "min_mcg": 1000, "max_mcg": 12000 },
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 1000,
+          "max_mcg": 12000
+        },
         "frequency": "1x weekly",
-        "common_vial_sizes_mg": [5, 10, 15],
+        "common_vial_sizes_mg": [
+          5,
+          10,
+          15
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -143,14 +196,27 @@
     {
       "id": "tb-500",
       "name": "TB-500",
-      "aliases": ["Thymosin Beta-4", "TB4"],
-      "pubchem_cid": 0,
+      "aliases": [
+        "Thymosin Beta-4",
+        "TB4"
+      ],
+      "pubchem_cid": 45382195,
       "category": "healing",
       "administration": {
-        "routes": ["subcutaneous", "intramuscular"],
-        "typical_dose": { "min_mcg": 2000, "max_mcg": 5000 },
+        "routes": [
+          "subcutaneous",
+          "intramuscular"
+        ],
+        "typical_dose": {
+          "min_mcg": 2000,
+          "max_mcg": 5000
+        },
         "frequency": "2x weekly (loading), 1x weekly (maintenance)",
-        "common_vial_sizes_mg": [2, 5, 10],
+        "common_vial_sizes_mg": [
+          2,
+          5,
+          10
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -178,14 +244,27 @@
     {
       "id": "cjc-1295",
       "name": "CJC-1295",
-      "aliases": ["CJC-1295 DAC", "CJC-1295 no DAC", "Modified GRF 1-29"],
-      "pubchem_cid": 0,
+      "aliases": [
+        "CJC-1295 DAC",
+        "CJC-1295 no DAC",
+        "Modified GRF 1-29",
+        "CJC1295"
+      ],
+      "pubchem_cid": 91971820,
       "category": "gh_secretagogue",
       "administration": {
-        "routes": ["subcutaneous"],
-        "typical_dose": { "min_mcg": 100, "max_mcg": 300 },
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 100,
+          "max_mcg": 300
+        },
         "frequency": "1x daily (before bed)",
-        "common_vial_sizes_mg": [2, 5],
+        "common_vial_sizes_mg": [
+          2,
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -213,14 +292,24 @@
     {
       "id": "ipamorelin",
       "name": "Ipamorelin",
-      "aliases": ["IPA"],
+      "aliases": [
+        "IPA"
+      ],
       "pubchem_cid": 9831659,
       "category": "gh_secretagogue",
       "administration": {
-        "routes": ["subcutaneous"],
-        "typical_dose": { "min_mcg": 100, "max_mcg": 300 },
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 100,
+          "max_mcg": 300
+        },
         "frequency": "1x daily (before bed)",
-        "common_vial_sizes_mg": [2, 5],
+        "common_vial_sizes_mg": [
+          2,
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -248,14 +337,27 @@
     {
       "id": "ghk-cu",
       "name": "GHK-Cu",
-      "aliases": ["Copper Peptide", "GHK-Copper"],
+      "aliases": [
+        "Copper Peptide",
+        "GHK-Copper"
+      ],
       "pubchem_cid": 73587,
       "category": "regenerative",
       "administration": {
-        "routes": ["subcutaneous", "topical"],
-        "typical_dose": { "min_mcg": 1000, "max_mcg": 2000 },
+        "routes": [
+          "subcutaneous",
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 1000,
+          "max_mcg": 2000
+        },
         "frequency": "1x daily",
-        "common_vial_sizes_mg": [5, 10, 50],
+        "common_vial_sizes_mg": [
+          5,
+          10,
+          50
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -283,14 +385,24 @@
     {
       "id": "tesamorelin",
       "name": "Tesamorelin",
-      "aliases": ["Egrifta", "TH9507"],
+      "aliases": [
+        "Egrifta",
+        "TH9507"
+      ],
       "pubchem_cid": 16137700,
       "category": "gh_secretagogue",
       "administration": {
-        "routes": ["subcutaneous"],
-        "typical_dose": { "min_mcg": 1000, "max_mcg": 2000 },
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 1000,
+          "max_mcg": 2000
+        },
         "frequency": "1x daily",
-        "common_vial_sizes_mg": [2],
+        "common_vial_sizes_mg": [
+          2
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 2,
@@ -318,14 +430,25 @@
     {
       "id": "thymosin-alpha-1",
       "name": "Thymosin Alpha-1",
-      "aliases": ["Ta1", "Zadaxin"],
+      "aliases": [
+        "Ta1",
+        "Zadaxin"
+      ],
       "pubchem_cid": 16132438,
       "category": "immune",
       "administration": {
-        "routes": ["subcutaneous"],
-        "typical_dose": { "min_mcg": 1600, "max_mcg": 1600 },
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 1600,
+          "max_mcg": 1600
+        },
         "frequency": "2x weekly",
-        "common_vial_sizes_mg": [1.6, 3.2],
+        "common_vial_sizes_mg": [
+          1.6,
+          3.2
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 1,
@@ -353,14 +476,24 @@
     {
       "id": "semax",
       "name": "Semax",
-      "aliases": ["MEHFPGP", "Semax 1%"],
+      "aliases": [
+        "MEHFPGP",
+        "Semax 1%"
+      ],
       "pubchem_cid": 72218,
       "category": "nootropic",
       "administration": {
-        "routes": ["intranasal"],
-        "typical_dose": { "min_mcg": 200, "max_mcg": 600 },
+        "routes": [
+          "intranasal"
+        ],
+        "typical_dose": {
+          "min_mcg": 200,
+          "max_mcg": 600
+        },
         "frequency": "1-2x daily",
-        "common_vial_sizes_mg": [3],
+        "common_vial_sizes_mg": [
+          3
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 1,
@@ -388,14 +521,24 @@
     {
       "id": "selank",
       "name": "Selank",
-      "aliases": ["TP-7"],
+      "aliases": [
+        "TP-7"
+      ],
       "pubchem_cid": 11765600,
       "category": "nootropic",
       "administration": {
-        "routes": ["intranasal"],
-        "typical_dose": { "min_mcg": 250, "max_mcg": 500 },
+        "routes": [
+          "intranasal"
+        ],
+        "typical_dose": {
+          "min_mcg": 250,
+          "max_mcg": 500
+        },
         "frequency": "1-2x daily",
-        "common_vial_sizes_mg": [3, 5],
+        "common_vial_sizes_mg": [
+          3,
+          5
+        ],
         "reconstitution": {
           "solvent": "bacteriostatic_water",
           "typical_volume_ml": 1,
@@ -418,6 +561,3680 @@
         "top_negative_report": "Tolerance questions with prolonged use, sedation at higher doses, limited evidence outside Russian studies",
         "common_mistake": "Treating it like a benzo replacement without understanding the evidence gap between Russian approval standards and FDA standards",
         "pro_tip": "Often stacked with Semax (Selank for calm, Semax for focus). Same intranasal delivery. Cycle with breaks."
+      }
+    },
+    {
+      "id": "liraglutide",
+      "name": "Liraglutide",
+      "aliases": [],
+      "pubchem_cid": 16134956,
+      "category": "glp1",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Liraglutide reduces the apoptosis of feeding and appetite-suppressing neurons in; Muscle atrophy associated with glucagon-like Peptide-1 receptor agonists: A popu",
+      "evidence": {
+        "grade": "green",
+        "detail": "FDA-approved. 8 PubMed results found, 1 clinical studies."
+      },
+      "regulatory": {
+        "fda_status": "approved",
+        "fda_category": "prescription",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "pt-141",
+      "name": "PT-141 (Bremelanotide)",
+      "aliases": [
+        "Bremelanotide"
+      ],
+      "pubchem_cid": 9941379,
+      "category": "sexual_health",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Practical considerations and emerging approaches for the management of vasomotor; A biodegradable suction patch for sustainable transbuccal peptide delivery.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "cagrilintide",
+      "name": "Cagrilintide",
+      "aliases": [],
+      "pubchem_cid": 171397054,
+      "category": "glp1",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Mitochondrial Adaptations in Skeletal Muscle Following Incretin-Based Therapies:; Amylin receptors as therapeutic targets in obesity: Emerging peptide-based strat",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "Late-stage clinical development. 8 PubMed results, 1 clinical studies. Phase 2/3 data available."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "eloralintide",
+      "name": "Eloralintide",
+      "aliases": [],
+      "pubchem_cid": 65938,
+      "category": "glp1",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Eloralintide (LY3841136), a novel amylin receptor agonist for the treatment of o",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "Late-stage clinical development. 6 PubMed results, 1 clinical studies. Phase 2/3 data available."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "mazdutide",
+      "name": "Mazdutide",
+      "aliases": [
+        "LY3305677"
+      ],
+      "pubchem_cid": 167312357,
+      "category": "glp1",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: IUPHAR review: From foe to friend: Repurposing glucagon to treat obesity and typ; Mazdutide versus Semaglutide for the treatment of type 2 diabetes and obesity: R",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "Late-stage clinical development. 8 PubMed results, 2 clinical studies. Phase 2/3 data available."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "orforglipron",
+      "name": "Orforglipron",
+      "aliases": [
+        "LY3502970"
+      ],
+      "pubchem_cid": 137319706,
+      "category": "glp1",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Efficacy and safety of once-daily oral orforglipron compared with oral semagluti; Comparative Efficacy and Safety of Different Orforglipron Doses in Patients With",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "Late-stage clinical development. 8 PubMed results, 3 clinical studies. Phase 2/3 data available."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "survodutide",
+      "name": "Survodutide",
+      "aliases": [
+        "BI 456906"
+      ],
+      "pubchem_cid": 168429725,
+      "category": "glp1",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Survodutide acts through circumventricular organs in the brain and activates neu; IUPHAR review: From foe to friend: Repurposing glucagon to treat obesity and typ",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "Late-stage clinical development. 8 PubMed results, 2 clinical studies. Phase 2/3 data available."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "aod-9604",
+      "name": "AOD-9604",
+      "aliases": [
+        "AOD9604"
+      ],
+      "pubchem_cid": 71300630,
+      "category": "weight_loss",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Direc; Effect of Intra-articular Injection of AOD9604 with or without Hyaluronic Acid i",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "Limited human data. 8 PubMed results, 1 clinical studies. Mostly animal/preclinical evidence."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "sermorelin",
+      "name": "Sermorelin",
+      "aliases": [],
+      "pubchem_cid": 16132413,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Direc; Growth hormone - releasing hormone antagonists induce autophagy in cancer cells.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "Limited human data. 8 PubMed results, 1 clinical studies. Mostly animal/preclinical evidence."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "ss-31",
+      "name": "SS-31 (Elamipretide)",
+      "aliases": [
+        "Elamipretide"
+      ],
+      "pubchem_cid": 11764719,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Mechanisms of Anti-Oxidants, N-Acetylcysteine and Elamipretide (SS-31), on Ozone; SS-31 improves post-cardiac arrest brain injury by inhibiting microglial ferropt",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "dsip",
+      "name": "DSIP",
+      "aliases": [
+        "delta sleep-inducing peptide"
+      ],
+      "pubchem_cid": 68816,
+      "category": "sleep_stress",
+      "administration": {
+        "routes": [
+          "subcutaneous",
+          "intranasal"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Direc; Delta Sleep-Inducing Peptide Recovers Motor Function in SD Rats after Focal Stro",
+      "evidence": {
+        "grade": "red",
+        "detail": "No human clinical trials. 8 PubMed results. Evidence is preclinical only."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "epithalon",
+      "name": "Epithalon",
+      "aliases": [
+        "epitalon"
+      ],
+      "pubchem_cid": 219042,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Direc; Overview of Epitalon-Highly Bioactive Pineal Tetrapeptide with Promising Propert",
+      "evidence": {
+        "grade": "red",
+        "detail": "No human clinical trials. 8 PubMed results. Evidence is preclinical only."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "ghrp-2",
+      "name": "GHRP-2",
+      "aliases": [
+        "pralmorelin"
+      ],
+      "pubchem_cid": 6918245,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Growth Hormone-Releasing Peptide 2 May Be Associated With Decreased M1 Macrophag; On the road of dried blood spot sampling for antidoping tests: Detection of GHRP",
+      "evidence": {
+        "grade": "red",
+        "detail": "No human clinical trials. 8 PubMed results. Evidence is preclinical only."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "ghrp-6",
+      "name": "GHRP-6",
+      "aliases": [],
+      "pubchem_cid": 6918245,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Growth hormone releasing peptide-6 (GHRP-6) ameliorates acute lung injury and it; Oral salmon acylated ghrelin increases food intake in common carp (Cyprinus carp",
+      "evidence": {
+        "grade": "red",
+        "detail": "No human clinical trials. 8 PubMed results. Evidence is preclinical only."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "hexarelin",
+      "name": "Hexarelin",
+      "aliases": [
+        "examorelin"
+      ],
+      "pubchem_cid": 6918297,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Hexarelin promotes the survival of retinal ganglion cells after optic nerve tran; Revealing the interaction between peptide drugs and permeation enhancers in the ",
+      "evidence": {
+        "grade": "red",
+        "detail": "No human clinical trials. 8 PubMed results. Evidence is preclinical only."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "mots-c",
+      "name": "MOTS-C",
+      "aliases": [],
+      "pubchem_cid": 146675088,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Mitochondria-derived peptide MOTS-c alleviates hyperoxia-induced bronchopulmonar; Mitochondrial-derived peptides MOTS-c and humanin attenuate dexamethasone-induce",
+      "evidence": {
+        "grade": "red",
+        "detail": "No human clinical trials. 8 PubMed results. Evidence is preclinical only."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "5-amino-1mq",
+      "name": "5-Amino-1MQ",
+      "aliases": [
+        "5-amino-1-methylquinolinium"
+      ],
+      "pubchem_cid": 950107,
+      "category": "weight_loss",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phellopterin Inhibits Inflammation and Relieves Cartilage Degradation by Suppres; Melatonin Promotes the Synthesis and Secretion of Growth Hormone in the Adenohyp",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "adamax",
+      "name": "Adamax",
+      "aliases": [],
+      "pubchem_cid": 4485,
+      "category": "nootropic",
+      "administration": {
+        "routes": [
+          "intranasal",
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "Mechanism of action not well characterized in available databases.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "5 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "adipotide",
+      "name": "Adipotide",
+      "aliases": [],
+      "pubchem_cid": 12364,
+      "category": "weight_loss",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Preclinical efficacy of the GPER-selective agonist G-1 in mouse models of obesit; Sustained influence of metformin therapy on circulating glucagon-like peptide-1 ",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "ahk-cu",
+      "name": "AHK-Cu",
+      "aliases": [],
+      "pubchem_cid": 125181279,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: The effect of tripeptide-copper complex on human hair growth in vitro.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "aicar",
+      "name": "AICAR",
+      "aliases": [
+        "aminoimidazole carboxamide ribonucleotide"
+      ],
+      "pubchem_cid": 65110,
+      "category": "weight_loss",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: FNDC5/Irisin-dependent renoprotection of resistance training in myocardial infar; The AMPK activator A769662 promotes ferroptosis and suppresses disulfidptosis by",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "ara-290",
+      "name": "ARA-290",
+      "aliases": [
+        "cibinetide"
+      ],
+      "pubchem_cid": 91810664,
+      "category": "healing",
+      "administration": {
+        "routes": [
+          "subcutaneous",
+          "intramuscular"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phase-targeted erythropoietin derivatives for traumatic brain injury: bridging m; Anti-Inflammatory Effects of Clarstatin, a Shared-Epitope-Antagonistic Cyclic Pe",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "argireline",
+      "name": "Argireline",
+      "aliases": [
+        "acetyl hexapeptide-3"
+      ],
+      "pubchem_cid": 71587772,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: BAK and ARG Have Moisturizing, Anti-Inflammatory, Antioxidant, and Antioxidant B; Acetyl Dipeptide-31 Amide: A Novel Cosmetic Anti-Inflammatory Peptide That Demon",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "bpc-157-tb-500-blend",
+      "name": "BPC-157 + TB-500 (blend)",
+      "aliases": [
+        "BPC-157"
+      ],
+      "pubchem_cid": 9941957,
+      "category": "healing",
+      "administration": {
+        "routes": [
+          "subcutaneous",
+          "intramuscular"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "Mechanism of action not well characterized in available databases.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "5 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "bronchogen",
+      "name": "Bronchogen",
+      "aliases": [],
+      "pubchem_cid": 6917754,
+      "category": "immune",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: [ANTIINFLAMMATORY AND REGENERATIVE EFFECT OF PEPTIDE THERAPY IN THE MODEL OF OBS; Modulating Effect of Peptide Therapy on the Morphofunctional State of Bronchial ",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "cagrilintide-semaglutide",
+      "name": "Cagrilintide + Semaglutide",
+      "aliases": [],
+      "pubchem_cid": 171397054,
+      "category": "glp1",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Mitochondrial Adaptations in Skeletal Muscle Following Incretin-Based Therapies:; CagriSema Reduces Blood Pressure in Adults With Overweight or Obesity: REDEFINE ",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "cardiogen",
+      "name": "Cardiogen",
+      "aliases": [],
+      "pubchem_cid": 16078958,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Clinical presentation of calmodulin mutations: the International Calmodulinopath; [Peptidergic regulation of the expression of signal factors of fibroblast differ",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "cartalax",
+      "name": "Cartalax",
+      "aliases": [],
+      "pubchem_cid": 16258,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Gene expression in human mesenchymal stem cell aging cultures: modulation by sho; Effect of short peptides on neuronal differentiation of stem cells.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "cerebrolysin",
+      "name": "Cerebrolysin",
+      "aliases": [],
+      "pubchem_cid": 11498616,
+      "category": "nootropic",
+      "administration": {
+        "routes": [
+          "intranasal",
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: [The effect of neuroprotectors on the level of BDNF, tumor necrosis factor alpha; Cerebrolysin ameliorates ketamine-mediated anxiety and cognitive impairments via",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "chonluten",
+      "name": "Chonluten",
+      "aliases": [],
+      "pubchem_cid": 91477,
+      "category": "immune",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Mono",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "cortagen",
+      "name": "Cortagen",
+      "aliases": [],
+      "pubchem_cid": 5952,
+      "category": "nootropic",
+      "administration": {
+        "routes": [
+          "intranasal",
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Neuroprotective Effects of Peptides during Ischemic Preconditioning.; Effects of bioactive tetrapeptides on free-radical processes.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "decapeptide-12",
+      "name": "Decapeptide-12",
+      "aliases": [],
+      "pubchem_cid": 25087629,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Open-label evaluation of a novel skin brightening system containing 0.01% decape; Open-label evaluation of the skin-brightening efficacy of a skin-brightening sys",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "dermorphin",
+      "name": "Dermorphin",
+      "aliases": [],
+      "pubchem_cid": 5485199,
+      "category": "healing",
+      "administration": {
+        "routes": [
+          "subcutaneous",
+          "intramuscular"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: The Neurotropic Activity of Novel Dermorphin Analogs Active at Systemic and Noni; Respiratory and Cardiovascular Activity of LENART01, an Analgesic Dermorphin-Ran",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "dihexa",
+      "name": "Dihexa",
+      "aliases": [],
+      "pubchem_cid": 129010512,
+      "category": "nootropic",
+      "administration": {
+        "routes": [
+          "intranasal",
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Direc; Effects of an Angiotensin IV Analog on 3-Nitropropionic Acid-Induced Huntington'",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "ds5",
+      "name": "DS5",
+      "aliases": [],
+      "pubchem_cid": 81689826,
+      "category": "nootropic",
+      "administration": {
+        "routes": [
+          "intranasal",
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: GMFB/AKT/TGF-β3 in Müller cells mediated early retinal degeneration in a strepto; Positron Emission Tomography/Computed Tomography Assessment After Immunochemothe",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "dulaglutide",
+      "name": "Dulaglutide",
+      "aliases": [],
+      "pubchem_cid": 171042928,
+      "category": "glp1",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: GLP-1 receptor agonists and sexual function in women and men: a narrative review; Association between GLP-1 receptor agonist use and worsening mental illness in p",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "enclomiphene",
+      "name": "Enclomiphene",
+      "aliases": [],
+      "pubchem_cid": 1548953,
+      "category": "sexual_health",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Hypothalamic-Pituitary-Testicular Axis Effects and Urinary Detection Following C; Differential effects of isomers of clomiphene citrate on reproductive tissues in",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "follistatin",
+      "name": "Follistatin",
+      "aliases": [],
+      "pubchem_cid": 5315,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Lorcaserin induces abdominal fat loss with associated improvements of the circul; FSTL1 silencing protects against lipopolysaccharide-induced ferroptosis in renal",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results, 3 clinical studies. Some human evidence exists."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "follistatin-315",
+      "name": "Follistatin-315",
+      "aliases": [],
+      "pubchem_cid": 5315,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Activin B Induces Noncanonical SMAD1/5/8 Signaling via BMP Type I Receptors in H; Increased activin bioavailability enhances hepatic insulin sensitivity while ind",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "follistatin-344",
+      "name": "Follistatin-344",
+      "aliases": [],
+      "pubchem_cid": 5315,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "Mechanism of action not well characterized in available databases.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "5 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "foxo4-dri",
+      "name": "FOXO4-DRI",
+      "aliases": [],
+      "pubchem_cid": 72233564,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: FOXO4-D-Retro-Inverso targets extracellular matrix production in fibroblasts and; FOXO4 peptide targets myofibroblast ameliorates bleomycin-induced pulmonary fibr",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "ghk",
+      "name": "GHK",
+      "aliases": [
+        "glycyl-histidyl-lysine"
+      ],
+      "pubchem_cid": 73587,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Anxiolytic Effect of GHK-PGP Peptide and Its Structural Analogues in a Test with; Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Direc",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "glutathione",
+      "name": "Glutathione",
+      "aliases": [],
+      "pubchem_cid": 124886,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Thermoradiotherapy-Driven Enhancement of Cuproptosis by Copper-Nitroimidazole Ba; Ginger extract and selenium supplementation: A promising approach to improve dia",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "gonadorelin",
+      "name": "Gonadorelin",
+      "aliases": [],
+      "pubchem_cid": 638793,
+      "category": "sexual_health",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Analysis of pubertal height gain in post-menarche girls.; Effects of Microplastics on the Central Reproductive Neuroendocrine System in a ",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "hgh-fragment-176-191",
+      "name": "HGH Fragment 176-191",
+      "aliases": [],
+      "pubchem_cid": 172966176,
+      "category": "weight_loss",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Human Growth Hormone Fragment 176-191 Peptide Enhances the Toxicity of Doxorubic; Hyperglycemic action of synthetic C-terminal fragments of human growth hormone.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "7 PubMed results, 3 clinical studies. Some human evidence exists."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "humanin",
+      "name": "Humanin",
+      "aliases": [],
+      "pubchem_cid": 16131438,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Arsenic Promotes Intracellular Aβ((1-42)) Accumulation via Enhanced APP but Redu; Mitochondrial-derived peptides MOTS-c and humanin attenuate dexamethasone-induce",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results, 3 clinical studies. Some human evidence exists."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "igf-1-des",
+      "name": "IGF-1 DES",
+      "aliases": [],
+      "pubchem_cid": 12560,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Novel insights into the effects of JMV2894, a growth hormone secretagogue, in Du; NAD(+) repletion restores cardioprotective autophagy and mitophagy in obesity-as",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "igf-1-lr3",
+      "name": "IGF-1 LR3",
+      "aliases": [],
+      "pubchem_cid": 0,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Revolutionary decellularized Alstroemeria stem-based nerve conduit integrated wi; Intranasal long R3 insulin-like growth factor-1 treatment promotes amyloid plaqu",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "kisspeptin-10",
+      "name": "Kisspeptin-10",
+      "aliases": [],
+      "pubchem_cid": 25240297,
+      "category": "sexual_health",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Kisspeptin Restores Placental mTOR Signaling and Improves Glucose Homeostasis Me; High-Fat Diet Promotes Glycolysis in Hepatocellular Carcinoma by Suppressing Hep",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "kpv",
+      "name": "KPV",
+      "aliases": [],
+      "pubchem_cid": 23677945,
+      "category": "immune",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Inflammation-triggered self-immolative conjugates enable oral peptide delivery b; Host defense peptides as a new drug lead to a strategy for inflammatory bowel di",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "livagen",
+      "name": "Livagen",
+      "aliases": [],
+      "pubchem_cid": 4671,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: [The influence of polypeptide liver complex and tetrapeptide KEDA on organism ph; [EVALUATION OF GENOMIC PARAMETERS IN DUCTAL BREAST CANCER PATIENTS AND THE ABILI",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "ll-37",
+      "name": "LL-37",
+      "aliases": [
+        "cathelicidin"
+      ],
+      "pubchem_cid": 16198951,
+      "category": "immune",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: LL-37 selectively targets Plasmodium-infected erythrocytes and exhibits antimala; CLEC3A-derived peptides exhibit broad-spectrum activity against Candida auris an",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "matrixyl",
+      "name": "Matrixyl",
+      "aliases": [
+        "palmitoyl pentapeptide-4"
+      ],
+      "pubchem_cid": 9897237,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Synergistic Effects of Injectable Platelet-Rich Fibrin and Bioactive Peptides on; Self-Assembly and Wound Healing Activity of Biomimetic Cycloalkane-Based Lipopep",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "mt-1",
+      "name": "MT-1 (Melanotan I)",
+      "aliases": [
+        "Melanotan I"
+      ],
+      "pubchem_cid": 16197727,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: High-performance liquid chromatographic assay for Melanotan-1 ([Nle4-DPhe7]alpha",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "melanotan-ii",
+      "name": "Melanotan II",
+      "aliases": [],
+      "pubchem_cid": 92432,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Antidepressant-like and antistress effects of the ACTH(4-10) synthetic analogs S; Therapeutic Strategies Against Metabolic Imbalance in a Male Mouse Model With 5-",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "mgf",
+      "name": "MGF",
+      "aliases": [],
+      "pubchem_cid": 447728,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Mangiferin as a Novel In Vitro Polyphenolic Inhibitor of Amyloid Aggregation.; Chondroitin sulfate and Cys-Ala-Gly peptides coated ZE21B magnesium alloy for en",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "mk-677",
+      "name": "MK-677 (Ibutamoren)",
+      "aliases": [
+        "Ibutamoren"
+      ],
+      "pubchem_cid": 178024,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Brain and kidney GHS-R1a underexpression is associated with changes in renal fun; MK0677, a Ghrelin Mimetic, Improves Neurogenesis but Fails to Prevent Hippocampa",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "nad-plus",
+      "name": "NAD+",
+      "aliases": [
+        "nicotinamide adenine dinucleotide"
+      ],
+      "pubchem_cid": 5892,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Administration of Nicotinamide Mononucleotide Mitigates the HIV Nef-Induced Meta; Activation of IRF3 in cardiomyocytes impairs mitochondrial oxidative function th",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "nonapeptide-1",
+      "name": "Nonapeptide-1",
+      "aliases": [],
+      "pubchem_cid": 10418849,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Enhanced skin benefits of EGCG loaded in nonapeptide-1-conjugated mesoporous sil",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "ovagen",
+      "name": "Ovagen",
+      "aliases": [],
+      "pubchem_cid": 67446,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Transvaginal follicular aspiration and embryo development in superstimulated ear; Effect of porcine and ovine FSH on nuclear maturation of pig oocytes in vitro.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "oxytocin",
+      "name": "Oxytocin",
+      "aliases": [],
+      "pubchem_cid": 439302,
+      "category": "sleep_stress",
+      "administration": {
+        "routes": [
+          "subcutaneous",
+          "intranasal"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Oxytocin supports the barrier integrity of brain endothelial cells via oxytocin ; Intravenous Oxytocin Has no Effect on Ad Libitum Food Intake or Postprandial Pla",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "p21",
+      "name": "P21",
+      "aliases": [],
+      "pubchem_cid": 3047746,
+      "category": "nootropic",
+      "administration": {
+        "routes": [
+          "intranasal",
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Heme enhances B-cell proliferation and plasma cell formation through reduced p21; Exposure of endothelial cells to doxorubicin inhibits extracellular matrix produ",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "pal-ahk",
+      "name": "Pal-AHK",
+      "aliases": [],
+      "pubchem_cid": 11683,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phellopterin Inhibits Inflammation and Relieves Cartilage Degradation by Suppres; Melatonin Promotes the Synthesis and Secretion of Growth Hormone in the Adenohyp",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "pal-ghk",
+      "name": "Pal-GHK",
+      "aliases": [
+        "palmitoyl tripeptide-1"
+      ],
+      "pubchem_cid": 10231864,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Palmitoyl copper peptide and acetyl tyrosine complex enhances melanin production",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "palmitoyl-dipeptide-6",
+      "name": "Palmitoyl Dipeptide-6",
+      "aliases": [],
+      "pubchem_cid": 11962376,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Thermoradiotherapy-Driven Enhancement of Cuproptosis by Copper-Nitroimidazole Ba; Iridium Nanoantidotes Attenuate Jellyfish Toxin-Induced Hepatotoxicity by Inhibi",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "pancragen",
+      "name": "Pancragen",
+      "aliases": [],
+      "pubchem_cid": 443688,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: [Correction of impaired glucose tolerance using tetrapeptide (Pancragen) in old ; Effects of pancragen on the differentiation of pancreatic cells during their age",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "pe-22-28",
+      "name": "PE-22-28",
+      "aliases": [],
+      "pubchem_cid": 9257,
+      "category": "nootropic",
+      "administration": {
+        "routes": [
+          "intranasal",
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "Mechanism of action not well characterized in available databases.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "5 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "peg-mgf",
+      "name": "PEG-MGF",
+      "aliases": [],
+      "pubchem_cid": 68028837,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phellopterin Inhibits Inflammation and Relieves Cartilage Degradation by Suppres; Melatonin Promotes the Synthesis and Secretion of Growth Hormone in the Adenohyp",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "pentapeptide-18",
+      "name": "Pentapeptide-18",
+      "aliases": [
+        "leuphasyl"
+      ],
+      "pubchem_cid": 10099522,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: D-tyrosine adds an anti-melanogenic effect to cosmetic peptides.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "pgpipn",
+      "name": "PGPIPN",
+      "aliases": [],
+      "pubchem_cid": 3083038,
+      "category": "healing",
+      "administration": {
+        "routes": [
+          "subcutaneous",
+          "intramuscular"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Construction of an Anticancer Fusion Peptide (ACFP) Derived from Milk Proteins a; The milk-derived hexapeptide PGPIPN inhibits the invasion and migration of human",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results, 3 clinical studies. Some human evidence exists."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "pinealon",
+      "name": "Pinealon",
+      "aliases": [],
+      "pubchem_cid": 10273502,
+      "category": "sleep_stress",
+      "administration": {
+        "routes": [
+          "subcutaneous",
+          "intranasal"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Therapeutic Peptides in Orthopaedics: Applications, Challenges, and Future Direc; Optimization of Jiuzao protein hydrolysis conditions and antioxidant activity in",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "pnc-27",
+      "name": "PNC-27",
+      "aliases": [],
+      "pubchem_cid": 7474,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: HDM-2-Targeting Peptide PNC-27 Kills Cervical Cancer Cells but not Normal Cervic; Anti-Cancer Peptide PNC-27 Kills Cancer Cells by Unique Interactions with Plasma",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "prostamax",
+      "name": "Prostamax",
+      "aliases": [],
+      "pubchem_cid": 222284,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: [Deheterochromatinization of the chromatin in old age induced by oligopeptide bi; Microcalorimetric study of human blood lymphocytes culture at presence of copper",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "rigin",
+      "name": "Rigin",
+      "aliases": [],
+      "pubchem_cid": 127555,
+      "category": "immune",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Antifungal Peptides with Unexpected Structure from a Library of Synthetic Analog; Antiviral responses of ATG13 to the infection of peste des petits ruminants viru",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "slu-pp-322",
+      "name": "SLU-PP-322",
+      "aliases": [
+        "SLU-PP-332"
+      ],
+      "pubchem_cid": 5338394,
+      "category": "weight_loss",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phellopterin Inhibits Inflammation and Relieves Cartilage Degradation by Suppres; Melatonin Promotes the Synthesis and Secretion of Growth Hormone in the Adenohyp",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "snap-8",
+      "name": "SNAP-8",
+      "aliases": [
+        "acetyl octapeptide-3"
+      ],
+      "pubchem_cid": 71587832,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phellopterin Inhibits Inflammation and Relieves Cartilage Degradation by Suppres; Melatonin Promotes the Synthesis and Secretion of Growth Hormone in the Adenohyp",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "somatropin",
+      "name": "Somatropin",
+      "aliases": [],
+      "pubchem_cid": 16104610,
+      "category": "gh_secretagogue",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Understanding the impact of growth hormone on ventilatory control stability in c; Iatrogenic Cerebral Amyloid Angiopathy After Cardiac Surgery: Two Case Reports.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "syn-ake",
+      "name": "Syn-Ake",
+      "aliases": [
+        "dipeptide diaminobutyroyl benzylamide diacetate"
+      ],
+      "pubchem_cid": 71465152,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Anti-aging activity of Syn-Ake peptide by in silico approaches and in vitro test",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "syn-coll",
+      "name": "Syn-Coll",
+      "aliases": [
+        "palmitoyl tripeptide-5"
+      ],
+      "pubchem_cid": 11950477,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phellopterin Inhibits Inflammation and Relieves Cartilage Degradation by Suppres; Melatonin Promotes the Synthesis and Secretion of Growth Hormone in the Adenohyp",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "tesofensine",
+      "name": "Tesofensine",
+      "aliases": [],
+      "pubchem_cid": 11370864,
+      "category": "weight_loss",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Centrally Acting Agents for Obesity: Past, Present, and Future.; Future Pharmacotherapy for Obesity: New Anti-obesity Drugs on the Horizon.",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "testagen",
+      "name": "Testagen",
+      "aliases": [],
+      "pubchem_cid": 5995,
+      "category": "sexual_health",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: The Inhibitory Effect and Adsorption Properties of Testagen Peptide on Copper Su",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "thymagen",
+      "name": "Thymagen",
+      "aliases": [],
+      "pubchem_cid": 100094,
+      "category": "immune",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: [Effect of thymagen, thymalin and vilosen on the cAMP and cGMP levels and phosph",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "6 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "thymalin",
+      "name": "Thymalin",
+      "aliases": [],
+      "pubchem_cid": 3085284,
+      "category": "immune",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: The Influence of KE and EW Dipeptides in the Composition of the Thymalin Drug on; Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Mono",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "tripeptide-29",
+      "name": "Tripeptide-29",
+      "aliases": [],
+      "pubchem_cid": 11534242,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phellopterin Inhibits Inflammation and Relieves Cartilage Degradation by Suppres; Melatonin Promotes the Synthesis and Secretion of Growth Hormone in the Adenohyp",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "triptorelin",
+      "name": "Triptorelin",
+      "aliases": [],
+      "pubchem_cid": 25074470,
+      "category": "sexual_health",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: [Efficacy and safety of triptorelin acetate microspheres for injection versus tr; Efficacy and outcomes of 6-month triptorelin formulation in girls treated for ce",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "vesilute",
+      "name": "Vesilute",
+      "aliases": [],
+      "pubchem_cid": 164521,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phellopterin Inhibits Inflammation and Relieves Cartilage Degradation by Suppres; Melatonin Promotes the Synthesis and Secretion of Growth Hormone in the Adenohyp",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "vesugen",
+      "name": "Vesugen",
+      "aliases": [],
+      "pubchem_cid": 3672,
+      "category": "anti_aging",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Short Peptides Protect Fibroblast-Derived Induced Neurons from Age-Related Chang; Peptide KED: Molecular-Genetic Aspects of Neurogenesis Regulation in Alzheimer's",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "vialox",
+      "name": "Vialox",
+      "aliases": [
+        "pentapeptide-3"
+      ],
+      "pubchem_cid": 11605666,
+      "category": "cosmetic",
+      "administration": {
+        "routes": [
+          "topical"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Phellopterin Inhibits Inflammation and Relieves Cartilage Degradation by Suppres; Melatonin Promotes the Synthesis and Secretion of Growth Hormone in the Adenohyp",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "vilon",
+      "name": "Vilon",
+      "aliases": [
+        "KE dipeptide"
+      ],
+      "pubchem_cid": 7010502,
+      "category": "immune",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Peptides Regulating Proliferative Activity and Inflammatory Pathways in the Mono; Gene expression in human mesenchymal stem cell aging cultures: modulation by sho",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
+      }
+    },
+    {
+      "id": "vip",
+      "name": "VIP",
+      "aliases": [
+        "vasoactive intestinal peptide"
+      ],
+      "pubchem_cid": 53314964,
+      "category": "immune",
+      "administration": {
+        "routes": [
+          "subcutaneous"
+        ],
+        "typical_dose": {
+          "min_mcg": 0,
+          "max_mcg": 0
+        },
+        "frequency": "See literature — dosing data pending MCP hydration",
+        "common_vial_sizes_mg": [],
+        "reconstitution": {
+          "solvent": "bacteriostatic_water",
+          "typical_volume_ml": 2,
+          "storage_days_refrigerated": 28
+        }
+      },
+      "mechanism_summary": "See literature: Senkyunolide H potentiates bone marrow-derived mesenchymal stem cells therapy fo; [Study on mechanism of Jiedu Huxin Formula protecting against heart failure caus",
+      "evidence": {
+        "grade": "yellow",
+        "detail": "8 PubMed results but limited clinical data. Mostly preclinical/mechanistic."
+      },
+      "regulatory": {
+        "fda_status": "not_approved",
+        "fda_category": "research_chemical",
+        "note": "Hydrated via public APIs. Run MCP hydration for full regulatory detail.",
+        "last_updated": "2026-03"
+      },
+      "community_insights": {
+        "top_positive_use": "Pending MCP hydration — community data not available via public APIs",
+        "top_negative_report": "Pending MCP hydration",
+        "common_mistake": "Pending MCP hydration",
+        "pro_tip": "Pending MCP hydration"
       }
     }
   ]
