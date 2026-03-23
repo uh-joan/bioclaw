@@ -770,21 +770,164 @@
     },
     {
       "compound_id": "cagrilintide",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "nausea",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Nausea (very common, ~70–80% in combination use)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "vomiting",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Vomiting",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "diarrhea",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Diarrhea",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "constipation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Constipation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "abdominal_pain",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Abdominal pain",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "eloralintide",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "anticipated_nausea_and_vomiting",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Anticipated nausea and vomiting (class effect of amylin analogues)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "decreased_appetite",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Decreased appetite",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "gi_discomfort",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "GI discomfort (class effect)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "profile_not_yet_fully_established_in_phase_3",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Profile not yet fully established in Phase 3",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "mazdutide",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "nausea",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Nausea (most common GI complaint)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "vomiting",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Vomiting",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "diarrhea",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Diarrhea",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "decreased_appetite",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Decreased appetite",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_increased_heart_rate",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential increased heart rate (glucagon receptor effect)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -899,28 +1042,202 @@
     },
     {
       "compound_id": "5-amino-1mq",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "unknown_long-term_safety_profile_in_humans",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown long-term safety profile in humans",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "possible_gi_upset",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Possible GI upset (anecdotal)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "headache",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Headache (anecdotal)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical:_altered_methylation_balance_via_sam_pathway_dis",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical: altered methylation balance via SAM pathway disruption",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_hepatic_effects",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential hepatic effects (NNMT highly expressed in liver)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "adamax",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "unknown;_no_systematic_human_safety_data",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown; no systematic human safety data",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "possible_gi_upset",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Possible GI upset (oral route)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical:_excess_copper_accumulation_with_copper-containi",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical: excess copper accumulation with copper-containing peptide variants",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "unknown_cns_effects_of_adamantyl_modification",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown CNS effects of adamantyl modification",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "adipotide",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "renal_tubular_toxicity",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Renal tubular toxicity (significant — observed in primates)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "dehydration_from_rapid_fluid_shifts",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Dehydration from rapid fluid shifts",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "electrolyte_imbalances",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Electrolyte imbalances",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection-site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection-site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_hypotension_from_rapid_volume_shifts",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential hypotension from rapid volume shifts",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "ahk-cu",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "skin_irritation_or_contact_dermatitis",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Skin irritation or contact dermatitis (topical, uncommon at cosmetic concentrations)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_copper_accumulation_with_excessive_application_t",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical copper accumulation with excessive application to broken skin",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_systemic_side_effects_expected_at_standard_cosmetic_doses",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No systemic side effects expected at standard cosmetic doses",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -934,49 +1251,276 @@
     },
     {
       "compound_id": "ara-290",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "generally_well-tolerated_in_clinical_trials",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Generally well-tolerated in clinical trials",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection-site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection-site reactions (mild)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "mild_headache_reported",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Mild headache reported",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_erythropoietic_effects",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No erythropoietic effects (no polycythemia risk unlike EPO)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_significant_cardiovascular_adverse_events_reported_in_tri",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No significant cardiovascular adverse events reported in trials",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "argireline",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "skin_irritation_or_redness",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Skin irritation or redness (uncommon, typically mild)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "contact_dermatitis",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Contact dermatitis (rare)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_systemic_toxicity_at_cosmetic_topical_doses",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No systemic toxicity at cosmetic topical doses",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "well-tolerated_in_clinical_trials",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Well-tolerated in clinical trials",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "bpc-157-tb-500-blend",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "bpc-157:_generally_well-tolerated_in_animal_studies;_rare_gi",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "BPC-157: Generally well-tolerated in animal studies; rare GI upset; theoretically may promote tumor angiogenesis (unconfirmed in humans)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "tb-500/thymosin_beta-4:_headache,_fatigue_reported_in_some_h",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "TB-500/Thymosin beta-4: headache, fatigue reported in some human trials; generally well-tolerated at studied doses",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection-site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection-site reactions (both compounds)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_immune_modulation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential immune modulation (both compounds have anti-inflammatory properties)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "unknown_long-term_safety_of_the_combination_in_humans",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown long-term safety of the combination in humans",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "bronchogen",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "no_well-documented_adverse_effects_in_available_literature;",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No well-documented adverse effects in available literature; insufficient safety data",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "cagrilintide-semaglutide",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "nausea",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Nausea (most common, especially during dose escalation)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "vomiting",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Vomiting",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "diarrhea",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Diarrhea",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "constipation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Constipation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "cardiogen",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "no_well-documented_adverse_effects_in_available_literature;",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No well-documented adverse effects in available literature; insufficient safety data",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "cartalax",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "no_well-documented_adverse_effects_in_available_literature;",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No well-documented adverse effects in available literature; insufficient safety data",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -990,28 +1534,132 @@
     },
     {
       "compound_id": "chonluten",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "no_well-documented_adverse_effects_in_available_literature;",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No well-documented adverse effects in available literature; insufficient safety data",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "cortagen",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "no_well-documented_adverse_effects_in_available_literature;",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No well-documented adverse effects in available literature; insufficient safety data",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "decapeptide-12",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "generally_well_tolerated",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Generally well tolerated",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "mild_transient_erythema_or_irritation_possible_at_initiation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Mild transient erythema or irritation possible at initiation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_cytotoxicity_reported_at_cosmetic_concentrations",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No cytotoxicity reported at cosmetic concentrations",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "dermorphin",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "respiratory_depression",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Respiratory depression (potentially fatal at overdose)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "profound_sedation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Profound sedation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "nausea_and_vomiting",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Nausea and vomiting",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "physical_dependence_and_addiction",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Physical dependence and addiction",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "euphoria",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Euphoria",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1025,7 +1673,18 @@
     },
     {
       "compound_id": "ds5",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "unknown;_no_reliable_safety_data_for_the_compound_as_describ",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown; no reliable safety data for the compound as described in community contexts",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1053,28 +1712,202 @@
     },
     {
       "compound_id": "follistatin-315",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "potential_immunogenicity_and_antibody_formation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential immunogenicity and antibody formation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "fsh_suppression",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "FSH suppression (follistatin inhibits activin-mediated FSH regulation) with implications for fertility",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_risk_of_promoting_growth_in_activin-regulated_ti",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical risk of promoting growth in activin-regulated tissues",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "insufficient_human_safety_data_for_subcutaneous_protein_admi",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Insufficient human safety data for subcutaneous protein administration",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "follistatin-344",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "potential_suppression_of_fsh/lh_via_activin_blockade",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential suppression of FSH/LH via activin blockade",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_risk_of_tendon_or_organ_overgrowth_with_chronic",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical risk of tendon or organ overgrowth with chronic use",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "possible_effects_on_reproductive_function",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Possible effects on reproductive function",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "foxo4-dri",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "unknown_in_humans",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown in humans",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical:_immune_modulation_from_rapid_senescent_cell_cle",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical: immune modulation from rapid senescent cell clearance (senescence-associated secretory phenotype release)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_off-target_p53_inhibition_effects_in_non-senescent",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential off-target p53 inhibition effects in non-senescent tissues",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "ghk",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "topical:_rare_contact_dermatitis",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Topical: rare contact dermatitis",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions (subcutaneous)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_copper_overload_with_excessive_ghk-cu_dosing",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical copper overload with excessive GHK-Cu dosing",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "generally_considered_well-tolerated_at_cosmetic_concentratio",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Generally considered well-tolerated at cosmetic concentrations",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1095,7 +1928,48 @@
     },
     {
       "compound_id": "hgh-fragment-176-191",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "mild_water_retention",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Mild water retention (uncommon, less than full HGH)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "possible_transient_hypoglycaemia_if_injected_near_meals",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Possible transient hypoglycaemia if injected near meals",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "headache",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Headache (reported at high doses)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1109,14 +1983,116 @@
     },
     {
       "compound_id": "igf-1-des",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "hypoglycaemia",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Hypoglycaemia (significant risk, especially fasted)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical:_localised_tissue_overgrowth_with_repeated_site",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical: localised tissue overgrowth with repeated site injection",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_for_igf-1r-mediated_tumour_promotion_with_chronic",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential for IGF-1R-mediated tumour promotion with chronic use",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "jaw,_hand,_or_organ_enlargement_with_excessive_systemic_expo",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Jaw, hand, or organ enlargement with excessive systemic exposure",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "igf-1-lr3",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "hypoglycaemia",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Hypoglycaemia (persistent risk due to long half-life)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "gut_distension_/_intestinal_hypertrophy",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Gut distension / intestinal hypertrophy (visceral organ growth)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "acromegalic_features_with_chronic_use",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Acromegalic features with chronic use",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_carcinogenic_risk_with_prolonged_igf-1r_stimulatio",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential carcinogenic risk with prolonged IGF-1R stimulation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "jaw_pain,_joint_pain,_water_retention",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Jaw pain, joint pain, water retention",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1137,7 +2113,38 @@
     },
     {
       "compound_id": "livagen",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "not_well_characterised;_generally_reported_as_well-tolerated",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Not well characterised; generally reported as well-tolerated in Russian studies",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions (if subcutaneous)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_significant_adverse_events_documented_in_available_litera",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No significant adverse events documented in available literature",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1151,7 +2158,38 @@
     },
     {
       "compound_id": "matrixyl",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "generally_very_well_tolerated",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Generally very well tolerated",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "rare:_mild_skin_irritation_or_contact_sensitivity",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Rare: mild skin irritation or contact sensitivity",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_systemic_absorption_concerns_at_cosmetic_use_levels",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No systemic absorption concerns at cosmetic use levels",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1213,7 +2251,48 @@
     },
     {
       "compound_id": "mgf",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_hypoglycaemia_at_high_doses",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential hypoglycaemia at high doses (IGF-1 receptor cross-activation)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_carcinogenic_risk_with_chronic_igf-1_pathway_sti",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical carcinogenic risk with chronic IGF-1 pathway stimulation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "limited_human_safety_data_available",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Limited human safety data available",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1275,7 +2354,38 @@
     },
     {
       "compound_id": "nonapeptide-1",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "generally_well_tolerated_in_cosmetic_concentrations",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Generally well tolerated in cosmetic concentrations",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "rare:_mild_skin_irritation_or_erythema",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Rare: mild skin irritation or erythema",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_systemic_toxicity_expected_at_cosmetic_use_levels",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No systemic toxicity expected at cosmetic use levels",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1296,56 +2406,224 @@
     },
     {
       "compound_id": "p21",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "headache",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "headache (anecdotal)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "nasal_irritation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "nasal irritation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "overstimulation_at_higher_doses",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "overstimulation at higher doses (anecdotal)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "pal-ahk",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "mild_topical_irritation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "mild topical irritation (rare)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "pal-ghk",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "mild_contact_irritation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "mild contact irritation (rare)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_sensitization_with_repeated_use",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "potential sensitization with repeated use (rare)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "palmitoyl-dipeptide-6",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "mild_topical_irritation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "mild topical irritation (rare)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "pancragen",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "potential_mild_hypoglycemia",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "potential mild hypoglycemia (based on animal data)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "injection site reactions (IM route)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "pe-22-28",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "nasal_irritation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "nasal irritation (intranasal route)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "mild_overstimulation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "mild overstimulation (anecdotal)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_insomnia_at_higher_doses",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "potential insomnia at higher doses (anecdotal)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "peg-mgf",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "injection_site_swelling",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "injection site swelling",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_disproportionate_local_muscle_growth_with_im_injec",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "potential disproportionate local muscle growth with IM injection",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_insulin_resistance_at_high_doses",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "theoretical insulin resistance at high doses (IGF pathway)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "pentapeptide-18",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "mild_topical_irritation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "mild topical irritation (rare)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1359,98 +2637,552 @@
     },
     {
       "compound_id": "pinealon",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "minimal_reported_adverse_effects_at_research_doses",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Minimal reported adverse effects at research doses",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "possible_drowsiness",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Possible drowsiness (melatonin pathway modulation)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions_with_subcutaneous_use",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions with subcutaneous use",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "pnc-27",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "unknown_in_humans",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown in humans",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_off-target_membrane_disruption_at_high_concentrati",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential off-target membrane disruption at high concentrations (in vitro concern)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "immunogenicity_risk_as_a_foreign_peptide",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Immunogenicity risk as a foreign peptide",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "prostamax",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "not_established_in_controlled_studies",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Not established in controlled studies",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_immune_response_to_non-self_peptides",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical immune response to non-self peptides",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "injection_site_reactions_with_subcutaneous_route",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions with subcutaneous route",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "rigin",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "generally_well_tolerated_topically",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Generally well tolerated topically",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "mild_skin_irritation_at_high_concentrations",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Mild skin irritation at high concentrations",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "systemic_side_effects_unknown_for_subcutaneous_use",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Systemic side effects unknown for subcutaneous use",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "slu-pp-322",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "unknown_in_humans",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown in humans",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "err_activation_may_have_unintended_effects_on_hormone-sensit",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "ERR activation may have unintended effects on hormone-sensitive tissues",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "cardiac_and_hepatic_effects_unknown",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Cardiac and hepatic effects unknown",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "snap-8",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "well_tolerated_topically",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Well tolerated topically",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "rare_contact_sensitization",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Rare contact sensitization",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_systemic_effects_at_cosmetic_concentrations",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No systemic effects at cosmetic concentrations",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "somatropin",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "fluid_retention_and_edema",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Fluid retention and edema",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "carpal_tunnel_syndrome",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Carpal tunnel syndrome",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "joint_and_muscle_pain",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Joint and muscle pain (arthralgia/myalgia)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "insulin_resistance_and_elevated_fasting_glucose",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Insulin resistance and elevated fasting glucose",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "intracranial_hypertension",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Intracranial hypertension (rare)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "syn-ake",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "well_tolerated_topically_at_cosmetic_concentrations",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Well tolerated topically at cosmetic concentrations",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_systemic_nachr_antagonism_if_absorbed",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical systemic nAChR antagonism if absorbed (not observed at topical doses)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "rare_contact_allergy",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Rare contact allergy",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "syn-coll",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "well_tolerated_topically",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Well tolerated topically",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_systemic_effects_at_cosmetic_concentrations",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No systemic effects at cosmetic concentrations",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "rare_contact_sensitization_to_palmitoyl_moiety",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Rare contact sensitization to palmitoyl moiety",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "tesofensine",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "tachycardia_and_increased_heart_rate",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Tachycardia and increased heart rate (dose-dependent)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "dry_mouth",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Dry mouth",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "nausea",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Nausea",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "constipation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Constipation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "insomnia_and_sleep_disturbance",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Insomnia and sleep disturbance",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "testagen",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions (subcutaneous use)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "unknown_systemic_effects_due_to_lack_of_safety_data",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown systemic effects due to lack of safety data",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "thymagen",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "local_injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Local injection site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_immune_activation_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential immune activation reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "possible_headache",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Possible headache (intranasal route)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "thymalin",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "injection_site_pain_or_inflammation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site pain or inflammation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "potential_flu-like_symptoms_from_immune_activation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Potential flu-like symptoms from immune activation",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_autoimmune_exacerbation_risk",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical autoimmune exacerbation risk",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "tripeptide-29",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "generally_well-tolerated_topically",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Generally well-tolerated topically",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "rare_contact_sensitivity_in_individuals_with_collagen_peptid",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Rare contact sensitivity in individuals with collagen peptide allergies",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
@@ -1464,28 +3196,142 @@
     },
     {
       "compound_id": "vesilute",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions (subcutaneous)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "unknown_systemic_effects_due_to_lack_of_safety_data",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown systemic effects due to lack of safety data",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "vesugen",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "theoretical_mild_vasodilatory_effects",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Theoretical mild vasodilatory effects (unverified)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "unknown_systemic_effects",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Unknown systemic effects",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "vialox",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "generally_well-tolerated_topically",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Generally well-tolerated topically",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "rare_contact_dermatitis",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Rare contact dermatitis",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "transient_mild_muscle_relaxation_sensation",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Transient mild muscle relaxation sensation (reported anecdotally)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []
     },
     {
       "compound_id": "vilon",
-      "watch_for": [],
+      "watch_for": [
+        {
+          "symptom": "injection_site_reactions",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Injection site reactions (subcutaneous use)",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "rare_immune_activation_symptoms",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "Rare immune activation symptoms (low-grade fever, fatigue) during initial courses",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        },
+        {
+          "symptom": "no_known_serious_adverse_effects_reported_in_russian_literat",
+          "frequency": "uncommon",
+          "severity": "mild",
+          "mechanism": "No known serious adverse effects reported in Russian literature",
+          "onset_days": {
+            "min": 1,
+            "max": 14
+          }
+        }
+      ],
       "critical_alerts": [],
       "dose_dependent": false,
       "context_modifiers": []

@@ -511,6 +511,343 @@
         2
       ],
       "notes": "Reconstitution data for VIP."
+    },
+    "cagrilintide": {
+      "common_vial_sizes_mg": [
+        0.5,
+        1.0,
+        2.4
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Cagrilintide."
+    },
+    "mazdutide": {
+      "common_vial_sizes_mg": [
+        3,
+        4.5,
+        6,
+        9
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Mazdutide."
+    },
+    "ara-290": {
+      "common_vial_sizes_mg": [
+        4,
+        8
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for ARA-290."
+    },
+    "bpc-157-tb-500-blend": {
+      "common_vial_sizes_mg": [
+        5,
+        10
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for BPC-157 + TB-500 (blend)."
+    },
+    "bronchogen": {
+      "common_vial_sizes_mg": [
+        0.01
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Bronchogen."
+    },
+    "cagrilintide-semaglutide": {
+      "common_vial_sizes_mg": [
+        2.4
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Cagrilintide + Semaglutide."
+    },
+    "cardiogen": {
+      "common_vial_sizes_mg": [
+        0.01
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Cardiogen."
+    },
+    "cartalax": {
+      "common_vial_sizes_mg": [
+        0.01
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Cartalax."
+    },
+    "cortagen": {
+      "common_vial_sizes_mg": [
+        0.01
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Cortagen."
+    },
+    "follistatin-344": {
+      "common_vial_sizes_mg": [
+        1
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Follistatin-344."
+    },
+    "ghk": {
+      "common_vial_sizes_mg": [
+        50,
+        100,
+        200
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for GHK."
+    },
+    "hgh-fragment-176-191": {
+      "common_vial_sizes_mg": [
+        2,
+        5
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for HGH Fragment 176-191."
+    },
+    "igf-1-des": {
+      "common_vial_sizes_mg": [
+        1
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for IGF-1 DES."
+    },
+    "igf-1-lr3": {
+      "common_vial_sizes_mg": [
+        1
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for IGF-1 LR3."
+    },
+    "livagen": {
+      "common_vial_sizes_mg": [
+        2
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Livagen."
+    },
+    "mgf": {
+      "common_vial_sizes_mg": [
+        2
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for MGF."
+    },
+    "pancragen": {
+      "common_vial_sizes_mg": [
+        0.5,
+        1
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Pancragen."
+    },
+    "peg-mgf": {
+      "common_vial_sizes_mg": [
+        2,
+        5
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for PEG-MGF."
+    },
+    "pinealon": {
+      "common_vial_sizes_mg": [
+        0.1,
+        0.3
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Pinealon."
+    },
+    "prostamax": {
+      "common_vial_sizes_mg": [
+        0.1,
+        0.2
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Prostamax."
+    },
+    "rigin": {
+      "common_vial_sizes_mg": [
+        0.05,
+        0.1
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Rigin."
+    },
+    "somatropin": {
+      "common_vial_sizes_mg": [
+        4,
+        5,
+        5.3,
+        6,
+        8,
+        10,
+        12,
+        24
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Somatropin."
+    },
+    "testagen": {
+      "common_vial_sizes_mg": [
+        1,
+        2
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Testagen."
+    },
+    "thymagen": {
+      "common_vial_sizes_mg": [
+        1,
+        2
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Thymagen."
+    },
+    "thymalin": {
+      "common_vial_sizes_mg": [
+        5,
+        10,
+        20
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Thymalin."
+    },
+    "vesilute": {
+      "common_vial_sizes_mg": [
+        1,
+        2
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Vesilute."
+    },
+    "vesugen": {
+      "common_vial_sizes_mg": [
+        1,
+        2
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Vesugen."
+    },
+    "vilon": {
+      "common_vial_sizes_mg": [
+        1,
+        2
+      ],
+      "recommended_solvent": "bacteriostatic_water",
+      "recommended_volume_ml": [
+        1,
+        2
+      ],
+      "notes": "MCP-hydrated reconstitution data for Vilon."
     }
   }
 }
