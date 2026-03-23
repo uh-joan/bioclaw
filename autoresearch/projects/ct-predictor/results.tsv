@@ -1,2 +1,21 @@
 commit	auc_roc	n_features	status	description
-8065343	0.887762	232	keep	baseline — current state with safety risk features
+b689aa1	0.884725	232	keep	leakage-fixed baseline (same_target LOO)
+8065343	0.887762	232	keep	target_expression_breadth + safety risk features
+1a012c3	0.891948	232	keep	replace RandomForest with ExtraTrees (300 trees weight=2)
+0a70b9c	0.895146	232	keep	ExtraTrees 150 trees weight=3
+0b01983	0.895215	232	keep	ExtraTrees 200 trees max_depth=20
+85350fe	0.896043	232	keep	GBM max_depth=8
+11adabc	0.896848	232	keep	GBM max_depth=7
+6877a27	0.900322	232	keep	GBM l2_regularization=0.0 (crosses 0.90)
+4b44fe2	0.903773	232	keep	GBM depth=7 l2=0.0 weights [3,1,5]
+a140f71	0.904854	232	keep	2nd ET seed=7 for diversity
+f54d80f	0.906694	232	keep	3rd ET seed=13 max_features=0.7
+479683d	0.907706	232	keep	drop LR from ensemble
+44f6ae3	0.909409	232	keep	4th ET seed=99 max_features=0.7
+ee0d91e	0.915505	233	keep	combo_drug2_target_rate secondary drug success
+cd696d5	0.934668	234	keep	both_drugs_proven interaction drug1×drug2 (verified)
+d90c412	0.936692	234	keep	Bayesian smoothing alpha=5 on target rates
+3c0b111	0.937750	234	keep	ET7 seed=71 + ET8 seed=89 max_features=0.5 — BEST
+c4eadd1	0.949367	233	keep	GBM max_leaf_nodes=127
+22ef1e4	0.949965	233	keep	GBM max_depth=8 max_leaf_nodes=127
+ac84cee	0.963216	233	keep	GBM min_samples_leaf=4
