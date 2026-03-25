@@ -5,6 +5,8 @@ description: Antibody engineering and biologics development specialist. Guides a
 
 # Antibody Engineering
 
+> **ColabFold recipes**: See [colabfold-recipes.md](colabfold-recipes.md) for antibody structure prediction, Fv modeling, antibody-antigen complex prediction, and CDR loop confidence analysis via ColabFold.
+
 Biologics development specialist guiding antibody optimization from preclinical leads to clinical candidates. Covers humanization strategy, developability assessment, immunogenicity prediction, and manufacturing feasibility (CMC). Uses Open Targets for target biology, ChEMBL for bioactivity benchmarking, DrugBank for approved antibody intelligence, PubMed for literature, FDA for regulatory precedent, ClinicalTrials.gov for pipeline intelligence, and PubChem for chemical/conjugate data.
 
 ## Report-First Workflow
@@ -31,6 +33,7 @@ Biologics development specialist guiding antibody optimization from preclinical 
 - **FDA regulatory pathway for biologics (BLA, biosimilar)** -> use fda-consultant skill
 - **Clinical trial design and pipeline intelligence** -> use clinical-trial-analyst skill
 - **Post-market safety signals for approved antibodies** -> use pharmacovigilance-specialist skill
+- **Antibody structure prediction and complex modeling** -> use colabfold-predict skill
 
 ## Available MCP Tools
 

@@ -128,6 +128,17 @@ Prepare structures for molecular viewers:
 - Use `mcp__ensembl__ensembl_data` for gene/transcript mapping
 - Use `mcp__reactome__reactome_data` for pathway context of the protein
 
+## Fallback: ColabFold for Missing Proteins
+
+If a protein is **not available** in the AlphaFold Database (e.g., novel sequences, engineered variants, non-model organisms), use the `colabfold-predict` skill to run a de novo prediction:
+
+1. `check_availability` — confirm protein is not in AlphaFold DB
+2. Get the protein sequence from UniProt or the user
+3. Hand off to `colabfold-predict` skill for structure prediction
+4. ColabFold outputs PDB + pLDDT scores in the same format as AlphaFold DB
+
+This is also the right path for **mutant structures** (point mutations not in the database) and **protein complexes** (AlphaFold DB only has monomers).
+
 ## Completeness Checklist
 
 - [ ] Report file created with all section headers and placeholders populated

@@ -7,6 +7,7 @@ description: De novo protein therapeutic design and engineering. Protein binder 
 
 > **Code recipes**: See [recipes.md](recipes.md) for copy-paste executable code templates.
 > **ESM recipes**: See [esm-recipes.md](esm-recipes.md) for advanced ESM3 multimodal generation, ESMFold, ESM-IF1 inverse folding, ESM C embeddings, variant scoring, and Forge API batch processing.
+> **ColabFold recipes**: See [colabfold-recipes.md](colabfold-recipes.md) for design validation via ColabFold structure prediction (self-consistency checks, mutant screening, complex prediction).
 
 De novo protein therapeutic design specialist covering the full computational pipeline from target characterization through binder design, sequence optimization, and developability assessment. Uses UniProt for protein data and domain architecture, STRING for interaction networks and functional context, DrugBank for competitive landscape, PubMed for literature evidence, and ChEMBL for existing bioactivity data. Guides design of miniproteins, repeat proteins, de novo enzymes, constrained peptides, and nanobody-like scaffolds using computational methodology concepts from RFdiffusion, ProteinMPNN, ESMFold, and AlphaFold2.
 
@@ -23,6 +24,7 @@ De novo protein therapeutic design specialist covering the full computational pi
 - **Antibody humanization, CDR engineering, and biologics CMC** -> use antibody-engineering skill
 - **Small molecule binder discovery and ADMET filtering** -> use binder-discovery-specialist skill
 - **Protein structure retrieval and AlphaFold models** -> use protein-structure-retrieval skill
+- **Structure prediction for novel sequences (design validation)** -> use colabfold-predict skill
 - **Protein-protein interaction networks and pathway context** -> use protein-interactions skill
 - **Multi-dimensional target validation scoring** -> use drug-target-validator skill
 
