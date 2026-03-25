@@ -5,6 +5,8 @@ description: AlphaFold protein structure prediction database specialist. Get pre
 
 # AlphaFold Structure Specialist
 
+> **ColabFold recipes**: See [colabfold-recipes.md](colabfold-recipes.md) for fallback prediction when proteins are missing from AlphaFold DB, cross-validation of DB entries, and variant-vs-wildtype comparison.
+
 Predicted protein structure data via the AlphaFold Protein Structure Database API (EBI). Uses the `mcp__alphafold__alphafold_data` tool for all queries.
 
 ## Report-First Workflow

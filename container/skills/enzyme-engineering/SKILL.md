@@ -5,6 +5,8 @@ description: "Enzyme engineering, directed evolution, rational design, stability
 
 # Enzyme Engineering
 
+> **ColabFold recipes**: See [colabfold-recipes.md](colabfold-recipes.md) for mutant stability screening, active site geometry validation, and directed evolution structural analysis via ColabFold.
+
 Specialist skill for enzyme engineering, directed evolution, and rational design of industrial and research enzymes. Covers the full pipeline from target enzyme characterization through variant library design, stability engineering, activity screening, kinetic characterization, immobilization, and process optimization for biocatalysis. Integrates computational prediction tools (ESM, FoldX, Rosetta, LigandMPNN, RFdiffusion) with experimental design guidance for high-throughput screening and validation.
 
 ## Report-First Workflow
@@ -19,6 +21,7 @@ Specialist skill for enzyme engineering, directed evolution, and rational design
 
 - **Antibody/biologics design, immunogenicity, CDR engineering** -> use protein-therapeutic-design skill
 - **Protein structure retrieval and AlphaFold models** -> use alphafold-structures or pdb-structures skill
+- **Structure prediction for engineered mutants** -> use colabfold-predict skill
 - **Small molecule substrate analysis and ADMET** -> use medicinal-chemistry skill
 - **Pathway context and gene enrichment** -> use systems-biology or gene-enrichment skill
 - **Clinical pharmacology of enzyme therapeutics** -> use clinical-pharmacology skill
