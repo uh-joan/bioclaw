@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  A biomedical AI assistant with 37 MCP-powered research tools and 124 specialized domain skills running securely in containers. Built on <a href="https://github.com/qwibitai/nanoclaw">NanoClaw</a>.
+  A biomedical AI assistant with 37 MCP-powered research tools and 173 specialized domain skills running securely in containers. Built on <a href="https://github.com/qwibitai/nanoclaw">NanoClaw</a>.
 </p>
 
 BioClaw bundles 37 [OpenPharma](https://github.com/openpharma-org) MCP servers directly into the container image — no cloning repos, no configuring paths. One image, zero setup.
@@ -24,16 +24,19 @@ BioClaw bundles 37 [OpenPharma](https://github.com/openpharma-org) MCP servers d
 | **Pharmacogenomics** | [ClinPGx](https://github.com/openpharma-org/clinpgx-mcp-server) |
 | **Healthcare** | [Medicare](https://github.com/openpharma-org/medicare-mcp), [Medicaid](https://github.com/openpharma-org/medicaid-mcp-server), [CDC](https://github.com/openpharma-org/cdc-mcp), [EU Filings](https://github.com/openpharma-org/eu-filings-mcp-server) |
 
-## Agent Skills (124 domain + 30 tooling) + Recipes (75)
+## Agent Skills (141 domain + 32 tooling) + Recipes (110)
 
-The container agent has access to 124 specialized domain skills, 14 superpowers workflow skills, 12 Apify scraping skills, 4 tool skills, and 75 recipe/reference files that guide its reasoning and workflows:
+The container agent has access to 141 specialized domain skills, 14 superpowers workflow skills, 12 Apify scraping skills, 4 tool skills, 2 design pipeline skills, and 110 recipe/reference files that guide its reasoning and workflows:
 
 | Domain | Skills |
 |--------|--------|
 | **Genomics & Variants** | variant-interpretation, variant-analysis, cancer-variant-interpreter, GWAS (SNP interpretation, fine-mapping, trait-to-gene, study explorer, drug discoverer), structural-variant-analysis, copy-number-analysis, rare-disease-diagnosis, comparative-genomics, regulatory-genomics, sequence-retrieval |
 | **Transcriptomics** | rnaseq-deseq2, single-cell-analysis, spatial-transcriptomics, spatial-omics-analysis, ribo-seq-analysis, alternative-splicing, temporal-genomics, gene-enrichment |
 | **Epigenomics** | atac-seq-analysis, chip-seq-analysis, chromatin-conformation, methylation-analysis, rna-modification-analysis, epigenomics |
-| **Proteomics & Structure** | alphafold-structures, pdb-structures, protein-interactions, protein-structure-retrieval, stringdb-interactions, proteomics-analysis, antibody-engineering, protein-therapeutic-design, enzyme-engineering |
+| **Proteomics & Structure** | alphafold-structures, pdb-structures, protein-interactions, protein-structure-retrieval, stringdb-interactions, proteomics-analysis, antibody-engineering, protein-therapeutic-design, enzyme-engineering, biologic-quality |
+| **Structure Prediction** | colabfold-predict, boltz-predict, chai-predict, protenix-predict, highfold-cyclic |
+| **Protein Design** | rfdiffusion-design, rfdiffusion3-design, proteinmpnn-design, caliby-design, bindcraft-design, boltzgen-design, proteina-complexa-design, mosaic-hallucination, pepmlm-design |
+| **Simulation & Dynamics** | molecular-dynamics, bioemu-ensemble |
 | **Pathways & Annotation** | reactome-pathways, kegg-database, geneontology, hpo-phenotypes, uniprot-protein-data, ensembl-genomics, gtex-expression, gene-regulatory-networks |
 | **Multi-Omics** | multi-omics-integration, multiomic-disease-characterization, metabolomics-analysis, toxicogenomics, systems-biology |
 | **Drug Discovery** | drug-target-analyst, drug-target-validator, drug-repurposing-analyst, target-research, binder-discovery-specialist, medicinal-chemistry, formulation-science, network-pharmacologist, molecular-glue-discovery, neuroscience-drug-discovery, drug-research |
@@ -96,7 +99,7 @@ Single Node.js process. Agents run in isolated Linux containers with all MCP ser
 Key additions over NanoClaw:
 - `container/Dockerfile.mcp-bundled` — Dockerfile with all MCP servers baked in
 - `container/build-mcp-bundled.sh` — Build script that stages and bundles MCP artifacts
-- `container/skills/` — 154 specialized skill sets with 75 recipe/reference files
+- `container/skills/` — 173 specialized skill sets with 110 recipe/reference files
 
 For the full NanoClaw architecture, see [docs/SPEC.md](docs/SPEC.md).
 
