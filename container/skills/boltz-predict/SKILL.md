@@ -11,6 +11,8 @@ Biomolecular structure and binding affinity prediction using Boltz-2 — the fir
 
 **Key distinction from `colabfold-predict`**: ColabFold predicts protein-only structures (monomers and multimers). Boltz-2 handles the full biomolecular spectrum — protein-ligand complexes, nucleic acids, covalent mods, and uniquely provides binding affinity predictions. Use ColabFold for fast protein-only screening; use Boltz-2 when ligands, nucleic acids, or affinity estimates are needed.
 
+**When to use Chai-1 instead**: If your prediction involves glycans/glycoproteins, you have experimental restraints (crosslinks, known contacts) to guide folding, or you want fast single-sequence mode without MSA, use the `chai-predict` skill. Boltz-2 is better for binding affinity estimation; Chai-1 is better for glycan modeling and restraint-guided predictions.
+
 ## Report-First Workflow
 
 1. **Create report file immediately**: `[complex]_boltz_prediction_report.md` with all section headers

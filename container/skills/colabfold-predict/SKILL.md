@@ -13,6 +13,8 @@ Protein structure prediction specialist using ColabFold — AlphaFold2/Multimer 
 
 **When to use Boltz-2 instead**: If your prediction involves small-molecule ligands, DNA/RNA, covalent modifications, binding affinity estimation, or pocket-conditioned docking, use the `boltz-predict` skill instead. ColabFold is faster for protein-only predictions.
 
+**When to use Chai-1 instead**: If your prediction involves glycans/glycoproteins, experimental restraints (crosslinks, known contacts), or you need fast single-sequence mode without MSA, use the `chai-predict` skill instead.
+
 ## Report-First Workflow
 
 1. **Create report file immediately**: `[protein]_colabfold_prediction_report.md` with all section headers
