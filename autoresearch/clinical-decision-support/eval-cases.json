@@ -1,0 +1,122 @@
+[
+  {
+    "id": "hypertension-first-line",
+    "input": "Recommend first-line antihypertensive therapy for a 55yo Black male with stage 2 hypertension (BP 162/98), no comorbidities, no drug allergies.",
+    "expected_details": {
+      "guideline": "AHA/ACC 2017 or JNC 8",
+      "first_line": ["thiazide diuretic (chlorthalidone/HCTZ)", "CCB (amlodipine)"],
+      "population_specific": "ACE inhibitors/ARBs less effective as monotherapy in Black patients; thiazide or CCB preferred",
+      "should_not_recommend": "ACE/ARB as first-line monotherapy for this patient (population-specific guidance)",
+      "bp_target": "<130/80 mmHg",
+      "required_sections": ["drug_selection", "guideline_basis", "population_considerations", "monitoring"]
+    }
+  },
+  {
+    "id": "depression-ssri-selection",
+    "input": "Select an SSRI for a 35yo female with major depressive disorder, first episode. She is also taking tramadol for chronic back pain. No other medications.",
+    "expected_details": {
+      "preferred_ssri": "avoid strong CYP2D6 inhibitors (paroxetine, fluoxetine) due to tramadol interaction",
+      "recommended": ["sertraline", "escitalopram", "citalopram"],
+      "interaction_concern": "SSRIs + tramadol = serotonin syndrome risk; also CYP2D6 inhibition reduces tramadol → O-desmethyltramadol conversion",
+      "additional_concern": "consider tapering tramadol if possible — dual serotonergic risk",
+      "should_flag_interaction": true,
+      "required_sections": ["drug_selection", "interaction_check", "rationale", "monitoring"]
+    }
+  },
+  {
+    "id": "diabetes-second-line",
+    "input": "Recommend second-line therapy for a 60yo male with T2DM (A1c 8.2% on metformin 2000mg), BMI 34, history of heart failure with reduced ejection fraction (HFrEF). eGFR 55.",
+    "expected_details": {
+      "recommended": "SGLT2 inhibitor (empagliflozin or dapagliflozin)",
+      "rationale": "SGLT2i have proven HF benefit (EMPEROR-Reduced, DAPA-HF), weight loss, and renal protection",
+      "should_not_recommend": ["GLP-1 RA as first add-on (HF benefit less established than SGLT2i for HFrEF)", "pioglitazone (contraindicated in HF)", "saxagliptin (SAVOR-TIMI showed increased HF hospitalization)"],
+      "renal_consideration": "eGFR 55 — SGLT2i still effective for cardiorenal benefits at this eGFR",
+      "required_sections": ["drug_selection", "comorbidity_alignment", "contraindications", "monitoring"]
+    }
+  },
+  {
+    "id": "anticoagulation-afib-selection",
+    "input": "Select an oral anticoagulant for a 72yo female with non-valvular atrial fibrillation. CHA₂DS₂-VASc score 4 (age, female, hypertension, diabetes). CrCl 40 mL/min. No prior bleeding.",
+    "expected_details": {
+      "recommended_class": "DOAC preferred over warfarin",
+      "dose_adjustment_needed": true,
+      "specific_recommendations": {"apixaban": "2.5 mg BID (dose reduced for ≥2 of: age ≥80, weight ≤60kg, Cr ≥1.5)", "rivaroxaban": "15 mg daily with food (CrCl 15-50)", "dabigatran": "caution at CrCl 30-50; 150mg BID or 110mg BID depending on guidelines"},
+      "renal_dosing": "CrCl 40 requires dose adjustment for some DOACs",
+      "warfarin_considerations": "acceptable alternative if DOAC cost prohibitive; INR target 2-3",
+      "required_sections": ["drug_selection", "dose_adjustment", "renal_consideration", "monitoring"]
+    }
+  },
+  {
+    "id": "polypharmacy-interaction-cascade",
+    "input": "A 78yo patient is on: simvastatin 40mg, amlodipine 10mg, diltiazem 240mg, metformin 1000mg, warfarin. Identify all clinically significant interactions.",
+    "expected_details": {
+      "critical_interactions": [
+        {"pair": "simvastatin + diltiazem", "severity": "major", "mechanism": "CYP3A4 inhibition by diltiazem increases simvastatin levels — rhabdomyolysis risk", "action": "switch simvastatin to pravastatin or rosuvastatin, or limit simvastatin to 10mg"},
+        {"pair": "simvastatin + amlodipine", "severity": "moderate", "mechanism": "CYP3A4 inhibition — limit simvastatin to 20mg with amlodipine", "action": "dose cap"},
+        {"pair": "diltiazem + amlodipine", "severity": "moderate", "mechanism": "additive hypotension and bradycardia risk (two CCBs)", "action": "monitor BP/HR; may need to choose one CCB"}
+      ],
+      "triple_interaction": "simvastatin + diltiazem + amlodipine = compounded CYP3A4 inhibition — high rhabdomyolysis risk",
+      "required_sections": ["interaction_matrix", "severity_ranking", "management_plan", "deprescribing_recommendations"]
+    }
+  },
+  {
+    "id": "formulary-substitution",
+    "input": "A hospital formulary restricts brand-name esomeprazole. Recommend a therapeutic alternative for a patient currently on esomeprazole 40mg for GERD.",
+    "expected_details": {
+      "alternatives": ["omeprazole 20-40mg (OTC available, lowest cost)", "lansoprazole 30mg", "pantoprazole 40mg"],
+      "therapeutic_equivalence": "all PPIs are generally equivalent for GERD at equipotent doses",
+      "dose_equivalence": {"esomeprazole_40": "omeprazole 20-40mg, lansoprazole 30mg, pantoprazole 40mg"},
+      "cost_consideration": "omeprazole is cheapest (generic OTC); pantoprazole has fewest drug interactions (CYP2C19)",
+      "special_situations": "if patient on clopidogrel → prefer pantoprazole (least CYP2C19 inhibition)",
+      "required_sections": ["therapeutic_alternatives", "dose_equivalence", "cost_comparison", "special_considerations"]
+    }
+  },
+  {
+    "id": "contraindication-check",
+    "input": "Check contraindications: Can a patient with a history of angioedema from lisinopril take losartan? Can they take sacubitril/valsartan?",
+    "expected_details": {
+      "losartan_assessment": "generally acceptable — ARBs can be used cautiously after ACE-inhibitor angioedema (cross-reactivity rate ~2-8%)",
+      "sacubitril_valsartan": "CONTRAINDICATED within 36 hours of ACE inhibitor; history of ACE-inhibitor angioedema is a relative contraindication due to neprilysin inhibition increasing bradykinin",
+      "nuance": "ACE-inhibitor angioedema is bradykinin-mediated; ARBs don't affect bradykinin; sacubitril increases bradykinin",
+      "monitoring": "if ARB used after ACE-I angioedema: close monitoring for first doses",
+      "required_sections": ["contraindication_assessment", "mechanism", "clinical_recommendation", "monitoring"]
+    }
+  },
+  {
+    "id": "pediatric-weight-based-dosing",
+    "input": "Calculate appropriate ibuprofen dose for a febrile 4-year-old child weighing 18 kg.",
+    "expected_details": {
+      "dose_range": "5-10 mg/kg/dose Q6-8h",
+      "calculated_dose": "90-180 mg per dose",
+      "max_daily": "40 mg/kg/day (720 mg/day for 18 kg)",
+      "formulation": "oral suspension (100 mg/5 mL typical concentration)",
+      "volume_per_dose": "4.5-9 mL per dose",
+      "duration": "use for fever; limit duration; consult if fever persists >3 days",
+      "required_sections": ["dose_calculation", "formulation", "max_dose", "duration"]
+    }
+  },
+  {
+    "id": "renal-dosing-multiple-drugs",
+    "input": "Adjust all medications for a patient with CKD stage 4 (eGFR 22): gabapentin 600mg TID, metformin 1000mg BID, allopurinol 300mg daily, lisinopril 20mg daily.",
+    "expected_details": {
+      "gabapentin": "reduce to 300mg daily or 100-300mg after dialysis (if applicable); significant renal clearance",
+      "metformin": "contraindicated at eGFR <30 (FDA) or use with extreme caution at reduced dose; many guidelines say stop",
+      "allopurinol": "reduce to 100-200mg daily; accumulates in renal impairment → increased hypersensitivity risk",
+      "lisinopril": "generally no dose adjustment needed but monitor potassium and Cr closely; may worsen eGFR acutely",
+      "required_sections": ["dose_adjustments", "contraindications", "monitoring_plan"]
+    }
+  },
+  {
+    "id": "guideline-based-statin-selection",
+    "input": "Recommend statin therapy for a 52yo male with LDL 185 mg/dL, no ASCVD history, no diabetes, 10-year ASCVD risk 12%. No liver disease.",
+    "expected_details": {
+      "guideline": "AHA/ACC 2018 cholesterol guidelines",
+      "risk_category": "LDL ≥190 = high-intensity statin regardless of ASCVD risk (primary prevention)",
+      "wait": "LDL 185 is <190 — falls into intermediate risk (7.5-20% 10-year risk) category",
+      "recommendation": "moderate-to-high intensity statin (atorvastatin 40-80mg or rosuvastatin 20-40mg)",
+      "target": "≥30-50% LDL reduction; some guidelines target LDL <100 or <70",
+      "risk_enhancers_to_check": ["family history", "metabolic syndrome", "South Asian ancestry", "CRP", "ABI", "CAC score"],
+      "required_sections": ["risk_assessment", "drug_selection", "intensity_recommendation", "monitoring"]
+    }
+  }
+]

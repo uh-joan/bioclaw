@@ -1,0 +1,127 @@
+[
+  {
+    "id": "excellent-rct-minor-revisions",
+    "input": "Review this study: Phase 3 double-blind RCT (N=1500) in NEJM. Novel biologic vs placebo for moderate-severe rheumatoid arthritis. Pre-registered, ITT analysis, alpha-spending for interim analysis. Primary endpoint met (ACR50 at 24 weeks: 45% vs 18%, p<0.001). Safety well-characterized. Methods transparent. One concern: subgroup analysis of anti-CCP-negative patients (N=120) shows no benefit but is underpowered.",
+    "expected_decision": "Accept with minor revisions",
+    "expected_details": {
+      "scholareval_range": [33, 38],
+      "methodology_score": [4, 5],
+      "analysis_score": [4, 5],
+      "major_comments": 0,
+      "minor_comments_expected": ["underpowered subgroup caveat should be explicitly stated", "consider post-hoc power calculation for anti-CCP-negative subgroup"],
+      "strengths": ["large N", "pre-registered", "ITT", "alpha-spending appropriate"]
+    }
+  },
+  {
+    "id": "major-statistical-flaws",
+    "input": "Review: Single-center study (N=40) claiming a novel biomarker predicts drug response with 94% accuracy. No independent validation cohort. Feature selection on full dataset before train/test split. P-values not corrected for multiple comparisons (50 biomarkers tested). Published in a specialty journal. No code or data shared.",
+    "expected_decision": "Major revision or Reject",
+    "expected_details": {
+      "scholareval_range": [12, 20],
+      "methodology_score": [1, 2],
+      "analysis_score": [1, 2],
+      "major_comments_expected": ["data leakage from feature selection before split", "no multiple testing correction", "no external validation", "N too small for 50 features", "no data/code sharing"],
+      "should_recommend": "reject unless fundamental redesign with external validation"
+    }
+  },
+  {
+    "id": "well-written-but-incremental",
+    "input": "Review: Well-conducted retrospective cohort study (N=5000) from a claims database. Confirms known association between statin use and reduced colorectal cancer risk (HR 0.85, 95% CI 0.78-0.93). Methods are appropriate (propensity score matching, sensitivity analyses). But: adds little to existing meta-analyses. No novel mechanistic insight.",
+    "expected_decision": "Minor revision (may depend on journal scope)",
+    "expected_details": {
+      "scholareval_range": [26, 32],
+      "methodology_score": [4, 5],
+      "novelty_score": [2, 3],
+      "major_comments": 0,
+      "minor_comments_expected": ["incremental contribution over existing meta-analyses", "discuss what this adds beyond prior studies", "consider confounding by indication despite PSM"],
+      "decision_depends_on": "journal scope — appropriate for specialty journal, not high-impact general"
+    }
+  },
+  {
+    "id": "ethical-concern-flagged",
+    "input": "Review: Clinical study testing an experimental therapy in a vulnerable population (pediatric oncology, ages 2-6). Informed consent documented from parents only (no assent from children where age-appropriate). No DSMB mentioned. Single-arm design with historical controls. Published results show response rate of 60% but 2 treatment-related deaths not prominently discussed.",
+    "expected_decision": "Major revision",
+    "expected_details": {
+      "scholareval_range": [14, 22],
+      "ethics_concerns": ["no pediatric assent where appropriate", "no DSMB for high-risk pediatric study", "treatment-related deaths minimized in reporting"],
+      "major_comments_expected": ["DSMB absence is serious ethical gap", "treatment-related deaths require prominent discussion", "pediatric assent requirements", "historical controls introduce bias"],
+      "should_flag_ethics": true
+    }
+  },
+  {
+    "id": "preprint-methodology-adequate",
+    "input": "Review: bioRxiv preprint. Genomics study with N=200 samples. CRISPR screen + RNA-seq to identify drug resistance genes. Methods well-described. Raw data on GEO. Code on GitHub (Snakemake pipeline). Pre-registered analysis on OSF. However: no independent validation cohort. Only tested in cell lines, not patient samples.",
+    "expected_decision": "Minor revision (suitable for publication after addressing validation limitation)",
+    "expected_details": {
+      "scholareval_range": [28, 34],
+      "methodology_score": [4, 5],
+      "reproducibility_score": [4, 5],
+      "novelty_score": [3, 4],
+      "minor_comments_expected": ["need validation in patient-derived samples", "cell line results may not translate", "discuss generalizability limitations"],
+      "strengths": ["data shared on GEO", "code on GitHub", "pre-registered", "transparent methods"]
+    }
+  },
+  {
+    "id": "grant-proposal-nih-r01",
+    "input": "Review NIH R01 grant proposal: 'mTOR pathway biomarkers for predicting immunotherapy resistance in NSCLC.' PI has strong publication record in the area. Proposed work: multi-omics profiling of 300 NSCLC patients pre- and post-ICI treatment, with machine learning biomarker discovery and prospective validation in independent cohort (N=150). Budget: $1.5M over 5 years. Innovation: integrating single-cell + spatial transcriptomics with clinical outcomes. Weakness: PI has no prior ML experience; no biostatistician named as co-investigator.",
+    "expected_decision": "Score in fundable range with concerns",
+    "expected_details": {
+      "nih_impact_range": [2, 4],
+      "significance_score": [1, 2],
+      "investigator_concern": "no ML/biostats expertise on team",
+      "innovation_score": [2, 3],
+      "approach_score": [2, 4],
+      "major_weakness": "no biostatistician/ML expert as co-I for a study centered on ML biomarker discovery",
+      "minor_strengths": ["strong PI track record", "adequate sample size", "prospective validation planned", "multi-omics innovation"]
+    }
+  },
+  {
+    "id": "figure-manipulation-suspect",
+    "input": "Review: Paper with Western blot images that appear to have duplicated bands across different experimental conditions. Lane 3 in Figure 2A appears identical to Lane 5 in Figure 3B (different experiment, different conditions). Background noise pattern is suspiciously uniform. The paper has no raw/unprocessed blot images in supplementary.",
+    "expected_decision": "Reject — data integrity concern",
+    "expected_details": {
+      "scholareval_range": [8, 15],
+      "data_integrity_flag": true,
+      "major_comments_expected": ["duplicated Western blot bands across figures", "uniform background suggests image manipulation", "no raw blots provided for verification"],
+      "recommendation": "reject and report to journal editor for investigation",
+      "should_flag_manipulation": true
+    }
+  },
+  {
+    "id": "meta-analysis-well-done",
+    "input": "Review: Cochrane-style systematic review and meta-analysis of 25 RCTs. PRISMA 2020 followed. Search across PubMed, Embase, CENTRAL, and grey literature. Two independent reviewers for screening and data extraction. RoB2 assessment for all studies. Random-effects meta-analysis. Pooled OR 1.32 (95% CI 1.15-1.52), I²=35%. Sensitivity analyses and funnel plot with Egger's test (no asymmetry). GRADE assessment provided.",
+    "expected_decision": "Accept with minor revisions",
+    "expected_details": {
+      "scholareval_range": [34, 40],
+      "methodology_score": [5, 5],
+      "analysis_score": [4, 5],
+      "minor_comments_expected": ["I²=35% is acceptable but discuss heterogeneity sources", "consider TSA (trial sequential analysis)"],
+      "strengths": ["Cochrane-level rigor", "comprehensive search", "GRADE", "low heterogeneity", "no publication bias"]
+    }
+  },
+  {
+    "id": "underpowered-pilot-appropriate",
+    "input": "Review: Pilot study (N=30) of a novel intervention. Authors clearly frame it as a pilot/feasibility study. Primary outcomes are feasibility metrics (recruitment rate, adherence, dropout). Secondary outcomes show trends toward efficacy but p=0.08. Authors do not claim efficacy. Sample size calculation for future definitive trial provided.",
+    "expected_decision": "Accept with minor revisions (appropriate for pilot study scope)",
+    "expected_details": {
+      "scholareval_range": [28, 34],
+      "methodology_score": [3, 4],
+      "should_not_penalize_power": true,
+      "key_assessment": "pilot study correctly scoped — feasibility outcomes primary, not efficacy",
+      "minor_comments_expected": ["verify sample size calculation for future trial", "discuss barriers to recruitment"],
+      "mistake_to_avoid": "rejecting because 'underpowered for efficacy' — it's a pilot, not a confirmatory trial"
+    }
+  },
+  {
+    "id": "ai-generated-text-suspect",
+    "input": "Review: Paper with unusually uniform writing style throughout. Several phrases characteristic of AI generation: 'it is important to note that,' 'in the realm of,' 'delve into.' Multiple factual claims lack citations. Two references when checked do not exist (hallucinated citations). The introduction contains a paragraph that is largely paraphrased from a well-known review without attribution.",
+    "expected_decision": "Reject",
+    "expected_details": {
+      "scholareval_range": [8, 16],
+      "major_comments_expected": ["hallucinated references (fabricated citations)", "suspected AI-generated text without disclosure", "unattributed paraphrasing borders on plagiarism"],
+      "data_integrity_flag": true,
+      "should_flag": ["fabricated references", "potential AI generation without declaration", "near-plagiarism"],
+      "recommendation": "reject and flag to editor"
+    }
+  }
+]

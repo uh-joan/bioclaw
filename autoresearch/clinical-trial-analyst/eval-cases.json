@@ -1,0 +1,146 @@
+[
+  {
+    "id": "nsclc-first-line-io",
+    "input": "Design a Phase 3 trial for a novel PD-1 inhibitor as first-line treatment in PD-L1 TPS >=50% advanced NSCLC. Standard of care comparator is pembrolizumab. What endpoint, sample size, and design would you recommend?",
+    "expected_details": {
+      "primary_endpoint": "OS or PFS (co-primary acceptable)",
+      "os_justification": "gold standard for superiority vs active comparator",
+      "comparator": "pembrolizumab 200mg Q3W",
+      "sample_size_range": [600, 1200],
+      "hazard_ratio_target": [0.70, 0.80],
+      "alpha_spending": "O'Brien-Fleming or Lan-DeMets",
+      "interim_analyses": true,
+      "biomarker_enrichment": "PD-L1 TPS >=50%",
+      "must_address": ["PFS-OS discordance risk", "proportional hazards assumption", "crossover impact on OS"],
+      "required_sections": ["endpoint_selection", "sample_size", "interim_analysis", "statistical_design"]
+    }
+  },
+  {
+    "id": "rare-disease-single-arm",
+    "input": "Propose a trial design for a gene therapy in Duchenne muscular dystrophy. Ultra-rare population (<5000 eligible patients globally). No approved disease-modifying therapy. Natural history data available.",
+    "expected_details": {
+      "design": "single-arm with external/historical control",
+      "justification": "ultra-rare population precludes adequately powered RCT",
+      "primary_endpoint": "functional endpoint (e.g., North Star Ambulatory Assessment change from baseline)",
+      "regulatory_pathway": "accelerated approval or RMAT designation",
+      "natural_history_comparator": true,
+      "sample_size_range": [20, 50],
+      "must_address": ["selection bias from historical controls", "FDA RMAT pathway", "long-term follow-up duration"],
+      "required_sections": ["endpoint_selection", "sample_size", "regulatory_considerations", "statistical_design"]
+    }
+  },
+  {
+    "id": "adaptive-platform-basket",
+    "input": "Design a basket trial for NTRK fusion-positive tumors across 5 tumor types (NSCLC, thyroid, salivary gland, soft tissue sarcoma, CRC). How would you handle multiplicity and what endpoints would you use?",
+    "expected_details": {
+      "design": "basket trial with tumor-type-specific cohorts",
+      "primary_endpoint": "ORR (overall response rate) by independent central review",
+      "regulatory_basis": "tumor-agnostic approval pathway (accelerated approval based on ORR)",
+      "multiplicity_approach": "no formal multiplicity correction across baskets (each tumor type assessed independently)",
+      "confirmatory": "DOR as key secondary; PFS and OS exploratory",
+      "sample_size_per_basket": [15, 40],
+      "must_address": ["heterogeneity across tumor types", "minimum response threshold per basket", "Simon two-stage design"],
+      "required_sections": ["endpoint_selection", "sample_size", "statistical_design", "regulatory_considerations"]
+    }
+  },
+  {
+    "id": "superiority-to-noninferiority",
+    "input": "A Phase 3 trial of a new oral anticoagulant vs warfarin for stroke prevention in atrial fibrillation. The sponsor wants a non-inferiority design. What margin, sample size, and statistical approach?",
+    "expected_details": {
+      "design": "non-inferiority, double-blind, double-dummy",
+      "primary_endpoint": "time to stroke or systemic embolism",
+      "ni_margin_range": [1.38, 1.50],
+      "ni_margin_justification": "preserve >=50% of warfarin effect vs placebo (SPAF III, ACTIVE W)",
+      "sample_size_range": [5000, 15000],
+      "analysis_populations": ["ITT for superiority", "per-protocol for non-inferiority (primary)"],
+      "must_address": ["ITT vs per-protocol populations for NI", "assay sensitivity", "constancy assumption", "pre-specified superiority testing if NI met"],
+      "required_sections": ["endpoint_selection", "sample_size", "ni_margin_justification", "statistical_design"]
+    }
+  },
+  {
+    "id": "immuno-oncology-combo",
+    "input": "Phase 3 trial comparing nivolumab + ipilimumab combination vs nivolumab monotherapy in advanced melanoma, second-line after progression on PD-1 inhibitor. What are the key design considerations?",
+    "expected_details": {
+      "primary_endpoint": "OS (preferred) or PFS",
+      "key_challenge": "patients previously exposed to PD-1 — rechallenge context",
+      "comparator_rationale": "nivo mono as active comparator represents retreatment paradigm",
+      "sample_size_range": [400, 800],
+      "stratification_factors": ["BRAF status", "prior best response to PD-1", "LDH"],
+      "must_address": ["prior PD-1 exposure confounding", "immune-related AE monitoring with dual checkpoint", "delayed separation of KM curves", "proportional hazards violation likely"],
+      "ph_violation_remedy": ["RMST", "MaxCombo test", "weighted log-rank"],
+      "required_sections": ["endpoint_selection", "sample_size", "statistical_design", "safety_endpoints"]
+    }
+  },
+  {
+    "id": "biomarker-enrichment-adaptive",
+    "input": "Design an adaptive enrichment Phase 2/3 trial for a CDK4/6 inhibitor in HR+/HER2- breast cancer. You suspect the drug works better in patients with high Ki-67 (>=20%). How would you structure the adaptation?",
+    "expected_details": {
+      "design": "adaptive enrichment (seamless Phase 2/3)",
+      "adaptation_point": "interim analysis after Phase 2 enrollment completes",
+      "biomarker": "Ki-67 >=20% vs <20%",
+      "adaptation_options": ["enrich to Ki-67 high only", "continue all-comers", "stop for futility"],
+      "primary_endpoint": "PFS",
+      "alpha_control": "closed testing procedure or adaptive combination test",
+      "type_i_error_preserved": true,
+      "sample_size_range": [300, 700],
+      "must_address": ["type I error control across adaptations", "operational bias from enrichment decision", "biomarker assay validation"],
+      "required_sections": ["endpoint_selection", "sample_size", "adaptive_design", "biomarker_strategy", "statistical_design"]
+    }
+  },
+  {
+    "id": "safety-focused-post-approval",
+    "input": "FDA requires a post-marketing safety study (REMS) for a newly approved JAK inhibitor. The concern is cardiovascular events (MACE) and malignancy. Design the study.",
+    "expected_details": {
+      "design": "prospective observational cohort or pragmatic RCT",
+      "primary_endpoint": "MACE (composite: CV death, MI, stroke)",
+      "secondary_endpoints": ["malignancy incidence", "VTE", "serious infections"],
+      "comparator": "TNF inhibitor (active comparator, similar indication)",
+      "sample_size_range": [2000, 10000],
+      "follow_up_duration": ">=3 years (minimum for cancer latency)",
+      "must_address": ["confounding by indication", "event adjudication committee", "FDA REMS compliance timeline", "interim safety reviews"],
+      "required_sections": ["endpoint_selection", "sample_size", "statistical_design", "safety_endpoints", "regulatory_considerations"]
+    }
+  },
+  {
+    "id": "futility-interim-analysis",
+    "input": "A Phase 3 trial of an anti-amyloid antibody in early Alzheimer's disease has enrolled 800 of planned 1500 patients. The DSMB wants to conduct a futility interim analysis. What approach do you recommend?",
+    "expected_details": {
+      "futility_method": "conditional power or predictive probability",
+      "conditional_power_threshold": [0.10, 0.20],
+      "information_fraction": "~53% (800/1500)",
+      "primary_endpoint": "CDR-SB change from baseline at 18 months",
+      "recommendation": "non-binding futility boundary (preserves type I error)",
+      "must_address": ["non-binding vs binding futility", "conditional power calculation under current trend", "amyloid-related imaging abnormalities (ARIA) safety review", "dropout rate impact on event accumulation"],
+      "required_sections": ["interim_analysis", "statistical_design", "safety_endpoints"]
+    }
+  },
+  {
+    "id": "pediatric-extrapolation",
+    "input": "FDA requests a pediatric study for an approved adult biologic in moderate-to-severe ulcerative colitis. Propose a study design for ages 6-17.",
+    "expected_details": {
+      "design": "PK/PD study with dose finding, leveraging adult efficacy data",
+      "primary_approach": "pediatric extrapolation framework (similar disease, similar drug response)",
+      "primary_endpoint": "PK exposure matching adult therapeutic range",
+      "efficacy_endpoint": "PUCAI (Pediatric Ulcerative Colitis Activity Index) as supportive",
+      "sample_size_range": [30, 80],
+      "must_address": ["weight-based dosing tiers", "developmental pharmacology differences", "age-stratified PK (6-11 vs 12-17)", "FDA pediatric extrapolation guidance"],
+      "required_sections": ["endpoint_selection", "sample_size", "statistical_design", "regulatory_considerations"]
+    }
+  },
+  {
+    "id": "time-to-event-tricky",
+    "input": "Critique this trial design: A Phase 3 superiority trial of Drug X vs placebo in hepatocellular carcinoma. Primary endpoint: OS. N=600. HR=0.75, alpha=0.05, power=80%. One interim analysis at 50% information. Crossover from placebo to Drug X allowed at progression.",
+    "expected_details": {
+      "key_issues": [
+        "crossover dilutes OS treatment effect",
+        "HR=0.75 may be optimistic for HCC",
+        "crossover requires RPSFT or IPCW adjustment for OS analysis"
+      ],
+      "crossover_remedies": ["RPSFT (rank-preserving structural failure time)", "IPCW (inverse probability of censoring weighting)", "two-stage estimation"],
+      "sample_size_concern": "600 likely underpowered if crossover dilutes HR to 0.85+",
+      "design_improvement": "consider co-primary PFS + OS, or restrict crossover",
+      "must_address": ["crossover impact quantification", "OS dilution factor", "PFS as co-primary", "regulatory precedent (e.g., SHARP, IMbrave150)"],
+      "required_sections": ["endpoint_selection", "sample_size", "statistical_design", "competitive_analysis"]
+    }
+  }
+]

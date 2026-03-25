@@ -1,0 +1,145 @@
+[
+  {
+    "id": "brca1-breast-high-risk",
+    "input": "Stratify: 38yo female, BRCA1 pathogenic germline variant (c.5266dupC), triple-negative breast cancer stage IIIA, ECOG 1. Planned treatment: dose-dense AC-T + olaparib maintenance. CYP2D6 *1/*1, no HLA risk alleles. Charlson comorbidity index 0.",
+    "expected_tier": "VERY HIGH",
+    "expected_details": {
+      "genetic_risk_range": [20, 30],
+      "clinical_risk_range": [12, 18],
+      "molecular_features_range": [15, 25],
+      "pgx_risk_range": [0, 2],
+      "total_score_range": [50, 75],
+      "key_recommendations": ["PARP inhibitor maintenance", "genetic counseling for family", "intensified surveillance"],
+      "rationale": "High-penetrance BRCA1 + advanced stage + actionable for PARP inhibitor"
+    }
+  },
+  {
+    "id": "lynch-crc-moderate",
+    "input": "Stratify: 52yo male, MLH1 pathogenic variant (germline), colorectal cancer stage II (MSI-H/dMMR). ECOG 0. No planned chemotherapy (observation per guidelines for stage II MSI-H). CYP2D6 *1/*2, DPYD *1/*1. Charlson 1 (hypertension).",
+    "expected_tier": "INTERMEDIATE",
+    "expected_details": {
+      "genetic_risk_range": [15, 25],
+      "clinical_risk_range": [3, 8],
+      "molecular_features_range": [5, 15],
+      "pgx_risk_range": [0, 2],
+      "total_score_range": [25, 45],
+      "key_recommendations": ["surveillance colonoscopy", "Lynch syndrome cascade testing", "ICI if recurs"],
+      "rationale": "High genetic risk but early stage + favorable prognosis for MSI-H stage II"
+    }
+  },
+  {
+    "id": "egfr-nsclc-pgx-risk",
+    "input": "Stratify: 65yo female, EGFR L858R somatic mutation, NSCLC stage IV. ECOG 1. Planned treatment: osimertinib. CYP3A4 *1/*22 (reduced function). No germline pathogenic variants. Charlson 2 (diabetes, hypertension).",
+    "expected_tier": "HIGH",
+    "expected_details": {
+      "genetic_risk_range": [0, 5],
+      "clinical_risk_range": [15, 22],
+      "molecular_features_range": [15, 22],
+      "pgx_risk_range": [2, 6],
+      "total_score_range": [40, 55],
+      "key_recommendations": ["osimertinib first-line", "CYP3A4 monitoring", "resistance testing at progression"],
+      "rationale": "Actionable driver + advanced stage; PGx adds modest risk from CYP3A4 reduced function"
+    }
+  },
+  {
+    "id": "dpyd-deficient-crc",
+    "input": "Stratify: 58yo male, colorectal cancer stage III. Planned treatment: FOLFOX. DPYD *1/*2A (heterozygous — intermediate metabolizer). No germline cancer predisposition variants. MSS. ECOG 0. Charlson 0.",
+    "expected_tier": "INTERMEDIATE to HIGH",
+    "expected_details": {
+      "genetic_risk_range": [0, 5],
+      "clinical_risk_range": [10, 15],
+      "molecular_features_range": [0, 5],
+      "pgx_risk_range": [5, 10],
+      "total_score_range": [25, 40],
+      "key_recommendations": ["reduce 5-FU dose by 50%", "therapeutic drug monitoring", "DPYD testing confirmation"],
+      "pgx_critical": true,
+      "rationale": "The PGx finding is the dominant risk driver; DPYD*2A heterozygous = severe toxicity risk without dose reduction"
+    }
+  },
+  {
+    "id": "low-risk-early-prostate",
+    "input": "Stratify: 62yo male, prostate cancer Gleason 3+3=6, stage T1c, PSA 5.2. No germline BRCA1/2 or ATM variants. No actionable somatic mutations. ECOG 0. No PGx concerns (no systemic therapy planned — active surveillance). Charlson 1 (mild COPD).",
+    "expected_tier": "LOW",
+    "expected_details": {
+      "genetic_risk_range": [0, 3],
+      "clinical_risk_range": [0, 5],
+      "molecular_features_range": [0, 3],
+      "pgx_risk_range": [0, 0],
+      "total_score_range": [0, 15],
+      "key_recommendations": ["active surveillance", "PSA monitoring Q6 months", "repeat biopsy per protocol"],
+      "rationale": "Very low risk across all dimensions; active surveillance is guideline-concordant"
+    }
+  },
+  {
+    "id": "hla-b5701-hiv-abacavir",
+    "input": "Stratify: 34yo male, newly diagnosed HIV. Planned ART regimen includes abacavir. HLA-B*57:01 POSITIVE. CD4 count 350. No comorbidities. Charlson 0.",
+    "expected_tier": "INTERMEDIATE",
+    "expected_details": {
+      "genetic_risk_range": [0, 3],
+      "clinical_risk_range": [3, 8],
+      "molecular_features_range": [0, 3],
+      "pgx_risk_range": [5, 10],
+      "total_score_range": [15, 30],
+      "key_recommendations": ["contraindicate abacavir", "switch to alternative NRTI (TAF/TDF)", "HLA-B*57:01 is absolute contraindication"],
+      "pgx_critical": true,
+      "rationale": "PGx risk dominates — HLA-B*57:01 mandates abacavir avoidance"
+    }
+  },
+  {
+    "id": "aml-flt3-itd-complex",
+    "input": "Stratify: 55yo male, AML with FLT3-ITD mutation (allelic ratio 0.7), NPM1 wild-type, adverse cytogenetics (complex karyotype). ECOG 1. Planned: 7+3 induction + midostaurin. CYP3A4 *1/*1 (normal). Charlson 1.",
+    "expected_tier": "VERY HIGH",
+    "expected_details": {
+      "genetic_risk_range": [5, 15],
+      "clinical_risk_range": [18, 25],
+      "molecular_features_range": [15, 22],
+      "pgx_risk_range": [0, 3],
+      "total_score_range": [55, 80],
+      "key_recommendations": ["midostaurin + induction", "allogeneic stem cell transplant in CR1", "MRD monitoring"],
+      "rationale": "FLT3-ITD high ratio + NPM1 wt + adverse cytogenetics = ELN adverse risk; transplant indicated"
+    }
+  },
+  {
+    "id": "multiple-pgx-interactions",
+    "input": "Stratify: 70yo female, breast cancer HR+/HER2-. Planned: tamoxifen. CYP2D6 *4/*4 (poor metabolizer). Also on fluoxetine (strong CYP2D6 inhibitor — phenoconversion irrelevant since already PM). CYP2C19 *2/*2 (PM). Charlson 3 (CHF, diabetes, CKD).",
+    "expected_tier": "HIGH",
+    "expected_details": {
+      "genetic_risk_range": [0, 5],
+      "clinical_risk_range": [12, 20],
+      "molecular_features_range": [3, 10],
+      "pgx_risk_range": [6, 10],
+      "total_score_range": [35, 55],
+      "key_recommendations": ["switch tamoxifen to aromatase inhibitor", "avoid CYP2D6-dependent drugs", "renal dose adjustments"],
+      "pgx_critical": true,
+      "rationale": "CYP2D6 PM = no endoxifen production from tamoxifen; must use AI instead; multiple PGx + comorbidity burden"
+    }
+  },
+  {
+    "id": "tp53-li-fraumeni-surveillance",
+    "input": "Stratify: 25yo female, Li-Fraumeni syndrome (TP53 germline R248W). Currently cancer-free. No somatic findings. ECOG 0. No medications planned. Family history: mother breast cancer age 32, brother osteosarcoma age 14.",
+    "expected_tier": "HIGH",
+    "expected_details": {
+      "genetic_risk_range": [25, 35],
+      "clinical_risk_range": [0, 5],
+      "molecular_features_range": [0, 3],
+      "pgx_risk_range": [0, 0],
+      "total_score_range": [30, 50],
+      "key_recommendations": ["Toronto/NCCN LFS surveillance protocol", "annual whole-body MRI", "breast MRI Q6 months", "avoid radiation exposure", "genetic counseling"],
+      "rationale": "Extremely high genetic risk drives the score despite no current disease; surveillance is lifesaving"
+    }
+  },
+  {
+    "id": "no-actionable-findings",
+    "input": "Stratify: 45yo male, stage I colon cancer (T2N0M0), MSS, TMB-low. No germline pathogenic variants on multigene panel. No actionable somatic mutations. DPYD *1/*1, UGT1A1 *1/*1. ECOG 0. Charlson 0. Planned: surgery alone (no adjuvant chemo for T2N0).",
+    "expected_tier": "LOW",
+    "expected_details": {
+      "genetic_risk_range": [0, 3],
+      "clinical_risk_range": [3, 8],
+      "molecular_features_range": [0, 3],
+      "pgx_risk_range": [0, 0],
+      "total_score_range": [5, 18],
+      "key_recommendations": ["surgery", "standard surveillance colonoscopy", "no adjuvant therapy indicated"],
+      "rationale": "No risk amplifiers across any dimension; standard of care without intensification"
+    }
+  }
+]

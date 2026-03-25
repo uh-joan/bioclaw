@@ -1,0 +1,121 @@
+[
+  {
+    "id": "warfarin-fluconazole-major",
+    "input": "Evaluate the drug-drug interaction between warfarin and fluconazole.",
+    "expected_severity": "Major / Contraindicated",
+    "expected_details": {
+      "mechanism": "CYP2C9 inhibition by fluconazole reduces warfarin metabolism, increasing INR and bleeding risk",
+      "cyp_involved": "CYP2C9 (primary), CYP3A4 (minor)",
+      "effect": "increased warfarin exposure and anticoagulant effect",
+      "management": ["reduce warfarin dose by 25-50%", "monitor INR closely", "consider alternative antifungal"],
+      "evidence_level": "well-documented",
+      "required_sections": ["mechanism", "severity", "management", "alternatives"]
+    }
+  },
+  {
+    "id": "simvastatin-clarithromycin-major",
+    "input": "Evaluate the drug-drug interaction between simvastatin and clarithromycin.",
+    "expected_severity": "Contraindicated",
+    "expected_details": {
+      "mechanism": "strong CYP3A4 inhibition by clarithromycin dramatically increases simvastatin exposure",
+      "cyp_involved": "CYP3A4",
+      "effect": "elevated simvastatin levels → rhabdomyolysis risk",
+      "management": ["contraindicated combination", "suspend simvastatin during clarithromycin course", "use azithromycin as alternative (no CYP3A4 inhibition)"],
+      "alternatives": ["azithromycin (for macrolide)", "pravastatin or rosuvastatin (for statin — not CYP3A4 dependent)"],
+      "required_sections": ["mechanism", "severity", "management", "alternatives"]
+    }
+  },
+  {
+    "id": "ssri-tramadol-serotonin-syndrome",
+    "input": "Evaluate the drug-drug interaction between sertraline and tramadol.",
+    "expected_severity": "Major",
+    "expected_details": {
+      "mechanism_dual": ["pharmacodynamic: additive serotonergic activity → serotonin syndrome risk", "pharmacokinetic: CYP2D6 inhibition by sertraline reduces tramadol → O-desmethyltramadol conversion (reduces analgesic effect)"],
+      "effect": "serotonin syndrome risk + reduced analgesia",
+      "management": ["avoid combination if possible", "if used: monitor for serotonin syndrome symptoms", "consider non-serotonergic analgesic"],
+      "required_sections": ["mechanism", "severity", "management", "alternatives"]
+    }
+  },
+  {
+    "id": "metformin-contrast-moderate",
+    "input": "Evaluate the drug-drug interaction between metformin and iodinated contrast media.",
+    "expected_severity": "Moderate",
+    "expected_details": {
+      "mechanism": "contrast-induced nephropathy reduces metformin clearance → lactic acidosis risk",
+      "effect": "accumulation of metformin if renal function declines post-contrast",
+      "management": ["hold metformin 48h before and after contrast", "check renal function before restarting", "ensure adequate hydration"],
+      "required_sections": ["mechanism", "severity", "management"]
+    }
+  },
+  {
+    "id": "clopidogrel-omeprazole-moderate",
+    "input": "Evaluate the drug-drug interaction between clopidogrel and omeprazole.",
+    "expected_severity": "Moderate to Major",
+    "expected_details": {
+      "mechanism": "CYP2C19 inhibition by omeprazole reduces clopidogrel activation to active metabolite",
+      "cyp_involved": "CYP2C19",
+      "effect": "reduced antiplatelet effect → increased cardiovascular event risk",
+      "management": ["switch to pantoprazole (minimal CYP2C19 inhibition)", "avoid omeprazole/esomeprazole with clopidogrel"],
+      "fda_warning": true,
+      "alternatives": ["pantoprazole", "famotidine (H2 blocker)"],
+      "required_sections": ["mechanism", "severity", "management", "alternatives"]
+    }
+  },
+  {
+    "id": "negative-control-amoxicillin-acetaminophen",
+    "input": "Evaluate the drug-drug interaction between amoxicillin and acetaminophen.",
+    "expected_severity": "Minor / No significant interaction",
+    "expected_details": {
+      "mechanism": "no known clinically significant pharmacokinetic or pharmacodynamic interaction",
+      "should_conclude_no_significant_interaction": true,
+      "management": ["no dose adjustment needed", "safe to co-administer"],
+      "required_sections": ["mechanism", "severity"]
+    }
+  },
+  {
+    "id": "lithium-nsaid-major",
+    "input": "Evaluate the drug-drug interaction between lithium and ibuprofen.",
+    "expected_severity": "Major",
+    "expected_details": {
+      "mechanism": "NSAIDs reduce renal prostaglandin synthesis → decreased lithium renal clearance → lithium toxicity",
+      "effect": "lithium level increase by 15-50%",
+      "management": ["monitor lithium levels closely", "reduce lithium dose if NSAID needed", "prefer sulindac or aspirin (lower effect)", "avoid prolonged NSAID use"],
+      "required_sections": ["mechanism", "severity", "management", "alternatives"]
+    }
+  },
+  {
+    "id": "rifampin-ocp-major",
+    "input": "Evaluate the drug-drug interaction between rifampin and combined oral contraceptives (ethinyl estradiol/levonorgestrel).",
+    "expected_severity": "Major",
+    "expected_details": {
+      "mechanism": "rifampin is a potent CYP3A4 and CYP2C9 inducer → dramatically increases metabolism of ethinyl estradiol and progestins",
+      "cyp_involved": ["CYP3A4", "CYP2C9"],
+      "effect": "contraceptive failure → unintended pregnancy",
+      "management": ["use non-hormonal contraception during rifampin and for 28 days after", "backup contraception mandatory"],
+      "required_sections": ["mechanism", "severity", "management", "alternatives"]
+    }
+  },
+  {
+    "id": "digoxin-amiodarone-major",
+    "input": "Evaluate the drug-drug interaction between digoxin and amiodarone.",
+    "expected_severity": "Major",
+    "expected_details": {
+      "mechanism": "amiodarone inhibits P-glycoprotein and renal tubular secretion of digoxin",
+      "transporter": "P-glycoprotein (ABCB1)",
+      "effect": "digoxin levels increase 50-100% → toxicity risk (arrhythmia, nausea, visual disturbance)",
+      "management": ["reduce digoxin dose by 50% when starting amiodarone", "monitor digoxin levels", "watch for toxicity signs"],
+      "required_sections": ["mechanism", "severity", "management"]
+    }
+  },
+  {
+    "id": "maoi-tyramine-contraindicated",
+    "input": "Evaluate the interaction between phenelzine (MAOI) and tyramine-rich foods (aged cheese, fermented products).",
+    "expected_severity": "Contraindicated",
+    "expected_details": {
+      "mechanism": "MAO-A inhibition prevents tyramine metabolism in gut and liver → systemic tyramine causes norepinephrine release → hypertensive crisis",
+      "effect": "severe hypertensive crisis (potentially fatal)",
+      "management": ["strict dietary tyramine restriction mandatory", "avoid aged cheese, fermented foods, cured meats, draft beer", "patient education critical"],
+      "required_sections": ["mechanism", "severity", "management"]
+    }
+  }
+]

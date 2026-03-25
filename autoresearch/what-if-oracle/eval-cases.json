@@ -1,0 +1,109 @@
+[
+  {
+    "id": "phase3-miss-contingency",
+    "input": "Model scenarios for: Your lead asset (PD-1 inhibitor + novel ADC combination) misses its Phase 3 primary endpoint (PFS) in first-line NSCLC by a narrow margin (HR 0.82, p=0.06). What are the options?",
+    "expected_details": {
+      "branches_required": ["regulatory salvage (supplemental analysis)", "pivotal redesign", "indication pivot", "partnership/licensing", "program termination"],
+      "probabilities_must_sum": true,
+      "key_factors": ["HR trend is positive but not significant", "OS data immature — may mature favorably", "subgroup analysis may show benefit in biomarker-defined population", "competitor landscape"],
+      "decision_confidence_range": [30, 55],
+      "trigger_conditions_expected": true,
+      "required_sections": ["scenario_branches", "probability_weighting", "trigger_conditions", "hedge_strategies", "decision_framework"]
+    }
+  },
+  {
+    "id": "patent-cliff-portfolio-strategy",
+    "input": "Model scenarios for a pharma company whose top revenue product ($8B/year) loses patent exclusivity in 18 months. What strategic options exist?",
+    "expected_details": {
+      "branches_required": ["authorized generic launch", "next-gen formulation/delivery", "lifecycle management (new indication)", "M&A to replace revenue", "accept decline and cut costs"],
+      "key_factors": ["biosimilar/generic competition timeline", "pipeline assets to fill gap", "cash reserves for M&A", "current indication expansion potential"],
+      "decision_confidence_range": [40, 65],
+      "required_sections": ["scenario_branches", "probability_weighting", "financial_impact", "decision_framework"]
+    }
+  },
+  {
+    "id": "safety-signal-response",
+    "input": "Model scenarios: Your approved drug (JAK inhibitor for RA) just received a new boxed warning for MACE events based on a post-marketing safety study. Model the impact and response options.",
+    "expected_details": {
+      "branches_required": ["market share loss to biologics", "label defense with risk management", "indication restriction", "voluntary market withdrawal", "differentiation via selectivity messaging"],
+      "key_factors": ["ORAL Surveillance precedent (tofacitinib)", "class effect vs drug-specific signal", "prescriber behavior change", "payer formulary repositioning"],
+      "decision_confidence_range": [35, 55],
+      "should_model_revenue_impact": true,
+      "required_sections": ["scenario_branches", "probability_weighting", "revenue_impact", "risk_mitigation"]
+    }
+  },
+  {
+    "id": "go-nogo-early-pipeline",
+    "input": "Model go/no-go decision: Novel allosteric KRAS inhibitor with IC50 30 nM, moderate oral bioavailability (35%), and 60% TGI in PDX model. IND-enabling studies will cost $5M. Competitor (MRTX1133) is 1 year ahead in Phase 1.",
+    "expected_details": {
+      "branches_required": ["proceed to IND (go)", "proceed with de-risking studies first (conditional go)", "license compound to partner", "shelve program (no-go)"],
+      "key_factors": ["competitive timing gap", "differentiation potential", "cost of IND package", "opportunity cost vs other pipeline assets", "KRAS G12D space validation"],
+      "decision_confidence_range": [40, 60],
+      "required_sections": ["scenario_branches", "probability_weighting", "competitive_timing", "decision_framework"]
+    }
+  },
+  {
+    "id": "platform-technology-bet",
+    "input": "Model scenarios: Should a biotech invest $50M in building an mRNA manufacturing platform for oncology, given that mRNA vaccines succeeded for COVID but oncology mRNA is unproven?",
+    "expected_details": {
+      "branches_required": ["mRNA oncology succeeds (platform becomes valuable)", "mRNA oncology fails (stranded asset)", "partial success (niche applications only)", "pivot platform to other therapeutic areas", "license platform to partners"],
+      "key_factors": ["BioNTech/Moderna oncology pipeline progress", "manufacturing complexity for individualized vaccines", "capital requirements vs expected revenue", "alternative platform investments"],
+      "decision_confidence_range": [35, 55],
+      "wildcard_expected": true,
+      "required_sections": ["scenario_branches", "probability_weighting", "financial_modeling", "hedge_strategies"]
+    }
+  },
+  {
+    "id": "regulatory-pathway-uncertainty",
+    "input": "Model scenarios for FDA submission strategy: You have positive Phase 2 data (ORR 38%, N=80) for a novel agent in a rare sarcoma. Options: seek accelerated approval now vs wait for Phase 3 OS data (24 months away).",
+    "expected_details": {
+      "branches_required": ["accelerated approval granted", "accelerated approval refused (insufficient surrogate)", "file after Phase 3 (traditional approval)", "conditional: file now with Phase 3 running as confirmatory"],
+      "key_factors": ["unmet need in rare sarcoma", "ORR as surrogate acceptability", "advisory committee dynamics", "confirmatory trial feasibility", "competitor timing"],
+      "decision_confidence_range": [45, 65],
+      "required_sections": ["scenario_branches", "probability_weighting", "regulatory_precedent", "decision_framework"]
+    }
+  },
+  {
+    "id": "simple-binary-decision",
+    "input": "Model: Should we add a biomarker enrichment strategy to our Phase 3 trial (restrict to PD-L1 ≥50%) vs run all-comers? The Phase 2 subgroup showed HR 0.55 in PD-L1 high vs HR 0.88 in PD-L1 low.",
+    "expected_details": {
+      "branches_required": ["enrich (PD-L1 ≥50% only)", "all-comers", "adaptive enrichment (start all-comers, enrich at interim)"],
+      "key_factors": ["enrichment increases effect size but shrinks market", "all-comers preserves broad label", "adaptive balances both", "enrollment feasibility of enriched population"],
+      "decision_confidence_range": [50, 70],
+      "recommended_branch": "adaptive enrichment with pre-specified decision rules",
+      "required_sections": ["scenario_branches", "probability_weighting", "market_impact", "decision_framework"]
+    }
+  },
+  {
+    "id": "macro-disruption-scenario",
+    "input": "Model scenarios: IRA (Inflation Reduction Act) Medicare drug price negotiation expands to cover all drugs after 5 years on market (currently 9 years for small molecules). How does this affect biotech portfolio strategy?",
+    "expected_details": {
+      "branches_required": ["full expansion passes (5-year threshold)", "partial expansion (7-year compromise)", "expansion blocked (status quo)", "industry adapts with pricing strategies"],
+      "key_factors": ["ROI compressed for small molecules", "biologics advantage (13-year threshold)", "impact on early-stage investment", "orphan drug exemption preservation"],
+      "decision_confidence_range": [30, 50],
+      "strategic_implications": ["shift pipeline toward biologics", "front-load pricing in first 5 years", "increase orphan drug focus"],
+      "required_sections": ["scenario_branches", "probability_weighting", "portfolio_impact", "strategic_recommendations"]
+    }
+  },
+  {
+    "id": "combination-vs-monotherapy",
+    "input": "Model: Phase 2 data shows your CDK4/6 inhibitor has ORR 25% as monotherapy vs ORR 52% in combination with fulvestrant in HR+/HER2- breast cancer. Should you pursue monotherapy, combination, or both in Phase 3?",
+    "expected_details": {
+      "branches_required": ["combination only Phase 3", "monotherapy + combination (two trials)", "combination with monotherapy as secondary endpoint", "abandon monotherapy, combination only"],
+      "key_factors": ["monotherapy ORR 25% is marginal for approval alone", "combination 52% is competitive with palbociclib/ribociclib", "two Phase 3 trials = 2x cost and complexity", "monotherapy label would be valuable but risky"],
+      "decision_confidence_range": [55, 75],
+      "recommended_branch": "combination Phase 3 with embedded monotherapy cohort",
+      "required_sections": ["scenario_branches", "probability_weighting", "cost_analysis", "decision_framework"]
+    }
+  },
+  {
+    "id": "geographic-expansion-decision",
+    "input": "Model: Your drug is approved in the US and EU. Should you pursue approval in China (NMPA pathway) vs Japan (PMDA) first? Budget allows one at a time.",
+    "expected_details": {
+      "branches_required": ["China first", "Japan first", "both simultaneously (stretched budget)", "neither (focus on US/EU lifecycle)"],
+      "key_factors": ["China: larger patient population, lower pricing, regulatory complexity, IP concerns", "Japan: higher pricing, well-characterized pathway, bridging study may suffice", "budget constraints", "strategic partnering opportunities in each market"],
+      "decision_confidence_range": [45, 65],
+      "required_sections": ["scenario_branches", "probability_weighting", "market_sizing", "decision_framework"]
+    }
+  }
+]

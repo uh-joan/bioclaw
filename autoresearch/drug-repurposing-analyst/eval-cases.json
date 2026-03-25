@@ -1,0 +1,141 @@
+[
+  {
+    "id": "metformin-cancer-strong",
+    "input": "Evaluate metformin as a repurposing candidate for colorectal cancer prevention. Use all three strategies (target-based, disease-driven, compound-based).",
+    "expected_score_range": [55, 75],
+    "expected_interpretation": "Promising",
+    "expected_details": {
+      "target_association": "moderate (AMPK/mTOR pathway implicated in CRC; epidemiologic evidence of reduced CRC risk in diabetic patients on metformin)",
+      "safety_profile": "excellent (decades on market, well-tolerated, no boxed warnings relevant to CRC population)",
+      "literature_evidence": "strong retrospective/observational data; multiple RCTs ongoing but no definitive prospective result",
+      "drug_properties": "oral, generic, low cost — ideal repurposing profile",
+      "strategies_used": ["target-based (AMPK → cancer)", "disease-driven (CRC → find drugs)", "compound-based (metformin → off-target activity)"],
+      "required_sections": ["strategy_results", "composite_score", "regulatory_pathway", "competitive_landscape"]
+    }
+  },
+  {
+    "id": "thalidomide-myeloma-validated",
+    "input": "Evaluate thalidomide as a repurposing candidate for multiple myeloma. This is a historically validated repurposing success.",
+    "expected_score_range": [80, 100],
+    "expected_interpretation": "Strong candidate",
+    "expected_details": {
+      "target_association": "strong (cereblon/CRBN binding → degradation of IKZF1/IKZF3 → myeloma cell death)",
+      "safety_profile": "significant concerns (teratogenicity, VTE, neuropathy) but manageable with REMS",
+      "literature_evidence": "prospective clinical trial evidence; FDA-approved for this indication",
+      "already_approved": true,
+      "should_note_validated_example": true,
+      "required_sections": ["strategy_results", "composite_score", "safety_mitigation"]
+    }
+  },
+  {
+    "id": "sildenafil-pah-validated",
+    "input": "Evaluate sildenafil as a repurposing candidate for pulmonary arterial hypertension (PAH). Another validated success (Revatio).",
+    "expected_score_range": [85, 100],
+    "expected_interpretation": "Strong candidate",
+    "expected_details": {
+      "target_association": "strong (PDE5 expressed in pulmonary vasculature; cGMP pathway directly relevant to vasodilation)",
+      "safety_profile": "well-characterized from erectile dysfunction use; favorable in PAH population",
+      "literature_evidence": "prospective RCTs (SUPER-1); FDA-approved as Revatio",
+      "already_approved": true,
+      "regulatory_pathway": "505(b)(2) NDA",
+      "required_sections": ["strategy_results", "composite_score", "regulatory_pathway"]
+    }
+  },
+  {
+    "id": "aspirin-crc-prevention-moderate",
+    "input": "Evaluate aspirin as a repurposing candidate for colorectal cancer chemoprevention.",
+    "expected_score_range": [60, 80],
+    "expected_interpretation": "Promising",
+    "expected_details": {
+      "target_association": "strong (COX-2 pathway in colorectal carcinogenesis; prostaglandin-mediated tumor promotion)",
+      "safety_profile": "mixed — GI bleeding risk limits population-wide use; need careful risk-benefit for individual patients",
+      "literature_evidence": "multiple large prospective studies and meta-analyses (USPSTF conditional recommendation for select patients)",
+      "drug_properties": "oral, generic, pennies per dose",
+      "risk_benefit_complexity": true,
+      "required_sections": ["strategy_results", "composite_score", "risk_benefit", "target_population"]
+    }
+  },
+  {
+    "id": "hydroxychloroquine-covid-failed",
+    "input": "Evaluate hydroxychloroquine as a repurposing candidate for COVID-19 treatment. This is a FAILED repurposing attempt.",
+    "expected_score_range": [15, 35],
+    "expected_interpretation": "Weak or Not viable",
+    "expected_details": {
+      "target_association": "weak (in vitro antiviral activity at concentrations unachievable in vivo)",
+      "safety_profile": "QT prolongation risk at higher doses; retinal toxicity with prolonged use",
+      "literature_evidence": "multiple large RCTs (RECOVERY, SOLIDARITY, ORCHID) showed NO benefit",
+      "in_vitro_vs_in_vivo_gap": true,
+      "should_note_failure_reasons": ["effective in vitro concentrations far exceed achievable plasma levels", "no clinical benefit in RCTs", "safety concerns at needed doses"],
+      "lesson": "in vitro activity alone is insufficient for repurposing",
+      "required_sections": ["strategy_results", "composite_score", "failure_analysis"]
+    }
+  },
+  {
+    "id": "propranolol-hemangioma-serendipity",
+    "input": "Evaluate propranolol as a repurposing candidate for infantile hemangioma.",
+    "expected_score_range": [75, 95],
+    "expected_interpretation": "Strong candidate",
+    "expected_details": {
+      "target_association": "moderate (beta-adrenergic signaling in vascular endothelial proliferation; mechanism not fully elucidated)",
+      "safety_profile": "well-characterized in pediatric population (decades of use for cardiac indications)",
+      "literature_evidence": "serendipitous discovery → case series → prospective RCTs → FDA approval (Hemangeol)",
+      "already_approved": true,
+      "discovery_type": "serendipitous clinical observation",
+      "required_sections": ["strategy_results", "composite_score", "discovery_history"]
+    }
+  },
+  {
+    "id": "minoxidil-hair-loss",
+    "input": "Evaluate minoxidil as a repurposing candidate for androgenetic alopecia (hair loss). Classic repurposing example.",
+    "expected_score_range": [80, 100],
+    "expected_interpretation": "Strong candidate",
+    "expected_details": {
+      "target_association": "moderate (potassium channel opener → increased blood flow to follicles; exact mechanism for hair growth not fully understood)",
+      "original_indication": "antihypertensive",
+      "safety_profile": "topical formulation minimizes systemic effects; well-tolerated",
+      "already_approved": true,
+      "required_sections": ["strategy_results", "composite_score"]
+    }
+  },
+  {
+    "id": "ibuprofen-alzheimers-weak",
+    "input": "Evaluate ibuprofen as a repurposing candidate for Alzheimer's disease prevention.",
+    "expected_score_range": [25, 45],
+    "expected_interpretation": "Moderate to Weak",
+    "expected_details": {
+      "target_association": "moderate (COX-2/neuroinflammation hypothesis)",
+      "safety_profile": "GI and CV risks limit long-term use in elderly AD-risk population",
+      "literature_evidence": "epidemiologic association (NSAID users had lower AD incidence) BUT prospective RCTs (ADAPT trial) failed to confirm benefit and showed harm",
+      "should_note_discordance": true,
+      "lesson": "observational association does not guarantee interventional benefit",
+      "required_sections": ["strategy_results", "composite_score", "failure_analysis"]
+    }
+  },
+  {
+    "id": "rapamycin-aging-speculative",
+    "input": "Evaluate rapamycin (sirolimus) as a repurposing candidate for aging/longevity.",
+    "expected_score_range": [30, 50],
+    "expected_interpretation": "Moderate — Needs significant de-risking",
+    "expected_details": {
+      "target_association": "strong preclinical (mTOR is the most validated aging pathway; lifespan extension in multiple model organisms)",
+      "safety_profile": "significant — immunosuppression, metabolic effects, impaired wound healing limit chronic use",
+      "literature_evidence": "strong preclinical; very limited human evidence (PEARL trial in elderly, small studies)",
+      "regulatory_challenge": "aging is not an FDA-recognized disease indication",
+      "required_sections": ["strategy_results", "composite_score", "regulatory_challenge", "safety_mitigation"]
+    }
+  },
+  {
+    "id": "doxycycline-mmp-periodontal",
+    "input": "Evaluate low-dose doxycycline as a repurposing candidate for periodontal disease (as MMP inhibitor, not antibiotic).",
+    "expected_score_range": [75, 95],
+    "expected_interpretation": "Strong candidate",
+    "expected_details": {
+      "target_association": "moderate (matrix metalloproteinase inhibition at sub-antimicrobial doses)",
+      "safety_profile": "excellent at low dose (20mg) — below antimicrobial threshold, minimal GI/resistance concerns",
+      "literature_evidence": "prospective RCTs; FDA-approved as Periostat",
+      "already_approved": true,
+      "novel_mechanism": "repurposed at different dose for different mechanism",
+      "required_sections": ["strategy_results", "composite_score"]
+    }
+  }
+]

@@ -1,0 +1,129 @@
+[
+  {
+    "id": "warfarin-pk-profile",
+    "input": "Extract the complete PK profile for warfarin from regulatory and literature sources. Include all ADME parameters.",
+    "expected_details": {
+      "bioavailability": "~100% (nearly complete oral absorption)",
+      "tmax": "1-4 hours",
+      "protein_binding": "~99% (primarily albumin)",
+      "half_life": "20-60 hours (R-warfarin ~45h, S-warfarin ~29h)",
+      "vd": "~0.14 L/kg",
+      "metabolism": ["CYP2C9 (S-warfarin, more potent enantiomer)", "CYP3A4, CYP1A2 (R-warfarin)"],
+      "narrow_therapeutic_index": true,
+      "tdm_required": true,
+      "required_sections": ["absorption", "distribution", "metabolism", "elimination", "special_populations"]
+    }
+  },
+  {
+    "id": "fih-dose-small-molecule",
+    "input": "Calculate a first-in-human starting dose for a novel kinase inhibitor. Preclinical data: rat NOAEL = 10 mg/kg/day, dog NOAEL = 3 mg/kg/day. Show the NOAEL-based calculation with HED conversion.",
+    "expected_details": {
+      "most_sensitive_species": "dog",
+      "dog_km_ratio": 20,
+      "human_km": 37,
+      "hed_from_dog": "3 * (20/37) = ~1.62 mg/kg",
+      "safety_factor": 10,
+      "fih_dose_mg_kg": "~0.162 mg/kg",
+      "fih_dose_absolute": "~10 mg (for 60 kg human)",
+      "cross_check_rat": "10 * (6/37) = ~1.62 mg/kg HED (same as dog — use dog as most conservative)",
+      "required_sections": ["noael_identification", "hed_calculation", "safety_factor", "fih_dose", "cross_check"]
+    }
+  },
+  {
+    "id": "fih-dose-biologic-mabel",
+    "input": "Calculate a first-in-human starting dose for a novel anti-CD3 bispecific antibody using the MABEL approach. The compound activates T-cells. EC10 from in vitro cytokine release assay = 0.5 mcg/mL.",
+    "expected_details": {
+      "approach": "MABEL (minimum anticipated biological effect level)",
+      "rationale": "T-cell engaging biologic — high-risk target; NOAEL alone insufficient (TGN1412 precedent)",
+      "starting_point": "EC10 from most sensitive pharmacological assay",
+      "safety_factor_range": [10, 100],
+      "should_reference_tgn1412": true,
+      "required_sections": ["mabel_calculation", "safety_factor_justification", "risk_assessment"]
+    }
+  },
+  {
+    "id": "renal-dose-adjustment",
+    "input": "Provide dose adjustment recommendations for vancomycin in a patient with CKD stage 4 (eGFR 20 mL/min). Include TDM targets.",
+    "expected_details": {
+      "normal_dose": "15-20 mg/kg Q8-12h",
+      "ckd4_adjustment": "extend interval (Q24-48h) or reduce dose; guided by TDM",
+      "tdm_target": "AUC/MIC 400-600 (preferred over trough-only monitoring)",
+      "trough_target_range": "15-20 mcg/mL (for serious infections)",
+      "loading_dose": "25-30 mg/kg (not affected by renal function)",
+      "monitoring": "serum creatinine, vancomycin trough/AUC, audiometry for ototoxicity",
+      "required_sections": ["dose_adjustment", "tdm_strategy", "monitoring"]
+    }
+  },
+  {
+    "id": "cyp-ddi-prediction",
+    "input": "Predict the drug-drug interaction risk for a new compound that has CYP3A4 Ki = 0.5 μM and is also a CYP3A4 substrate. The patient is on midazolam. Classify the interaction risk.",
+    "expected_details": {
+      "classification": "strong CYP3A4 inhibitor (Ki < 1 μM)",
+      "midazolam_impact": "expected >5-fold increase in midazolam AUC",
+      "clinical_significance": "major — midazolam is a sensitive CYP3A4 substrate",
+      "r_value_calculation": "R = 1 + [I]/Ki (FDA basic model)",
+      "management": ["contraindicate with sensitive CYP3A4 substrates", "dose reduce less sensitive substrates"],
+      "required_sections": ["inhibition_classification", "auc_ratio_prediction", "clinical_significance", "management"]
+    }
+  },
+  {
+    "id": "pediatric-dosing",
+    "input": "Recommend appropriate dosing for amoxicillin in a 3-year-old child (15 kg) with acute otitis media.",
+    "expected_details": {
+      "standard_dose": "80-90 mg/kg/day divided Q12h (high-dose for AOM)",
+      "calculated_dose": "600-675 mg Q12h",
+      "formulation": "oral suspension (250 mg/5 mL or 400 mg/5 mL)",
+      "duration": "10 days (for age <2) or 5-7 days (for age ≥2)",
+      "pk_considerations": "children have higher weight-normalized clearance than adults; higher mg/kg doses needed",
+      "required_sections": ["dose_calculation", "formulation", "duration", "pk_rationale"]
+    }
+  },
+  {
+    "id": "hepatic-impairment-adjustment",
+    "input": "Provide dose adjustment recommendations for metoprolol in a patient with Child-Pugh C cirrhosis.",
+    "expected_details": {
+      "normal_metabolism": "extensive CYP2D6 first-pass metabolism; oral bioavailability ~50% in normal liver",
+      "cirrhosis_impact": "reduced first-pass metabolism → increased bioavailability → higher systemic exposure",
+      "child_pugh_c_adjustment": "start at lowest dose; titrate slowly; expect 2-3x higher exposure",
+      "monitoring": ["heart rate", "blood pressure", "signs of beta-blocker excess (bradycardia, hypotension)"],
+      "required_sections": ["pk_rationale", "dose_adjustment", "monitoring"]
+    }
+  },
+  {
+    "id": "therapeutic-window-assessment",
+    "input": "Characterize the therapeutic window for lithium. Include TDM strategy, toxic thresholds, and factors affecting levels.",
+    "expected_details": {
+      "therapeutic_range": "0.6-1.2 mEq/L (acute mania: 0.8-1.2; maintenance: 0.6-0.8)",
+      "toxic_threshold": ">1.5 mEq/L (mild toxicity); >2.0 mEq/L (moderate); >2.5 mEq/L (severe/life-threatening)",
+      "narrow_therapeutic_index": true,
+      "tdm_frequency": "weekly during initiation, then Q3-6 months steady state",
+      "factors_affecting_levels": ["renal function", "sodium intake/dehydration", "NSAIDs", "ACE inhibitors", "thiazide diuretics"],
+      "required_sections": ["therapeutic_range", "toxic_thresholds", "tdm_strategy", "level_modifiers"]
+    }
+  },
+  {
+    "id": "obesity-dosing",
+    "input": "Recommend appropriate dosing for enoxaparin in a morbidly obese patient (160 kg, BMI 52) for VTE treatment.",
+    "expected_details": {
+      "standard_dose": "1 mg/kg Q12h",
+      "obesity_controversy": "use of actual body weight vs capped weight is debated",
+      "recommendation": "use actual body weight (1 mg/kg) with anti-Xa monitoring",
+      "max_dose_consideration": "some guidelines suggest capping at 150 mg; monitor anti-Xa",
+      "anti_xa_target": "0.5-1.0 IU/mL at 4 hours post-dose",
+      "monitoring": "anti-Xa levels mandatory in morbid obesity",
+      "required_sections": ["dose_calculation", "weight_basis", "monitoring", "anti_xa_targets"]
+    }
+  },
+  {
+    "id": "drug-food-interaction",
+    "input": "Characterize the drug-food interaction between grapefruit juice and felodipine. Include PK mechanism and clinical significance.",
+    "expected_details": {
+      "mechanism": "grapefruit juice irreversibly inhibits intestinal CYP3A4 → reduced first-pass metabolism → increased felodipine bioavailability",
+      "magnitude": "2-3 fold increase in AUC; up to 5-fold increase in Cmax",
+      "clinical_significance": "major — excessive hypotension, headache, flushing",
+      "duration_of_effect": "CYP3A4 recovery takes 24-72h (de novo enzyme synthesis required)",
+      "management": ["avoid grapefruit juice entirely", "applies to whole grapefruit, not just juice"],
+      "required_sections": ["pk_mechanism", "magnitude", "clinical_significance", "management"]
+    }
+  }
+]

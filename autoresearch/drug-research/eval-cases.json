@@ -1,0 +1,171 @@
+[
+  {
+    "id": "semaglutide-approved",
+    "input": "Generate a comprehensive drug research report for semaglutide.",
+    "expected_details": {
+      "compound_type": "approved",
+      "brand_names": ["Ozempic", "Wegovy", "Rybelsus"],
+      "mechanism": "GLP-1 receptor agonist",
+      "primary_target": "GLP1R",
+      "approved_indications": ["type 2 diabetes", "obesity/weight management", "cardiovascular risk reduction"],
+      "evidence_tier_expected": "T1",
+      "key_trials": ["SUSTAIN", "STEP", "SELECT"],
+      "safety_signals": ["thyroid C-cell tumors (boxed warning)", "pancreatitis", "gallbladder events"],
+      "pgx_relevance": false,
+      "required_sections_count": 11,
+      "required_sections": ["identity", "chemistry", "mechanism", "targets", "admet", "clinical_trials", "safety", "pharmacogenomics", "regulatory", "literature", "executive_summary"]
+    }
+  },
+  {
+    "id": "osimertinib-approved",
+    "input": "Generate a comprehensive drug research report for osimertinib.",
+    "expected_details": {
+      "compound_type": "approved",
+      "brand_names": ["Tagrisso"],
+      "mechanism": "third-generation EGFR TKI (mutant-selective, spares wild-type)",
+      "primary_target": "EGFR (T790M and sensitizing mutations)",
+      "approved_indications": ["NSCLC with EGFR mutations (first-line and T790M+)"],
+      "evidence_tier_expected": "T1",
+      "key_trials": ["FLAURA", "AURA3"],
+      "resistance_mutations": ["C797S", "MET amplification"],
+      "safety_signals": ["ILD/pneumonitis", "QTc prolongation", "cardiomyopathy"],
+      "companion_diagnostic": true,
+      "required_sections_count": 11
+    }
+  },
+  {
+    "id": "lecanemab-controversial",
+    "input": "Generate a comprehensive drug research report for lecanemab.",
+    "expected_details": {
+      "compound_type": "approved (accelerated then traditional)",
+      "brand_names": ["Leqembi"],
+      "mechanism": "anti-amyloid beta protofibril monoclonal antibody",
+      "primary_target": "amyloid beta protofibrils",
+      "approved_indications": ["early Alzheimer's disease"],
+      "evidence_tier_expected": "T1",
+      "key_trials": ["Clarity AD"],
+      "safety_signals": ["ARIA-E (edema)", "ARIA-H (hemorrhage)", "infusion reactions"],
+      "controversial_aspects": ["clinical meaningfulness of CDR-SB change", "ARIA risk especially with ApoE4 homozygotes"],
+      "pgx_relevance": "ApoE4 genotype affects ARIA risk",
+      "required_sections_count": 11
+    }
+  },
+  {
+    "id": "investigational-compound",
+    "input": "Generate a comprehensive drug research report for suzerigotide (investigational GLP-1/GIP/glucagon triple agonist, also known as LY3437943 or retatrutide).",
+    "expected_details": {
+      "compound_type": "investigational",
+      "mechanism": "GLP-1/GIP/glucagon receptor triple agonist",
+      "development_stage": "Phase 3",
+      "evidence_tier_expected": "T2-T3",
+      "key_trials": ["TRIUMPH"],
+      "sections_expected_sparse": ["regulatory", "safety"],
+      "must_note_investigational": true,
+      "required_sections_count": 11,
+      "competitor_context": ["semaglutide", "tirzepatide"]
+    }
+  },
+  {
+    "id": "metformin-classic",
+    "input": "Generate a comprehensive drug research report for metformin.",
+    "expected_details": {
+      "compound_type": "approved (decades)",
+      "brand_names": ["Glucophage"],
+      "mechanism": "biguanide — reduces hepatic glucose production, improves insulin sensitivity",
+      "primary_target": "AMPK pathway (indirect)",
+      "approved_indications": ["type 2 diabetes"],
+      "evidence_tier_expected": "T1",
+      "safety_signals": ["lactic acidosis (boxed warning, rare)", "vitamin B12 deficiency", "GI intolerance"],
+      "pgx_relevance": "SLC22A1 (OCT1) polymorphisms affect response",
+      "generic_available": true,
+      "required_sections_count": 11
+    }
+  },
+  {
+    "id": "trastuzumab-biosimilars",
+    "input": "Generate a comprehensive drug research report for trastuzumab.",
+    "expected_details": {
+      "compound_type": "approved biologic with biosimilars",
+      "brand_names": ["Herceptin"],
+      "mechanism": "anti-HER2 monoclonal antibody",
+      "primary_target": "ERBB2 (HER2)",
+      "approved_indications": ["HER2+ breast cancer", "HER2+ gastric cancer"],
+      "evidence_tier_expected": "T1",
+      "key_trials": ["HERA", "CLEOPATRA", "ToGA"],
+      "safety_signals": ["cardiotoxicity (LVEF decline)", "infusion reactions", "pulmonary toxicity"],
+      "companion_diagnostic": true,
+      "biosimilars_available": true,
+      "required_sections_count": 11
+    }
+  },
+  {
+    "id": "rare-disease-drug",
+    "input": "Generate a comprehensive drug research report for nusinersen.",
+    "expected_details": {
+      "compound_type": "approved orphan drug",
+      "brand_names": ["Spinraza"],
+      "mechanism": "antisense oligonucleotide — modifies SMN2 pre-mRNA splicing to increase functional SMN protein",
+      "primary_target": "SMN2 pre-mRNA",
+      "approved_indications": ["spinal muscular atrophy (SMA)"],
+      "evidence_tier_expected": "T1",
+      "key_trials": ["ENDEAR", "CHERISH"],
+      "safety_signals": ["thrombocytopenia", "renal toxicity", "lumbar puncture procedure risks"],
+      "orphan_designation": true,
+      "competitor_context": ["onasemnogene abeparvovec (Zolgensma)", "risdiplam (Evrysdi)"],
+      "required_sections_count": 11
+    }
+  },
+  {
+    "id": "safety-withdrawn",
+    "input": "Generate a comprehensive drug research report for rofecoxib (Vioxx).",
+    "expected_details": {
+      "compound_type": "withdrawn",
+      "brand_names": ["Vioxx"],
+      "mechanism": "selective COX-2 inhibitor",
+      "primary_target": "PTGS2 (COX-2)",
+      "former_indications": ["osteoarthritis", "acute pain", "dysmenorrhea"],
+      "evidence_tier_expected": "T1",
+      "withdrawal_reason": "cardiovascular events (MI, stroke) — APPROVe trial",
+      "key_trials": ["VIGOR", "APPROVe"],
+      "must_document_withdrawal": true,
+      "regulatory_history": "FDA approved 1999, withdrawn 2004",
+      "required_sections_count": 11
+    }
+  },
+  {
+    "id": "combination-context",
+    "input": "Generate a comprehensive drug research report for lenvatinib, with emphasis on its use in combination regimens.",
+    "expected_details": {
+      "compound_type": "approved",
+      "brand_names": ["Lenvima"],
+      "mechanism": "multi-kinase inhibitor (VEGFR1-3, FGFR1-4, PDGFRa, RET, KIT)",
+      "approved_indications": ["thyroid cancer", "renal cell carcinoma (with pembrolizumab/everolimus)", "hepatocellular carcinoma (with pembrolizumab)", "endometrial carcinoma (with pembrolizumab)"],
+      "combination_emphasis": true,
+      "evidence_tier_expected": "T1",
+      "key_trials": ["CLEAR", "KEYNOTE-775", "LEAP-002"],
+      "safety_signals": ["hypertension", "hepatotoxicity", "arterial thromboembolic events", "proteinuria"],
+      "required_sections_count": 11
+    }
+  },
+  {
+    "id": "pgx-heavy-drug",
+    "input": "Generate a comprehensive drug research report for tamoxifen, with emphasis on pharmacogenomics.",
+    "expected_details": {
+      "compound_type": "approved",
+      "brand_names": ["Nolvadex"],
+      "mechanism": "selective estrogen receptor modulator (SERM) — prodrug requiring CYP2D6 activation to endoxifen",
+      "primary_target": "ESR1 (estrogen receptor alpha)",
+      "approved_indications": ["HR+ breast cancer (adjuvant)", "breast cancer risk reduction"],
+      "evidence_tier_expected": "T1",
+      "pgx_critical": true,
+      "pgx_details": {
+        "gene": "CYP2D6",
+        "cpic_guideline": true,
+        "impact": "PM have reduced endoxifen levels — consider aromatase inhibitor alternative",
+        "fda_label_pgx": true
+      },
+      "drug_interactions": "CYP2D6 inhibitors (paroxetine, fluoxetine) cause phenoconversion",
+      "required_sections_count": 11
+    }
+  }
+]

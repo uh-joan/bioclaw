@@ -1,0 +1,139 @@
+[
+  {
+    "id": "braf-v600e-melanoma",
+    "input": "Classify somatic BRAF V600E mutation found in metastatic melanoma. Patient has no prior targeted therapy.",
+    "expected": "Tier I (Level A)",
+    "expected_details": {
+      "tier": "Tier I",
+      "evidence_level": "A",
+      "actionability": "HIGH",
+      "key_therapies": ["vemurafenib", "dabrafenib", "encorafenib"],
+      "combination_partners": ["cobimetinib", "trametinib", "binimetinib"],
+      "resistance_mutations": ["NRAS Q61", "MEK1/2 mutations", "BRAF amplification", "BRAF splice variants"],
+      "companion_diagnostic": true,
+      "required_sections": ["variant_summary", "amp_classification", "therapeutic_associations", "resistance_mechanisms", "clinical_trials", "actionability_rating"]
+    }
+  },
+  {
+    "id": "kras-g12c-nsclc",
+    "input": "Classify somatic KRAS G12C mutation in non-small cell lung cancer (adenocarcinoma). Patient is treatment-naive.",
+    "expected": "Tier I (Level A)",
+    "expected_details": {
+      "tier": "Tier I",
+      "evidence_level": "A",
+      "actionability": "HIGH",
+      "key_therapies": ["sotorasib", "adagrasib"],
+      "resistance_mutations": ["KRAS Y96D", "KRAS R68S", "MET amplification", "EGFR activation"],
+      "companion_diagnostic": true,
+      "required_sections": ["variant_summary", "amp_classification", "therapeutic_associations", "resistance_mechanisms", "clinical_trials", "actionability_rating"]
+    }
+  },
+  {
+    "id": "egfr-t790m-nsclc",
+    "input": "Classify somatic EGFR T790M mutation in NSCLC patient who progressed on erlotinib. Prior EGFR L858R detected at diagnosis.",
+    "expected": "Tier I (Level A)",
+    "expected_details": {
+      "tier": "Tier I",
+      "evidence_level": "A",
+      "actionability": "HIGH",
+      "key_therapies": ["osimertinib"],
+      "resistance_context": "acquired resistance to first-gen EGFR TKI",
+      "next_resistance": ["EGFR C797S", "MET amplification", "small cell transformation"],
+      "required_sections": ["variant_summary", "amp_classification", "therapeutic_associations", "resistance_mechanisms", "clinical_trials", "actionability_rating"]
+    }
+  },
+  {
+    "id": "pik3ca-e545k-breast",
+    "input": "Classify somatic PIK3CA E545K mutation in HR+/HER2- metastatic breast cancer. Patient progressed on aromatase inhibitor.",
+    "expected": "Tier I (Level A)",
+    "expected_details": {
+      "tier": "Tier I",
+      "evidence_level": "A",
+      "actionability": "HIGH",
+      "key_therapies": ["alpelisib"],
+      "combination_partners": ["fulvestrant"],
+      "companion_diagnostic": true,
+      "required_sections": ["variant_summary", "amp_classification", "therapeutic_associations", "resistance_mechanisms", "clinical_trials", "actionability_rating"]
+    }
+  },
+  {
+    "id": "idh1-r132h-aml",
+    "input": "Classify somatic IDH1 R132H mutation in newly diagnosed acute myeloid leukemia (AML). Patient age 72, not fit for intensive chemotherapy.",
+    "expected": "Tier I (Level A)",
+    "expected_details": {
+      "tier": "Tier I",
+      "evidence_level": "A",
+      "actionability": "HIGH",
+      "key_therapies": ["ivosidenib"],
+      "combination_context": ["azacitidine"],
+      "biomarker": "IDH1 R132 mutations",
+      "required_sections": ["variant_summary", "amp_classification", "therapeutic_associations", "clinical_trials", "actionability_rating"]
+    }
+  },
+  {
+    "id": "vus-novel-missense-crc",
+    "input": "Classify somatic novel missense variant APC p.Ile1580Val found in colorectal cancer. Not in COSMIC. gnomAD AF 0.0003.",
+    "expected": "Tier III (VUS)",
+    "expected_details": {
+      "tier": "Tier III",
+      "actionability": "UNKNOWN",
+      "rationale": "novel variant without functional data or clinical evidence",
+      "should_not_recommend_therapy": true,
+      "required_sections": ["variant_summary", "amp_classification", "actionability_rating"]
+    }
+  },
+  {
+    "id": "alk-fusion-nsclc",
+    "input": "Classify EML4-ALK fusion (variant 1) detected by FISH in stage IV NSCLC adenocarcinoma. Treatment-naive patient.",
+    "expected": "Tier I (Level A)",
+    "expected_details": {
+      "tier": "Tier I",
+      "evidence_level": "A",
+      "actionability": "HIGH",
+      "key_therapies": ["alectinib", "brigatinib", "lorlatinib", "crizotinib", "ceritinib"],
+      "resistance_mutations": ["ALK G1202R", "ALK L1196M", "ALK I1171T"],
+      "required_sections": ["variant_summary", "amp_classification", "therapeutic_associations", "resistance_mechanisms", "clinical_trials", "actionability_rating"]
+    }
+  },
+  {
+    "id": "msi-h-endometrial",
+    "input": "MSI-H (microsatellite instability-high) detected in advanced endometrial carcinoma. MLH1 promoter methylation confirmed. No POLE mutations.",
+    "expected": "Tier I (Level A)",
+    "expected_details": {
+      "tier": "Tier I",
+      "evidence_level": "A",
+      "actionability": "HIGH",
+      "key_therapies": ["pembrolizumab", "dostarlimab"],
+      "biomarker_type": "MSI-H/dMMR",
+      "tumor_agnostic": true,
+      "required_sections": ["variant_summary", "amp_classification", "therapeutic_associations", "clinical_trials", "actionability_rating"]
+    }
+  },
+  {
+    "id": "fgfr2-fusion-cholangiocarcinoma",
+    "input": "Classify FGFR2-BICC1 fusion in previously treated intrahepatic cholangiocarcinoma.",
+    "expected": "Tier I (Level A)",
+    "expected_details": {
+      "tier": "Tier I",
+      "evidence_level": "A",
+      "actionability": "HIGH",
+      "key_therapies": ["pemigatinib", "futibatinib", "infigratinib"],
+      "resistance_mutations": ["FGFR2 gatekeeper mutations", "FGFR2 V565F"],
+      "required_sections": ["variant_summary", "amp_classification", "therapeutic_associations", "resistance_mechanisms", "clinical_trials", "actionability_rating"]
+    }
+  },
+  {
+    "id": "tp53-r175h-pancreatic",
+    "input": "Classify somatic TP53 R175H mutation in pancreatic ductal adenocarcinoma. Co-occurring KRAS G12D. No MSI-H.",
+    "expected": "Tier II (Level D) or Tier III",
+    "expected_details": {
+      "tier_range": ["Tier II", "Tier III"],
+      "actionability": "LOW",
+      "rationale": "TP53 is prognostic but no approved targeted therapies; investigational only",
+      "should_not_overclassify": true,
+      "prognostic_significance": true,
+      "no_approved_targeted_therapy": true,
+      "required_sections": ["variant_summary", "amp_classification", "prognostic_implications", "clinical_trials", "actionability_rating"]
+    }
+  }
+]

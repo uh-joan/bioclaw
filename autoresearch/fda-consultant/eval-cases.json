@@ -1,0 +1,123 @@
+[
+  {
+    "id": "510k-predicate-search",
+    "input": "A company is developing a new pulse oximeter. Recommend the regulatory pathway and identify potential predicate devices for a 510(k) submission.",
+    "expected_details": {
+      "pathway": "510(k) premarket notification",
+      "product_code": "DQA",
+      "classification": "Class II",
+      "predicate_strategy": "identify substantially equivalent legally marketed devices",
+      "key_comparisons": ["intended use", "technology", "performance characteristics"],
+      "should_mention": ["special controls", "performance testing guidance", "clinical data requirements (if any)"],
+      "required_sections": ["pathway_recommendation", "classification", "predicate_identification", "submission_requirements"]
+    }
+  },
+  {
+    "id": "drug-patent-cliff-analysis",
+    "input": "Analyze the patent cliff for Humira (adalimumab). When do key patents expire? What biosimilars are available?",
+    "expected_details": {
+      "original_approval": "2002",
+      "key_patent_expiry": "2023 (US) — patent thicket strategy extended exclusivity from 2016 to 2023",
+      "biosimilars_available": ["adalimumab-atto (Amjevita)", "adalimumab-adbm (Cyltezo)", "adalimumab-bwwd (Hadlima)"],
+      "interchangeable_status": "Cyltezo was first interchangeable biosimilar",
+      "market_impact": "significant price erosion expected post-2023",
+      "required_sections": ["patent_landscape", "biosimilar_competition", "market_impact"]
+    }
+  },
+  {
+    "id": "accelerated-approval-oncology",
+    "input": "A sponsor has Phase 2 data for a novel kinase inhibitor in a rare sarcoma (ORR 42%, N=60). Recommend a regulatory strategy for FDA approval.",
+    "expected_details": {
+      "pathway": "accelerated approval based on ORR (surrogate endpoint)",
+      "requirements": ["confirmatory Phase 3 trial required post-approval", "breakthrough therapy designation possible", "orphan drug designation if <200K patients"],
+      "surrogate_endpoint": "ORR (objective response rate) by RECIST",
+      "confirmatory_trial": "randomized Phase 3 with OS or PFS as primary endpoint",
+      "designations_to_pursue": ["breakthrough therapy", "orphan drug", "fast track"],
+      "required_sections": ["pathway_recommendation", "designations", "confirmatory_requirements"]
+    }
+  },
+  {
+    "id": "drug-safety-recall-lookup",
+    "input": "Check the recall history and current safety status of ranitidine (Zantac). What happened and why?",
+    "expected_details": {
+      "recall_type": "market withdrawal (2020)",
+      "reason": "NDMA (N-nitrosodimethylamine) contamination — probable carcinogen",
+      "mechanism": "ranitidine molecule is inherently unstable → forms NDMA at elevated temperatures",
+      "fda_action": "requested all manufacturers withdraw ranitidine from market (April 2020)",
+      "scope": "all OTC and prescription ranitidine products",
+      "alternatives": ["famotidine", "cimetidine", "PPIs"],
+      "required_sections": ["recall_history", "safety_signal", "mechanism", "alternatives"]
+    }
+  },
+  {
+    "id": "de-novo-novel-device",
+    "input": "A startup has developed an AI-based diagnostic tool that uses retinal imaging to detect diabetic retinopathy. No predicate exists. Recommend the pathway.",
+    "expected_details": {
+      "pathway": "De Novo classification (novel device, no predicate, low-to-moderate risk)",
+      "precedent": "IDx-DR (first FDA-authorized AI diagnostic device, De Novo 2018)",
+      "classification_expected": "Class II with special controls",
+      "key_requirements": ["clinical validation study", "algorithm performance data (sensitivity, specificity)", "software validation (IEC 62304)", "cybersecurity documentation"],
+      "alternative_pathway": "510(k) using IDx-DR as predicate if substantially equivalent",
+      "required_sections": ["pathway_recommendation", "classification", "precedent_analysis", "submission_requirements"]
+    }
+  },
+  {
+    "id": "orange-book-generic-entry",
+    "input": "A generic company wants to launch a generic version of Eliquis (apixaban). What are the patent and exclusivity barriers?",
+    "expected_details": {
+      "nda_holder": "Bristol-Myers Squibb",
+      "active_patents": "multiple patents including composition of matter and methods of use",
+      "exclusivity_types": ["NCE exclusivity (5 years)", "patent term extensions"],
+      "anda_strategy": "Paragraph IV certification challenging patents",
+      "litigation_risk": "patent infringement lawsuit likely within 45 days of ANDA filing",
+      "required_sections": ["patent_landscape", "exclusivity_analysis", "generic_entry_strategy"]
+    }
+  },
+  {
+    "id": "companion-diagnostic-requirement",
+    "input": "Does osimertinib (Tagrisso) require a companion diagnostic? If so, which one?",
+    "expected_details": {
+      "companion_dx_required": true,
+      "approved_cdx": "cobas EGFR Mutation Test v2 (Roche)",
+      "mutations_tested": ["EGFR exon 19 deletions", "L858R", "T790M"],
+      "requirement_type": "FDA mandated — prescribing requires EGFR mutation confirmation",
+      "alternative_tests": "FDA-approved NGS panels (FoundationOne CDx) also approved",
+      "required_sections": ["cdx_requirement", "approved_tests", "prescribing_implications"]
+    }
+  },
+  {
+    "id": "biosimilar-interchangeability",
+    "input": "Is there an interchangeable biosimilar for insulin glargine (Lantus)? What does interchangeability mean practically?",
+    "expected_details": {
+      "interchangeable_biosimilar": "insulin glargine-yfgn (Semglee) — first interchangeable biosimilar insulin",
+      "practical_meaning": "pharmacist can substitute without prescriber intervention (like generic drugs)",
+      "switching_study_required": true,
+      "distinction": "interchangeable > biosimilar (biosimilar requires prescriber specification; interchangeable allows automatic substitution)",
+      "required_sections": ["interchangeability_status", "practical_implications", "switching_evidence"]
+    }
+  },
+  {
+    "id": "rems-program-lookup",
+    "input": "Does clozapine have a REMS? What are the requirements?",
+    "expected_details": {
+      "rems_required": true,
+      "rems_name": "Clozapine REMS Program",
+      "key_requirement": "mandatory ANC (absolute neutrophil count) monitoring — risk of severe neutropenia/agranulocytosis",
+      "monitoring_schedule": ["weekly ANC for first 6 months", "biweekly for months 6-12", "monthly thereafter"],
+      "elements": ["prescriber certification", "pharmacy certification", "patient enrollment", "ANC monitoring registry"],
+      "dispensing_restriction": "cannot dispense without current ANC result in system",
+      "required_sections": ["rems_requirement", "monitoring_schedule", "dispensing_restrictions"]
+    }
+  },
+  {
+    "id": "pediatric-exclusivity",
+    "input": "Explain pediatric exclusivity for drugs. How much additional exclusivity does it grant? Does it apply to Prozac (fluoxetine)?",
+    "expected_details": {
+      "exclusivity_duration": "6 months additional exclusivity added to all existing patents and exclusivities",
+      "mechanism": "FDA issues Written Request → sponsor conducts pediatric study → if adequate, 6 months granted",
+      "fluoxetine_pediatric": "yes — fluoxetine has pediatric indication (MDD in children ≥8, OCD in children ≥7)",
+      "distinction_from_prea": "pediatric exclusivity is voluntary (incentive-based); PREA is mandatory",
+      "required_sections": ["exclusivity_mechanism", "duration", "application_to_fluoxetine"]
+    }
+  }
+]

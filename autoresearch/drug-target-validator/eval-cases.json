@@ -1,0 +1,128 @@
+[
+  {
+    "id": "egfr-nsclc-tier1",
+    "input": "Validate EGFR as a drug target for NSCLC. Full 10-phase assessment.",
+    "expected_tier": "Tier 1 — GO",
+    "expected_details": {
+      "score_range": [85, 100],
+      "disease_association_range": [22, 25],
+      "druggability_range": [22, 25],
+      "safety_range": [12, 18],
+      "clinical_precedent": 10,
+      "validation_evidence": 10,
+      "rationale": "Clinically validated target with multiple approved TKIs, strong genetic evidence, high druggability"
+    }
+  },
+  {
+    "id": "kras-g12d-pancreatic-caution",
+    "input": "Validate KRAS G12D as a drug target for pancreatic ductal adenocarcinoma.",
+    "expected_tier": "Tier 3 — CAUTION",
+    "expected_details": {
+      "score_range": [40, 58],
+      "disease_association_range": [18, 25],
+      "druggability_range": [8, 16],
+      "clinical_precedent_range": [1, 4],
+      "rationale": "Strong disease association but historically undruggable; G12D inhibitors only now entering clinic; no approved G12D-specific drugs"
+    }
+  },
+  {
+    "id": "pcsk9-hyperlipidemia-go",
+    "input": "Validate PCSK9 as a drug target for familial hypercholesterolemia and ASCVD.",
+    "expected_tier": "Tier 1 — GO",
+    "expected_details": {
+      "score_range": [85, 100],
+      "disease_association_range": [22, 25],
+      "druggability_range": [20, 25],
+      "safety_range": [16, 20],
+      "clinical_precedent": 10,
+      "rationale": "Exceptional human genetic validation (LOF = low LDL + cardioprotection); multiple approved modalities (mAb, siRNA)"
+    }
+  },
+  {
+    "id": "grk2-heart-failure-nogo",
+    "input": "Validate GRK2 as a drug target for heart failure.",
+    "expected_tier": "Tier 4 — NO-GO or Tier 3 — CAUTION",
+    "expected_details": {
+      "score_range": [20, 45],
+      "disease_association_range": [8, 15],
+      "druggability_range": [5, 12],
+      "clinical_precedent_range": [0, 1],
+      "rationale": "Preclinical evidence only; no selective inhibitors in clinic; kinase selectivity challenge"
+    }
+  },
+  {
+    "id": "bcl2-cll-conditional-go",
+    "input": "Validate BCL-2 as a drug target for CLL.",
+    "expected_tier": "Tier 1 — GO or Tier 2 — CONDITIONAL GO",
+    "expected_details": {
+      "score_range": [70, 95],
+      "disease_association_range": [18, 25],
+      "druggability_range": [15, 22],
+      "safety_range": [10, 16],
+      "clinical_precedent": 10,
+      "rationale": "Venetoclax validated; BH3 mimetic class proven; TLS safety concern manageable with ramp-up"
+    }
+  },
+  {
+    "id": "tau-alzheimers-caution",
+    "input": "Validate tau protein (MAPT) as a drug target for Alzheimer's disease.",
+    "expected_tier": "Tier 3 — CAUTION",
+    "expected_details": {
+      "score_range": [35, 55],
+      "disease_association_range": [18, 25],
+      "druggability_range": [5, 12],
+      "clinical_precedent_range": [0, 4],
+      "rationale": "Strong disease association (tau correlates with cognition) but multiple clinical failures; intracellular target; BBB challenge"
+    }
+  },
+  {
+    "id": "pd1-oncology-go",
+    "input": "Validate PD-1 (PDCD1) as a drug target for solid tumors broadly.",
+    "expected_tier": "Tier 1 — GO",
+    "expected_details": {
+      "score_range": [85, 100],
+      "disease_association_range": [20, 25],
+      "druggability_range": [20, 25],
+      "safety_range": [12, 18],
+      "clinical_precedent": 10,
+      "rationale": "Most commercially successful oncology target; multiple approved agents; broad tumor-type applicability"
+    }
+  },
+  {
+    "id": "claudin182-gastric-conditional",
+    "input": "Validate Claudin 18.2 (CLDN18.2) as a drug target for gastric adenocarcinoma.",
+    "expected_tier": "Tier 2 — CONDITIONAL GO",
+    "expected_details": {
+      "score_range": [60, 78],
+      "disease_association_range": [15, 22],
+      "druggability_range": [15, 22],
+      "clinical_precedent_range": [8, 10],
+      "rationale": "Zolbetuximab validated in late-stage trials; restricted normal tissue expression is favorable; multiple modalities in development"
+    }
+  },
+  {
+    "id": "gpbar1-nash-nogo",
+    "input": "Validate GPBAR1 (TGR5) as a drug target for MASH/NASH.",
+    "expected_tier": "Tier 3 — CAUTION or Tier 4 — NO-GO",
+    "expected_details": {
+      "score_range": [25, 48],
+      "disease_association_range": [8, 15],
+      "druggability_range": [10, 18],
+      "clinical_precedent_range": [0, 1],
+      "rationale": "GPCR class is tractable but limited human genetic evidence; gallbladder safety concern; no clinical candidates advanced"
+    }
+  },
+  {
+    "id": "her2-breast-go",
+    "input": "Validate HER2 (ERBB2) as a drug target for HER2-positive breast cancer.",
+    "expected_tier": "Tier 1 — GO",
+    "expected_details": {
+      "score_range": [88, 100],
+      "disease_association_range": [23, 25],
+      "druggability_range": [23, 25],
+      "safety_range": [12, 18],
+      "clinical_precedent": 10,
+      "rationale": "Paradigm-defining target; trastuzumab, pertuzumab, T-DXd, tucatinib all approved; multiple modalities validated"
+    }
+  }
+]

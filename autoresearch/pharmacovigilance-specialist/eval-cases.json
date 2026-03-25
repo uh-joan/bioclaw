@@ -1,0 +1,126 @@
+[
+  {
+    "id": "statin-liver-safety-review",
+    "input": "Conduct a comprehensive safety review of atorvastatin. Focus on hepatotoxicity signal, muscle-related AEs, and diabetes risk.",
+    "expected_details": {
+      "hepatotoxicity": "transaminase elevations (1-3%); serious hepatotoxicity rare; routine LFT monitoring no longer universally recommended",
+      "muscle_aes": {"myalgia": "5-10%", "myopathy": "<0.1%", "rhabdomyolysis": "extremely rare (<0.01%)"},
+      "diabetes_risk": "small increased risk of new-onset diabetes (OR ~1.1-1.2); benefits outweigh risk in CV prevention",
+      "boxed_warning": false,
+      "risk_factors_for_muscle": ["high dose", "CYP3A4 inhibitors", "renal impairment", "hypothyroidism", "elderly"],
+      "required_sections": ["safety_profile", "signal_assessment", "risk_factors", "benefit_risk", "monitoring_recommendations"]
+    }
+  },
+  {
+    "id": "checkpoint-inhibitor-irae-profile",
+    "input": "Provide a comprehensive immune-related adverse event (irAE) profile for pembrolizumab.",
+    "expected_details": {
+      "common_iraes": {"dermatologic": "15-20% (rash, pruritus)", "endocrine": "10-15% (thyroiditis, hypothyroidism)", "GI": "5-15% (colitis, diarrhea)", "hepatic": "3-10% (hepatitis)", "pulmonary": "2-5% (pneumonitis)"},
+      "rare_serious_iraes": ["myocarditis (<1%, high fatality)", "encephalitis", "nephritis", "type 1 diabetes"],
+      "management_principle": "grade-based: hold for grade 2, discontinue for grade 3-4, high-dose corticosteroids",
+      "fatality_risk": "irAE-related mortality ~0.3-1.3%",
+      "monitoring": "baseline TSH, LFTs, renal function; repeat Q cycle",
+      "required_sections": ["irae_profile", "severity_grading", "management_algorithm", "monitoring"]
+    }
+  },
+  {
+    "id": "nsaid-cv-risk-class-review",
+    "input": "Conduct a class-level safety review of NSAIDs for cardiovascular risk. Compare COX-2 selective vs non-selective.",
+    "expected_details": {
+      "class_effect": true,
+      "cv_risk_mechanism": "COX-2 inhibition → prostacyclin/thromboxane imbalance → pro-thrombotic state",
+      "rofecoxib_precedent": "withdrawn 2004 for CV events (APPROVe trial)",
+      "naproxen_exception": "may have lower CV risk due to sustained COX-1 inhibition (antiplatelet effect)",
+      "fda_boxed_warning": "class-wide CV risk warning on all NSAIDs (2005, strengthened 2015)",
+      "relative_risk": {"celecoxib": "similar to nonselective NSAIDs at standard doses (PRECISION trial)", "diclofenac": "highest CV risk among non-selective NSAIDs", "naproxen": "lowest CV risk"},
+      "required_sections": ["class_effect_assessment", "mechanism", "comparative_safety", "regulatory_history", "prescribing_guidance"]
+    }
+  },
+  {
+    "id": "fluoroquinolone-multiorgansafety",
+    "input": "Provide a comprehensive safety profile for ciprofloxacin covering all FDA-warned adverse effects.",
+    "expected_details": {
+      "boxed_warnings": ["tendinitis/tendon rupture", "peripheral neuropathy", "CNS effects"],
+      "additional_warnings": ["aortic dissection/aneurysm", "hypoglycemia (with sulfonylureas)", "C. difficile colitis", "QT prolongation", "musculoskeletal effects in pediatrics"],
+      "tendon_risk_factors": ["age >60", "corticosteroid use", "renal impairment", "organ transplant"],
+      "fda_safety_communication_history": ["2008 (tendon)", "2013 (neuropathy)", "2016 (disabling and potentially permanent effects)", "2018 (aortic dissection)"],
+      "prescribing_restriction": "FDA recommends against use for uncomplicated infections when alternatives exist",
+      "required_sections": ["safety_profile", "boxed_warnings", "risk_factors", "fda_communications", "prescribing_guidance"]
+    }
+  },
+  {
+    "id": "benefit-risk-opioid",
+    "input": "Conduct a benefit-risk assessment for long-term opioid therapy (oxycodone) in chronic non-cancer pain.",
+    "expected_details": {
+      "benefits": "moderate short-term pain reduction; limited evidence for long-term benefit",
+      "risks": ["physical dependence", "tolerance", "opioid use disorder", "respiratory depression", "constipation", "hormonal disruption", "overdose death"],
+      "benefit_risk_assessment": "risks generally outweigh benefits for long-term use in chronic non-cancer pain",
+      "guidelines": "CDC 2022 guideline recommends non-opioid therapies first; lowest effective dose if opioids used; regular reassessment",
+      "rems": "class-wide opioid REMS (patient education, prescriber training)",
+      "monitoring": ["PDMP (prescription drug monitoring program)", "urine drug testing", "functional assessment", "naloxone co-prescribing"],
+      "required_sections": ["benefit_assessment", "risk_assessment", "benefit_risk_conclusion", "monitoring", "regulatory_context"]
+    }
+  },
+  {
+    "id": "pediatric-safety-ssri",
+    "input": "Review the safety profile of SSRIs in pediatric patients (ages 6-17), focusing on the suicidality boxed warning.",
+    "expected_details": {
+      "boxed_warning": "increased risk of suicidal thinking and behavior in children, adolescents, and young adults (18-24)",
+      "evidence_basis": "FDA meta-analysis of 24 trials: 4% suicidality in drug group vs 2% in placebo (no completed suicides)",
+      "clinical_paradox": "untreated depression also increases suicide risk; black box may deter appropriate treatment",
+      "approved_pediatric_ssris": ["fluoxetine (MDD ≥8, OCD ≥7)", "escitalopram (MDD ≥12)", "sertraline (OCD ≥6)", "fluvoxamine (OCD ≥8)"],
+      "monitoring_requirement": "weekly visits for first 4 weeks, biweekly for next 4 weeks",
+      "required_sections": ["boxed_warning", "evidence_basis", "clinical_context", "monitoring", "prescribing_guidance"]
+    }
+  },
+  {
+    "id": "drug-withdrawal-case-study",
+    "input": "Document the pharmacovigilance timeline for the withdrawal of valdecoxib (Bextra). What safety signals led to withdrawal?",
+    "expected_details": {
+      "drug": "valdecoxib (Bextra)",
+      "class": "selective COX-2 inhibitor",
+      "approval_date": "2001",
+      "withdrawal_date": "April 2005",
+      "safety_signals": ["cardiovascular events (class effect, post-Vioxx scrutiny)", "serious skin reactions (Stevens-Johnson syndrome, toxic epidermal necrolysis)", "increased CV risk in CABG patients"],
+      "regulatory_action": "FDA requested voluntary withdrawal; manufacturer (Pfizer) complied",
+      "context": "withdrew in wake of rofecoxib (Vioxx) withdrawal; valdecoxib had additional skin toxicity concern",
+      "required_sections": ["drug_history", "safety_signals", "regulatory_timeline", "lessons_learned"]
+    }
+  },
+  {
+    "id": "pregnancy-safety-assessment",
+    "input": "Assess the safety of valproic acid in pregnancy. What is the risk classification and what are the alternatives?",
+    "expected_details": {
+      "pregnancy_category": "Category X (contraindicated)",
+      "teratogenicity": "neural tube defects (spina bifida) in 1-2% of exposed pregnancies (10x baseline risk)",
+      "other_risks": ["reduced IQ in exposed children (NEAD study)", "autism spectrum disorder", "craniofacial defects", "cardiac malformations"],
+      "fda_actions": ["boxed warning for teratogenicity", "pregnancy exposure registry", "mandatory pregnancy testing before prescribing to women of childbearing potential"],
+      "alternatives": {"epilepsy": "lamotrigine, levetiracetam", "bipolar": "lithium (lower risk but still monitored), lamotrigine", "migraine": "propranolol, amitriptyline"},
+      "required_sections": ["teratogenicity_profile", "risk_quantification", "regulatory_requirements", "alternatives"]
+    }
+  },
+  {
+    "id": "real-world-evidence-signal",
+    "input": "A large insurance claims database study (N=500,000) shows a statistically significant association between PPI use and dementia risk (HR 1.44, 95% CI 1.36-1.52). Evaluate this pharmacovigilance signal.",
+    "expected_details": {
+      "signal_assessment": "potential signal requiring further investigation but confounding likely",
+      "key_concerns": ["confounding by indication (GERD ↔ H. pylori ↔ dementia?)", "protopathic bias (PPIs for prodromal GI symptoms of dementia)", "healthy user bias", "residual confounding despite adjustment"],
+      "supporting_evidence": "some mechanistic plausibility (vitamin B12 deficiency, amyloid interaction)",
+      "contradicting_evidence": "large RCTs (ASPREE) have not confirmed association; European cohorts show null results",
+      "assessment": "likely confounded; not sufficient to change prescribing practice without RCT confirmation",
+      "required_sections": ["signal_description", "confounding_assessment", "evidence_review", "clinical_recommendation"]
+    }
+  },
+  {
+    "id": "adverse-event-reporting-psur",
+    "input": "Outline the structure and requirements for a Periodic Safety Update Report (PSUR/PBRER) for a newly approved oncology biologic. What are the key sections and timeline?",
+    "expected_details": {
+      "format": "ICH E2C(R2) / PBRER format",
+      "timeline": "every 6 months for first 2 years, annually for next 2 years, then every 3 years",
+      "key_sections": ["executive summary", "worldwide marketing authorization status", "estimated patient exposure", "summary tabulation of serious AEs", "signal evaluation", "benefit-risk analysis", "conclusion"],
+      "data_lock_point": "international birth date (IBD) of the product",
+      "additional_for_oncology": ["irAE section if immunotherapy", "secondary malignancy tracking", "pregnancy exposure outcomes"],
+      "required_sections": ["psur_structure", "timeline", "data_requirements", "regulatory_submission"]
+    }
+  }
+]

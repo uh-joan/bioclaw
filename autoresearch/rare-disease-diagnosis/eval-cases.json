@@ -1,0 +1,140 @@
+[
+  {
+    "id": "marfan-classic",
+    "input": "Patient: 19yo male. Phenotypes: tall stature, arachnodactyly, pectus excavatum, bilateral lens subluxation (ectopia lentis), mitral valve prolapse, aortic root dilation (z-score 3.2), positive wrist and thumb signs, high-arched palate, scoliosis. Family history: father died of aortic dissection at age 42.",
+    "expected_diagnosis": "Marfan syndrome",
+    "expected_details": {
+      "gene": "FBN1",
+      "inheritance": "autosomal dominant",
+      "key_hpo_terms": ["HP:0001166", "HP:0001083", "HP:0001634", "HP:0002616", "HP:0000768"],
+      "diagnostic_criteria": "revised Ghent nosology",
+      "differential_should_include": ["Loeys-Dietz syndrome", "Ehlers-Danlos syndrome (vascular type)"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel", "variant_classification"]
+    }
+  },
+  {
+    "id": "rett-syndrome",
+    "input": "Patient: 3yo female. Normal development until 12 months, then progressive loss of hand skills and spoken language. Stereotypic hand movements (hand wringing). Deceleration of head growth. Breathing irregularities (hyperventilation episodes). Gait abnormalities. Seizures starting at age 2.",
+    "expected_diagnosis": "Rett syndrome",
+    "expected_details": {
+      "gene": "MECP2",
+      "inheritance": "X-linked dominant (de novo)",
+      "key_hpo_terms": ["HP:0002376", "HP:0000733", "HP:0002370", "HP:0010864", "HP:0012469"],
+      "differential_should_include": ["FOXG1 syndrome", "CDKL5 deficiency", "Angelman syndrome"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel", "treatment_options"]
+    }
+  },
+  {
+    "id": "fabry-disease-late",
+    "input": "Patient: 45yo male. Unexplained left ventricular hypertrophy (LVH) not attributable to hypertension. Proteinuria. Recurrent stroke-like episodes. Cornea verticillata on slit lamp exam. History of childhood acroparesthesias (burning pain in hands and feet) that resolved. Reduced sweating. Plasma alpha-galactosidase A activity: 2% of normal.",
+    "expected_diagnosis": "Fabry disease",
+    "expected_details": {
+      "gene": "GLA",
+      "inheritance": "X-linked",
+      "key_hpo_terms": ["HP:0001639", "HP:0000093", "HP:0007957", "HP:0001945"],
+      "enzymatic_confirmation": "alpha-galactosidase A deficiency",
+      "treatment": ["enzyme replacement therapy (agalsidase)", "migalastat (chaperone therapy)"],
+      "differential_should_include": ["hypertrophic cardiomyopathy", "amyloidosis"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel", "treatment_options"]
+    }
+  },
+  {
+    "id": "wilson-disease",
+    "input": "Patient: 14yo male. Hepatomegaly discovered incidentally. AST/ALT mildly elevated. Kayser-Fleischer rings on slit lamp exam. Low serum ceruloplasmin (8 mg/dL, normal >20). Elevated 24-hour urine copper (180 mcg, normal <40). Neuropsychiatric symptoms: tremor, dysarthria, personality changes.",
+    "expected_diagnosis": "Wilson disease",
+    "expected_details": {
+      "gene": "ATP7B",
+      "inheritance": "autosomal recessive",
+      "key_hpo_terms": ["HP:0002240", "HP:0012743", "HP:0001347", "HP:0001260"],
+      "biochemical_markers": ["low ceruloplasmin", "elevated urine copper", "Kayser-Fleischer rings"],
+      "treatment": ["penicillamine", "trientine", "zinc"],
+      "differential_should_include": ["autoimmune hepatitis", "NASH", "hemochromatosis"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel", "treatment_options"]
+    }
+  },
+  {
+    "id": "gaucher-type1",
+    "input": "Patient: 8yo Ashkenazi Jewish female. Massive splenomegaly. Hepatomegaly. Thrombocytopenia (platelets 45,000). Anemia. Bone pain in femurs. Erlenmeyer flask deformity on X-ray. No neurological symptoms. Acid beta-glucosidase activity: 15% of normal.",
+    "expected_diagnosis": "Gaucher disease type 1",
+    "expected_details": {
+      "gene": "GBA1",
+      "inheritance": "autosomal recessive",
+      "key_hpo_terms": ["HP:0001744", "HP:0001433", "HP:0001873", "HP:0003155"],
+      "common_variants": ["N370S", "L444P"],
+      "treatment": ["enzyme replacement therapy (imiglucerase/velaglucerase)", "substrate reduction therapy (eliglustat)"],
+      "population_prevalence": "1:850 Ashkenazi Jewish",
+      "differential_should_include": ["Niemann-Pick disease", "other lysosomal storage disorders"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel", "treatment_options"]
+    }
+  },
+  {
+    "id": "ehlers-danlos-vascular",
+    "input": "Patient: 28yo female. Spontaneous sigmoid colon perforation. Thin, translucent skin with visible veins. Easy bruising since childhood. History of pneumothorax at age 22. Characteristic facial features: thin lips, small chin, prominent eyes. Mother had arterial dissection at age 35.",
+    "expected_diagnosis": "Vascular Ehlers-Danlos syndrome (vEDS, type IV)",
+    "expected_details": {
+      "gene": "COL3A1",
+      "inheritance": "autosomal dominant",
+      "key_hpo_terms": ["HP:0002027", "HP:0001075", "HP:0000978", "HP:0002107"],
+      "major_complications": ["arterial rupture", "organ perforation", "uterine rupture"],
+      "differential_should_include": ["Marfan syndrome", "Loeys-Dietz syndrome", "other EDS subtypes"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel", "treatment_options"]
+    }
+  },
+  {
+    "id": "phenylketonuria",
+    "input": "Patient: newborn, positive newborn screen for elevated phenylalanine. Confirmatory plasma phenylalanine: 1200 umol/L (normal <120). Normal BH4 loading test (rules out BH4 deficiency). No tyrosine elevation. Parents are non-consanguineous European descent.",
+    "expected_diagnosis": "Classic phenylketonuria (PKU)",
+    "expected_details": {
+      "gene": "PAH",
+      "inheritance": "autosomal recessive",
+      "key_hpo_terms": ["HP:0004923", "HP:0001249", "HP:0000252"],
+      "treatment": ["phenylalanine-restricted diet", "sapropterin (BH4-responsive cases)", "pegvaliase"],
+      "differential_should_include": ["BH4 deficiency", "mild hyperphenylalaninemia"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel", "treatment_options"]
+    }
+  },
+  {
+    "id": "noonan-syndrome",
+    "input": "Patient: 5yo male. Short stature (3rd percentile). Pulmonary valve stenosis. Characteristic facial features: hypertelorism, downslanting palpebral fissures, low-set posteriorly rotated ears, webbed neck. Cryptorchidism. Mild developmental delay. Easy bruising (factor XI deficiency). Lymphedema of hands and feet at birth that resolved.",
+    "expected_diagnosis": "Noonan syndrome",
+    "expected_details": {
+      "gene": "PTPN11",
+      "gene_alternatives": ["SOS1", "RAF1", "KRAS", "RIT1"],
+      "inheritance": "autosomal dominant",
+      "key_hpo_terms": ["HP:0004322", "HP:0001642", "HP:0000316", "HP:0000465"],
+      "pathway": "RAS-MAPK",
+      "differential_should_include": ["Costello syndrome", "CFC syndrome", "Turner syndrome", "LEOPARD syndrome"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel"]
+    }
+  },
+  {
+    "id": "huntington-ambiguous",
+    "input": "Patient: 42yo male. Progressive chorea for 2 years. Psychiatric symptoms: depression, irritability. Cognitive decline (executive dysfunction). Father had similar symptoms starting at age 50. CAG repeat testing: 38 repeats (reduced penetrance range 36-39).",
+    "expected_diagnosis": "Huntington disease (reduced penetrance)",
+    "expected_details": {
+      "gene": "HTT",
+      "inheritance": "autosomal dominant",
+      "cag_interpretation": "reduced penetrance range — not full penetrance",
+      "key_hpo_terms": ["HP:0002072", "HP:0000716", "HP:0001268"],
+      "should_note_uncertainty": true,
+      "genetic_counseling_emphasis": true,
+      "differential_should_include": ["Huntington disease-like syndromes (HDL1-4)", "SCA17", "DRPLA", "neuroacanthocytosis"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel"]
+    }
+  },
+  {
+    "id": "cftr-atypical",
+    "input": "Patient: 32yo male. Infertility (congenital bilateral absence of vas deferens, CBAVD). Mild recurrent sinusitis. Normal sweat chloride (28 mmol/L). No pancreatic insufficiency. No significant pulmonary disease. Genotyping reveals CFTR F508del / R117H(7T).",
+    "expected_diagnosis": "CFTR-related disorder (atypical/non-classic CF)",
+    "expected_details": {
+      "gene": "CFTR",
+      "inheritance": "autosomal recessive",
+      "classification_nuance": "CFTR-related disorder, NOT classic cystic fibrosis",
+      "key_hpo_terms": ["HP:0012873", "HP:0000246"],
+      "variant_note": "R117H with 7T poly-T tract has variable expressivity",
+      "should_not_diagnose_classic_cf": true,
+      "differential_should_include": ["classic cystic fibrosis", "isolated CBAVD"],
+      "required_sections": ["phenotype_profile", "differential_diagnosis", "gene_panel", "variant_classification"]
+    }
+  }
+]

@@ -1,0 +1,155 @@
+[
+  {
+    "id": "statin-rhabdomyolysis",
+    "input": "Run signal detection for simvastatin and rhabdomyolysis. This is a well-known labeled safety signal. Compute disproportionality measures and Safety Signal Score.",
+    "expected_signal": true,
+    "expected_details": {
+      "signal_classification": "HIGH PRIORITY",
+      "score_range": [70, 100],
+      "prr_signal": true,
+      "ror_signal": true,
+      "biological_plausibility": true,
+      "mechanism": "HMG-CoA reductase inhibition disrupts muscle cell cholesterol synthesis and mitochondrial function",
+      "labeled": true,
+      "literature_support": "systematic_review",
+      "required_output": ["2x2_table", "prr", "ror", "ic", "signal_score", "mechanism_analysis"]
+    }
+  },
+  {
+    "id": "fluoroquinolone-tendon-rupture",
+    "input": "Run signal detection for levofloxacin and tendon rupture. This is a known boxed warning signal. Compute all disproportionality measures.",
+    "expected_signal": true,
+    "expected_details": {
+      "signal_classification": "HIGH PRIORITY",
+      "score_range": [75, 100],
+      "prr_signal": true,
+      "biological_plausibility": true,
+      "mechanism": "fluoroquinolone-mediated collagen degradation via MMP upregulation; oxidative tendon damage",
+      "labeled": true,
+      "fda_boxed_warning": true,
+      "risk_factors": ["age >60", "corticosteroid use", "renal impairment", "organ transplant"],
+      "required_output": ["2x2_table", "prr", "ror", "ic", "signal_score"]
+    }
+  },
+  {
+    "id": "ace-inhibitor-angioedema",
+    "input": "Run signal detection for lisinopril and angioedema.",
+    "expected_signal": true,
+    "expected_details": {
+      "signal_classification": "HIGH PRIORITY",
+      "score_range": [65, 95],
+      "prr_signal": true,
+      "biological_plausibility": true,
+      "mechanism": "ACE inhibition causes bradykinin accumulation leading to vasodilation and tissue edema",
+      "labeled": true,
+      "demographic_pattern": "higher risk in African American patients",
+      "required_output": ["2x2_table", "prr", "ror", "signal_score", "mechanism_analysis"]
+    }
+  },
+  {
+    "id": "nsaid-gi-bleeding-known",
+    "input": "Run signal detection for ibuprofen and gastrointestinal hemorrhage.",
+    "expected_signal": true,
+    "expected_details": {
+      "signal_classification": "MODERATE to HIGH PRIORITY",
+      "score_range": [55, 85],
+      "prr_signal": true,
+      "biological_plausibility": true,
+      "mechanism": "COX-1 inhibition reduces protective prostaglandin synthesis in gastric mucosa",
+      "labeled": true,
+      "required_output": ["2x2_table", "prr", "ror", "signal_score"]
+    }
+  },
+  {
+    "id": "metformin-lactic-acidosis-rare",
+    "input": "Run signal detection for metformin and lactic acidosis. Note: this is a labeled but rare and debated signal.",
+    "expected_signal": true,
+    "expected_details": {
+      "signal_classification": "MODERATE",
+      "score_range": [40, 70],
+      "prr_signal": true,
+      "biological_plausibility": true,
+      "mechanism": "metformin inhibits mitochondrial complex I and hepatic lactate uptake; risk primarily in renal impairment",
+      "labeled": true,
+      "should_note_controversy": true,
+      "nuance": "boxed warning present but causal association debated; risk primarily in contraindicated populations",
+      "required_output": ["2x2_table", "prr", "ror", "signal_score", "mechanism_analysis"]
+    }
+  },
+  {
+    "id": "ssri-hyponatremia-moderate",
+    "input": "Run signal detection for sertraline and hyponatremia (SIADH).",
+    "expected_signal": true,
+    "expected_details": {
+      "signal_classification": "MODERATE",
+      "score_range": [40, 65],
+      "prr_signal": true,
+      "biological_plausibility": true,
+      "mechanism": "SSRI-induced SIADH via serotonergic stimulation of ADH release",
+      "labeled": true,
+      "risk_factors": ["elderly", "female", "low baseline sodium", "diuretic use"],
+      "required_output": ["2x2_table", "prr", "signal_score"]
+    }
+  },
+  {
+    "id": "negative-control-aspirin-alopecia",
+    "input": "Run signal detection for aspirin and alopecia. This is expected to be a NEGATIVE control — no meaningful safety signal expected.",
+    "expected_signal": false,
+    "expected_details": {
+      "signal_classification": "MINIMAL",
+      "score_range": [0, 25],
+      "prr_signal": false,
+      "biological_plausibility": false,
+      "should_conclude_no_signal": true,
+      "required_output": ["2x2_table", "prr", "ror", "signal_score"]
+    }
+  },
+  {
+    "id": "checkpoint-inhibitor-myocarditis",
+    "input": "Run signal detection for nivolumab and myocarditis. This is a rare but serious immune-related adverse event.",
+    "expected_signal": true,
+    "expected_details": {
+      "signal_classification": "HIGH PRIORITY",
+      "score_range": [65, 95],
+      "prr_signal": true,
+      "biological_plausibility": true,
+      "mechanism": "T-cell-mediated autoimmune attack on cardiac myocytes following PD-1 checkpoint release",
+      "labeled": true,
+      "fatality_rate_high": true,
+      "class_effect": true,
+      "required_output": ["2x2_table", "prr", "ror", "signal_score", "mechanism_analysis"]
+    }
+  },
+  {
+    "id": "jak-inhibitor-vte",
+    "input": "Run signal detection for tofacitinib and venous thromboembolism (VTE including PE and DVT). Reference: ORAL Surveillance trial.",
+    "expected_signal": true,
+    "expected_details": {
+      "signal_classification": "HIGH PRIORITY",
+      "score_range": [70, 95],
+      "prr_signal": true,
+      "biological_plausibility": true,
+      "mechanism": "JAK2 inhibition may impair endothelial protective signaling and hemostatic balance",
+      "labeled": true,
+      "fda_boxed_warning": true,
+      "class_effect": true,
+      "required_output": ["2x2_table", "prr", "ror", "signal_score", "mechanism_analysis"]
+    }
+  },
+  {
+    "id": "glp1ra-thyroid-cancer-emerging",
+    "input": "Run signal detection for semaglutide and thyroid cancer (medullary thyroid carcinoma). Note: boxed warning based on rodent data; human signal strength is debated.",
+    "expected_signal": true,
+    "expected_details": {
+      "signal_classification": "MODERATE",
+      "score_range": [35, 65],
+      "biological_plausibility": true,
+      "mechanism": "GLP-1R activation stimulates calcitonin release and C-cell proliferation in rodents; uncertain relevance in humans",
+      "labeled": true,
+      "fda_boxed_warning": true,
+      "should_note_uncertainty": true,
+      "nuance": "rodent signal strong; human epidemiologic evidence conflicting; precautionary labeling",
+      "required_output": ["2x2_table", "prr", "signal_score", "mechanism_analysis"]
+    }
+  }
+]

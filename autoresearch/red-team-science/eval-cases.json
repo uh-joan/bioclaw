@@ -1,0 +1,104 @@
+[
+  {
+    "id": "amyloid-hypothesis-attack",
+    "input": "Red team the amyloid hypothesis for Alzheimer's disease. The claim: 'Clearing amyloid beta plaques will slow cognitive decline in Alzheimer's patients.'",
+    "expected_severity_range": [60, 85],
+    "expected_details": {
+      "key_vulnerabilities": ["decades of clinical trial failures (aducanumab controversy, solanezumab failure)", "amyloid clearance doesn't correlate well with cognitive improvement", "tau pathology correlates better with cognition than amyloid", "many elderly have amyloid plaques without dementia", "lecanemab shows statistical but questionable clinical significance (CDR-SB 0.45 point difference)"],
+      "attack_modes_required": ["pre-mortem", "failure mode enumeration", "hidden assumption extraction"],
+      "hidden_assumptions": ["amyloid is cause not consequence", "clearing plaques reverses downstream damage", "timing of intervention doesn't matter"],
+      "should_acknowledge_recent_data": "lecanemab/donanemab show modest benefit but don't fully validate hypothesis"
+    }
+  },
+  {
+    "id": "crispr-gene-therapy-safety",
+    "input": "Red team the safety profile of in vivo CRISPR gene editing for sickle cell disease. Assume systemic AAV delivery of Cas9.",
+    "expected_severity_range": [55, 80],
+    "expected_details": {
+      "key_vulnerabilities": ["off-target editing at unintended genomic loci", "pre-existing AAV antibodies in ~40-70% of population", "AAV immunogenicity and hepatotoxicity", "genotoxicity from double-strand breaks", "inability to redose (anti-AAV immune memory)", "mosaicism (incomplete editing across target cells)"],
+      "attack_modes_required": ["failure mode enumeration", "hidden assumption extraction"],
+      "hidden_assumptions": ["Cas9 specificity is sufficient at therapeutic doses", "AAV tropism is adequately controlled", "immune response won't eliminate edited cells"]
+    }
+  },
+  {
+    "id": "well-validated-easy-target",
+    "input": "Red team this claim: 'Imatinib is an effective treatment for CML with BCR-ABL fusion.' This should score LOW severity — it's a well-validated, proven therapy.",
+    "expected_severity_range": [10, 30],
+    "expected_details": {
+      "should_find_few_vulnerabilities": true,
+      "minor_vulnerabilities": ["resistance mutations (T315I)", "long-term adherence challenges", "cost/access in developing countries"],
+      "core_claim_robust": true,
+      "rationale": "overwhelming Phase 3 evidence, 20+ years of clinical experience, multiple confirmatory studies"
+    }
+  },
+  {
+    "id": "microbiome-cancer-immunotherapy",
+    "input": "Red team: 'The gut microbiome composition determines response to immune checkpoint inhibitors, and fecal microbiota transplant (FMT) can convert non-responders to responders.'",
+    "expected_severity_range": [55, 80],
+    "expected_details": {
+      "key_vulnerabilities": ["correlation vs causation not established in large trials", "microbiome composition highly variable and hard to standardize", "FMT studies are small (N<30), single-center, unblinded", "what defines a 'favorable' microbiome differs across studies", "confounders: diet, antibiotics, geography, genetics"],
+      "attack_modes_required": ["hidden assumption extraction", "failure mode enumeration"],
+      "hidden_assumptions": ["microbiome is a modifiable determinant not a biomarker", "donor-to-recipient microbiome transfer is stable", "favorable taxa are the same across cancer types"]
+    }
+  },
+  {
+    "id": "trial-design-vulnerability",
+    "input": "Red team this clinical trial design: Phase 3 superiority trial of Drug X vs placebo in HCC. Primary endpoint: OS. N=500. HR=0.75. One interim analysis at 50%. Crossover permitted at progression.",
+    "expected_severity_range": [50, 75],
+    "expected_details": {
+      "key_vulnerabilities": ["crossover dilutes OS treatment effect", "HR 0.75 may be optimistic for HCC", "N=500 likely underpowered if crossover dilution occurs", "single interim may miss early futility signal", "no co-primary PFS endpoint"],
+      "attack_modes_required": ["failure mode enumeration", "pre-mortem"],
+      "mitigation_suggestions": ["add PFS co-primary", "use RPSFT/IPCW for crossover-adjusted OS", "increase N to account for dilution", "add futility boundary"]
+    }
+  },
+  {
+    "id": "ai-drug-discovery-hype",
+    "input": "Red team: 'AI-discovered drugs will reach market faster and cheaper than traditional approaches, reducing drug development timelines from 10-15 years to 3-5 years.'",
+    "expected_severity_range": [65, 90],
+    "expected_details": {
+      "key_vulnerabilities": ["AI accelerates hit finding but doesn't compress clinical trial timelines (biology is rate-limiting)", "no AI-discovered drug has completed Phase 3 from start to finish yet", "clinical trial duration is regulatory-constrained not computation-constrained", "training data bias limits generalizability", "survivorship bias in reported AI successes"],
+      "attack_modes_required": ["hidden assumption extraction", "steel-man attack"],
+      "hidden_assumptions": ["preclinical speed translates to clinical speed", "AI predictions are accurate enough to skip experimental validation steps", "regulatory timelines will compress proportionally"]
+    }
+  },
+  {
+    "id": "regulatory-strategy-attack",
+    "input": "Red team this regulatory strategy: Seeking accelerated approval for a novel Alzheimer's drug based on amyloid PET clearance as surrogate endpoint. Phase 2 data shows 30% amyloid reduction at 18 months.",
+    "expected_severity_range": [60, 85],
+    "expected_details": {
+      "key_vulnerabilities": ["amyloid PET clearance not accepted as validated surrogate (FDA Aduhelm controversy)", "30% reduction is modest compared to lecanemab (~60%)", "no cognitive endpoint data to support", "confirmatory trial requirement creates substantial risk", "advisory committee likely skeptical given Aduhelm precedent"],
+      "attack_modes_required": ["pre-mortem", "hidden assumption extraction"],
+      "hidden_assumptions": ["FDA will accept amyloid clearance as reasonably likely to predict clinical benefit", "30% clearance is sufficient threshold", "confirmatory trial can be completed in reasonable timeframe"]
+    }
+  },
+  {
+    "id": "precision-medicine-overpromise",
+    "input": "Red team: 'Whole genome sequencing for all newborns will prevent most genetic diseases through early intervention.'",
+    "expected_severity_range": [55, 80],
+    "expected_details": {
+      "key_vulnerabilities": ["most genetic variants are VUS — creating anxiety without actionability", "many genetic diseases have no intervention even if detected early", "psychological harm from incidental findings", "cost-effectiveness not demonstrated at population scale", "false positive rate at genome-wide scale", "health equity concerns (who gets access?)"],
+      "attack_modes_required": ["failure mode enumeration", "devil's advocate"],
+      "hidden_assumptions": ["early detection = better outcomes for all genetic conditions", "VUS rate is manageable", "healthcare system can act on findings", "parents want to know about all genetic risks"]
+    }
+  },
+  {
+    "id": "liquid-biopsy-replacement",
+    "input": "Red team: 'Liquid biopsy (ctDNA) will completely replace tissue biopsy for cancer diagnosis within 5 years.'",
+    "expected_severity_range": [60, 80],
+    "expected_details": {
+      "key_vulnerabilities": ["ctDNA sensitivity limited for early-stage and low-tumor-burden cancers", "tissue still needed for histology, grading, IHC markers", "false negatives in ctDNA can miss actionable mutations", "clonal hematopoiesis confounds ctDNA interpretation", "regulatory infrastructure not ready for liquid-only diagnosis"],
+      "nuance": "liquid biopsy will SUPPLEMENT not REPLACE tissue biopsy",
+      "attack_modes_required": ["hidden assumption extraction", "failure mode enumeration"]
+    }
+  },
+  {
+    "id": "drug-candidate-red-team",
+    "input": "Red team a novel oral KRAS G12D inhibitor entering Phase 1. Preclinical data: IC50 15 nM, oral bioavailability 45% in mice, clean hERG (>30 μM). PDAC xenograft TGI 65%. No prior clinical KRAS G12D inhibitors approved.",
+    "expected_severity_range": [45, 70],
+    "expected_details": {
+      "key_vulnerabilities": ["mouse PK may not translate to human (species-specific metabolism)", "TGI 65% is modest (not complete regression)", "first-in-class G12D risk — no clinical precedent for dosing/efficacy", "PDAC has historically poor response to targeted therapy", "resistance mechanisms unknown for G12D class", "competitive risk from MRTX1133 and other G12D programs"],
+      "attack_modes_required": ["pre-mortem", "failure mode enumeration"],
+      "mitigations_expected": ["human PK prediction via allometric scaling", "combination strategy for resistance", "biomarker-enriched enrollment"]
+    }
+  }
+]

@@ -1,0 +1,144 @@
+[
+  {
+    "id": "egfr-nsclc-validated",
+    "input": "Evaluate EGFR as a drug target for non-small cell lung cancer. Provide full target assessment including disease association, druggability, existing compounds, and safety profile.",
+    "expected_details": {
+      "target_class": "receptor tyrosine kinase",
+      "disease_association": "strong (genetic evidence: activating mutations, clinical precedent: multiple approved TKIs)",
+      "druggability": "high (small molecule tractable, multiple generations of inhibitors)",
+      "existing_drugs": ["erlotinib", "gefitinib", "afatinib", "osimertinib"],
+      "bioactivity_data_available": true,
+      "resistance_mechanisms": ["T790M", "C797S", "MET amplification"],
+      "safety_concerns": ["skin toxicity (class effect)", "ILD/pneumonitis", "hepatotoxicity"],
+      "competitive_landscape": "crowded — 3+ generations of TKIs",
+      "required_sections": ["target_identification", "disease_association", "druggability", "existing_compounds", "bioactivity", "safety", "competitive_landscape"]
+    }
+  },
+  {
+    "id": "pcsk9-hyperlipidemia",
+    "input": "Evaluate PCSK9 as a drug target for hyperlipidemia and atherosclerotic cardiovascular disease.",
+    "expected_details": {
+      "target_class": "serine protease (proprotein convertase)",
+      "disease_association": "strong (Mendelian genetics: gain-of-function = hypercholesterolemia, loss-of-function = low LDL + cardioprotection)",
+      "druggability": "validated — monoclonal antibodies and siRNA approved",
+      "existing_drugs": ["evolocumab", "alirocumab", "inclisiran"],
+      "modality_diversity": ["monoclonal antibody", "siRNA"],
+      "genetic_validation": "exceptional (human genetics strongly support)",
+      "safety_concerns": ["injection site reactions", "neurocognitive effects (debated)", "cost/access"],
+      "required_sections": ["target_identification", "disease_association", "druggability", "existing_compounds", "genetic_validation"]
+    }
+  },
+  {
+    "id": "kras-g12d-undruggable-becoming-druggable",
+    "input": "Evaluate KRAS G12D as a drug target for pancreatic cancer. Note the historical 'undruggable' status and recent progress.",
+    "expected_details": {
+      "target_class": "GTPase",
+      "disease_association": "strong (KRAS G12D is the most common KRAS mutation in PDAC, ~40%)",
+      "druggability": "emerging — historically undruggable; G12C solved (sotorasib/adagrasib); G12D inhibitors in clinical development",
+      "existing_drugs_for_g12d": "none approved (investigational: MRTX1133, RMC-9805)",
+      "g12c_precedent": ["sotorasib", "adagrasib"],
+      "challenge": "G12D lacks the cysteine residue used by G12C covalent inhibitors; requires non-covalent approach",
+      "should_note_historical_context": true,
+      "required_sections": ["target_identification", "disease_association", "druggability", "existing_compounds", "bioactivity", "competitive_landscape"]
+    }
+  },
+  {
+    "id": "cd20-lymphoma",
+    "input": "Evaluate CD20 as a drug target for B-cell non-Hodgkin lymphoma.",
+    "expected_details": {
+      "target_class": "cell surface antigen (MS4A1)",
+      "disease_association": "strong (expressed on >95% of B-cell lymphomas)",
+      "druggability": "fully validated — multiple approved biologics",
+      "existing_drugs": ["rituximab", "obinutuzumab", "ofatumumab"],
+      "modalities": ["monoclonal antibody", "bispecific antibody", "CAR-T (targeting CD20)"],
+      "safety_concerns": ["B-cell depletion / immunosuppression", "infusion reactions", "PML (rare)", "hepatitis B reactivation"],
+      "required_sections": ["target_identification", "disease_association", "druggability", "existing_compounds", "safety"]
+    }
+  },
+  {
+    "id": "novel-target-gpbar1",
+    "input": "Evaluate GPBAR1 (TGR5, bile acid receptor) as a drug target for MASH/NASH. This is a less validated target with emerging data.",
+    "expected_details": {
+      "target_class": "GPCR (G-protein coupled bile acid receptor)",
+      "disease_association": "moderate (preclinical evidence strong; limited clinical validation)",
+      "druggability": "moderate (GPCR class is tractable; no approved drugs for this target)",
+      "existing_drugs": "none approved",
+      "clinical_stage": "early clinical / preclinical",
+      "genetic_evidence": "limited",
+      "safety_concerns": ["gallbladder effects (bile acid signaling)", "pruritus risk", "off-target bile acid pathway effects"],
+      "should_note_limited_validation": true,
+      "required_sections": ["target_identification", "disease_association", "druggability", "bioactivity", "safety", "competitive_landscape"]
+    }
+  },
+  {
+    "id": "bcl2-cll-validated",
+    "input": "Evaluate BCL-2 as a drug target for chronic lymphocytic leukemia (CLL).",
+    "expected_details": {
+      "target_class": "anti-apoptotic protein (BCL-2 family)",
+      "disease_association": "strong (BCL-2 overexpression is a hallmark of CLL via t(14;18) and other mechanisms)",
+      "druggability": "validated — BH3 mimetic venetoclax approved",
+      "existing_drugs": ["venetoclax"],
+      "bioactivity_type": "protein-protein interaction inhibitor (BH3 mimetic)",
+      "safety_concerns": ["tumor lysis syndrome (TLS)", "neutropenia", "infections"],
+      "tls_management": "dose ramp-up protocol required",
+      "required_sections": ["target_identification", "disease_association", "druggability", "existing_compounds", "safety"]
+    }
+  },
+  {
+    "id": "tau-alzheimers-difficult",
+    "input": "Evaluate tau protein (MAPT) as a drug target for Alzheimer's disease. This is a high-value but historically difficult target.",
+    "expected_details": {
+      "target_class": "microtubule-associated protein",
+      "disease_association": "strong (tau tangles correlate with cognitive decline better than amyloid; genetic evidence from MAPT mutations in FTD)",
+      "druggability": "difficult — no approved tau-targeting therapies; multiple clinical failures",
+      "clinical_failures": ["LMTM (TRx0237)", "anti-tau antibodies (semorinemab, zagotenemab)"],
+      "modality_attempts": ["small molecule aggregation inhibitors", "anti-tau antibodies", "antisense oligonucleotides", "vaccines"],
+      "challenge": "intracellular target; blood-brain barrier; tau exists in multiple conformations",
+      "should_note_difficulty": true,
+      "required_sections": ["target_identification", "disease_association", "druggability", "existing_compounds", "bioactivity", "competitive_landscape"]
+    }
+  },
+  {
+    "id": "claudin-18-2-gastric",
+    "input": "Evaluate Claudin 18.2 (CLDN18.2) as a drug target for gastric cancer.",
+    "expected_details": {
+      "target_class": "tight junction protein",
+      "disease_association": "strong (expressed in ~60-80% of gastric cancers; limited normal tissue expression beyond gastric mucosa)",
+      "druggability": "validated — zolbetuximab (anti-CLDN18.2 mAb) approved/late-stage",
+      "existing_drugs": ["zolbetuximab"],
+      "modalities": ["monoclonal antibody", "ADC", "CAR-T", "bispecific"],
+      "key_trials": ["SPOTLIGHT", "GLOW"],
+      "safety_concerns": ["nausea/vomiting (high incidence)", "decreased appetite"],
+      "required_sections": ["target_identification", "disease_association", "druggability", "existing_compounds", "safety"]
+    }
+  },
+  {
+    "id": "pd1-broad-oncology",
+    "input": "Evaluate PD-1 (PDCD1) as a drug target across solid tumors. Provide a broad target assessment.",
+    "expected_details": {
+      "target_class": "immune checkpoint receptor",
+      "disease_association": "broad (pan-tumor relevance; PD-1/PD-L1 axis exploited by many cancers for immune evasion)",
+      "druggability": "fully validated — blockbuster class with multiple approved agents",
+      "existing_drugs": ["pembrolizumab", "nivolumab", "cemiplimab"],
+      "pd_l1_drugs": ["atezolizumab", "durvalumab", "avelumab"],
+      "market_size": "largest oncology drug class by revenue",
+      "safety_concerns": ["immune-related AEs (irAEs)", "pneumonitis", "colitis", "hepatitis", "endocrinopathies", "myocarditis (rare but fatal)"],
+      "biomarker_landscape": ["PD-L1 TPS/CPS", "TMB-H", "MSI-H/dMMR"],
+      "required_sections": ["target_identification", "disease_association", "druggability", "existing_compounds", "bioactivity", "safety", "competitive_landscape"]
+    }
+  },
+  {
+    "id": "grk2-heart-failure-preclinical",
+    "input": "Evaluate GRK2 (G-protein coupled receptor kinase 2) as a drug target for heart failure. This is a preclinical-stage target.",
+    "expected_details": {
+      "target_class": "serine/threonine kinase (GRK family)",
+      "disease_association": "moderate (GRK2 upregulated in failing hearts; desensitizes beta-adrenergic receptors; preclinical genetic evidence)",
+      "druggability": "early (kinase class is tractable; paroxetine identified as weak inhibitor; selective inhibitors in development)",
+      "existing_drugs": "none (preclinical/early stage)",
+      "genetic_evidence": "cardiac-specific GRK2 knockout improves function in mouse HF models",
+      "challenge": "selectivity within GRK family; cardiac-specific delivery",
+      "should_note_early_stage": true,
+      "required_sections": ["target_identification", "disease_association", "druggability", "bioactivity", "competitive_landscape"]
+    }
+  }
+]

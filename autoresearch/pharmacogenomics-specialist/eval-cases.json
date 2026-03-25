@@ -1,0 +1,167 @@
+[
+  {
+    "id": "cyp2d6-codeine-pm",
+    "input": "Patient prescribed codeine 30mg for pain. CYP2D6 genotype: *4/*4. No CYP2D6 inhibitors co-prescribed. What is the metabolizer phenotype and dosing recommendation?",
+    "expected_phenotype": "Poor Metabolizer",
+    "expected_details": {
+      "gene": "CYP2D6",
+      "diplotype": "*4/*4",
+      "activity_score": 0,
+      "phenotype": "PM",
+      "drug": "codeine",
+      "cpic_level": "1A",
+      "recommendation": "avoid codeine — use non-opioid or non-CYP2D6-dependent opioid (morphine, oxycodone with caution)",
+      "rationale": "codeine is a prodrug requiring CYP2D6 to convert to morphine; PM = no conversion = no analgesia",
+      "fda_label_pgx": true,
+      "required_sections": ["diplotype_activity_score", "phenotype_assignment", "cpic_recommendation", "alternative_drugs"]
+    }
+  },
+  {
+    "id": "cyp2d6-codeine-um",
+    "input": "Patient prescribed codeine 30mg. CYP2D6 genotype: *1/*1xN (gene duplication). No inhibitors.",
+    "expected_phenotype": "Ultra-rapid Metabolizer",
+    "expected_details": {
+      "gene": "CYP2D6",
+      "diplotype": "*1/*1xN",
+      "activity_score": ">2.0",
+      "phenotype": "UM",
+      "drug": "codeine",
+      "cpic_level": "1A",
+      "recommendation": "avoid codeine — risk of fatal respiratory depression from rapid morphine accumulation",
+      "fda_boxed_warning": true,
+      "safety_critical": true,
+      "required_sections": ["diplotype_activity_score", "phenotype_assignment", "cpic_recommendation", "safety_warning", "alternative_drugs"]
+    }
+  },
+  {
+    "id": "cyp2c19-clopidogrel-im",
+    "input": "Patient post-coronary stent, prescribed clopidogrel 75mg daily. CYP2C19 genotype: *1/*2. No interacting medications.",
+    "expected_phenotype": "Intermediate Metabolizer",
+    "expected_details": {
+      "gene": "CYP2C19",
+      "diplotype": "*1/*2",
+      "activity_score": 1.0,
+      "phenotype": "IM",
+      "drug": "clopidogrel",
+      "cpic_level": "1A",
+      "recommendation": "use alternative antiplatelet (prasugrel or ticagrelor) — reduced clopidogrel activation",
+      "fda_label_pgx": true,
+      "clinical_risk": "increased risk of stent thrombosis and cardiovascular events",
+      "required_sections": ["diplotype_activity_score", "phenotype_assignment", "cpic_recommendation", "alternative_drugs"]
+    }
+  },
+  {
+    "id": "cyp2c19-phenoconversion",
+    "input": "Patient on clopidogrel. CYP2C19 genotype: *1/*1 (Normal Metabolizer). Recently started omeprazole 20mg daily for GERD. What is the phenoconversion impact?",
+    "expected_phenotype": "Phenotypic Intermediate Metabolizer",
+    "expected_details": {
+      "gene": "CYP2C19",
+      "genotypic_diplotype": "*1/*1",
+      "genotypic_phenotype": "NM",
+      "inhibitor": "omeprazole (moderate CYP2C19 inhibitor)",
+      "phenotypic_phenotype": "phenotypic IM",
+      "drug": "clopidogrel",
+      "recommendation": "switch PPI to pantoprazole (minimal CYP2C19 inhibition) or use alternative antiplatelet",
+      "phenoconversion_detected": true,
+      "required_sections": ["diplotype_activity_score", "phenotype_assignment", "phenoconversion_assessment", "cpic_recommendation", "alternative_drugs"]
+    }
+  },
+  {
+    "id": "hla-b5701-abacavir",
+    "input": "HIV patient being considered for abacavir-containing regimen. HLA-B*57:01 positive.",
+    "expected_phenotype": "HLA-B*57:01 positive",
+    "expected_details": {
+      "gene": "HLA-B",
+      "allele": "HLA-B*57:01",
+      "drug": "abacavir",
+      "cpic_level": "1A",
+      "recommendation": "do NOT prescribe abacavir — use alternative NRTI",
+      "adverse_reaction": "hypersensitivity reaction (potentially fatal)",
+      "fda_required_testing": true,
+      "required_sections": ["hla_typing", "cpic_recommendation", "safety_warning", "alternative_drugs"]
+    }
+  },
+  {
+    "id": "slco1b1-simvastatin",
+    "input": "Patient starting simvastatin 40mg for hyperlipidemia. SLCO1B1 genotype: rs4149056 TC (heterozygous). SLCO1B1 *1/*5.",
+    "expected_phenotype": "Intermediate Function",
+    "expected_details": {
+      "gene": "SLCO1B1",
+      "diplotype": "*1/*5",
+      "phenotype": "intermediate function transporter",
+      "drug": "simvastatin",
+      "cpic_level": "1A",
+      "recommendation": "use lower dose simvastatin (max 20mg) or prescribe alternative statin (rosuvastatin, pravastatin)",
+      "adverse_reaction_risk": "increased myopathy risk (especially at ≥40mg)",
+      "fda_label_pgx": true,
+      "required_sections": ["diplotype_activity_score", "phenotype_assignment", "cpic_recommendation", "alternative_drugs"]
+    }
+  },
+  {
+    "id": "cyp2d6-tamoxifen-nm",
+    "input": "Breast cancer patient on tamoxifen 20mg daily. CYP2D6 genotype: *1/*1. No CYP2D6 inhibitors.",
+    "expected_phenotype": "Normal Metabolizer",
+    "expected_details": {
+      "gene": "CYP2D6",
+      "diplotype": "*1/*1",
+      "activity_score": 2.0,
+      "phenotype": "NM",
+      "drug": "tamoxifen",
+      "cpic_level": "1A",
+      "recommendation": "standard tamoxifen dosing appropriate — adequate endoxifen production",
+      "no_change_needed": true,
+      "required_sections": ["diplotype_activity_score", "phenotype_assignment", "cpic_recommendation"]
+    }
+  },
+  {
+    "id": "tpmt-azathioprine-pm",
+    "input": "Patient with Crohn's disease being started on azathioprine. TPMT genotype: *3A/*3A. NUDT15 genotype: *1/*1.",
+    "expected_phenotype": "TPMT Poor Metabolizer",
+    "expected_details": {
+      "gene": "TPMT",
+      "diplotype": "*3A/*3A",
+      "phenotype": "PM",
+      "drug": "azathioprine",
+      "cpic_level": "1A",
+      "recommendation": "drastically reduce dose (start at 10% of standard) OR use alternative immunosuppressant",
+      "adverse_reaction_risk": "life-threatening myelosuppression",
+      "nudt15_status": "normal (*1/*1) — no additional dose reduction needed from NUDT15",
+      "safety_critical": true,
+      "required_sections": ["diplotype_activity_score", "phenotype_assignment", "cpic_recommendation", "safety_warning", "alternative_drugs"]
+    }
+  },
+  {
+    "id": "cyp2c9-vkorc1-warfarin",
+    "input": "Patient starting warfarin for atrial fibrillation. CYP2C9 genotype: *1/*3. VKORC1 genotype: rs9923231 AG (heterozygous, -1639G>A).",
+    "expected_phenotype": "CYP2C9 IM / VKORC1 intermediate sensitivity",
+    "expected_details": {
+      "genes": ["CYP2C9", "VKORC1"],
+      "cyp2c9_diplotype": "*1/*3",
+      "cyp2c9_phenotype": "IM",
+      "vkorc1_genotype": "AG",
+      "vkorc1_sensitivity": "intermediate warfarin sensitivity",
+      "drug": "warfarin",
+      "cpic_level": "1A",
+      "recommendation": "reduce initial dose (~30-40% below standard); use pharmacogenomic dosing algorithm",
+      "required_sections": ["diplotype_activity_score", "phenotype_assignment", "cpic_recommendation", "dosing_algorithm"]
+    }
+  },
+  {
+    "id": "dpyd-fluorouracil-im",
+    "input": "Colorectal cancer patient about to start FOLFOX (includes 5-fluorouracil). DPYD genotype: *1/*2A (c.1905+1G>A heterozygous).",
+    "expected_phenotype": "Intermediate Metabolizer",
+    "expected_details": {
+      "gene": "DPYD",
+      "diplotype": "*1/*2A",
+      "activity_score": 1.0,
+      "phenotype": "IM",
+      "drug": "5-fluorouracil",
+      "cpic_level": "1A",
+      "recommendation": "reduce 5-FU dose by 50% with therapeutic drug monitoring",
+      "adverse_reaction_risk": "severe/fatal toxicity (mucositis, myelosuppression, diarrhea, hand-foot syndrome)",
+      "safety_critical": true,
+      "fda_label_pgx": true,
+      "required_sections": ["diplotype_activity_score", "phenotype_assignment", "cpic_recommendation", "safety_warning", "dosing_adjustment"]
+    }
+  }
+]

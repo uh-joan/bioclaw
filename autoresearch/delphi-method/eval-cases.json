@@ -1,0 +1,119 @@
+[
+  {
+    "id": "prob-phase3-success-nsclc",
+    "input": "Run a Delphi panel to estimate the probability that a novel KRAS G12C inhibitor (currently in Phase 2 with ORR 32%) will succeed in Phase 3 for second-line NSCLC. Sotorasib and adagrasib are already approved.",
+    "expected_consensus_range": [25, 50],
+    "expected_details": {
+      "panel_size": [5, 8],
+      "rounds": 4,
+      "convergence_expected": "moderate (experts will disagree on competitive positioning)",
+      "key_factors": ["ORR 32% is modest vs sotorasib (~37%) and adagrasib (~43%)", "differentiation needed for crowded space", "durability of response matters", "toxicity profile comparison"],
+      "minority_report_expected": true,
+      "required_sections": ["round1_assessments", "round2_revisions", "convergence_metrics", "consensus_position", "minority_report"]
+    }
+  },
+  {
+    "id": "technology-readiness-mrna-cancer-vaccines",
+    "input": "Run a Delphi panel to assess the technology readiness of personalized mRNA cancer vaccines. Are they ready for broad clinical deployment?",
+    "expected_consensus_range": [40, 65],
+    "expected_details": {
+      "convergence_expected": "moderate to strong (most experts agree it's promising but not yet ready)",
+      "key_factors": ["COVID mRNA success validated platform", "individualized manufacturing is complex and expensive", "CheckMate 7FL shows promise in melanoma", "manufacturing scalability unknown", "regulatory pathway for personalized products unclear"],
+      "consensus_likely": "promising technology, 3-5 years from broad deployment",
+      "required_sections": ["round1_assessments", "convergence_metrics", "consensus_position"]
+    }
+  },
+  {
+    "id": "high-consensus-question",
+    "input": "Run a Delphi panel: 'Should all breast cancer patients undergo germline BRCA1/2 testing?' This is a question with emerging strong consensus.",
+    "expected_consensus_range": [75, 95],
+    "expected_details": {
+      "convergence_expected": "strong (NCCN guidelines already recommend broad testing)",
+      "iqr_expected": "narrow (<15% relative IQR)",
+      "consensus_strength_score_range": [70, 95],
+      "key_factors": ["NCCN expanded criteria to all breast cancer patients ≤65", "cost of testing has dropped dramatically", "PARP inhibitor eligibility depends on BRCA status", "cascade testing benefits families"],
+      "minority_position": "resource constraints in low-income settings; overdiagnosis concern for VUS"
+    }
+  },
+  {
+    "id": "controversial-low-consensus",
+    "input": "Run a Delphi panel: 'Should healthy adults take low-dose rapamycin for longevity?' This is a highly controversial question.",
+    "expected_consensus_range": [10, 35],
+    "expected_details": {
+      "convergence_expected": "low (experts will remain divided)",
+      "iqr_expected": "wide (>30% relative IQR)",
+      "consensus_strength_score_range": [15, 40],
+      "key_factors": ["strong preclinical evidence in model organisms", "no large human RCT data", "immunosuppression risk", "off-label use growing without evidence", "aging not an FDA-recognized indication"],
+      "should_note_non_convergence": true,
+      "minority_positions_multiple": true
+    }
+  },
+  {
+    "id": "timeline-estimation",
+    "input": "Run a Delphi panel to estimate when the first AI-discovered drug (entirely AI-designed molecule) will receive FDA approval. Estimate year.",
+    "expected_consensus_range": [2028, 2033],
+    "expected_details": {
+      "convergence_expected": "moderate",
+      "key_factors": ["Insilico Medicine's INS018_055 in Phase 2 (AI-designed)", "Recursion, Exscientia pipeline", "still need full Phase 3 data", "FDA timeline compression unlikely"],
+      "wide_range_expected": true,
+      "minority_positions": ["optimist: 2027 (INS018_055 fast-tracked)", "pessimist: 2035+ (definition disputes, clinical failures)"],
+      "required_sections": ["round1_assessments", "convergence_metrics", "consensus_position", "minority_report"]
+    }
+  },
+  {
+    "id": "clinical-guideline-question",
+    "input": "Run a Delphi panel: 'What is the optimal duration of adjuvant immunotherapy in resected stage III melanoma? 12 months vs 6 months?' There is genuine clinical equipoise.",
+    "expected_consensus_range": [50, 70],
+    "expected_details": {
+      "convergence_expected": "moderate (evidence supports both; KEYNOTE-054 used 12 months but shorter durations being studied)",
+      "key_factors": ["KEYNOTE-054: 12 months pembrolizumab showed RFS benefit", "shorter duration may reduce irAEs and cost", "no head-to-head duration comparison trial", "patient preference for shorter treatment"],
+      "consensus_likely": "12 months remains standard but 6 months is reasonable to study",
+      "should_note_equipoise": true
+    }
+  },
+  {
+    "id": "risk-assessment-gene-editing",
+    "input": "Run a Delphi panel to assess the risk level (0-100) of heritable human germline gene editing becoming clinically available within 10 years.",
+    "expected_consensus_range": [10, 30],
+    "expected_details": {
+      "convergence_expected": "strong (most experts agree it's very unlikely within 10 years)",
+      "consensus_strength_score_range": [60, 85],
+      "key_factors": ["He Jiankui incident led to global moratorium", "ethical/regulatory barriers enormous", "technical challenges (mosaicism, off-target)", "no legitimate clinical trial pathway", "WHO advisory committee recommends against"],
+      "minority_position": "rogue actors may attempt despite moratorium"
+    }
+  },
+  {
+    "id": "drug-pricing-question",
+    "input": "Run a Delphi panel: 'Will GLP-1 agonist obesity drugs (semaglutide, tirzepatide) be covered by Medicare Part D within 3 years?'",
+    "expected_consensus_range": [55, 80],
+    "expected_details": {
+      "convergence_expected": "moderate",
+      "key_factors": ["Treat and Reduce Obesity Act has bipartisan support", "SELECT trial CV benefit creates medical necessity argument", "cost concern: $1000+/month × millions of patients = budget impact", "CMS negotiation authority under IRA", "political pressure from patient advocacy"],
+      "key_uncertainty": "budget impact vs clinical evidence tension",
+      "required_sections": ["round1_assessments", "convergence_metrics", "consensus_position"]
+    }
+  },
+  {
+    "id": "probability-calibration",
+    "input": "Run a Delphi panel to estimate phase transition probabilities for oncology drugs: Phase 1→2, Phase 2→3, Phase 3→approval. Use historical base rates.",
+    "expected_consensus_range": "Phase 1→2: 50-65%, Phase 2→3: 25-35%, Phase 3→approval: 55-70%",
+    "expected_details": {
+      "convergence_expected": "strong (historical data well-documented)",
+      "base_rates": {"phase1_to_2": [0.50, 0.65], "phase2_to_3": [0.25, 0.35], "phase3_to_approval": [0.55, 0.70]},
+      "overall_approval_from_phase1": [0.07, 0.15],
+      "sources": ["BIO/QLS Advisors clinical development success rates", "DiMasi et al.", "Wong et al."],
+      "should_note_variation_by_indication": true
+    }
+  },
+  {
+    "id": "emerging-technology-assessment",
+    "input": "Run a Delphi panel to score the readiness (0-100) of protein degradation (PROTACs/molecular glues) as a therapeutic modality for undruggable targets.",
+    "expected_consensus_range": [55, 75],
+    "expected_details": {
+      "convergence_expected": "moderate to strong",
+      "key_factors": ["molecular glues validated (thalidomide/lenalidomide/pomalidomide)", "PROTAC oral bioavailability improving", "ARV-471 (PROTAC) in Phase 3 for breast cancer", "can degrade 'undruggable' targets", "manufacturing complexity", "selectivity concerns"],
+      "consensus_likely": "modality is validated for some targets; broad applicability still 3-5 years out",
+      "required_sections": ["round1_assessments", "convergence_metrics", "consensus_position"]
+    }
+  }
+]

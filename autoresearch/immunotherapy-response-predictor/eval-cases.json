@@ -1,0 +1,140 @@
+[
+  {
+    "id": "nsclc-tmb-high-pdl1-high",
+    "input": "Predict immunotherapy response for: NSCLC adenocarcinoma, TMB 28 mut/Mb, PD-L1 TPS 80%, MSS (microsatellite stable), no STK11/PTEN loss. Treatment-naive. ECOG 1.",
+    "expected_tier": "HIGH",
+    "expected_details": {
+      "tmb_score": 30,
+      "msi_score": 5,
+      "pdl1_score": 20,
+      "neoantigen_score_range": [12, 15],
+      "resistance_penalties": 0,
+      "ici_score_range": [70, 100],
+      "recommended_agents": ["pembrolizumab"],
+      "rationale": "TMB-H + PD-L1 high = strong dual biomarker support for ICI monotherapy"
+    }
+  },
+  {
+    "id": "melanoma-msih-tmb-high",
+    "input": "Predict immunotherapy response for: Cutaneous melanoma, TMB 45 mut/Mb, MSI-H (dMMR confirmed), PD-L1 TPS 30%, BRAF V600E present but not targeting BRAF. No resistance gene mutations.",
+    "expected_tier": "HIGH",
+    "expected_details": {
+      "tmb_score": 30,
+      "msi_score": 25,
+      "pdl1_score": 12,
+      "ici_score_range": [75, 100],
+      "recommended_agents": ["pembrolizumab", "nivolumab", "ipilimumab+nivolumab"],
+      "should_note": "MSI-H + TMB-H provides strong independent biomarker support"
+    }
+  },
+  {
+    "id": "crc-mss-pdl1-negative",
+    "input": "Predict immunotherapy response for: Colorectal cancer (CRC), MSS, TMB 4 mut/Mb, PD-L1 TPS 0%. No POLE/POLD1 mutations. Prior FOLFOX + bevacizumab.",
+    "expected_tier": "LOW",
+    "expected_details": {
+      "tmb_score": 5,
+      "msi_score": 5,
+      "pdl1_score": 5,
+      "neoantigen_score_range": [5, 8],
+      "ici_score_range": [0, 30],
+      "should_not_recommend_monotherapy": true,
+      "rationale": "MSS CRC is prototypically ICI-resistant; no biomarker support"
+    }
+  },
+  {
+    "id": "nsclc-stk11-loss",
+    "input": "Predict immunotherapy response for: NSCLC adenocarcinoma, TMB 15 mut/Mb, PD-L1 TPS 60%, MSS. STK11 (LKB1) loss-of-function mutation confirmed. KRAS G12C co-mutation.",
+    "expected_tier": "LOW to MODERATE",
+    "expected_details": {
+      "tmb_score": 20,
+      "pdl1_score": 20,
+      "msi_score": 5,
+      "resistance_penalty_applied": true,
+      "stk11_penalty": "significant negative modifier",
+      "ici_score_range": [20, 50],
+      "should_note": "STK11 loss is a strong negative predictor of ICI response in NSCLC despite otherwise favorable biomarkers",
+      "rationale": "STK11 loss creates 'cold' immune microenvironment resistant to checkpoint blockade"
+    }
+  },
+  {
+    "id": "renal-cell-intermediate",
+    "input": "Predict immunotherapy response for: Clear cell renal cell carcinoma (ccRCC), TMB 8 mut/Mb, PD-L1 TPS 15%, MSS. IMDC intermediate risk. No resistance gene mutations identified.",
+    "expected_tier": "MODERATE",
+    "expected_details": {
+      "tmb_score": 10,
+      "pdl1_score": 12,
+      "msi_score": 5,
+      "ici_score_range": [30, 55],
+      "recommended_agents": ["nivolumab+ipilimumab", "pembrolizumab+axitinib"],
+      "should_note": "RCC responds to ICI independent of TMB/PD-L1; combination IO+TKI is standard",
+      "rationale": "ccRCC is immunogenic; traditional biomarkers less predictive; combination therapy preferred"
+    }
+  },
+  {
+    "id": "pancreatic-immune-desert",
+    "input": "Predict immunotherapy response for: Pancreatic ductal adenocarcinoma (PDAC), TMB 2 mut/Mb, PD-L1 TPS 0%, MSS. KRAS G12D, TP53 R175H. Dense desmoplastic stroma.",
+    "expected_tier": "LOW",
+    "expected_details": {
+      "tmb_score": 5,
+      "pdl1_score": 5,
+      "msi_score": 5,
+      "ici_score_range": [0, 25],
+      "immune_microenvironment": "immune desert",
+      "should_not_recommend_ici": true,
+      "rationale": "PDAC is prototypically immune-cold; no biomarker support for ICI"
+    }
+  },
+  {
+    "id": "endometrial-pole-ultramutated",
+    "input": "Predict immunotherapy response for: Endometrial carcinoma, POLE exonuclease domain mutation (P286R), TMB 232 mut/Mb, MSS (by IHC — note: POLE-mutant tumors may not be MSI-H), PD-L1 TPS 40%.",
+    "expected_tier": "HIGH",
+    "expected_details": {
+      "tmb_score": 30,
+      "pdl1_score": 12,
+      "msi_score": 5,
+      "sensitivity_bonus_applied": true,
+      "pole_bonus": "POLE ultramutated is a strong positive predictor",
+      "ici_score_range": [65, 100],
+      "should_note": "POLE ultramutated endometrial has excellent prognosis and high ICI response rate despite MSS status"
+    }
+  },
+  {
+    "id": "gastric-ebv-positive",
+    "input": "Predict immunotherapy response for: Gastric adenocarcinoma, EBV-positive, TMB 12 mut/Mb, PD-L1 CPS 15, MSS. PIK3CA mutation present.",
+    "expected_tier": "MODERATE to HIGH",
+    "expected_details": {
+      "tmb_score": 20,
+      "pdl1_score": 20,
+      "msi_score": 5,
+      "ici_score_range": [45, 75],
+      "should_note": "EBV-positive gastric cancer has high PD-L1 expression and favorable ICI response",
+      "recommended_agents": ["nivolumab", "pembrolizumab"]
+    }
+  },
+  {
+    "id": "triple-negative-breast",
+    "input": "Predict immunotherapy response for: Triple-negative breast cancer (TNBC), TMB 6 mut/Mb, PD-L1 CPS 12, MSS. BRCA1 germline mutation. No TILs data available.",
+    "expected_tier": "MODERATE",
+    "expected_details": {
+      "tmb_score": 10,
+      "pdl1_score": 20,
+      "msi_score": 5,
+      "ici_score_range": [35, 55],
+      "recommended_agents": ["pembrolizumab+chemotherapy"],
+      "should_note": "KEYNOTE-522 established pembrolizumab + chemo in early TNBC; CPS >= 10 is relevant threshold"
+    }
+  },
+  {
+    "id": "sclc-high-tmb-no-pdl1",
+    "input": "Predict immunotherapy response for: Small cell lung cancer (SCLC), extensive stage, TMB 22 mut/Mb, PD-L1 TPS 0%, MSS. No resistance gene data available.",
+    "expected_tier": "MODERATE",
+    "expected_details": {
+      "tmb_score": 30,
+      "pdl1_score": 5,
+      "msi_score": 5,
+      "ici_score_range": [35, 60],
+      "recommended_agents": ["atezolizumab+chemotherapy", "durvalumab+chemotherapy"],
+      "should_note": "SCLC benefits from IO+chemo regardless of PD-L1 (IMpower133, CASPIAN); TMB less predictive in SCLC"
+    }
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "id": "glp1-obesity-landscape",
+    "input": "Map the competitive landscape for GLP-1-based anti-obesity therapies. Include approved agents, Phase 3 pipeline, and emerging mechanisms.",
+    "expected_details": {
+      "approved_agents": ["semaglutide (Wegovy)", "liraglutide (Saxenda)", "tirzepatide (Zepbound)"],
+      "phase3_pipeline": ["retatrutide (Lilly)", "orforglipron (Lilly, oral)", "survodutide (BI/Zealand)", "cagrisema (Novo Nordisk)"],
+      "mechanism_categories": ["GLP-1 mono", "GLP-1/GIP dual", "GLP-1/GIP/glucagon triple", "oral non-peptide GLP-1", "amylin combinations"],
+      "market_leaders": ["Novo Nordisk (semaglutide)", "Eli Lilly (tirzepatide)"],
+      "differentiation_axes": ["weight loss magnitude", "oral vs injectable", "CV outcomes data", "MASH indication"],
+      "required_sections": ["landscape_matrix", "pipeline_waterfall", "differentiation_analysis", "market_dynamics"]
+    }
+  },
+  {
+    "id": "alk-nsclc-generations",
+    "input": "Map the competitive landscape for ALK inhibitors in NSCLC. Track generational development.",
+    "expected_details": {
+      "generation_1": ["crizotinib (Pfizer)"],
+      "generation_2": ["ceritinib (Novartis)", "alectinib (Roche)", "brigatinib (Takeda)"],
+      "generation_3": ["lorlatinib (Pfizer)"],
+      "market_leader": "alectinib (first-line standard of care based on ALEX trial)",
+      "resistance_driven_sequencing": true,
+      "loe_analysis": "crizotinib patent expired; generics available",
+      "required_sections": ["landscape_matrix", "pipeline_waterfall", "sequencing_strategy", "loe_analysis"]
+    }
+  },
+  {
+    "id": "cd20-lymphoma-crowded",
+    "input": "Map the competitive landscape for anti-CD20 therapies in B-cell lymphoma. Include biosimilars.",
+    "expected_details": {
+      "originator": "rituximab (Roche/Genentech)",
+      "next_gen": ["obinutuzumab (Gazyva)", "ofatumumab (Arzerra/Kesimpta)"],
+      "biosimilars": ["rituximab-abbs (Truxima)", "rituximab-pvvr (Ruxience)", "rituximab-arrx (Riabni)"],
+      "new_modalities": ["bispecific antibodies (glofitamab, epcoritamab, mosunetuzumab)", "CAR-T (targeting CD19, not CD20 directly, but competes in same space)"],
+      "biosimilar_impact": "significant price erosion for rituximab indication",
+      "required_sections": ["landscape_matrix", "biosimilar_analysis", "next_gen_modalities", "market_dynamics"]
+    }
+  },
+  {
+    "id": "nash-mash-landscape",
+    "input": "Map the competitive landscape for MASH/NASH therapeutics. This is a dynamic space with recent approvals.",
+    "expected_details": {
+      "first_approval": "resmetirom (Rezdiffra, Madrigal) — March 2024, conditional approval for MASH with fibrosis",
+      "mechanism": "thyroid hormone receptor beta (THR-beta) agonist",
+      "phase3_competitors": ["semaglutide (MASH indication)", "survodutide", "retatrutide", "tirzepatide"],
+      "failed_programs": ["obeticholic acid (Intercept — FDA rejection)", "selonsertib (Gilead — failed Phase 3)"],
+      "mechanism_diversity": ["THR-beta agonist", "GLP-1 agonists", "FXR agonists", "FGF21 analogs", "pan-PPAR agonists"],
+      "unmet_need": "massive — >10M patients, limited options before resmetirom",
+      "required_sections": ["landscape_matrix", "pipeline_waterfall", "mechanism_comparison", "market_sizing"]
+    }
+  },
+  {
+    "id": "pcsk9-statin-landscape",
+    "input": "Compare the competitive positioning of PCSK9 inhibitors vs high-intensity statins and ezetimibe for LDL lowering.",
+    "expected_details": {
+      "pcsk9_agents": ["evolocumab (Repatha)", "alirocumab (Praluent)", "inclisiran (Leqvio)"],
+      "differentiation": {
+        "evolocumab_vs_alirocumab": "similar efficacy; evolocumab has broader indication set",
+        "inclisiran_differentiator": "siRNA mechanism, Q6 month dosing (vs Q2W for mAbs), in-office administration",
+        "vs_statins": "PCSK9i used add-on when statins insufficient; cost premium significant"
+      },
+      "cost_access_barrier": true,
+      "cv_outcomes_data": ["FOURIER (evolocumab)", "ODYSSEY OUTCOMES (alirocumab)", "ORION-4 (inclisiran, pending)"],
+      "required_sections": ["landscape_matrix", "differentiation_analysis", "cost_access", "cv_outcomes"]
+    }
+  },
+  {
+    "id": "adc-breast-cancer",
+    "input": "Map the competitive landscape for antibody-drug conjugates (ADCs) in breast cancer.",
+    "expected_details": {
+      "approved_adcs": ["trastuzumab emtansine (T-DM1, Kadcyla)", "trastuzumab deruxtecan (T-DXd, Enhertu)", "sacituzumab govitecan (Trodelvy)"],
+      "targets": {"T-DM1": "HER2", "T-DXd": "HER2 (including HER2-low)", "sacituzumab": "Trop-2"},
+      "game_changer": "T-DXd expanded to HER2-low (DESTINY-Breast04) — dramatically expanded addressable population",
+      "pipeline": ["datopotamab deruxtecan (Trop-2, DS-1062)", "patritumab deruxtecan (HER3)"],
+      "differentiation": "payload (DXd bystander effect), target selection (HER2-low expansion), linker technology",
+      "required_sections": ["landscape_matrix", "target_comparison", "pipeline_waterfall", "differentiation_analysis"]
+    }
+  },
+  {
+    "id": "jak-inhibitor-rheumatology",
+    "input": "Map the competitive landscape for JAK inhibitors in rheumatoid arthritis. Include the safety concern impact.",
+    "expected_details": {
+      "approved_agents": ["tofacitinib (Xeljanz, JAK1/3)", "baricitinib (Olumiant, JAK1/2)", "upadacitinib (Rinvoq, JAK1-selective)"],
+      "safety_concern": "ORAL Surveillance trial — tofacitinib showed increased MACE and malignancy vs TNF inhibitors",
+      "fda_boxed_warning": "class-wide boxed warning for all JAK inhibitors (CV events, malignancy, thrombosis, serious infections)",
+      "market_impact": "JAK inhibitors repositioned later in treatment algorithm (after biologic failure)",
+      "differentiation": "selectivity profile (JAK1 vs pan-JAK) — upadacitinib positioned as more selective",
+      "required_sections": ["landscape_matrix", "safety_impact", "prescribing_positioning", "differentiation_analysis"]
+    }
+  },
+  {
+    "id": "loe-analysis-keytruda",
+    "input": "Analyze the loss of exclusivity timeline for pembrolizumab (Keytruda). When does patent protection expire? What biosimilar activity exists?",
+    "expected_details": {
+      "current_revenue": "~$25B+ annually (largest oncology drug by revenue)",
+      "key_patents": "composition of matter and method patents extending into 2028-2030+",
+      "biosimilar_filings": "multiple biosimilar developers have filed or are in late-stage development",
+      "loe_timeline": "2028-2030 range depending on patent challenge outcomes",
+      "merck_strategy": "subcutaneous formulation (Keytruda SC), combination regimens to extend franchise",
+      "required_sections": ["patent_landscape", "loe_timeline", "biosimilar_activity", "sponsor_defense_strategy"]
+    }
+  },
+  {
+    "id": "gene-therapy-sma-landscape",
+    "input": "Map the competitive landscape for spinal muscular atrophy (SMA) treatments.",
+    "expected_details": {
+      "approved_therapies": [
+        {"name": "nusinersen (Spinraza)", "mechanism": "ASO", "route": "intrathecal", "sponsor": "Biogen"},
+        {"name": "onasemnogene (Zolgensma)", "mechanism": "gene therapy (AAV9-SMN1)", "route": "IV single dose", "sponsor": "Novartis"},
+        {"name": "risdiplam (Evrysdi)", "mechanism": "small molecule SMN2 splicing modifier", "route": "oral daily", "sponsor": "Roche"}
+      ],
+      "differentiation_axes": ["route of administration", "one-time vs chronic", "age eligibility", "cost"],
+      "cost_landscape": "Zolgensma ~$2.1M single dose; Spinraza ~$750K year 1; Evrysdi ~$340K/year",
+      "market_dynamics": "shift toward oral (Evrysdi) for convenience; gene therapy for pre-symptomatic newborns",
+      "required_sections": ["landscape_matrix", "differentiation_analysis", "cost_comparison", "market_dynamics"]
+    }
+  },
+  {
+    "id": "empty-landscape-rare",
+    "input": "Map the competitive landscape for Hutchinson-Gilford progeria syndrome (HGPS) treatments.",
+    "expected_details": {
+      "approved_therapy": "lonafarnib (Zokinvy, Eiger) — first and only approved therapy (2020)",
+      "mechanism": "farnesyltransferase inhibitor — prevents progerin accumulation",
+      "pipeline": "very limited — ultra-rare disease (~400 patients worldwide",
+      "market_size": "ultra-orphan — minimal commercial but high unmet need",
+      "should_note_limited_landscape": true,
+      "required_sections": ["landscape_matrix", "unmet_need", "market_sizing"]
+    }
+  }
+]

@@ -1,0 +1,179 @@
+[
+  {
+    "id": "well-designed-rct",
+    "input": "Audit reproducibility of: A Phase 3 double-blind RCT (N=1200) published in NEJM. Pre-registered on ClinicalTrials.gov. Full protocol available as supplement. Individual patient data deposited in YODA Project. Statistical analysis plan published before unblinding. Primary endpoint: PFS (HR 0.72, 95% CI 0.58-0.89, p=0.002). All pre-specified subgroups reported with forest plot. Two interim analyses with O'Brien-Fleming boundaries. No outcome switching between registration and publication.",
+    "expected_score_range": [80, 100],
+    "expected_rating": "Highly reproducible",
+    "expected_details": {
+      "claim_traceability": [8, 10],
+      "methodological_completeness": [9, 10],
+      "data_availability": [8, 10],
+      "code_availability": [3, 6],
+      "statistical_rigor": [8, 10],
+      "internal_consistency": [8, 10],
+      "bias_risk": [8, 10],
+      "external_validity": [6, 9],
+      "red_flags": [],
+      "notes": "Exemplary trial design. Code availability may dock points if SAP code not shared."
+    }
+  },
+  {
+    "id": "p-hacking-suspect",
+    "input": "Audit reproducibility of: A study in a mid-tier journal. N=47 per group. Primary outcome changed between ClinicalTrials.gov registration (OS) and publication (ORR). Reports p=0.048 on the 'primary' endpoint. 12 subgroup analyses reported; one subgroup (female, age >65, ECOG 0) shows p=0.003 and is highlighted in the abstract. No correction for multiple comparisons. Raw data not available. No statistical analysis plan published.",
+    "expected_score_range": [15, 35],
+    "expected_rating": "Low reproducibility",
+    "expected_details": {
+      "claim_traceability": [2, 5],
+      "methodological_completeness": [3, 6],
+      "data_availability": [0, 2],
+      "code_availability": [0, 2],
+      "statistical_rigor": [1, 4],
+      "internal_consistency": [3, 6],
+      "bias_risk": [1, 3],
+      "external_validity": [3, 6],
+      "red_flags": ["outcome switching", "p-value just below 0.05", "underpowered", "no multiplicity correction", "selective subgroup reporting"],
+      "notes": "Multiple red flags for p-hacking: outcome switching, borderline p-value, unreported multiplicity adjustment"
+    }
+  },
+  {
+    "id": "grim-test-failure",
+    "input": "Audit reproducibility of: A psychology study (N=25 per group). Reports mean ages of 23.44 (group 1) and 24.72 (group 2). Reports mean Likert scores (1-7 scale) of 4.37 (treatment, N=25) and 3.84 (control, N=25). Apply the GRIM test to these means.",
+    "expected_score_range": [20, 45],
+    "expected_rating": "Questionable reproducibility",
+    "expected_details": {
+      "claim_traceability": [4, 7],
+      "internal_consistency": [1, 4],
+      "grim_test_results": {
+        "age_23.44_n25": "PASS (25 * 23.44 = 586.0, integer)",
+        "age_24.72_n25": "PASS (25 * 24.72 = 618.0, integer)",
+        "likert_4.37_n25": "FAIL (25 * 4.37 = 109.25, not integer — Likert scores must sum to integer)",
+        "likert_3.84_n25": "PASS (25 * 3.84 = 96.0, integer)"
+      },
+      "red_flags": ["GRIM test failure on treatment group Likert mean"],
+      "notes": "One GRIM failure doesn't prove fabrication but warrants investigation"
+    }
+  },
+  {
+    "id": "open-science-exemplar",
+    "input": "Audit reproducibility of: A genomics study. All raw sequencing data deposited in GEO (GSE accession provided). Full analysis pipeline on GitHub with Snakemake workflow. Docker container for exact environment reproduction. Pre-registered analysis plan on OSF. All figures generated from provided scripts. Supplementary tables include all intermediate results.",
+    "expected_score_range": [85, 100],
+    "expected_rating": "Highly reproducible",
+    "expected_details": {
+      "claim_traceability": [8, 10],
+      "methodological_completeness": [8, 10],
+      "data_availability": [9, 10],
+      "code_availability": [9, 10],
+      "statistical_rigor": [7, 9],
+      "internal_consistency": [8, 10],
+      "bias_risk": [7, 10],
+      "external_validity": [6, 8],
+      "red_flags": [],
+      "notes": "Gold standard for computational reproducibility"
+    }
+  },
+  {
+    "id": "case-report-low-evidence",
+    "input": "Audit reproducibility of: A case report of 3 patients treated with off-label drug X for rare disease Y. All 3 showed improvement at 6 weeks. No control group. No blinding. No pre-registration. Outcome measured by treating physician (not independent assessor). Published in a specialty journal.",
+    "expected_score_range": [10, 30],
+    "expected_rating": "Low reproducibility",
+    "expected_details": {
+      "claim_traceability": [3, 6],
+      "methodological_completeness": [1, 3],
+      "data_availability": [1, 3],
+      "code_availability": [0, 1],
+      "statistical_rigor": [0, 2],
+      "internal_consistency": [4, 7],
+      "bias_risk": [0, 3],
+      "external_validity": [1, 3],
+      "red_flags": ["N=3", "no control", "unblinded outcome assessment", "regression to mean possible"],
+      "notes": "Case reports have inherent reproducibility limitations; this is expected, not necessarily a flaw"
+    }
+  },
+  {
+    "id": "retracted-paper-signals",
+    "input": "Audit reproducibility of: A study claiming a novel biomarker predicts treatment response with 95% sensitivity and 92% specificity. Training set N=200, validation set N=50. The validation set was selected from the same cohort as training (not independent). Multiple figures show visually identical data distributions between groups with different p-values. The paper was later retracted for 'data irregularities.'",
+    "expected_score_range": [0, 15],
+    "expected_rating": "Not reproducible",
+    "expected_details": {
+      "claim_traceability": [1, 3],
+      "methodological_completeness": [2, 4],
+      "data_availability": [0, 2],
+      "code_availability": [0, 1],
+      "statistical_rigor": [0, 2],
+      "internal_consistency": [0, 2],
+      "bias_risk": [0, 1],
+      "external_validity": [1, 3],
+      "red_flags": ["non-independent validation", "data overfitting", "visually identical distributions with different stats", "retracted"],
+      "notes": "Multiple red flags consistent with data fabrication or manipulation"
+    }
+  },
+  {
+    "id": "meta-analysis-moderate",
+    "input": "Audit reproducibility of: A systematic review and meta-analysis of 15 RCTs. PRISMA checklist followed. Forest plot shows pooled OR 1.45 (95% CI 1.12-1.88). Heterogeneity I²=62%. Funnel plot shows moderate asymmetry. Search strategy provided but limited to PubMed only (no Embase, CENTRAL, or grey literature). Risk of bias assessed with Cochrane RoB2 but 4 of 15 studies rated 'high risk.'",
+    "expected_score_range": [50, 70],
+    "expected_rating": "Moderately reproducible",
+    "expected_details": {
+      "claim_traceability": [6, 8],
+      "methodological_completeness": [5, 7],
+      "data_availability": [5, 7],
+      "code_availability": [2, 5],
+      "statistical_rigor": [5, 7],
+      "internal_consistency": [6, 8],
+      "bias_risk": [4, 6],
+      "external_validity": [5, 7],
+      "red_flags": ["search limited to single database", "moderate heterogeneity", "funnel plot asymmetry suggests publication bias", "27% of included studies high risk of bias"],
+      "notes": "Methodologically sound but with gaps that could affect conclusions"
+    }
+  },
+  {
+    "id": "machine-learning-overfit",
+    "input": "Audit reproducibility of: A machine learning study predicting drug response from gene expression. Reports AUC 0.96 on test set. However: no external validation cohort used (internal cross-validation only). Feature selection performed on full dataset before train/test split. 50,000 features, 200 samples. No code provided. Training/test split ratio not specified.",
+    "expected_score_range": [15, 35],
+    "expected_rating": "Low reproducibility",
+    "expected_details": {
+      "claim_traceability": [3, 5],
+      "methodological_completeness": [2, 4],
+      "data_availability": [2, 5],
+      "code_availability": [0, 2],
+      "statistical_rigor": [1, 3],
+      "internal_consistency": [3, 6],
+      "bias_risk": [1, 3],
+      "external_validity": [1, 3],
+      "red_flags": ["data leakage (feature selection before split)", "no external validation", "p >> n problem", "no code for reproduction", "suspiciously high AUC"],
+      "notes": "Classic ML reproducibility failures: data leakage from feature selection, no held-out test set, severe overfitting likely"
+    }
+  },
+  {
+    "id": "preprint-vs-publication-drift",
+    "input": "Audit reproducibility of: A study where the bioRxiv preprint (v1) reported primary outcome p=0.12, then the published version in a peer-reviewed journal reports p=0.03 on the same endpoint with 'additional data cleaning.' Sample size unchanged between versions. Methods section substantially rewritten between preprint and publication.",
+    "expected_score_range": [15, 35],
+    "expected_rating": "Low reproducibility",
+    "expected_details": {
+      "claim_traceability": [2, 4],
+      "methodological_completeness": [3, 5],
+      "statistical_rigor": [1, 3],
+      "internal_consistency": [1, 3],
+      "bias_risk": [0, 2],
+      "red_flags": ["p-value shift from 0.12 to 0.03 without sample size change", "substantial methods rewrite", "unexplained data cleaning changed result", "preprint-to-publication discrepancy"],
+      "notes": "The p-value shift without sample size change and with 'additional data cleaning' is a strong signal of post-hoc analytical flexibility"
+    }
+  },
+  {
+    "id": "animal-study-adequate",
+    "input": "Audit reproducibility of: An animal pharmacology study. N=10 mice per group (4 groups). Randomization described (computer-generated). Blinded outcome assessment. Power calculation provided (80% power at alpha=0.05 for expected effect size d=1.2). Primary outcome: tumor volume measured by caliper, confirmed by ex vivo weighing. All individual animal data in supplementary table. One mouse excluded with documented reason (died of unrelated cause, confirmed by necropsy).",
+    "expected_score_range": [60, 80],
+    "expected_rating": "Moderately reproducible",
+    "expected_details": {
+      "claim_traceability": [7, 9],
+      "methodological_completeness": [7, 9],
+      "data_availability": [7, 9],
+      "code_availability": [2, 5],
+      "statistical_rigor": [7, 9],
+      "internal_consistency": [7, 9],
+      "bias_risk": [6, 8],
+      "external_validity": [4, 6],
+      "red_flags": [],
+      "notes": "Well-designed animal study with appropriate rigor. External validity limited to animal model generalizability."
+    }
+  }
+]

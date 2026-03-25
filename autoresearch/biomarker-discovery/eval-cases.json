@@ -1,0 +1,137 @@
+[
+  {
+    "id": "her2-breast-companion-dx",
+    "input": "Assess HER2 as a predictive biomarker for trastuzumab response in breast cancer. Apply the FDA BEST framework and assess companion diagnostic status.",
+    "expected_details": {
+      "best_category": "Predictive biomarker",
+      "validation_stage": "clinically validated — FDA-approved companion diagnostic",
+      "companion_diagnostic": true,
+      "assays": ["IHC (HercepTest)", "FISH (PathVysion)", "NGS panels"],
+      "cutoff": "IHC 3+ or FISH amplified (HER2/CEP17 ratio ≥2.0)",
+      "clinical_utility": "mandatory for trastuzumab prescribing; determines treatment eligibility",
+      "required_sections": ["best_classification", "validation_status", "companion_dx", "clinical_utility"]
+    }
+  },
+  {
+    "id": "tmb-pan-tumor-emerging",
+    "input": "Assess tumor mutational burden (TMB) as a predictive biomarker for pembrolizumab response across solid tumors.",
+    "expected_details": {
+      "best_category": "Predictive biomarker",
+      "validation_stage": "FDA-approved (TMB-H ≥10 mut/Mb for pembrolizumab, tissue-agnostic)",
+      "companion_diagnostic": true,
+      "assay": "FoundationOne CDx (FDA-approved CDx for TMB-H)",
+      "cutoff": "≥10 mutations/Mb",
+      "limitations": ["TMB cutoff may not be optimal for all tumor types", "assay variability across platforms", "TMB less predictive in some cancers (e.g., RCC)"],
+      "required_sections": ["best_classification", "validation_status", "companion_dx", "limitations"]
+    }
+  },
+  {
+    "id": "troponin-diagnostic",
+    "input": "Assess high-sensitivity troponin I (hs-TnI) as a diagnostic biomarker for acute myocardial infarction.",
+    "expected_details": {
+      "best_category": "Diagnostic biomarker",
+      "validation_stage": "clinically validated — gold standard for MI diagnosis",
+      "cutoff": "99th percentile upper reference limit (sex-specific)",
+      "auc_range": [0.90, 0.98],
+      "sensitivity_range": [0.90, 0.99],
+      "specificity": "moderate — elevated in other conditions (PE, myocarditis, HF, renal failure)",
+      "serial_measurement": "rise/fall pattern required to differentiate acute MI from chronic elevation",
+      "required_sections": ["best_classification", "roc_analysis", "clinical_utility", "limitations"]
+    }
+  },
+  {
+    "id": "psa-screening-controversial",
+    "input": "Assess PSA as a screening biomarker for prostate cancer. Note the controversy around population screening.",
+    "expected_details": {
+      "best_category": "Susceptibility/Risk biomarker (screening context)",
+      "validation_stage": "clinically available but controversial for population screening",
+      "cutoff_traditional": "4.0 ng/mL",
+      "sensitivity_at_4": "~70-80%",
+      "specificity_at_4": "~60-70%",
+      "auc_range": [0.65, 0.75],
+      "controversy": ["overdiagnosis of indolent cancers", "USPSTF recommendation history (D→C)", "shared decision-making recommended"],
+      "should_note_controversy": true,
+      "required_sections": ["best_classification", "roc_analysis", "clinical_utility", "controversy"]
+    }
+  },
+  {
+    "id": "ctdna-mrd-monitoring",
+    "input": "Assess circulating tumor DNA (ctDNA) as a monitoring biomarker for minimal residual disease (MRD) in colorectal cancer post-surgery.",
+    "expected_details": {
+      "best_category": "Monitoring biomarker",
+      "validation_stage": "emerging — clinical trials ongoing; not yet standard of care",
+      "assays": ["tumor-informed approaches (e.g., Signatera)", "tumor-agnostic panels"],
+      "clinical_utility": "detects MRD before radiographic recurrence; may guide adjuvant therapy decisions",
+      "sensitivity": "variable by assay (50-90% for stage II-III CRC)",
+      "key_trials": ["DYNAMIC (ANZ)", "CIRCULATE-Japan"],
+      "required_sections": ["best_classification", "validation_status", "clinical_utility", "limitations"]
+    }
+  },
+  {
+    "id": "brca-pharmacogenomic",
+    "input": "Assess BRCA1/2 mutation status as a predictive biomarker for PARP inhibitor response in ovarian cancer.",
+    "expected_details": {
+      "best_category": "Predictive biomarker",
+      "validation_stage": "clinically validated — companion diagnostic approved",
+      "companion_diagnostic": true,
+      "assay": "BRACAnalysis CDx (Myriad)",
+      "mechanism": "HRD from BRCA LOF creates synthetic lethality with PARP inhibition",
+      "drugs": ["olaparib", "rucaparib", "niraparib"],
+      "response_rate": "ORR ~60-80% in BRCA-mutant platinum-sensitive ovarian cancer",
+      "required_sections": ["best_classification", "companion_dx", "mechanism", "clinical_utility"]
+    }
+  },
+  {
+    "id": "albumin-prognostic",
+    "input": "Assess serum albumin as a prognostic biomarker in advanced cancer (pan-cancer).",
+    "expected_details": {
+      "best_category": "Prognostic biomarker",
+      "validation_stage": "clinically validated — widely used but non-specific",
+      "cutoff": "<3.5 g/dL (hypoalbuminemia associated with worse outcomes)",
+      "mechanism": "reflects nutritional status, inflammation (negative acute-phase reactant), liver synthetic function",
+      "limitations": ["non-specific — confounded by inflammation, liver disease, nephrotic syndrome", "not actionable (no targeted therapy)", "component of prognostic scores (e.g., Glasgow Prognostic Score)"],
+      "not_a_companion_dx": true,
+      "required_sections": ["best_classification", "clinical_utility", "limitations"]
+    }
+  },
+  {
+    "id": "pdl1-complex-predictive",
+    "input": "Assess PD-L1 expression as a predictive biomarker for immune checkpoint inhibitors in NSCLC. Note the complexity of scoring systems.",
+    "expected_details": {
+      "best_category": "Predictive biomarker",
+      "validation_stage": "FDA-approved companion diagnostic for multiple agents",
+      "scoring_systems": ["TPS (tumor proportion score — SP263, 22C3)", "CPS (combined positive score — 22C3)"],
+      "cutoffs_vary_by_drug": true,
+      "pembrolizumab_nsclc": "TPS ≥50% (first-line mono) or ≥1% (with chemo)",
+      "assay_variability": "different antibody clones (22C3, 28-8, SP142, SP263) may give discordant results",
+      "limitations": ["dynamic expression (changes with treatment)", "intratumoral heterogeneity", "assay-specific cutoffs not interchangeable"],
+      "required_sections": ["best_classification", "companion_dx", "scoring_complexity", "limitations"]
+    }
+  },
+  {
+    "id": "novel-exploratory-biomarker",
+    "input": "Assess circulating galectin-3 as a prognostic biomarker for heart failure outcomes. This is an FDA-cleared but still maturing biomarker.",
+    "expected_details": {
+      "best_category": "Prognostic biomarker",
+      "validation_stage": "FDA-cleared (510(k)) but clinical adoption limited",
+      "cutoff": "~17.8 ng/mL (varies by assay)",
+      "mechanism": "galectin-3 drives cardiac fibrosis via fibroblast activation",
+      "additive_value": "adds prognostic information beyond NT-proBNP in some studies",
+      "limitations": ["not widely adopted in clinical practice", "unclear if actionable (no galectin-3-guided therapy)", "confounded by renal function"],
+      "required_sections": ["best_classification", "validation_status", "clinical_utility", "limitations"]
+    }
+  },
+  {
+    "id": "readiness-scoring-exercise",
+    "input": "Score the biomarker readiness for a novel plasma protein X discovered via proteomics. Discovery cohort N=50, single-center. AUC 0.82 in discovery. No independent validation. No assay standardization. No regulatory submission. Two publications from the same group.",
+    "expected_details": {
+      "best_category": "Candidate/exploratory biomarker",
+      "validation_stage": "discovery phase only",
+      "readiness_assessment": "low readiness — requires independent validation, assay standardization, multi-center replication",
+      "auc_caution": "AUC 0.82 in small discovery cohort likely inflated (optimism bias)",
+      "next_steps": ["independent validation cohort (N ≥ 200)", "assay standardization and reproducibility testing", "multi-center replication"],
+      "should_not_overstate_readiness": true,
+      "required_sections": ["best_classification", "validation_status", "readiness_score", "next_steps"]
+    }
+  }
+]

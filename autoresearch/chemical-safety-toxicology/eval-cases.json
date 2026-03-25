@@ -1,0 +1,154 @@
+[
+  {
+    "id": "aspirin-clean-profile",
+    "input": "Run a full 8-phase safety assessment on aspirin (acetylsalicylic acid). This is a well-characterized compound expected to have a clean drug-likeness profile.",
+    "expected_risk": "Low",
+    "expected_details": {
+      "lipinski_violations": 0,
+      "pains_alerts": 0,
+      "mw": "~180 Da",
+      "logp": "~1.2",
+      "herg_concern": false,
+      "hepatotox_concern": "low (rare idiosyncratic)",
+      "known_safety_issues": ["GI bleeding (COX-1 inhibition)", "Reye syndrome in children", "bleeding risk"],
+      "risk_classification": "Low",
+      "required_phases": [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+  },
+  {
+    "id": "thalidomide-structural-alerts",
+    "input": "Run a full safety assessment on thalidomide. This compound has a notorious teratogenicity history.",
+    "expected_risk": "High to Critical",
+    "expected_details": {
+      "lipinski_violations": 0,
+      "structural_alerts": ["glutarimide moiety (teratogenic)", "phthalimide"],
+      "teratogenicity": "CRITICAL — category X; absolute contraindication in pregnancy",
+      "mechanism_of_teratogenicity": "cereblon binding → degradation of SALL4 and other transcription factors critical for limb development",
+      "current_use": "approved for multiple myeloma, ENL (with strict REMS — Thalomid REMS)",
+      "risk_classification": "Critical (with REMS mitigation)",
+      "required_phases": [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+  },
+  {
+    "id": "curcumin-pains-flagged",
+    "input": "Run a safety assessment on curcumin (diferuloylmethane). This is a well-known PAINS compound.",
+    "expected_risk": "Medium (PAINS concern)",
+    "expected_details": {
+      "pains_alerts": ["Michael acceptor (alpha-beta unsaturated carbonyl)", "metal chelator", "redox-active"],
+      "brenk_alerts": ["quinone-like"],
+      "lipinski_compliance": "borderline (MW 368, logP ~3.2, marginal solubility)",
+      "drug_likeness": "poor — PAINS alerts make bioassay data unreliable",
+      "clinical_reality": "no approved drug despite thousands of publications; bioavailability extremely low",
+      "should_flag_pains": true,
+      "risk_classification": "Medium",
+      "required_phases": [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+  },
+  {
+    "id": "herg-blocker-terfenadine",
+    "input": "Run a safety assessment on terfenadine (Seldane). This was withdrawn due to cardiac toxicity.",
+    "expected_risk": "Critical",
+    "expected_details": {
+      "herg_concern": true,
+      "herg_ic50": "~50 nM (potent hERG blocker)",
+      "cardiac_toxicity": "QT prolongation → torsades de pointes → sudden cardiac death",
+      "withdrawal_reason": "hERG-mediated cardiac arrhythmia, especially with CYP3A4 inhibitors",
+      "cyp3a4_interaction": "terfenadine is a CYP3A4 substrate; ketoconazole/erythromycin co-administration caused fatal arrhythmias",
+      "replacement": "fexofenadine (active metabolite, no hERG liability)",
+      "risk_classification": "Critical",
+      "required_phases": [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+  },
+  {
+    "id": "lipinski-violator-cyclosporine",
+    "input": "Run a safety assessment on cyclosporine. This is a known Lipinski Rule of 5 violator.",
+    "expected_risk": "High (multiple violations but approved drug)",
+    "expected_details": {
+      "lipinski_violations": 3,
+      "mw": "~1203 Da (violates MW < 500)",
+      "logp": "~2.9",
+      "hbd": "5 (borderline)",
+      "rotatable_bonds": ">10",
+      "oral_bioavailability": "~30% (poor but sufficient)",
+      "narrow_therapeutic_index": true,
+      "tdm_required": true,
+      "hepatotoxicity": "yes — dose-dependent",
+      "nephrotoxicity": "yes — major dose-limiting toxicity",
+      "should_note_beyond_rule_of_5": true,
+      "risk_classification": "High",
+      "required_phases": [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+  },
+  {
+    "id": "genotoxic-impurity",
+    "input": "Assess the safety of nitrosamine impurity NDMA (N-nitrosodimethylamine) found as a contaminant in pharmaceutical products. Apply ICH M7 principles.",
+    "expected_risk": "Critical",
+    "expected_details": {
+      "genotoxicity": "positive (AMES test positive; known DNA alkylating agent)",
+      "carcinogenicity": "IARC Group 2A (probably carcinogenic to humans)",
+      "structural_alert": "N-nitroso group (potent mutagen)",
+      "ich_m7_class": "Class 1 (known mutagenic carcinogen)",
+      "acceptable_intake": "96 ng/day (FDA interim limit for NDMA)",
+      "context": "ranitidine, valsartan, metformin recalls due to NDMA contamination",
+      "risk_classification": "Critical",
+      "required_phases": [1, 2, 3, 4, 7, 8]
+    }
+  },
+  {
+    "id": "clean-drug-candidate",
+    "input": "Assess a hypothetical compound with: MW 350, LogP 2.1, HBD 1, HBA 4, TPSA 60, 3 rotatable bonds, no PAINS alerts, no structural alerts, hERG IC50 >30 μM, no CYP inhibition. Classify the safety profile.",
+    "expected_risk": "Low",
+    "expected_details": {
+      "lipinski_violations": 0,
+      "veber_compliance": true,
+      "pains_alerts": 0,
+      "herg_concern": false,
+      "qed_estimate": ">0.5 (favorable)",
+      "risk_classification": "Low",
+      "recommendation": "proceed to standard safety testing program",
+      "required_phases": [1, 2, 3, 5, 8]
+    }
+  },
+  {
+    "id": "dili-risk-assessment",
+    "input": "Assess hepatotoxicity risk for a compound with: daily dose 500 mg, lipophilic (LogP 4.5), forms reactive metabolites via CYP3A4 (glutathione conjugate detected), and inhibits BSEP (bile salt export pump) at 5 μM.",
+    "expected_risk": "High",
+    "expected_details": {
+      "dili_risk_factors": ["high daily dose (>100 mg — Lammert rule)", "lipophilic (LogP >3)", "reactive metabolite formation (GSH conjugate)", "BSEP inhibition"],
+      "bsep_concern": "BSEP IC50 5 μM is concerning — cholestatic liver injury risk",
+      "reactive_metabolite": "CYP3A4 bioactivation → reactive intermediate → GSH depletion → hepatotoxicity",
+      "daily_dose_rule": "daily dose >100 mg + lipophilic + reactive metabolite = high DILI risk (rule of 2)",
+      "risk_classification": "High",
+      "recommendation": "conduct dedicated hepatotoxicity studies; consider dose reduction or structural modification",
+      "required_phases": [2, 3, 5, 6, 8]
+    }
+  },
+  {
+    "id": "ames-positive-rescue",
+    "input": "A compound tests AMES-positive in TA98 (frameshift mutation). However, it is intended as an oncology drug with no alternative. How should genotoxicity data be interpreted?",
+    "expected_risk": "High (but context-dependent)",
+    "expected_details": {
+      "ames_result": "positive — potential mutagen",
+      "interpretation": "AMES positive does not automatically preclude development for life-threatening indications",
+      "ich_s9_guidance": "ICH S9 allows reduced genotoxicity package for oncology drugs with serious conditions",
+      "risk_benefit": "acceptable if: disease is life-threatening, no alternatives exist, and benefit outweighs genotoxic risk",
+      "additional_testing": ["in vivo micronucleus test", "in vivo comet assay", "mechanistic follow-up"],
+      "should_note_context_dependence": true,
+      "required_phases": [3, 5, 7, 8]
+    }
+  },
+  {
+    "id": "read-across-analog",
+    "input": "Assess a novel compound that is structurally very similar (Tanimoto 0.92) to a known hepatotoxin that was withdrawn from market. No direct toxicology data available for the new compound. Apply read-across principles.",
+    "expected_risk": "High (by read-across)",
+    "expected_details": {
+      "read_across_applicable": true,
+      "tanimoto_threshold": "0.92 is high structural similarity — read-across is justified",
+      "inference": "structural analog was hepatotoxic → new compound has high probability of similar liability",
+      "recommendation": ["prioritize hepatotoxicity testing before advancement", "conduct in vitro hepatocyte assays", "compare metabolic profiles"],
+      "limitations": ["read-across is inferential, not definitive", "small structural changes can alter toxicity", "direct testing needed to confirm"],
+      "risk_classification": "High (provisional, pending direct data)",
+      "required_phases": [2, 3, 6, 8]
+    }
+  }
+]
