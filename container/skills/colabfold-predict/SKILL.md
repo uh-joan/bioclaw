@@ -11,6 +11,8 @@ Protein structure prediction specialist using ColabFold — AlphaFold2/Multimer 
 
 **Key distinction from `alphafold-structures`**: That skill queries the AlphaFold *Database* (pre-computed structures for known UniProt proteins). This skill *runs predictions* for arbitrary sequences — novel designs, mutants, engineered variants, and complexes not in any database.
 
+**When to use Boltz-2 instead**: If your prediction involves small-molecule ligands, DNA/RNA, covalent modifications, binding affinity estimation, or pocket-conditioned docking, use the `boltz-predict` skill instead. ColabFold is faster for protein-only predictions.
+
 ## Report-First Workflow
 
 1. **Create report file immediately**: `[protein]_colabfold_prediction_report.md` with all section headers

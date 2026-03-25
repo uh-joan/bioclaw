@@ -6,6 +6,7 @@ description: Comprehensive drug research report generator. Compound disambiguati
 # Drug Research
 
 > **Code recipes**: See [recipes.md](recipes.md) for copy-paste executable code templates.
+> **Boltz-2 recipes**: See [boltz-recipes.md](boltz-recipes.md) for drug-target docking, binding affinity prediction, covalent binding, and competitive drug comparison via Boltz-2.
 
 Generates comprehensive drug research reports with compound disambiguation, evidence grading, and 11 mandatory sections. Uses 8 MCP servers for full-spectrum pharmaceutical intelligence: FDA regulatory data, DrugBank pharmacology, ChEMBL bioactivity, PubMed literature, PubChem chemistry, ClinicalTrials.gov trials, Open Targets genetics, and bioRxiv preprints.
 

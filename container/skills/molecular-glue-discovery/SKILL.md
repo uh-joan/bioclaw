@@ -7,6 +7,7 @@ description: "Targeted protein degradation: molecular glues, PROTACs, degrader d
 
 Specialist skill for targeted protein degradation (TPD) drug discovery — molecular glues, PROTACs, and next-generation degraders. Covers the full TPD pipeline from E3 ligase selection and neosubstrate identification through ternary complex modeling, degrader optimization, selectivity profiling, and clinical translation. Integrates structural biology, computational chemistry, proteomics, and pharmacology data to deliver actionable degrader design recommendations.
 
+> **Boltz-2 recipes**: See [boltz-recipes.md](boltz-recipes.md) for ternary complex modeling, PROTAC prediction, neosubstrate selectivity screening, and glue SAR via Boltz-2.
 > **Cross-references**: [medicinal-chemistry](../medicinal-chemistry/SKILL.md) for warhead SAR/ADMET optimization, [protein-therapeutic-design](../protein-therapeutic-design/SKILL.md) for biologics alternatives, [chemical-safety-toxicology](../chemical-safety-toxicology/SKILL.md) for teratogenicity assessment, [drug-target-analyst](../drug-target-analyst/SKILL.md) for target validation.
 
 ## Report-First Workflow

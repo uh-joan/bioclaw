@@ -5,6 +5,8 @@ description: Complete drug discovery cascade from target validation through know
 
 # Binder Discovery Specialist
 
+> **Boltz-2 recipes**: See [boltz-recipes.md](boltz-recipes.md) for structure-based virtual screening, hit-to-lead affinity ranking, scaffold hopping validation, and ADMET-filtered docking via Boltz-2.
+
 Complete drug discovery cascade from target validation through known ligand mining, compound expansion, ADMET filtering, to docking prioritization. Uses Open Targets for target validation and druggability, ChEMBL for bioactivity and SAR data, DrugBank for drug-target pharmacology, PubChem for compound expansion and similarity searches, PubMed for literature evidence, and FDA for regulatory context on approved compounds.
 
 ## Report-First Workflow
