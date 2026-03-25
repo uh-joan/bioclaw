@@ -127,6 +127,21 @@ Use ClinVar to retrieve known pathogenicity classifications for candidate varian
 | `combined_search` | Multi-filter: gene + condition + significance (`gene`, `condition`, `significance`, `retmax`, `retstart`) |
 | `get_gene_variants_summary` | Search gene then return summaries, max 50 (`gene`, `limit`) |
 
+### `mcp__ncbi__ncbi_data` (NCBI Gene & OMIM — Gene Details and Genetic Disorders)
+
+Use NCBI for gene details (function, aliases, genomic context), cross-database links (pathways, diseases, literature), and OMIM genetic disorder lookups — the gold standard for Mendelian disease cataloging.
+
+| Method | Rare disease use |
+|--------|-----------------|
+| `search_gene` | Search NCBI Gene database by gene name/keyword |
+| `get_gene` | Get full gene details (function, aliases, location, summary) by NCBI Gene ID |
+| `get_gene_links` | Cross-database links: pathways, diseases, literature for a gene |
+| `search_omim` | CORE: Search OMIM for genetic disorders by keyword (phenotype, gene, syndrome name) |
+| `search_protein` | Search NCBI Protein database for additional protein context |
+| `get_protein` | Get protein details by accession |
+
+**OMIM integration**: Use `search_omim` to look up Mendelian disease entries, inheritance patterns, and gene-disease relationships. Cross-reference with Monarch `get_disease_genes` and ClinVar pathogenicity data for comprehensive diagnostic evidence.
+
 ### `mcp__gnomad__gnomad_data` (gnomAD Population Genomics)
 
 | Method | Rare disease use |

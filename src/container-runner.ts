@@ -40,6 +40,7 @@ import {
   GWAS_MCP_SERVER_PATH,
   HMDB_MCP_SERVER_PATH,
   OPENALEX_MCP_SERVER_PATH,
+  NCBI_MCP_SERVER_PATH,
   UNIPROT_MCP_SERVER_PATH,
   FDA_MCP_SERVER_PATH,
   MEDICAID_MCP_SERVER_PATH,
@@ -302,6 +303,7 @@ function buildVolumeMounts(
     { envPath: GWAS_MCP_SERVER_PATH, containerName: 'gwas-mcp-server' },
     { envPath: HMDB_MCP_SERVER_PATH, containerName: 'hmdb-mcp-server' },
     { envPath: OPENALEX_MCP_SERVER_PATH, containerName: 'openalex-mcp-server' },
+    { envPath: NCBI_MCP_SERVER_PATH, containerName: 'ncbi-mcp-server' },
   ];
   for (const { envPath, containerName } of mcpMounts) {
     if (envPath && fs.existsSync(envPath)) {

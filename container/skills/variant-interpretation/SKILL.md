@@ -153,6 +153,17 @@ Use ClinVar to retrieve existing ACMG classifications, submission-level evidence
 
 **GWAS Catalog Workflow:** Use the GWAS Catalog to retrieve population-level variant-trait associations that inform ACMG evidence assessment. For variants under clinical interpretation, query `get_variant_associations` to identify all published GWAS associations — variants with genome-wide significant associations to the patient's phenotype support PS4 (prevalence in affected vs controls). Use `get_gene_associations` to check whether the gene harboring the variant has broader GWAS evidence linking it to the disease, reinforcing gene-disease validity. Use `search_by_trait` to identify other variants and loci associated with the same condition, providing context for the genetic architecture and supporting PP4 (phenotype specificity) when GWAS findings converge on the same gene or pathway.
 
+### `mcp__ncbi__ncbi_data` (NCBI Gene — Gene Context & OMIM)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_gene` | Search NCBI Gene by name/keyword | `query`, `limit` |
+| `get_gene` | Full gene details (function, aliases, location, summary) | `gene_id` |
+| `get_gene_links` | Cross-database links (pathways, diseases, literature) | `gene_id`, `link_db` |
+| `search_omim` | OMIM entries for Mendelian disorders associated with the gene | `query`, `limit` |
+
+**NCBI Gene Workflow:** Use `search_gene` + `get_gene` to retrieve detailed gene function summaries and aliases — this contextualizes variants within the gene's biological role. Use `search_omim` to check if the gene is associated with known Mendelian disorders, directly informing ACMG PP4 (patient phenotype matches known gene-disease relationship) and PM2 (gene-disease mechanism established).
+
 ## Python Environment
 
 Python 3 is available in the container with `scipy`, `statsmodels`, `pandas`, `numpy`, `scikit-learn`. Use `python3` to execute scripts. All code templates below are ready to run with minor parameter substitution.

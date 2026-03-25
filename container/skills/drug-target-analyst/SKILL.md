@@ -165,6 +165,15 @@ Drug target identification, validation, and molecular pharmacology analysis. Use
 | `get_gene_expression` | Expression-dependency correlation | `gene`, `lineage`, `dataset` |
 | `get_multi_gene_profile` | Pathway-level dependency assessment | `genes`, `lineage`, `dataset` |
 
+### `mcp__ncbi__ncbi_data` (NCBI Gene — Gene Details & Cross-Database Links)
+
+| Method | What it does | Key parameters |
+|--------|-------------|----------------|
+| `search_gene` | Search NCBI Gene database by name/keyword | `query`, `limit` |
+| `get_gene` | Full gene details: function, aliases, location, summary | `gene_id` |
+| `get_gene_links` | Cross-database links: pathways, diseases, literature | `gene_id`, `link_db` |
+| `search_omim` | OMIM genetic disorder entries for the target gene | `query`, `limit` |
+
 ---
 
 ## Target Identification Workflow
