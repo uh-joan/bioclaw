@@ -48,6 +48,9 @@ const envConfig = readEnvFile([
   'HMDB_MCP_SERVER_PATH',
   'OPENALEX_MCP_SERVER_PATH',
   'NCBI_MCP_SERVER_PATH',
+  'FINANCIALS_MCP_SERVER_PATH',
+  'SEC_MCP_SERVER_PATH',
+  'PATENTS_MCP_SERVER_PATH',
 ]);
 
 export const ASSISTANT_NAME =
@@ -221,8 +224,16 @@ export const OPENALEX_MCP_SERVER_PATH =
   envConfig.OPENALEX_MCP_SERVER_PATH ||
   '';
 export const NCBI_MCP_SERVER_PATH =
-  process.env.NCBI_MCP_SERVER_PATH ||
-  envConfig.NCBI_MCP_SERVER_PATH ||
+  process.env.NCBI_MCP_SERVER_PATH || envConfig.NCBI_MCP_SERVER_PATH || '';
+export const FINANCIALS_MCP_SERVER_PATH =
+  process.env.FINANCIALS_MCP_SERVER_PATH ||
+  envConfig.FINANCIALS_MCP_SERVER_PATH ||
+  '';
+export const SEC_MCP_SERVER_PATH =
+  process.env.SEC_MCP_SERVER_PATH || envConfig.SEC_MCP_SERVER_PATH || '';
+export const PATENTS_MCP_SERVER_PATH =
+  process.env.PATENTS_MCP_SERVER_PATH ||
+  envConfig.PATENTS_MCP_SERVER_PATH ||
   '';
 
 // Timezone for scheduled tasks (cron expressions, etc.)
