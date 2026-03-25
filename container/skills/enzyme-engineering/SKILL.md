@@ -7,6 +7,7 @@ description: "Enzyme engineering, directed evolution, rational design, stability
 
 > **ColabFold recipes**: See [colabfold-recipes.md](colabfold-recipes.md) for mutant stability screening, active site geometry validation, and directed evolution structural analysis via ColabFold.
 > **ProteinMPNN recipes**: See [proteinmpnn-recipes.md](proteinmpnn-recipes.md) for active site redesign with fixed catalytic residues, thermostability design, and substrate tunnel engineering via ProteinMPNN.
+> **RFdiffusion recipes**: See [rfdiffusion-recipes.md](rfdiffusion-recipes.md) for de novo enzyme scaffold generation with the ActiveSite model, catalytic triad scaffolding, and substrate channel design.
 
 Specialist skill for enzyme engineering, directed evolution, and rational design of industrial and research enzymes. Covers the full pipeline from target enzyme characterization through variant library design, stability engineering, activity screening, kinetic characterization, immobilization, and process optimization for biocatalysis. Integrates computational prediction tools (ESM, FoldX, Rosetta, LigandMPNN, RFdiffusion) with experimental design guidance for high-throughput screening and validation.
 
