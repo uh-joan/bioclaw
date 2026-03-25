@@ -13,6 +13,8 @@ Biomolecular structure and binding affinity prediction using Boltz-2 — the fir
 
 **When to use Chai-1 instead**: If your prediction involves glycans/glycoproteins, you have experimental restraints (crosslinks, known contacts) to guide folding, or you want fast single-sequence mode without MSA, use the `chai-predict` skill. Boltz-2 is better for binding affinity estimation; Chai-1 is better for glycan modeling and restraint-guided predictions.
 
+**When to use Protenix instead**: If you need highest benchmark accuracy, are predicting hard targets (Ab-Ag), or want inference-time scaling (100+ candidates for log-linear accuracy gains), use the `protenix-predict` skill. Boltz-2 remains the only tool with binding affinity prediction.
+
 ## Report-First Workflow
 
 1. **Create report file immediately**: `[complex]_boltz_prediction_report.md` with all section headers

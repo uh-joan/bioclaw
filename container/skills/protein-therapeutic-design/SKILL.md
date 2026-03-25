@@ -11,6 +11,7 @@ description: De novo protein therapeutic design and engineering. Protein binder 
 > **Boltz-2 recipes**: See [boltz-recipes.md](boltz-recipes.md) for designed protein-ligand complex prediction, template-forced validation, and binding affinity estimation via Boltz-2.
 > **Chai-1 recipes**: See [chai-recipes.md](chai-recipes.md) for glycoprotein design validation, restraint-guided complex prediction, and modified residue modeling via Chai-1.
 > **ProteinMPNN recipes**: See [proteinmpnn-recipes.md](proteinmpnn-recipes.md) for inverse folding sequence design from scaffold structures, interface design, and the full design-predict-validate loop.
+> **Protenix recipes**: See [protenix-recipes.md](protenix-recipes.md) for highest-accuracy design validation with inference-time scaling, mini model screening, and multi-tool validation cascade.
 
 De novo protein therapeutic design specialist covering the full computational pipeline from target characterization through binder design, sequence optimization, and developability assessment. Uses UniProt for protein data and domain architecture, STRING for interaction networks and functional context, DrugBank for competitive landscape, PubMed for literature evidence, and ChEMBL for existing bioactivity data. Guides design of miniproteins, repeat proteins, de novo enzymes, constrained peptides, and nanobody-like scaffolds using computational methodology concepts from RFdiffusion, ProteinMPNN, ESMFold, and AlphaFold2.
 

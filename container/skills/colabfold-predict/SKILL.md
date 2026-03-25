@@ -15,6 +15,8 @@ Protein structure prediction specialist using ColabFold — AlphaFold2/Multimer 
 
 **When to use Chai-1 instead**: If your prediction involves glycans/glycoproteins, experimental restraints (crosslinks, known contacts), or you need fast single-sequence mode without MSA, use the `chai-predict` skill instead.
 
+**When to use Protenix instead**: If you need the highest possible accuracy (outperforms AF3), are predicting hard targets (Ab-Ag complexes), or want to apply inference-time scaling (100+ candidates), use the `protenix-predict` skill.
+
 ## Report-First Workflow
 
 1. **Create report file immediately**: `[protein]_colabfold_prediction_report.md` with all section headers

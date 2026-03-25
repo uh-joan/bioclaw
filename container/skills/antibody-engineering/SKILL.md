@@ -8,6 +8,7 @@ description: Antibody engineering and biologics development specialist. Guides a
 > **ColabFold recipes**: See [colabfold-recipes.md](colabfold-recipes.md) for antibody structure prediction, Fv modeling, antibody-antigen complex prediction, and CDR loop confidence analysis via ColabFold.
 > **Chai-1 recipes**: See [chai-recipes.md](chai-recipes.md) for Fc glycosylation modeling, glycan impact on effector function, and restraint-guided antibody complex prediction via Chai-1.
 > **ProteinMPNN recipes**: See [proteinmpnn-recipes.md](proteinmpnn-recipes.md) for CDR loop redesign with fixed framework, humanization-aware sequence design, and antibody interface optimization via ProteinMPNN.
+> **Protenix recipes**: See [protenix-recipes.md](protenix-recipes.md) for Ab-Ag complex prediction with inference-time scaling (200 candidates), humanization comparison, and mini model screening.
 
 Biologics development specialist guiding antibody optimization from preclinical leads to clinical candidates. Covers humanization strategy, developability assessment, immunogenicity prediction, and manufacturing feasibility (CMC). Uses Open Targets for target biology, ChEMBL for bioactivity benchmarking, DrugBank for approved antibody intelligence, PubMed for literature, FDA for regulatory precedent, ClinicalTrials.gov for pipeline intelligence, and PubChem for chemical/conjugate data.
 
