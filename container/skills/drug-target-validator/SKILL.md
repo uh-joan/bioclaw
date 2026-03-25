@@ -616,6 +616,17 @@ Step 6: DepMap Essentiality (max 10)
   - For non-oncology targets: score based on whether essentiality data supports or contradicts the safety profile
 ```
 
+### Score Ceiling Rules (Conservative Guardrails)
+
+Before assigning the final tier, apply these ceiling checks:
+
+- **Clinical Precedent = 0 or 1 (Preclinical only / Failed):** Total score is CAPPED at 55 regardless of other dimensions. Rationale: without any human clinical proof-of-concept, a target cannot be CONDITIONAL GO or GO. Preclinical-only targets are CAUTION at best.
+- **Clinical Precedent ≤ 4 (In clinical testing, no efficacy data):** Total score is CAPPED at 70. Rationale: Phase 1 dosing alone does not validate the target.
+- **Druggability ≤ 10 (low tractability):** Total score is CAPPED at 55. Rationale: strong biology without a drugable path is not actionable.
+- **Safety Profile = RED (0 points):** Total score is CAPPED at 40. Rationale: unacceptable safety risk overrides all other dimensions.
+
+Apply ceilings AFTER computing the raw sum. If multiple ceilings apply, use the lowest.
+
 ### Priority Tiers and GO/NO-GO Decisions
 
 | Tier | Score Range | Decision | Action |

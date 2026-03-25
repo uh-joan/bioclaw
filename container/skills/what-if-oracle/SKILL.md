@@ -277,6 +277,17 @@ The single most important non-obvious conclusion: a concise statement with suppo
 
 **Robustness (0-15):** 13-15: 3+ robust actions tested across all branches, hedges with triggers | 10-12: 2-3 actions, major risks hedged | 7-9: partial | 4-6: mentioned but untested | 0-3: none
 
+### Confidence Ceiling Rules
+
+Before assigning the final DC tier, apply these anchoring checks:
+
+- **If the scenario involves a clinical trial that has NOT yet read out (outcome unknown):** DC score is CAPPED at 60. Rationale: unobserved outcomes cannot support high confidence regardless of analysis quality. The uncertainty is irreducible until data exists.
+- **If the decision depends on a regulatory agency response (FDA meeting, advisory committee) that has not occurred:** DC score is CAPPED at 65. Rationale: regulatory decisions are inherently unpredictable.
+- **If the best available evidence is Phase 2 / single-arm / uncontrolled:** DC is CAPPED at 55 for efficacy-dependent scenarios.
+- **If >50% of scenario probabilities are based on analyst judgment rather than empirical base rates:** Deduct 10 points from the Probability Calibration dimension.
+
+Apply ceilings AFTER computing the raw sum. These prevent overconfident recommendations on inherently uncertain decisions.
+
 ### Confidence Tiers
 
 | Score | Tier | Interpretation | Recommended Action |

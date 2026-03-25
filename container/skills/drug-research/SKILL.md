@@ -248,7 +248,7 @@ Disambiguation rules:
 
 ## 9 Research Pathways
 
-Execute pathways in order. Each pathway populates one or more of the 11 mandatory report sections.
+Execute pathways in **priority tier order** (see Tiered Pathway Execution above), NOT sequentially 1-9. Each pathway populates one or more of the 11 mandatory report sections. **Save each section to the report file as soon as it completes.**
 
 ### Pathway 1: Chemical Properties → Section 2 (Chemistry)
 
@@ -574,11 +574,58 @@ Always create the report template FIRST, then populate progressively:
 ```
 Step 1: Create the 11-section template with drug name and date
 Step 2: Run Compound Disambiguation Chain → populate Section 1
-Step 3: Execute Pathways 1-9 in order → populate Sections 2-11
-Step 4: Assign T1-T4 evidence grade to each section
-Step 5: Flag sections with T4-only evidence or "insufficient data"
-Step 6: Write Executive Summary (Section 11) last, synthesizing all findings
+Step 3: Execute Pathways in PRIORITY ORDER (see Tiered Execution below)
+Step 4: WRITE EACH SECTION TO THE REPORT FILE AS SOON AS IT COMPLETES
+        Do NOT wait until all pathways finish — save progress incrementally
+Step 5: Assign T1-T4 evidence grade to each section as it is written
+Step 6: Write Executive Summary last, synthesizing whatever sections are complete
 ```
+
+## Tiered Pathway Execution (Timeout Resilience)
+
+MCP tool calls take time. To ensure useful output even if execution is interrupted,
+execute pathways in priority tiers. **Complete each tier and save before starting the next.**
+
+### Tier 1 — MUST COMPLETE (target: first 10 minutes)
+These produce the core report. If nothing else runs, these alone are useful.
+```
+1. Compound Disambiguation Chain → Section 1 (Identity Card)
+2. Pathway 2: Mechanism & Targets → Sections 3-4
+3. Pathway 4: Clinical Trials → Section 6
+>>> CHECKPOINT: Write Sections 1, 3, 4, 6 to report file NOW <<<
+```
+
+### Tier 2 — HIGH VALUE (next 10 minutes)
+Adds safety and regulatory context.
+```
+4. Pathway 5: Post-Marketing Safety → Section 7
+5. Pathway 7: Regulatory & Patents → Section 9
+6. Pathway 1: Chemical Properties → Section 2
+>>> CHECKPOINT: Write Sections 2, 7, 9 to report file NOW <<<
+```
+
+### Tier 3 — COMPLETE PICTURE (remaining time)
+Fills remaining sections. Skip if running low on time.
+```
+7. Pathway 3: ADMET → Section 5
+8. Pathway 6: Pharmacogenomics → Section 8
+9. Pathway 8: Real-World Evidence → Section 10
+10. Pathway 9: Comparative Analysis → Section 11 (Executive Summary)
+>>> FINAL CHECKPOINT: Write all remaining sections <<<
+```
+
+### Parallel Execution Within Tiers
+Where pathways are independent, run MCP calls in parallel:
+- Tier 1: Disambiguation is sequential, but Pathway 2 and 4 are independent — run simultaneously
+- Tier 2: Pathways 5, 7, and 1 are all independent — run simultaneously
+- Tier 3: All independent — run simultaneously
+
+### Timeout Behavior
+If the agent detects it is running low on time or context:
+1. Stop starting new pathways
+2. Write the Executive Summary (Section 11) from whatever data has been gathered
+3. Mark incomplete sections as `[Not completed — prioritized sections above]`
+4. A partial report with Sections 1, 3-4, 6 is MORE VALUABLE than no report
 
 ---
 
@@ -595,6 +642,11 @@ Focus: Complete monograph with safety/efficacy balance.
 
 ### Investigational Drugs (Mechanism & Trial Focus)
 ```
+ALWAYS run the Compound Disambiguation Chain first — even for investigational compounds.
+Many Phase 2+ compounds have PubChem CIDs, ChEMBL IDs, and sometimes DrugBank entries.
+Search by development code (e.g., "LY3437943") if the INN returns no results.
+Only mark an ID as unavailable AFTER attempting all 5 disambiguation steps.
+
 Prioritize: Pathway 2 (mechanism), Pathway 4 (trials), Pathway 1 (chemistry).
 Sections 6-9 may be sparse — mark as T3/T4.
 Focus: Mechanism novelty, trial design, competitive positioning.
@@ -645,13 +697,22 @@ Cross-reference DDIs with metabolic pathway.
 
 ## Completeness Checklist
 
-- [ ] Compound disambiguation chain completed with all database IDs resolved
-- [ ] All 11 mandatory report sections populated
-- [ ] T1-T4 evidence grade assigned to each section
+**Tier 1 (minimum viable report):**
+- [ ] Compound disambiguation chain completed with database IDs resolved
+- [ ] Mechanism of action confirmed (Section 3)
+- [ ] Targets and pathways documented (Section 4)
+- [ ] Clinical trial landscape summarized (Section 6)
+- [ ] Report file saved with Tier 1 sections
+
+**Tier 2 (standard report):**
+- [ ] Safety profile and FAERS data reviewed (Section 7)
+- [ ] Regulatory status documented (Section 9)
+- [ ] Chemical properties retrieved (Section 2)
+- [ ] T1-T4 evidence grade assigned to each completed section
+
+**Tier 3 (complete report):**
+- [ ] ADMET profile populated (Section 5)
+- [ ] Pharmacogenomic considerations documented (Section 8)
+- [ ] Literature summary with recent publications (Section 10)
+- [ ] Executive summary synthesizes all findings (Section 11)
 - [ ] Fallback chains followed for any section with missing primary data
-- [ ] Chemical properties retrieved from PubChem and/or ChEMBL
-- [ ] Mechanism of action confirmed across ChEMBL and DrugBank
-- [ ] Clinical trial landscape summarized by phase and status
-- [ ] FAERS adverse events and FDA label warnings reviewed
-- [ ] Pharmacogenomic considerations documented
-- [ ] Executive summary synthesizes all findings with competitive positioning
