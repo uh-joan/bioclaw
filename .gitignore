@@ -39,3 +39,4 @@ agents-sdk-docs
 
 # MCP bundled build staging (temporary, cleaned after build)
 container/mcp-servers-stage/
+container/skills/company-pipeline-breakdown/scripts/__pycache__/
