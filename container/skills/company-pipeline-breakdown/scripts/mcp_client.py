@@ -22,10 +22,32 @@ class McpClient:
 
     def __init__(self, server_name: str, server_dir: Optional[str] = None):
         self.server_name = server_name
-        self.server_dir = server_dir or f"/tmp/{server_name}-mcp-server"
+        self.server_dir = server_dir or self._find_server(server_name)
         self.proc = None
         self.msg_id = 0
         self._tool_name = None
+
+    @staticmethod
+    def _find_server(name: str) -> str:
+        """Find MCP server directory — check container path, env var, then local dev paths."""
+        # Container path (inside Docker)
+        container_path = f"/tmp/{name}-mcp-server"
+        if os.path.exists(os.path.join(container_path, "build", "index.js")):
+            return container_path
+
+        # Environment variable (e.g., CTGOV_MCP_SERVER_PATH)
+        env_key = f"{name.upper().replace('-', '_')}_MCP_SERVER_PATH"
+        env_path = os.environ.get(env_key, "")
+        if env_path and os.path.exists(os.path.join(env_path, "build", "index.js")):
+            return env_path
+
+        # Local dev path (~/code/{name}-mcp-server)
+        home = os.environ.get("HOME", os.path.expanduser("~"))
+        local_path = os.path.join(home, "code", f"{name}-mcp-server")
+        if os.path.exists(os.path.join(local_path, "build", "index.js")):
+            return local_path
+
+        return container_path  # Fallback (will fail with clear error)
 
     def __enter__(self):
         self.connect()

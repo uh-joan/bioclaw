@@ -110,20 +110,26 @@ def get_company_pipeline_breakdown(
     except Exception:
         pass  # EMA is optional
 
-    # Wrap MCP calls to match riot-flames function signatures
+    # Wrap MCP calls to match riot-flames function signatures.
+    # riot-flames callers pass method="search" or method="suggest" etc.
+    # We pass those through to the MCP tool as-is.
     def ct_search(**kwargs):
-        return _ctgov_client.call("ct_gov_studies", method="search", **kwargs)
+        method = kwargs.pop("method", "search")
+        return _ctgov_client.call("ct_gov_studies", method=method, **kwargs)
 
     def get_study(**kwargs):
-        return _ctgov_client.call("ct_gov_studies", method="get", **kwargs)
+        method = kwargs.pop("method", "get")
+        return _ctgov_client.call("ct_gov_studies", method=method, **kwargs)
 
     def fda_lookup(**kwargs):
-        return _fda_client.call("fda_info", **kwargs)
+        method = kwargs.pop("method", "lookup_drug")
+        return _fda_client.call("fda_info", method=method, **kwargs)
 
     fda_device_lookup = None  # Device lookup not yet implemented
 
     def ema_search(**kwargs):
-        return _ema_client.call("ema_data", **kwargs)
+        method = kwargs.pop("method", "search_medicines")
+        return _ema_client.call("ema_data", method=method, **kwargs)
 
     # Create progress tracker with mode awareness
     progress = create_progress_tracker(
