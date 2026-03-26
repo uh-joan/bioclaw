@@ -327,7 +327,7 @@ def get_drug_safety_intelligence(
             'biorxiv': ('biorxiv_data', {
                 'biorxiv_search': {},
             }),
-            'cdc': ('cdc_data', {
+            'cdc': ('cdc_health_data', {
                 'cdc_health_data': {},
             }),
             'chembl': ('chembl_info', {

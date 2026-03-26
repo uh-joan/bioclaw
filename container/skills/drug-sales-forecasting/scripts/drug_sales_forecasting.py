@@ -93,7 +93,7 @@ def drug_sales_forecasting(
             'sec': ('sec-edgar', {
                 'sec_search_companies': {'method': 'search_companies'},
             }),
-            'cdc': ('cdc_data', {
+            'cdc': ('cdc_health_data', {
                 'cdc_health_data': {},
             }),
         }
@@ -185,8 +185,8 @@ def drug_sales_forecasting(
     drug_type = result.get('drug_info', {}).get('drug_type')
 
     try:
-        patent_data = get_patent_exclusivity(drug_name, drug_type, mcp_funcs)
-        risk_assessment = get_patent_cliff_risk(drug_name, drug_type, mcp_funcs)
+        patent_data = get_patent_exclusivity(drug_name, drug_type=drug_type, mcp_funcs=mcp_funcs)
+        risk_assessment = get_patent_cliff_risk(drug_name, drug_type=drug_type, mcp_funcs=mcp_funcs)
 
         result['patent_analysis'] = {
             'patent_expiry_date': patent_data.get('patent_expiry_date'),
