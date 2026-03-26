@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  A biomedical AI assistant with 41 MCP-powered research tools and 173 specialized domain skills running securely in containers. Built on <a href="https://github.com/qwibitai/nanoclaw">NanoClaw</a>.
+  A biomedical AI assistant with 41 MCP-powered research tools, 189 specialized domain skills, and 11 executable analytics scripts (47K lines Python) running securely in containers. Built on <a href="https://github.com/qwibitai/nanoclaw">NanoClaw</a>.
 </p>
 
 BioClaw bundles 41 [OpenPharma](https://github.com/openpharma-org) MCP servers directly into the container image — no cloning repos, no configuring paths. One image, zero setup.
@@ -28,9 +28,9 @@ BioClaw bundles 41 [OpenPharma](https://github.com/openpharma-org) MCP servers d
 | **Pharmacogenomics** | [ClinPGx](https://github.com/openpharma-org/clinpgx-mcp-server) |
 | **Healthcare** | [Medicare](https://github.com/openpharma-org/medicare-mcp), [Medicaid](https://github.com/openpharma-org/medicaid-mcp-server), [CDC](https://github.com/openpharma-org/cdc-mcp), [EU Filings](https://github.com/openpharma-org/eu-filings-mcp-server) |
 
-## Agent Skills (141 domain + 32 tooling) + Recipes (110)
+## Agent Skills (157 domain + 32 tooling) + Recipes (110) + Scripts (47K lines)
 
-The container agent has access to 141 specialized domain skills, 14 superpowers workflow skills, 12 Apify scraping skills, 4 tool skills, 2 design pipeline skills, and 110 recipe/reference files that guide its reasoning and workflows:
+The container agent has access to 157 specialized domain skills (including 11 with executable Python scripts), 14 superpowers workflow skills, 12 Apify scraping skills, 4 tool skills, 2 design pipeline skills, and 110 recipe/reference files:
 
 | Domain | Skills |
 |--------|--------|
@@ -45,6 +45,7 @@ The container agent has access to 141 specialized domain skills, 14 superpowers 
 | **Multi-Omics** | multi-omics-integration, multiomic-disease-characterization, metabolomics-analysis, toxicogenomics, systems-biology |
 | **Drug Discovery** | drug-target-analyst, drug-target-validator, drug-repurposing-analyst, target-research, binder-discovery-specialist, medicinal-chemistry, formulation-science, network-pharmacologist, molecular-glue-discovery, neuroscience-drug-discovery, drug-research |
 | **Commercialization & Financials** | pharma-market-access, pharma-launch-strategy, pharma-financial-analyst, pharma-deal-valuation, pharma-patent-analyst |
+| **Executable Analytics** | company-pipeline-breakdown`*`, company-us-earnings`*`, company-swot-analysis`*`, drug-safety-intelligence`*`, drug-sales-forecasting`*`, indication-drug-pipeline-breakdown`*`, real-world-utilization`*`, regulatory-precedent-pathway`*`, target-landscape-analysis`*`, clinical-trial-landscape`*`, disease-burden-analysis`*` |
 | **Pharmacology** | pharmacogenomics-specialist, clinical-pharmacology, drug-interaction-analyst, chemical-safety-toxicology, pharmacovigilance-specialist |
 | **Precision Medicine** | biomarker-discovery, precision-medicine-stratifier, precision-oncology-advisor, immunotherapy-response-predictor, polygenic-risk-score |
 | **Clinical** | clinical-trial-protocol-designer, clinical-trial-analyst, clinical-report-writer, clinical-decision-support, clinical-guidelines, prior-auth-reviewer |
@@ -57,6 +58,8 @@ The container agent has access to 141 specialized domain skills, 14 superpowers 
 | **Apify Scraping** | apify-ultimate-scraper, apify-actor-development, apify-actorization, apify-audience-analysis, apify-brand-reputation-monitoring, apify-competitor-intelligence, apify-content-analytics, apify-ecommerce, apify-influencer-discovery, apify-lead-generation, apify-market-research, apify-trend-analysis |
 | **Superpowers (Dev Workflow)** | brainstorming, writing-plans, executing-plans, subagent-driven-development, dispatching-parallel-agents, test-driven-development, systematic-debugging, requesting-code-review, receiving-code-review, finishing-a-development-branch, using-git-worktrees, using-superpowers, verification-before-completion, writing-skills |
 | **Tools** | agent-browser, pdf-reader, image-analysis, pipeline-engineering |
+
+`*` = Executable Python scripts that call MCP servers directly. Run via CLI (e.g., `python3 scripts/get_company_pipeline_breakdown.py "Pfizer"`) or invoked by the agent in-container.
 
 ## Quick Start
 
@@ -96,7 +99,7 @@ FDA_MCP_SERVER_PATH=/path/to/my/fda-mcp-server
 Built on [NanoClaw](https://github.com/qwibitai/nanoclaw) — a lightweight personal Claude assistant.
 
 ```
-Channels --> SQLite --> Polling loop --> Container (Claude Agent SDK + 37 MCP servers) --> Response
+Channels --> SQLite --> Polling loop --> Container (Claude Agent SDK + 41 MCP servers) --> Response
 ```
 
 Single Node.js process. Agents run in isolated Linux containers with all MCP servers available. The container entrypoint wires up bundled servers via symlinks, with host mounts taking priority for dev overrides.
@@ -104,7 +107,7 @@ Single Node.js process. Agents run in isolated Linux containers with all MCP ser
 Key additions over NanoClaw:
 - `container/Dockerfile.mcp-bundled` — Dockerfile with all MCP servers baked in
 - `container/build-mcp-bundled.sh` — Build script that stages and bundles MCP artifacts
-- `container/skills/` — 173 specialized skill sets with 110 recipe/reference files
+- `container/skills/` — 189 skill sets with 110 recipe files + 11 executable script skills (97 Python scripts, 47K lines)
 
 For the full NanoClaw architecture, see [docs/SPEC.md](docs/SPEC.md).
 
